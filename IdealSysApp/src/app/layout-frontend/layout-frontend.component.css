@@ -1,0 +1,15 @@
+﻿.main-container {
+  background-color: cadetblue;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  display: block;
+}
+.main-container>h1{
+  text-align:center;
+  color:#fff;
+}
+.btnmenu{
+  text-align:right;
+  margin:0 7px;
+}

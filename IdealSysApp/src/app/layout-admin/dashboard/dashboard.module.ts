@@ -8,7 +8,7 @@ import {
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-
+import { StatModule } from '../../shared/modules';
 
 @NgModule({
     imports: [
@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard.component';
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
         DashboardRoutingModule,
+        StatModule
        
     ],
     declarations: [

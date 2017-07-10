@@ -10,8 +10,8 @@ export class LayoutAdminComponent implements OnInit {
     constructor(public router: Router) { }
 
     ngOnInit() {
-        if (this.router.url === '/') {
-            this.router.navigate(['/dashboard']);
+        if (this.router.url === '/admin') {
+            this.router.navigate(['/admin/dashboard']);
         }
   }
 

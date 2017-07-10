@@ -10,25 +10,25 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  background: #222;
+  background: #218E44;
   text-align: center;
   color: #fff;
   padding: 10em;
-
+}
   .col-lg-8 {
     padding: 0;
   }
 
-  .rounded-btn {
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    color: rgba(255,255,255,0.8);
-    background: #222;
-    border: 2px solid rgba(255,255,255,0.8);
-    font-size: 18px;
-    line-height: 40px;
-    padding: 0 25px;
-  }
+.rounded-btn {
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  color: rgba(255,255,255,0.8);
+  background: #6FB344;
+  border: 2px solid rgba(255,255,255,0.8);
+  font-size: 18px;
+  line-height: 40px;
+  padding: 0 25px;
+}
 
   .rounded-btn:hover, .rounded-btn:focus, .rounded-btn:active, .rounded-btn:visited {
     color: rgba(255,255,255,1);
@@ -42,4 +42,4 @@
     margin-bottom: 10px;
     font-size: 36px;
   }
-}
+
