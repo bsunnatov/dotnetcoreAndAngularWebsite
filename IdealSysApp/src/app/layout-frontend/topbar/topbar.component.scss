@@ -1,0 +1,45 @@
+﻿div.top-bar {
+  background: #292b2c;
+  color: #fff;
+}
+
+div.top-bar button, div.top-bar a {
+  padding: 10px 0;
+}
+
+div.top-bar button {
+  padding: 10px;
+}
+
+div.top-bar div[class*="col-"] {
+  padding: 0;
+}
+
+div.top-bar button.dropdown-toggle {
+  background: none;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+
+div.top-bar a {
+  color: #fff;
+  font-size: 0.8em;
+  margin: 0 5px;
+}
+
+div.top-bar a:hover {
+  color: #ff6b6b;
+}
+
+div.top-bar .dropdown-menu {
+  padding: 10px;
+}
+
+div.top-bar .dropdown-menu a {
+  color: #333;
+  margin: 0 !important;
+  padding: 10px;
+}
