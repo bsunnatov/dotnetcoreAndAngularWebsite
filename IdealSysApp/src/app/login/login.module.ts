@@ -6,6 +6,7 @@ import { LoginComponent } from './login.component';
 import { SharedModule } from '../shared/modules/shared.module';
 import { EmailValidator } from '../directives/email-validator.directive';
 import { FormsModule } from '@angular/forms';
+import { RegFormComponent } from './reg-form/reg-form.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -13,7 +14,7 @@ import { FormsModule } from '@angular/forms';
         SharedModule,
         FormsModule
     ],
-    declarations: [LoginComponent, EmailValidator],
+    declarations: [LoginComponent, EmailValidator, RegFormComponent],
     providers: []
 })
 export class LoginModule { }

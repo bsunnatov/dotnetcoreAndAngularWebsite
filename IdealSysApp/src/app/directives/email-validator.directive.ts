@@ -23,6 +23,7 @@ export class EmailValidator {
     }
 
     validate(c: FormControl) {
+        alert("Validate working!!!");
         return this.validator(c);
     }
 
