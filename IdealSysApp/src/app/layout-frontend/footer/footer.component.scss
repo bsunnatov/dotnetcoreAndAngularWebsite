@@ -11,6 +11,7 @@ footer.main-footer {
 
 footer.main-footer h3 {
   font-size: 1.2rem;
+  
 }
 
 footer.main-footer h3 + ul {
@@ -23,34 +24,34 @@ footer.main-footer .page-links {
 
 footer.main-footer .page-links a {
   padding-left: 15px;
-  color: #636c72;
+  color: #fff;
   margin: 1px 0;
 }
 
 footer.main-footer .page-links a:hover {
-  color: #ff6b6b;
+  color: #218E44;
   text-decoration: none;
 }
 
 footer.main-footer .page-links a:hover:before {
-  color: #ff6b6b;
+  color: #218E44;
 }
 
 footer.main-footer .page-links a:before {
   font-family: 'FontAwesome';
   content: '\f105';
   margin: 0 5px 0 -15px;
-  color: $color-primary;
+  color: #fff;
 }
 
 footer.main-footer .page-links .icon {
   width: 45px;
   height: 45px;
   line-height: 45px;
-  color: #ff6b6b;
+  color: #fff;
   text-align: center;
   border-radius: 50%;
-  border: 1px solid #218E44;
+  border: 1px solid #fff;
   margin-right: 10px;
   font-size: 18px;
 }
@@ -84,7 +85,7 @@ footer.main-footer .copyrights p {
   color: #fff;
 }
 footer.main-footer .copyrights span {
-  color: $color-primary;
+  color: $color-secondary;
 }
 
 footer.main-footer .copyrights a {

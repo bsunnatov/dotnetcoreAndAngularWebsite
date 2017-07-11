@@ -1,6 +1,8 @@
 ﻿import { BrowserModule } from '@angular/platform-browser';
 import { Http,HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
+import { UserService } from './shared/services/user.service';
+import { ConfigService } from './shared/utils/config.service';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared/auth.guard';
@@ -9,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 export function HttpLoaderFactory(http: Http) {
     //     for development
     //     return new TranslateHttpLoader(http, '/start-angular/SB-Admin-BS4-Angular-4/master/dist/assets/i18n/', '.json');
@@ -18,7 +19,9 @@ export function HttpLoaderFactory(http: Http) {
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        
+       
     ],
     imports: [
         BrowserModule,
@@ -34,7 +37,7 @@ export function HttpLoaderFactory(http: Http) {
             }
         })
     ],
-    providers: [AuthGuard],
+    providers: [AuthGuard, UserService, ConfigService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
