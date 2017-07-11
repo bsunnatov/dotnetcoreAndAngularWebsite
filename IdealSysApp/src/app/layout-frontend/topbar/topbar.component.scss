@@ -1,45 +1,89 @@
-﻿div.top-bar {
-  background: #292b2c;
-  color: #fff;
+﻿$topnav-background-color: #218e44;
+$color-primary: #218E44;
+$color-secondary: #6FB344;
+
+.topnav {
+  border-radius: 0;
+  background-color: $topnav-background-color;
+  padding: 6px;
+  z-index: 2;
+
+  .text-center {
+    text-align: center;
+    padding-left: 0;
+    cursor: pointer;
+  }
+
+  .top-right-nav {
+    .buy-now {
+      a {
+        color: #999;
+      }
+    }
+
+    .dropdown-menu {
+      top: 40px;
+      right: -5px;
+      left: auto;
+
+      .message-preview {
+        .media {
+          .media-body {
+            .media-heading {
+              font-size: 14px;
+              font-weight: bold;
+              margin-bottom: 0;
+            }
+
+            p {
+              margin: 0;
+            }
+
+            p.last {
+              font-size: 13px;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      hr {
+        margin-top: 1px;
+        margin-bottom: 4px;
+      }
+    }
+  }
 }
 
-div.top-bar button, div.top-bar a {
-  padding: 10px 0;
+.messages {
+  width: 300px;
+
+  .media {
+    border-bottom: 1px solid #DDD;
+    padding: 5px 10px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .media-body {
+    h5 {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .small {
+      margin: 0;
+    }
+
+    .last {
+      font-size: 12px;
+      margin: 0;
+    }
+  }
 }
 
-div.top-bar button {
-  padding: 10px;
-}
-
-div.top-bar div[class*="col-"] {
-  padding: 0;
-}
-
-div.top-bar button.dropdown-toggle {
-  background: none;
-  outline: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.8em;
-}
-
-div.top-bar a {
-  color: #fff;
-  font-size: 0.8em;
-  margin: 0 5px;
-}
-
-div.top-bar a:hover {
-  color: #ff6b6b;
-}
-
-div.top-bar .dropdown-menu {
-  padding: 10px;
-}
-
-div.top-bar .dropdown-menu a {
-  color: #333;
-  margin: 0 !important;
-  padding: 10px;
+.header .navbar {
+  background: $topnav-background-color !important;
 }

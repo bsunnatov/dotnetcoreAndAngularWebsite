@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutFrontendComponent } from './layout-frontend.component';
 import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 const routes: Routes = [
     {
         path: '', component: LayoutFrontendComponent,
         children: [
+            {
+                path: 'home', component: HomeComponent
+            },
             {
                 path: 'about', component: AboutComponent
             },

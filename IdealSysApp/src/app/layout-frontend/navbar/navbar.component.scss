@@ -1,0 +1,120 @@
+﻿nav.navbar {
+  background: #fff;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+  z-index: 999;
+  top:56px;
+}
+
+nav.navbar i.fa-caret-down {
+  padding: 5px;
+  display: inline-block;
+}
+
+nav.navbar ul.navbar-nav {
+  font-size: 1.1em;
+}
+
+nav.navbar ul.navbar-nav a {
+  color: #333;
+  font-size: 0.85em;
+  padding: 15px 0;
+}
+
+nav.navbar ul.navbar-nav a:hover {
+  color: #ff6b6b;
+}
+
+nav.navbar ul.navbar-nav .dropdown-menu {
+  left: auto;
+  float: none;
+  border-radius: 0;
+  padding: 0;
+  border-top: 2px solid #ff6b6b;
+  margin-top: 8px;
+  font-size: 0.85em;
+}
+
+nav.navbar ul.navbar-nav .dropdown-menu a {
+  padding: 8px 10px;
+  color: #636c72;
+}
+
+nav.navbar ul.navbar-nav .dropdown-menu a:active {
+  background-color: #eceeef;
+}
+
+nav.navbar ul.navbar-nav li.active .dropdown-menu a {
+  color: #636c72;
+}
+
+nav.navbar ul.navbar-nav li.active a {
+  color: #ff6b6b;
+}
+
+nav.navbar ul.navbar-nav ul li a {
+  padding-right: 0 !important;
+  margin: 0;
+}
+
+nav.navbar ul.navbar-nav ul li .icon {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+nav.navbar ul.navbar-nav ul li .icon.search {
+  border: 1px solid #333;
+}
+
+nav.navbar ul.navbar-nav ul li .icon.cart {
+  color: #fff;
+  background: #ff6b6b;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav.navbar ul.navbar-nav ul li .icon.cart i {
+  transform: translateY(3px);
+}
+
+nav.navbar ul.navbar-nav span.no {
+  margin-right: 5px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  nav.navbar .navbar-brand img {
+    max-width: 100px;
+  }
+}
+
+nav.navbar button.navbar-toggler {
+  font-size: 1em;
+  padding: 10px 0;
+  height: 40px;
+  outline: none;
+  text-transform: uppercase;
+  right: 0;
+}
+
+@media (max-width: 580px) {
+  nav.navbar {
+    padding: 20px 0;
+  }
+
+  nav.navbar button.navbar-toggler {
+    right: 1rem;
+  }
+
+  nav.navbar ul.navbar-nav .dropdown-menu {
+    border-top: none;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav.navbar ul.navbar-nav .dropdown-menu {
+    border: none;
+  }
+}
