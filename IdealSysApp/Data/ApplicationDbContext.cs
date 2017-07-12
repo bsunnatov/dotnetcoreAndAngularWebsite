@@ -15,5 +15,6 @@ namespace IdealSysApp.Data
     {
     }
     public DbSet<JobSeeker> JobSeekers{ get; set; }
+   
   }
 }

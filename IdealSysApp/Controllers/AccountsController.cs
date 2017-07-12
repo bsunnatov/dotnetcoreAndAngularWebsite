@@ -26,7 +26,15 @@ namespace IdealSysApp.Controllers
       _mapper = mapper;
       _appDbContext = appDbContext;
     }
+    // GET api/accounts/GetUserList
+    [HttpGet("GetUserList")]
+    public IList<UserViewModel> GetUserList()
+    {
 
+      var result = _mapper.Map<IList<UserViewModel>>(_userManager.Users.ToList());
+      return result;
+
+    }
     // POST api/accounts
     [HttpPost]
     public async Task<IActionResult> Post([FromBody]RegistrationViewModel model)
@@ -47,5 +55,6 @@ namespace IdealSysApp.Controllers
 
       return new OkObjectResult("Account created");
     }
+
   }
 }

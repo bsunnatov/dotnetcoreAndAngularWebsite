@@ -1,0 +1,1 @@
+﻿http://www.telerik.com/kendo-angular-ui/components/grid/data-binding/
