@@ -35,6 +35,9 @@ namespace IdealSysApp.Controllers
       {
         Formatting = Formatting.Indented
       };
+      //System.Security.Claims.ClaimsPrincipal currentUser = this.User;
+      //bool IsAdmin = currentUser.IsInRole("Admin");
+      //var id = _userManager.GetUserId(User); // Get user id:
     }
 
     // POST api/auth/login

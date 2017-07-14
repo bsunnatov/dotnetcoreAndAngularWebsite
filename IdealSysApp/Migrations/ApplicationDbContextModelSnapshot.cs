@@ -32,6 +32,26 @@ namespace IdealSysApp.Migrations
                     b.ToTable("JobSeekers");
                 });
 
+            modelBuilder.Entity("IdealSysApp.Models.Entities.SiteLink", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("IdentityId");
+
+                    b.Property<DateTime>("ModifiedDate");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdentityId");
+
+                    b.ToTable("SiteLinks");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -208,6 +228,13 @@ namespace IdealSysApp.Migrations
                 });
 
             modelBuilder.Entity("IdealSysApp.Models.Entities.JobSeeker", b =>
+                {
+                    b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
+                        .WithMany()
+                        .HasForeignKey("IdentityId");
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.SiteLink", b =>
                 {
                     b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
                         .WithMany()

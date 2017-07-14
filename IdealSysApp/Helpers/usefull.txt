@@ -1,1 +1,2 @@
 ﻿http://www.telerik.com/kendo-angular-ui/components/grid/data-binding/
+https://github.com/mmacneil/AngularASPNETCoreAuthentication/tree/master/src/dotnetGigs

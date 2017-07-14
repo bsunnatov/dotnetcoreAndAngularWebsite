@@ -31,10 +31,11 @@ namespace IdealSysApp.Controllers
     public IList<UserViewModel> GetUserList()
     {
 
-      var result = _mapper.Map<IList<UserViewModel>>(_userManager.Users.ToList());
-      return result;
+
+      return _mapper.Map<IList<UserViewModel>>(_userManager.Users.ToList());
 
     }
+
     // POST api/accounts
     [HttpPost]
     public async Task<IActionResult> Post([FromBody]RegistrationViewModel model)

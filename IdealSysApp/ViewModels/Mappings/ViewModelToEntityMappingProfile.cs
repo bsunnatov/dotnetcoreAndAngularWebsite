@@ -7,11 +7,14 @@ using IdealSysApp.Models.Entities;
 
 namespace IdealSysApp.ViewModels.Mappings
 {
-  public class ViewModelToEntityMappingProfile : Profile
+  public class AutoMapperProfileConfiguration : Profile
   {
-    public ViewModelToEntityMappingProfile()
+    public AutoMapperProfileConfiguration()
     {
       CreateMap<RegistrationViewModel, AppUser>().ForMember(au => au.UserName, map => map.MapFrom(vm => vm.Email));
+      CreateMap<UserViewModel,AppUser>();
+      CreateMap<AppUser, UserViewModel>().ForMember(vm=>vm.FullName,map=>map.MapFrom(au=>au.FirstName+" "+ au.LastName));
+      //CreateMap<IList<AppUser>, IList<UserViewModel>>();
     }
   }
 }

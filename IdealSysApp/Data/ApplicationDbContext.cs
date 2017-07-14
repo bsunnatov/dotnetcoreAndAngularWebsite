@@ -14,7 +14,7 @@ namespace IdealSysApp.Data
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
-    public DbSet<JobSeeker> JobSeekers{ get; set; }
-   
+    public DbSet<JobSeeker> JobSeekers { get; set; }
+    public DbSet<SiteLink> SiteLinks { get; set; }
   }
 }

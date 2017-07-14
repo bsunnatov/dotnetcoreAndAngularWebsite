@@ -81,7 +81,7 @@ namespace IdealSysApp
           })
           .AddEntityFrameworkStores<ApplicationDbContext>()
           .AddDefaultTokenProviders();
-
+      services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
       services.AddMvc();
       services.AddAutoMapper();
     }
@@ -89,16 +89,15 @@ namespace IdealSysApp
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
-
-      app.SeedData();
+    // loggerFactory.AddFile("Logs/myapp-{Date}.txt");
+      // app.SeedData();
       app.UseCors("MyPolicy");
       loggerFactory.AddConsole();
-   
+
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
       }
-
       var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
       var tokenValidationParameters = new TokenValidationParameters
       {
