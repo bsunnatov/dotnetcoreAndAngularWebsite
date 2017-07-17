@@ -31,7 +31,6 @@ namespace IdealSysApp.Controllers
     public IList<UserViewModel> GetUserList()
     {
 
-
       return _mapper.Map<IList<UserViewModel>>(_userManager.Users.ToList());
 
     }

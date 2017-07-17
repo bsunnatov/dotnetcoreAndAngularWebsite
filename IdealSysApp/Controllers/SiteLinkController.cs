@@ -27,14 +27,15 @@ namespace IdealSysApp.Controllers
     {
       try
       {
-        _service.Insert(new SiteLink() { Name = "Home" });
+        
+      _service.Insert(new SiteLink() { Name = "Home" + DateTime.Now.Millisecond.ToString() });
       }
       catch (Exception ex)
       {
         _log.LogWarning(ex.Message);
         return new string[] { ex.Message };
       }
-      return _service.GetAll().Select(s=>s.Name);
+      return _service.GetAll().Select(s => s.Name);
     }
 
     // POST: api/SiteLink

@@ -12,7 +12,7 @@
       <div class="nested" [class.expand]="showMenu === 'pages'">
         <ul class="submenu">
           <li>
-            <a href="javascript:void(0)"><span>{{ 'Users' | translate }}</span></a>
+            <a routerLink="appusers" [routerLinkActive]="['router-link-active']"><span>{{ 'Users' | translate }}</span></a>
           </li>
           <li>
             <a href="javascript:void(0)"><span>{{ 'Roles' | translate }}</span></a>

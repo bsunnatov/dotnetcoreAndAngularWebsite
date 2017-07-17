@@ -20,7 +20,9 @@ export class UserService extends BaseService {
 
     constructor(private http: Http, private configService: ConfigService) {
         super();
-        this.loggedIn = !!localStorage.getItem('auth_token');
+        let authToken = localStorage.getItem('auth_token');
+        console.log(authToken);
+        this.loggedIn = !!authToken;
         // ?? not sure if this the best way to broadcast the status but seems to resolve issue on page refresh where auth status is lost in
         // header component resulting in authed user nav links disappearing despite the fact user is still logged in
         this._authNavStatusSource.next(this.loggedIn);
@@ -66,5 +68,16 @@ export class UserService extends BaseService {
     isLoggedIn() {
         return this.loggedIn;
     }  
+    list() {
+        return this.http
+            .get(this.baseUrl + 'Acoounts/GetUserList'
+            )
+            //.map(res => res.json())
+            .map(res => {
+                console.log(res)
+            })
+            .catch(this.handleError);
+     
+    }
 
 }

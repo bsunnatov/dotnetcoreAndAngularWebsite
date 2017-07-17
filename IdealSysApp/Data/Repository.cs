@@ -11,14 +11,21 @@ using System.Security.Principal;
 namespace IdealSysApp.Data
 {
   public class Repository<T> : IRepository<T> where T : BaseEntity
+   
   {
     private readonly ApplicationDbContext context;
     private DbSet<T> entities;
     string errorMessage = string.Empty;
-    public Repository(ApplicationDbContext context)
+    private readonly UserManager<AppUser> _userManager;
+
+    public Repository(ApplicationDbContext context, UserManager<AppUser> userManager)
     {
+     
       this.context = context;
-      entities = context.Set<T>();
+      this.entities = context.Set<T>();
+      _userManager = userManager;
+    
+      
     }
     public IEnumerable<T> GetAll()
     {
@@ -33,10 +40,10 @@ namespace IdealSysApp.Data
       if (entity == null)
       {
         throw new ArgumentNullException("entity");
-      } 
+      }
       entity.CreatedDate = DateTime.Now;
       entity.ModifiedDate = DateTime.Now;
-     // entity.IdentityId= 
+      entity.IdentityId = _userManager.GetUserId(ClaimsPrincipal.Current);
       entities.Add(entity);
       context.SaveChanges();
     }
@@ -58,5 +65,6 @@ namespace IdealSysApp.Data
       entities.Remove(entity);
       context.SaveChanges();
     }
+
   }
 }

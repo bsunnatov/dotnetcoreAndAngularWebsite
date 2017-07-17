@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace IdealSysApp.Controllers
 {
-  [Authorize(Policy = "ApiUser")]
+
   [Produces("application/json")]
   [Route("api/Dashboard")]
   //[Authorize(Policy = "ApiUser")]
@@ -20,7 +20,8 @@ namespace IdealSysApp.Controllers
     {
       return new string[] { "value1", "value2" };
     }
-   
+
+    [Authorize(Policy = "ApiUser")]
     // GET api/dashboard/home
     [HttpGet("home")]
     public IActionResult GetHome()

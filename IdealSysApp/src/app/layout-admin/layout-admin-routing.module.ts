@@ -7,7 +7,7 @@ const routes: Routes = [
         path: '', component: LayoutAdminComponent,
         children: [
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-            //{ path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
+            { path: 'appusers', loadChildren: './appuser/appuser.module#AppuserModule' },
             //{ path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
             //{ path: 'forms', loadChildren: './form/form.module#FormModule' },
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
