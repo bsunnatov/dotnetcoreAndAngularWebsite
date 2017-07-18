@@ -33,7 +33,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\app\shared\components\" />
-    <Folder Include="src\app\shared\models\" />
     <Folder Include="src\app\shared\services\" />
     <Folder Include="src\app\directives\" />
   </ItemGroup>

@@ -2,6 +2,7 @@
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { BaseService } from "./base.service";
 import { UserRegistration } from '../models/user-registration';
+import { AppUser } from '../models/appuser'
 import { ConfigService } from '../utils/config.service';
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/Rx';
@@ -10,7 +11,7 @@ import '../../rxjs-operators';
 export class UserService extends BaseService {
 
     baseUrl: string = '';
-
+    gridSource: Observable<AppUser>;
     // Observable navItem source
     private _authNavStatusSource = new BehaviorSubject<boolean>(false);
     // Observable navItem stream
@@ -21,7 +22,6 @@ export class UserService extends BaseService {
     constructor(private http: Http, private configService: ConfigService) {
         super();
         let authToken = localStorage.getItem('auth_token');
-        console.log(authToken);
         this.loggedIn = !!authToken;
         // ?? not sure if this the best way to broadcast the status but seems to resolve issue on page refresh where auth status is lost in
         // header component resulting in authed user nav links disappearing despite the fact user is still logged in
@@ -32,10 +32,10 @@ export class UserService extends BaseService {
 
     register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<UserRegistration> {
         let body = JSON.stringify({ email, password, firstName, lastName, location });
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
+       // let headers = new Headers({ 'Content-Type': 'application/json' });
+        //let options = new RequestOptions({ headers: headers });
 
-        return this.http.post(this.baseUrl + "/accounts", body, options)
+        return this.http.post(this.baseUrl + "/accounts", body)
             .map(res => true)
             .catch(this.handleError);
     }  
@@ -43,7 +43,6 @@ export class UserService extends BaseService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
         let postData = JSON.stringify({ userName, password });
-        console.log(postData);
         return this.http
             .post(
             this.baseUrl + '/auth/login',
@@ -70,13 +69,10 @@ export class UserService extends BaseService {
     }  
     list() {
         return this.http
-            .get(this.baseUrl + 'Acoounts/GetUserList'
+            .get(this.baseUrl + '/Accounts/GetUserList'
             )
-            //.map(res => res.json())
-            .map(res => {
-                console.log(res)
-            })
-            .catch(this.handleError);
+            .map(res => res.json())
+           .catch(this.handleError);
      
     }
 

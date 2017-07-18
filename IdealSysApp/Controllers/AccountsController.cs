@@ -10,6 +10,7 @@ using IdealSysApp.Models.Entities;
 using AutoMapper;
 using IdealSysApp.ViewModels;
 using IdealSysApp.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IdealSysApp.Controllers
 {
@@ -27,6 +28,7 @@ namespace IdealSysApp.Controllers
       _appDbContext = appDbContext;
     }
     // GET api/accounts/GetUserList
+    [Authorize(Policy = "ApiUser")]
     [HttpGet("GetUserList")]
     public IList<UserViewModel> GetUserList()
     {

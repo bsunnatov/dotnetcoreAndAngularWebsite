@@ -1,4 +1,16 @@
 ﻿<blockquote class="blockquote blockquote-reverse">
   appuser works!
 </blockquote>
-<button class="btn btn-default" (click)="getUserList()"><i class="fa fa-fw fa-users"></i> Get Users</button>
+<button class="btn btn-default" (click)="getUserList()"><i class="fa fa-fw fa-users"></i>{{'Refresh'|translate}}</button>
+<kendo-grid [data]="gridData">
+  <kendo-grid-column field="firstname" title="First Name" width="120">
+  </kendo-grid-column>
+  <kendo-grid-column field="lastname" title="Last Name" width="120">
+  </kendo-grid-column>
+
+  <!--<kendo-grid-column field="Discontinued" width="120">
+    <template kendoCellTemplate let-dataItem>
+      <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
+    </template>
+  </kendo-grid-column>-->
+</kendo-grid>  
