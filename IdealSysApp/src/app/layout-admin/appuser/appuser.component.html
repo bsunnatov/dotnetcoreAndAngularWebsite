@@ -2,12 +2,29 @@
   appuser works!
 </blockquote>
 <button class="btn btn-default" (click)="getUserList()"><i class="fa fa-fw fa-users"></i>{{'Refresh'|translate}}</button>
-<kendo-grid [data]="gridData">
-  <kendo-grid-column field="firstname" title="First Name" width="120">
+<kendo-grid [data]="gridData" (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+ (save)="saveHandler($event)" (remove)="removeHandler($event)"
+ (add)="addHandler($event)">
+  <kendo-grid-column field="firstName" title="First Name" width="120">
   </kendo-grid-column>
-  <kendo-grid-column field="lastname" title="Last Name" width="120">
+  <kendo-grid-column field="lastName" title="Last Name" width="120">
   </kendo-grid-column>
-
+  <kendo-grid-column field="fullName" title="fullName" width="120">
+  </kendo-grid-column>
+  <kendo-grid-column field="email" title="email" width="120">
+  </kendo-grid-column>
+  <kendo-grid-command-column title="command" width="220">
+    <ng-template kendoGridCellTemplate let-isNew="isNew">
+      <!-- edit command directive, will be visible when not in edit mode -->
+      <button kendoGridEditCommand class="k-primary">Edit</button>
+      <!-- remove command directive, will be visible when not in edit mode -->
+      <button kendoGridRemoveCommand>Remove</button>
+      <!-- save command directive, will be visible when in edit mode -->
+      <button kendoGridSaveCommand>{{ isNew ? 'Add' : 'Update' }}</button>
+      <!-- cancel command directive, will be visible when in edit mode -->
+      <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+    </ng-template>
+  </kendo-grid-command-column>
   <!--<kendo-grid-column field="Discontinued" width="120">
     <template kendoCellTemplate let-dataItem>
       <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
