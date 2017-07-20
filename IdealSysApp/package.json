@@ -25,6 +25,7 @@
     "@ngx-translate/core": "^7.0.0",
     "@ngx-translate/http-loader": "^0.1.0",
     "@progress/kendo-angular-dateinputs": "^1.0.0",
+    "@progress/kendo-angular-dialog": "^1.0.4",
     "@progress/kendo-angular-dropdowns": "^1.0.0",
     "@progress/kendo-angular-excel-export": "^1.0.0",
     "@progress/kendo-angular-grid": "^1.2.2",

@@ -1,10 +1,15 @@
-﻿<blockquote class="blockquote blockquote-reverse">
-  appuser works!
-</blockquote>
-<button class="btn btn-default" (click)="getUserList()"><i class="fa fa-fw fa-users"></i>{{'Refresh'|translate}}</button>
-<kendo-grid [data]="gridData" (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
- (save)="saveHandler($event)" (remove)="removeHandler($event)"
- (add)="addHandler($event)">
+﻿
+
+<kendo-grid [data]="gridData"
+          [height]="533"
+          [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+          [pageable]="true" [sortable]="true"
+          (dataStateChange)="onStateChange($event)"
+          (edit)="editHandler($event)" (remove)="removeHandler($event)"
+          (add)="addHandler($event)">
+  <ng-template kendoGridToolbarTemplate>
+    <button kendoGridAddCommand>Add new</button>
+  </ng-template>
   <kendo-grid-column field="firstName" title="First Name" width="120">
   </kendo-grid-column>
   <kendo-grid-column field="lastName" title="Last Name" width="120">
@@ -14,20 +19,13 @@
   <kendo-grid-column field="email" title="email" width="120">
   </kendo-grid-column>
   <kendo-grid-command-column title="command" width="220">
-    <ng-template kendoGridCellTemplate let-isNew="isNew">
-      <!-- edit command directive, will be visible when not in edit mode -->
+    <ng-template kendoGridCellTemplate>
       <button kendoGridEditCommand class="k-primary">Edit</button>
-      <!-- remove command directive, will be visible when not in edit mode -->
-      <button kendoGridRemoveCommand>Remove</button>
-      <!-- save command directive, will be visible when in edit mode -->
-      <button kendoGridSaveCommand>{{ isNew ? 'Add' : 'Update' }}</button>
-      <!-- cancel command directive, will be visible when in edit mode -->
-      <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+      <button kendoGridRemoveCommand>Delete</button>
     </ng-template>
   </kendo-grid-command-column>
-  <!--<kendo-grid-column field="Discontinued" width="120">
-    <template kendoCellTemplate let-dataItem>
-      <input type="checkbox" [checked]="dataItem.Discontinued" disabled />
-    </template>
-  </kendo-grid-column>-->
 </kendo-grid>  
+<kendo-grid-edit-form [model]="editDataItem" [isNew]="isNew"
+                      (save)="saveHandler($event)"
+                      (cancel)="cancelHandler()">
+</kendo-grid-edit-form>

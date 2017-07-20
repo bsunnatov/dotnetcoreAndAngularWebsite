@@ -1,37 +1,62 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, Inject } from '@angular/core';
 import { UserService } from '../../shared/services/user.service';
 import { AppUser } from '../../shared/models/appuser';
-
+import { GridDataResult } from '@progress/kendo-angular-grid';
+import { State, process } from '@progress/kendo-data-query';
+import { Observable } from 'rxjs/Rx';
 @Component({
     selector: 'app-appuser',
     templateUrl: './appuser.component.html',
     styleUrls: ['./appuser.component.scss']
 })
 export class AppuserComponent implements OnInit {
-    private gridData: Array<AppUser>;
-    constructor(private userService: UserService) { }
-
-    ngOnInit() {
-
-        this.getUserList();
-
+    private gridData: any[];
+    public view: Observable<GridDataResult>;
+    public gridState: State = {
+        sort: [],
+        skip: 0,
+        take: 10
+    };
+    private editService: UserService;
+    private editDataItem: AppUser;
+    private isNew: boolean;
+    constructor(private userService: UserService) {
+        this.editService = userService;
     }
 
-    getUserList() {
-         this.userService.list().subscribe((users: Array<AppUser>) => { this.gridData = users;});
+    public ngOnInit(): void {
+        this.editService.list().subscribe(s => this.gridData = s);
 
+        //this.editService.read();
     }
-    protected editHandler({sender, rowIndex, dataItem}) {
-        // define all editable fields validators and default values
-        //const group = new FormGroup({
-        //    'ProductID': new FormControl(dataItem.ProductID),
-        //    'ProductName': new FormControl(dataItem.ProductName, Validators.required),
-        //    'UnitPrice': new FormControl(dataItem.UnitPrice),
-        //    'UnitsInStock': new FormControl(dataItem.UnitsInStock, Validators.compose([Validators.required, Validators.pattern('^[0-9]{1,2}')])),
-        //    'Discontinued': new FormControl(dataItem.Discontinued)
-        //});
 
-        // put the row in edit mode, with the `FormGroup` build above
-        //sender.editRow(rowIndex, group);
+    public onStateChange(state: State) {
+        this.gridState = state;
+
+        //this.editService.read();
+    }
+
+    public addHandler() {
+        this.editDataItem = new AppUser();
+        this.isNew = true;
+    }
+
+    public editHandler({dataItem}) {
+        this.editDataItem = dataItem;
+        this.isNew = false;
+    }
+
+    public cancelHandler() {
+        this.editDataItem = undefined;
+    }
+
+    public saveHandler(product: AppUser) {
+        //this.editService.save(product, this.isNew);
+
+        this.editDataItem = undefined;
+    }
+
+    public removeHandler({dataItem}) {
+        //this.editService.remove(dataItem);
     }
 }

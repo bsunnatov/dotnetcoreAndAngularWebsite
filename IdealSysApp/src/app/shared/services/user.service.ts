@@ -7,6 +7,7 @@ import { ConfigService } from '../utils/config.service';
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/Rx';
 import '../../rxjs-operators';
+
 @Injectable()
 export class UserService extends BaseService {
 
@@ -29,6 +30,7 @@ export class UserService extends BaseService {
         this.baseUrl = configService.getApiURI();
     }
 
+    private data: any[] = [];
 
     register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<UserRegistration> {
         let body = JSON.stringify({ email, password, firstName, lastName, location });
