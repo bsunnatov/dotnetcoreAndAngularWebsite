@@ -50,8 +50,8 @@ export class AppuserComponent implements OnInit {
         this.editDataItem = undefined;
     }
 
-    public saveHandler(product: AppUser) {
-        //this.editService.save(product, this.isNew);
+    public saveHandler(user: AppUser) {
+        this.editService.save(user, this.isNew);
 
         this.editDataItem = undefined;
     }

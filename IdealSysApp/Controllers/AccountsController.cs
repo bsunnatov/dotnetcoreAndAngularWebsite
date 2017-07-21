@@ -57,6 +57,15 @@ namespace IdealSysApp.Controllers
 
       return new OkObjectResult("Account created");
     }
-
+    [HttpPost("Add")]
+    public IActionResult Add([FromBody]UserViewModel model)
+    {
+      return Ok(model);
+    }
+    [HttpPost("Update")]
+    public IActionResult Update([FromBody]UserViewModel model)
+    {
+      return Ok(model);
+    }
   }
 }

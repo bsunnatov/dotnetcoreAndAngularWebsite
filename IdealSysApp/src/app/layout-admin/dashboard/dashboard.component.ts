@@ -1,11 +1,11 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { routerTransition } from '../../router.animations';
+import { fadeAnimate, slideToBottom } from '../../router.animations';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  animations: [routerTransition()]
+  animations: [fadeAnimate()]
 })
 export class DashboardComponent implements OnInit {
     public sliders: Array<any> = [];

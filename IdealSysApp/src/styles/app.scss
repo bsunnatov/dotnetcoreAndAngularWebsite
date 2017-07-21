@@ -4,4 +4,13 @@
 @import "utils";
 @import "rtl";
 @import "responsive";
+$color-primary: #218E44;
+$color-secondary: #6FB344;
+$accent: #218E44;//Customize telerik default theme color
 @import "~@telerik/kendo-theme-default/styles/packages/all";
+.k-window {
+  left:50%;
+  top:50%;
+  margin-left:-225px;
+  margin-top:-225px;
+}

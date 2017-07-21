@@ -1,9 +1,24 @@
 ﻿import { animate, state, style, transition, trigger } from '@angular/animations';
 
 export function routerTransition() {
-    return slideToRight();
+    return fadeAnimate();
 }
 
+export function fadeAnimate() {
+    // trigger name for attaching this animation to an element using the [@triggerName] syntax
+    return trigger('routerTransition', [
+
+        // route 'enter' transition
+        transition(':enter', [
+
+            // css styles at start of transition
+            style({ opacity: 0 }),
+
+            // animation and styles at end of transition
+            animate('.3s', style({ opacity: 1 }))
+        ]),
+    ]);
+}
 export function slideToRight() {
     return trigger('routerTransition', [
         state('void', style({})),

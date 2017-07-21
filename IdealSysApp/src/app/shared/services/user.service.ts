@@ -77,5 +77,13 @@ export class UserService extends BaseService {
            .catch(this.handleError);
      
     }
+    save(data: any, isNew?: boolean) {
+        if (isNew) {
+            this.http.post(this.baseUrl + '/Accounts/Add', JSON.stringify(data)).map(res => res.json).subscribe(result => console.log(result));
+        }
+        else {
+            this.http.put(this.baseUrl + '/Accounts/Update', JSON.stringify(data)).map(res => res.json).subscribe(result => console.log(result));
+        }
+    }
 
 }

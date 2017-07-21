@@ -18,7 +18,6 @@ export class EditFormComponent  {
 
     @Input() public set model(user: AppUser) {
         this.editForm.reset(user);
-
         this.active = user !== undefined;
     }
 

@@ -1,34 +1,36 @@
-﻿<kendo-dialog *ngIf="active" (close)="closeForm()">
-  <kendo-dialog-titlebar>
-    {{ isNew ? 'Add new product' : 'Edit product' }}
-  </kendo-dialog-titlebar>
+﻿<div style="left:50%">
+  <kendo-dialog *ngIf="active" (close)="closeForm()">
+    <kendo-dialog-titlebar>
+      {{ isNew ? 'Add new product' : 'Edit product' }}
+    </kendo-dialog-titlebar>
 
-  <form novalidate [formGroup]="editForm">
-    <div class="form-group">
-      <label for="FirstName" class="control-label">First Name</label>
+    <form novalidate [formGroup]="editForm">
+      <div class="form-group">
+        <label for="FirstName" class="control-label">First Name</label>
 
-      <input type="text" class="k-textbox" formControlName="FirstName" />
+        <input type="text" class="k-textbox" formControlName="FirstName" />
 
-      <div class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.FirstName.valid || editForm.controls.FirstName.pristine">
-        FirstName is required
+        <div class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.FirstName.valid || editForm.controls.FirstName.pristine">
+          FirstName is required
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="LastName" class="control-label">Last Name</label>
+      <div class="form-group">
+        <label for="LastName" class="control-label">Last Name</label>
 
-      <input type="text" class="k-textbox" formControlName="LastName" />
-    </div>
+        <input type="text" class="k-textbox" formControlName="LastName" />
+      </div>
 
-    <div class="form-group">
-      <label>
-        <input type="checkbox" formControlName="IsBlocked" />
-        IsBlocked
-      </label>
-    </div>
-  </form>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" formControlName="IsBlocked" />
+          IsBlocked
+        </label>
+      </div>
+    </form>
 
-  <kendo-dialog-actions>
-    <button class="k-button" (click)="onCancel($event)">Cancel</button>
-    <button class="k-button k-primary" [disabled]="!editForm.valid" (click)="onSave($event)">Save</button>
-  </kendo-dialog-actions>
-</kendo-dialog>
+    <kendo-dialog-actions>
+      <button class="k-button" (click)="onCancel($event)">Cancel</button>
+      <button class="k-button k-primary" [disabled]="!editForm.valid" (click)="onSave($event)">Save</button>
+    </kendo-dialog-actions>
+  </kendo-dialog>
+</div>
