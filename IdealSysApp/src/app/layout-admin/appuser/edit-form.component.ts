@@ -9,9 +9,10 @@ import { AppUser } from '../../shared/models/appuser';
 export class EditFormComponent  {
 
     private editForm = new FormGroup({
-        'FirstName': new FormControl(),
+        'FirstName': new FormControl("", Validators.required),
         'LastName': new FormControl("", Validators.required),
-        'IsBlocked': new FormControl(false)
+        'IsBlocked': new FormControl(false),
+        'Id': new FormControl()
     });
     private active: boolean = false;
     @Input() public isNew: boolean = false;

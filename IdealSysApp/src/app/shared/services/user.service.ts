@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs/Rx';
 import '../../rxjs-operators';
 
 @Injectable()
-export class UserService extends BaseService {
+export class UserService extends BaseService  {
 
     baseUrl: string = '';
     gridSource: Observable<AppUser>;
@@ -82,8 +82,10 @@ export class UserService extends BaseService {
             this.http.post(this.baseUrl + '/Accounts/Add', JSON.stringify(data)).map(res => res.json).subscribe(result => console.log(result));
         }
         else {
-            this.http.put(this.baseUrl + '/Accounts/Update', JSON.stringify(data)).map(res => res.json).subscribe(result => console.log(result));
+            this.http.put(this.baseUrl + '/Accounts/Update', JSON.stringify(data)).map(res => res.json);
+          
         }
+        
     }
-
+  
 }

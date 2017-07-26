@@ -10,14 +10,17 @@
 
         <input type="text" class="k-textbox" formControlName="FirstName" />
 
-        <div class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.FirstName.valid || editForm.controls.FirstName.pristine">
+        <span class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.FirstName.valid || editForm.controls.FirstName.pristine">
           FirstName is required
-        </div>
+        </span>
       </div>
       <div class="form-group">
         <label for="LastName" class="control-label">Last Name</label>
 
         <input type="text" class="k-textbox" formControlName="LastName" />
+        <span class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.LastName.valid || editForm.controls.LastName.pristine">
+          LastName is required
+        </span>
       </div>
 
       <div class="form-group">

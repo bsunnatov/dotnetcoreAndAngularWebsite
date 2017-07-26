@@ -62,10 +62,13 @@ namespace IdealSysApp.Controllers
     {
       return Ok(model);
     }
-    [HttpPost("Update")]
-    public IActionResult Update([FromBody]UserViewModel model)
+    [HttpPut("Update")]
+    public async Task<IActionResult> Update([FromBody]UserViewModel model)
     {
-      return Ok(model);
+      var user = await _userManager.FindByIdAsync(model.Id);
+      var result = _mapper.Map<UserViewModel, AppUser>(model, user);
+      await _userManager.UpdateAsync(result);
+      return Ok(result);
     }
   }
 }

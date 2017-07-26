@@ -9,5 +9,6 @@ namespace IdealSysApp.Models.Entities
   public class SiteLink : BaseEntity
   {
     public string Name { get; set; }
+    
   }
 }
