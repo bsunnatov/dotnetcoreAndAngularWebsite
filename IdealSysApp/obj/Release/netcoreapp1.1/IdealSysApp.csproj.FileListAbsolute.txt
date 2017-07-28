@@ -7,3 +7,12 @@ D:\PersonFolder\Projects\IdealSysApp\IdealSysApp\obj\Release\netcoreapp1.1\Ideal
 D:\PersonFolder\Projects\IdealSysApp\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.AssemblyInfo.cs
 D:\PersonFolder\Projects\IdealSysApp\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.dll
 D:\PersonFolder\Projects\IdealSysApp\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.pdb
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.deps.json
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.runtimeconfig.json
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.runtimeconfig.dev.json
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.dll
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.pdb
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.csprojResolveAssemblyReference.cache
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.AssemblyInfo.cs
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.dll
+D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.pdb
