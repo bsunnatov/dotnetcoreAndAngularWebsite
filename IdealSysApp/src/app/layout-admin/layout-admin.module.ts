@@ -6,6 +6,8 @@ import { HeaderComponent } from '../shared/components/header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminSidebarComponent } from '../shared/components/admin-sidebar/admin-sidebar.component';
+
+
 //import { UserService } from '../shared/services/user.service';
 
 @NgModule({
@@ -14,6 +16,7 @@ import { AdminSidebarComponent } from '../shared/components/admin-sidebar/admin-
       LayoutAdminRoutingModule,
       TranslateModule,
       NgbDropdownModule.forRoot(),
+      
     ],
   declarations: [LayoutAdminComponent, HeaderComponent, AdminSidebarComponent],
   providers: []

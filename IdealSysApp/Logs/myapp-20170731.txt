@@ -1,0 +1,405 @@
+2017-07-31T00:15:16.7987730+05:00  [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-07-31T00:15:16.9919411+05:00  [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-07-31T00:15:17.3182558+05:00  [INF] Executed DbCommand (212ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedEmail] = @__normalizedEmail_0) (6438bdd5)
+2017-07-31T00:15:17.3753088+05:00  [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T00:15:17.3973311+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T00:21:45.0329249+05:00  [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-07-31T00:21:45.1930793+05:00  [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-07-31T00:21:45.3282104+05:00  [INF] Executed DbCommand (51ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedEmail] = @__normalizedEmail_0) (6438bdd5)
+2017-07-31T00:21:45.3713595+05:00  [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T00:21:45.3918821+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T00:23:26.2068353+05:00  [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-07-31T00:23:26.3779999+05:00  [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-07-31T00:23:26.5201378+05:00  [INF] Executed DbCommand (57ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedEmail] = @__normalizedEmail_0) (6438bdd5)
+2017-07-31T00:23:26.5683389+05:00  [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T00:23:26.5913624+05:00  [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T00:35:04.2461929+05:00  [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-07-31T00:35:04.4128556+05:00  [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-07-31T00:35:04.5529897+05:00  [INF] Executed DbCommand (54ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedEmail] = @__normalizedEmail_0) (6438bdd5)
+2017-07-31T00:35:04.5994487+05:00  [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T00:35:04.6189678+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T00:35:04.6690153+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-31T00:35:04.6730191+05:00  [INF] Working SeedData (e03f4adc)
+2017-07-31T01:06:46.7019620+05:00  [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-07-31T01:06:46.8701234+05:00  [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-07-31T01:06:47.0022528+05:00  [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedEmail] = @__normalizedEmail_0) (6438bdd5)
+2017-07-31T01:06:47.0508278+05:00  [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:06:47.0753539+05:00  [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:06:47.1254041+05:00  [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-31T01:06:47.1314051+05:00  [INF] Working SeedData (e03f4adc)
+2017-07-31T01:07:00.1036153+05:00 0HL6NGQ4QD3M5 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (e5be5b71)
+2017-07-31T01:07:00.2827061+05:00 0HL6NGQ4QD3M5 [INF] Request finished in 167.7408ms 200  (15c52c40)
+2017-07-31T01:07:05.4461650+05:00 0HL6NGQ4QD3M6 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Role   (e5be5b71)
+2017-07-31T01:07:06.0867834+05:00 0HL6NGQ4QD3M6 [INF] Executing action method "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T01:07:06.1468377+05:00 0HL6NGQ4QD3M6 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Name]
+FROM [AspNetRoles] AS [s] (6438bdd5)
+2017-07-31T01:07:06.1885770+05:00 0HL6NGQ4QD3M6 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T01:07:06.3437319+05:00 0HL6NGQ4QD3M6 [INF] Executed action "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" in 323.0787ms (afa2e885)
+2017-07-31T01:07:06.3532231+05:00 0HL6NGQ4QD3M6 [INF] Request finished in 905.1213ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T01:10:51.0261642+05:00  [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-07-31T01:10:51.1853167+05:00  [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-07-31T01:10:51.3044311+05:00  [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedEmail] = @__normalizedEmail_0) (6438bdd5)
+2017-07-31T01:10:51.3644891+05:00  [INF] Executed DbCommand (19ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.4085313+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-07-31T01:10:51.4275507+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.4787494+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.4967688+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-07-31T01:10:51.5107804+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.5257946+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.5403087+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-07-31T01:10:51.5533211+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.5678361+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.5818497+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-07-31T01:10:51.5958617+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.6098779+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.6238889+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-07-31T01:10:51.6364243+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.6489148+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.6614251+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-07-31T01:10:51.6759389+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.6954593+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.7099713+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-07-31T01:10:51.7229890+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.7349959+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.7475089+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-07-31T01:10:51.7600202+05:00  [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-07-31T01:10:51.8621213+05:00  [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedUserName] = @__normalizedUserName_0) (6438bdd5)
+2017-07-31T01:10:52.1383854+05:00  [INF] Executed DbCommand (61ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (Size = 450), @p4='?' (Size = 450), @p5='?' (Size = 450), @p6='?' (Size = 450), @p7='?' (Size = 450), @p8='?' (Size = 450), @p9='?' (Size = 450), @p10='?' (Size = 450), @p11='?' (Size = 450), @p12='?' (Size = 450), @p13='?' (Size = 450), @p14='?' (Size = 450), @p15='?' (Size = 450), @p32='?' (Size = 450), @p16='?', @p17='?' (Size = 4000), @p33='?' (Size = 4000), @p18='?' (Size = 256), @p19='?', @p20='?', @p21='?', @p22='?' (Size = 256), @p23='?' (Size = 256), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?' (Size = 256), @p30='?' (Size = 4000), @p31='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1),
+(@p2, @p3),
+(@p4, @p5),
+(@p6, @p7),
+(@p8, @p9),
+(@p10, @p11),
+(@p12, @p13),
+(@p14, @p15);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p16, [ConcurrencyStamp] = @p17, [Email] = @p18, [EmailConfirmed] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [NormalizedEmail] = @p22, [NormalizedUserName] = @p23, [PasswordHash] = @p24, [PhoneNumber] = @p25, [PhoneNumberConfirmed] = @p26, [SecurityStamp] = @p27, [TwoFactorEnabled] = @p28, [UserName] = @p29, [FirstName] = @p30, [LastName] = @p31
+WHERE [Id] = @p32 AND [ConcurrencyStamp] = @p33;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-07-31T01:10:52.2169603+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-31T01:10:52.2229649+05:00  [INF] Working SeedData (e03f4adc)
+2017-07-31T01:11:40.0786823+05:00 0HL6NGSO8F0VH [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Role   (e5be5b71)
+2017-07-31T01:11:40.4240139+05:00 0HL6NGSO8F0VH [INF] Executing action method "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T01:11:40.4604241+05:00 0HL6NGSO8F0VH [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Name]
+FROM [AspNetRoles] AS [s] (6438bdd5)
+2017-07-31T01:11:40.4884513+05:00 0HL6NGSO8F0VH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T01:11:40.6661240+05:00 0HL6NGSO8F0VH [INF] Executed action "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" in 290.9393ms (afa2e885)
+2017-07-31T01:11:40.6881453+05:00 0HL6NGSO8F0VH [INF] Request finished in 619.8787ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T01:40:51.6427579+05:00 0HL6NGSO8F0VI [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T01:40:51.6716067+05:00 0HL6NGSO8F0VI [INF] Request finished in 35.9529ms 204  (15c52c40)
+2017-07-31T01:40:51.9413819+05:00 0HL6NGSO8F0VJ [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T01:40:52.5698745+05:00 0HL6NGSO8F0VJ [INF] Successfully validated the token. (60169667)
+2017-07-31T01:40:52.5832149+05:00 0HL6NGSO8F0VJ [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T01:40:52.6072439+05:00 0HL6NGSO8F0VJ [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T01:40:52.6143921+05:00 0HL6NGSO8F0VJ [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T01:40:53.1801749+05:00 0HL6NGSO8F0VJ [INF] Executed DbCommand (385ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T01:40:53.2192144+05:00 0HL6NGSO8F0VJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T01:40:53.2477414+05:00 0HL6NGSO8F0VJ [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 656.5161ms (afa2e885)
+2017-07-31T01:40:53.2532469+05:00 0HL6NGSO8F0VJ [INF] Request finished in 1307.4152ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T01:58:01.9923405+05:00 0HL6NGSO8F0VK [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T01:58:01.9973452+05:00 0HL6NGSO8F0VK [INF] Request finished in 8.1926ms 204  (15c52c40)
+2017-07-31T01:58:02.4407705+05:00 0HL6NGSO8F0VL [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T01:58:02.4547835+05:00 0HL6NGSO8F0VL [INF] Successfully validated the token. (60169667)
+2017-07-31T01:58:02.4722579+05:00 0HL6NGSO8F0VL [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T01:58:02.4792670+05:00 0HL6NGSO8F0VL [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T01:58:02.4907781+05:00 0HL6NGSO8F0VL [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T01:58:04.1617842+05:00 0HL6NGSO8F0VL [INF] Executed DbCommand (1,275ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T01:58:04.1657870+05:00 0HL6NGSO8F0VL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T01:58:04.1732940+05:00 0HL6NGSO8F0VL [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 1689.3542ms (afa2e885)
+2017-07-31T01:58:04.2038234+05:00 0HL6NGSO8F0VL [INF] Request finished in 1733.8794ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:09:46.5106942+05:00 0HL6NGSO8F0VM [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T02:09:46.5228362+05:00 0HL6NGSO8F0VM [INF] Request finished in 7.6086ms 204  (15c52c40)
+2017-07-31T02:09:46.5823961+05:00 0HL6NGSO8F0VN [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T02:09:46.5909052+05:00 0HL6NGSO8F0VN [INF] Successfully validated the token. (60169667)
+2017-07-31T02:09:46.5974102+05:00 0HL6NGSO8F0VN [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:09:46.6054186+05:00 0HL6NGSO8F0VN [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T02:09:46.6144268+05:00 0HL6NGSO8F0VN [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:09:46.7270348+05:00 0HL6NGSO8F0VN [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T02:09:46.7326024+05:00 0HL6NGSO8F0VN [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:09:46.7390896+05:00 0HL6NGSO8F0VN [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 131.441ms (afa2e885)
+2017-07-31T02:09:46.7516016+05:00 0HL6NGSO8F0VN [INF] Request finished in 158.4981ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:10:30.5294737+05:00 0HL6NGSO8F0VO [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T02:10:30.5359804+05:00 0HL6NGSO8F0VO [INF] Request finished in 1.3533ms 204  (15c52c40)
+2017-07-31T02:10:30.5855275+05:00 0HL6NGSO8F0VP [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T02:10:30.5920339+05:00 0HL6NGSO8F0VP [INF] Successfully validated the token. (60169667)
+2017-07-31T02:10:30.5995411+05:00 0HL6NGSO8F0VP [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:10:30.6065486+05:00 0HL6NGSO8F0VP [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T02:10:30.6140552+05:00 0HL6NGSO8F0VP [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:10:30.6616012+05:00 0HL6NGSO8F0VP [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T02:10:30.6686087+05:00 0HL6NGSO8F0VP [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:10:30.6759101+05:00 0HL6NGSO8F0VP [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 68.9836ms (afa2e885)
+2017-07-31T02:10:30.6819200+05:00 0HL6NGSO8F0VP [INF] Request finished in 91.5542ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:11:01.9864545+05:00 0HL6NGSO8F0VQ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T02:11:01.9924607+05:00 0HL6NGSO8F0VQ [INF] Request finished in 1.6357ms 204  (15c52c40)
+2017-07-31T02:11:02.0373585+05:00 0HL6NGSO8F0VR [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T02:11:02.0448671+05:00 0HL6NGSO8F0VR [INF] Successfully validated the token. (60169667)
+2017-07-31T02:11:02.0508720+05:00 0HL6NGSO8F0VR [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:11:02.0583783+05:00 0HL6NGSO8F0VR [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T02:11:02.0653851+05:00 0HL6NGSO8F0VR [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:11:02.0999187+05:00 0HL6NGSO8F0VR [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T02:11:02.1264449+05:00 0HL6NGSO8F0VR [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:11:02.1344520+05:00 0HL6NGSO8F0VR [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 77.6466ms (afa2e885)
+2017-07-31T02:11:02.1414584+05:00 0HL6NGSO8F0VR [INF] Request finished in 101.3654ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:13:36.0869740+05:00 0HL6NGSO8F0VS [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T02:13:36.0929803+05:00 0HL6NGSO8F0VS [INF] Request finished in 1.2069ms 204  (15c52c40)
+2017-07-31T02:13:36.1551995+05:00 0HL6NGSO8F0VT [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T02:13:36.1637083+05:00 0HL6NGSO8F0VT [INF] Successfully validated the token. (60169667)
+2017-07-31T02:13:36.1832271+05:00 0HL6NGSO8F0VT [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:13:36.1942381+05:00 0HL6NGSO8F0VT [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T02:13:36.1982409+05:00 0HL6NGSO8F0VT [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:13:36.2407812+05:00 0HL6NGSO8F0VT [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T02:13:36.2557957+05:00 0HL6NGSO8F0VT [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:13:36.2572970+05:00 0HL6NGSO8F0VT [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 71.9766ms (afa2e885)
+2017-07-31T02:13:36.2688081+05:00 0HL6NGSO8F0VT [INF] Request finished in 103.7467ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:16:38.4110649+05:00 0HL6NGSO8F0VU [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T02:16:38.4165694+05:00 0HL6NGSO8F0VU [INF] Request finished in 6.3197ms 204  (15c52c40)
+2017-07-31T02:16:38.5532005+05:00 0HL6NGSO8F0VV [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T02:16:38.5592061+05:00 0HL6NGSO8F0VV [INF] Successfully validated the token. (60169667)
+2017-07-31T02:16:38.5657128+05:00 0HL6NGSO8F0VV [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:16:38.5757417+05:00 0HL6NGSO8F0VV [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T02:16:38.5847503+05:00 0HL6NGSO8F0VV [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:16:38.7344602+05:00 0HL6NGSO8F0VV [INF] Executed DbCommand (125ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T02:16:38.7419674+05:00 0HL6NGSO8F0VV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:16:38.7484738+05:00 0HL6NGSO8F0VV [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 174.3615ms (afa2e885)
+2017-07-31T02:16:38.8040271+05:00 0HL6NGSO8F0VV [INF] Request finished in 228.9863ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:16:53.8917632+05:00 0HL6NGSO8F100 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T02:16:53.8967679+05:00 0HL6NGSO8F100 [INF] Request finished in 1.273ms 204  (15c52c40)
+2017-07-31T02:16:54.0228897+05:00 0HL6NGSO8F101 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T02:16:54.0298975+05:00 0HL6NGSO8F101 [INF] Successfully validated the token. (60169667)
+2017-07-31T02:16:54.0459119+05:00 0HL6NGSO8F101 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:16:54.0529217+05:00 0HL6NGSO8F101 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T02:16:54.1126923+05:00 0HL6NGSO8F101 [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:16:54.4019705+05:00 0HL6NGSO8F101 [INF] Executed DbCommand (276ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T02:16:54.4129818+05:00 0HL6NGSO8F101 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:16:54.4189887+05:00 0HL6NGSO8F101 [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 367.4718ms (afa2e885)
+2017-07-31T02:16:54.4256896+05:00 0HL6NGSO8F101 [INF] Request finished in 398.5991ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:18:06.2273559+05:00 0HL6NGSO8F102 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T02:18:06.2333612+05:00 0HL6NGSO8F102 [INF] Request finished in 4.1571ms 204  (15c52c40)
+2017-07-31T02:18:06.3704937+05:00 0HL6NGSO8F103 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T02:18:06.3785033+05:00 0HL6NGSO8F103 [INF] Successfully validated the token. (60169667)
+2017-07-31T02:18:06.3855078+05:00 0HL6NGSO8F103 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:18:06.3915148+05:00 0HL6NGSO8F103 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T02:18:06.3990828+05:00 0HL6NGSO8F103 [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:18:06.7765152+05:00 0HL6NGSO8F103 [INF] Executed DbCommand (362ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T02:18:06.7825201+05:00 0HL6NGSO8F103 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:18:06.7900264+05:00 0HL6NGSO8F103 [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 396.8814ms (afa2e885)
+2017-07-31T02:18:06.8015378+05:00 0HL6NGSO8F103 [INF] Request finished in 426.9154ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:18:20.9871776+05:00 0HL6NGSO8F104 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-07-31T02:18:20.9926830+05:00 0HL6NGSO8F104 [INF] Request finished in 1.1472ms 204  (15c52c40)
+2017-07-31T02:18:21.1398237+05:00 0HL6NGSO8F105 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-07-31T02:18:21.1458296+05:00 0HL6NGSO8F105 [INF] Successfully validated the token. (60169667)
+2017-07-31T02:18:21.1523356+05:00 0HL6NGSO8F105 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:18:21.2379183+05:00 0HL6NGSO8F105 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-07-31T02:18:21.2519316+05:00 0HL6NGSO8F105 [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:18:21.6142792+05:00 0HL6NGSO8F105 [INF] Executed DbCommand (348ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[FirstName], [a].[LastName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'AppUser' (6438bdd5)
+2017-07-31T02:18:21.6197843+05:00 0HL6NGSO8F105 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:18:21.6257906+05:00 0HL6NGSO8F105 [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 467.3766ms (afa2e885)
+2017-07-31T02:18:21.6322966+05:00 0HL6NGSO8F105 [INF] Request finished in 486.9882ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-31T02:18:22.4139764+05:00 0HL6NGSO8F106 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Role   (e5be5b71)
+2017-07-31T02:18:22.4266135+05:00 0HL6NGSO8F106 [INF] Request finished in 1.1131ms 204  (15c52c40)
+2017-07-31T02:18:22.4686574+05:00 0HL6NGSO8F107 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Role application/json  (e5be5b71)
+2017-07-31T02:18:22.4751631+05:00 0HL6NGSO8F107 [INF] Successfully validated the token. (60169667)
+2017-07-31T02:18:22.4811687+05:00 0HL6NGSO8F107 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-07-31T02:18:22.5692562+05:00 0HL6NGSO8F107 [INF] Executing action method "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-31T02:18:22.9386089+05:00 0HL6NGSO8F107 [INF] Executed DbCommand (326ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Name]
+FROM [AspNetRoles] AS [s] (6438bdd5)
+2017-07-31T02:18:22.9616311+05:00 0HL6NGSO8F107 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-31T02:18:22.9679049+05:00 0HL6NGSO8F107 [INF] Executed action "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" in 441.3165ms (afa2e885)
+2017-07-31T02:18:22.9744109+05:00 0HL6NGSO8F107 [INF] Request finished in 500.3227ms 200 application/json; charset=utf-8 (15c52c40)

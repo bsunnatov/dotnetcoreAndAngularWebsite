@@ -1,6 +1,7 @@
 ﻿import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { AppUser } from '../../shared/models/appuser';
+
 @Component({
     selector: 'kendo-grid-edit-form',
   templateUrl: './edit-form.component.html',

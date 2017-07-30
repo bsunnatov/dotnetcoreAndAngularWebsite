@@ -1,0 +1,11 @@
+2017-07-30T21:33:38.7193654+05:00  [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-30T21:33:38.7694136+05:00  [INF] Working SeedData (e03f4adc)
+2017-07-30T21:33:51.1597811+05:00 0HL6ND31DHFQR [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (e5be5b71)
+2017-07-30T21:33:51.3149321+05:00 0HL6ND31DHFQR [INF] Request finished in 159.4283ms 200  (15c52c40)

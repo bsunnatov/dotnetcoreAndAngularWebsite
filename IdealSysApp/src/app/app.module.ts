@@ -2,6 +2,7 @@
 import { Http, HttpModule, XHRBackend  } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { UserService } from './shared/services/user.service';
+import { RoleService } from './shared/services/role.service';
 import { ConfigService } from './shared/utils/config.service';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -40,7 +41,7 @@ export function HttpLoaderFactory(http: Http) {
             }
         })
     ],
-    providers: [AuthGuard, UserService, ConfigService, {
+    providers: [AuthGuard, UserService, ConfigService, RoleService, {
         provide: XHRBackend,
         useClass: AuthenticateXHRBackend
     }],

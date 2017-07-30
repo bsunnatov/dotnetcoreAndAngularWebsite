@@ -8,6 +8,8 @@ import { PageHeaderModule } from './../../shared/modules';
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogModule } from '@progress/kendo-angular-dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RoleComponent } from '../role/role.component';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 @NgModule({
     imports: [
         CommonModule,
@@ -16,8 +18,9 @@ import { ReactiveFormsModule } from '@angular/forms';
         TranslateModule,
         GridModule,
         DialogModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        DropDownsModule
     ],
-    declarations: [AppuserComponent, EditFormComponent]
+    declarations: [AppuserComponent, EditFormComponent,RoleComponent]
 })
 export class AppuserModule { }

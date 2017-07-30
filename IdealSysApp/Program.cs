@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace IdealSysApp
 {
@@ -15,6 +16,7 @@ namespace IdealSysApp
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
+                .ConfigureLogging(f => f.AddConsole(LogLevel.Information))
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
                 .Build();

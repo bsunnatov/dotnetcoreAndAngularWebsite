@@ -23,6 +23,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using IdealSysApp.Extensions;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Routing;
 
 namespace IdealSysApp
 {
@@ -30,8 +31,8 @@ namespace IdealSysApp
   {
     private const string SecretKey = "iNivDmHLpUA223sqsfhqGbMRdRj1PVkH"; // todo: get this from somewhere secure
     private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
-
-    public Startup(IHostingEnvironment env)
+    ILogger _logger;
+    public Startup(IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
@@ -39,6 +40,7 @@ namespace IdealSysApp
           .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
           .AddEnvironmentVariables();
       Configuration = builder.Build();
+      _logger = loggerFactory.CreateLogger<Startup>();
     }
 
     public IConfigurationRoot Configuration { get; }
@@ -90,16 +92,19 @@ namespace IdealSysApp
         o.SerializerSettings.ContractResolver = new DefaultContractResolver();
       });
       services.AddAutoMapper();
+      services.AddRouting();
+      _logger.LogInformation($"Total Services Initially: {services.Count}");
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
     {
-      // loggerFactory.AddFile("Logs/myapp-{Date}.txt");
-      // app.SeedData();
+      loggerFactory.AddFile("Logs/myapp-{Date}.txt");
+      app.SeedData().Wait();
+      _logger.LogInformation("Working SeedData");
       app.UseCors("MyPolicy");
-      loggerFactory.AddConsole();
-
+      loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+      loggerFactory.AddDebug();
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
@@ -120,17 +125,23 @@ namespace IdealSysApp
         ValidateLifetime = false,
         ClockSkew = TimeSpan.Zero
       };
-
       app.UseJwtBearerAuthentication(new JwtBearerOptions
       {
         AutomaticAuthenticate = true,
         AutomaticChallenge = true,
         TokenValidationParameters = tokenValidationParameters
       });
-      app.Use(async (context, next) =>
+      var myRouteHandler = new RouteHandler(Handle);
+      var routeBuilder = new RouteBuilder(app, myRouteHandler);
+      routeBuilder.MapRoute("default", "");
+      app.UseRouter(routeBuilder.Build());
+      app.UseDefaultFiles();
+      app.UseStaticFiles();
+      app.UseMvc();
+      app.Use(async (context, next) =>//Per request handling
       {
         await next();
-
+        _logger.LogInformation("Working peer request");
         if (context.Response.StatusCode == 404
                   && !Path.HasExtension(context.Request.Path.Value) && !context.Request.Path.Value.StartsWith("api"))
         {
@@ -139,9 +150,12 @@ namespace IdealSysApp
           await next();
         }
       });
-      app.UseDefaultFiles();
-      app.UseStaticFiles();
-      app.UseMvc();
+
+    }
+    // собственно обработчик маршрута
+    private async Task Handle(HttpContext context)
+    {
+      await context.Response.WriteAsync("Hello ASP.NET Core! Service is working!!!");
     }
   }
 }

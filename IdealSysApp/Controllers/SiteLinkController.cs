@@ -25,16 +25,6 @@ namespace IdealSysApp.Controllers
     [HttpGet]
     public IEnumerable<string> Get()
     {
-      try
-      {
-        
-      _service.Insert(new SiteLink() { Name = "Home" + DateTime.Now.Millisecond.ToString() });
-      }
-      catch (Exception ex)
-      {
-        _log.LogWarning(ex.Message);
-        return new string[] { ex.Message };
-      }
       return _service.GetAll().Select(s => s.Name);
     }
 
