@@ -55,8 +55,9 @@ export class AppuserComponent implements OnInit {
 
         this.editDataItem = undefined;
     }
-
+ 
     public removeHandler({dataItem}) {
         //this.editService.remove(dataItem);
     }
+
 }

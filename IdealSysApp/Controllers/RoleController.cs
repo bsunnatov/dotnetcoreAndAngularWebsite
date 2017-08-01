@@ -23,9 +23,9 @@ namespace IdealSysApp.Controllers
     }
     // GET: api/Role
     [HttpGet]
-    public IList<string> Get()
+    public object Get()
     {
-      return _appDbContext.Roles.Select(s => s.Name).ToList();
+      return _appDbContext.Roles.Select(s => new {text=s.Name,id=s.Id }).ToList();
     }
 
     // GET: api/Role/5

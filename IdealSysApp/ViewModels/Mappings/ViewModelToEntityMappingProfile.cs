@@ -17,7 +17,7 @@ namespace IdealSysApp.ViewModels.Mappings
       CreateMap<UserViewModel,AppUser>();
       CreateMap<AppUser, UserViewModel>().AfterMap((src,dist)=> {
 
-        dist.Roles = new string[] {src.Roles.Count().ToString() };
+        dist.Roles = src.Roles.Select(s => s.RoleId).ToArray();
       }).ForMember(vm=>vm.FullName,map=>map.MapFrom(au=>au.FirstName+" "+ au.LastName));
       //CreateMap<IList<AppUser>, IList<UserViewModel>>();
     }

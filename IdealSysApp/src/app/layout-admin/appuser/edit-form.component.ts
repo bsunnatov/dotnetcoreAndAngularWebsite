@@ -13,7 +13,9 @@ export class EditFormComponent  {
         'FirstName': new FormControl("", Validators.required),
         'LastName': new FormControl("", Validators.required),
         'IsBlocked': new FormControl(false),
-        'Id': new FormControl()
+        'Id': new FormControl(),
+        'RoleId': new FormControl()
+
     });
     private active: boolean = false;
     @Input() public isNew: boolean = false;
@@ -25,13 +27,11 @@ export class EditFormComponent  {
 
     @Output() cancel: EventEmitter<any> = new EventEmitter();
     @Output() save: EventEmitter<AppUser> = new EventEmitter();
-
     public onSave(e): void {
         e.preventDefault();
         this.save.emit(this.editForm.value);
         this.active = false;
     }
-
     public onCancel(e): void {
         e.preventDefault();
         this.closeForm();
@@ -40,5 +40,8 @@ export class EditFormComponent  {
     private closeForm(): void {
         this.active = false;
         this.cancel.emit();
+    }
+    public onValueChanged(v) {
+        this.editForm.reset({RoleId:'sasasa'})
     }
 }

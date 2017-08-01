@@ -11,7 +11,7 @@ export class LayoutFrontendComponent implements OnInit {
 
   ngOnInit() {
       if (this.router.url === '/') {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/admin']);
       }
   }
 

@@ -4,4 +4,5 @@
     FirstName: string;
     LastName: string;
     FullName: string;
+    RoleId: string
 }

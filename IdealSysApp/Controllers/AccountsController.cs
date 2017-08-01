@@ -11,7 +11,7 @@ using AutoMapper;
 using IdealSysApp.ViewModels;
 using IdealSysApp.Helpers;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.EntityFrameworkCore;
 namespace IdealSysApp.Controllers
 {
   [Route("api/[controller]")]
@@ -28,12 +28,12 @@ namespace IdealSysApp.Controllers
       _appDbContext = appDbContext;
     }
     // GET api/accounts/GetUserList
-    [Authorize(Policy = "ApiUser")]
+    [Authorize(Policy = "ApiUser",Roles ="Administrator")]
     [HttpGet("GetUserList")]
-    public IList<UserViewModel> GetUserList()
+    public object GetUserList()
     {
 
-      var result= _mapper.Map<IList<UserViewModel>>(_userManager.Users.ToList());
+      var result= _mapper.Map<IList<UserViewModel>>(_userManager.Users.Include(r=>r.Roles));
 
       return result;
 
@@ -60,6 +60,7 @@ namespace IdealSysApp.Controllers
 
       return new OkObjectResult("Account created");
     }
+    [Authorize(Policy = "ApiUser", Roles = "Administrator")]
     [HttpPost("Add")]
     public IActionResult Add([FromBody]UserViewModel model)
     {

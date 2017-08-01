@@ -6,34 +6,34 @@
 
     <form novalidate [formGroup]="editForm">
       <div class="form-group">
-        <label for="FirstName" class="control-label">First Name</label>
+        <label for="FirstName" class="control-label">Имя</label>
 
         <input type="text" class="k-textbox" formControlName="FirstName" />
 
         <span class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.FirstName.valid || editForm.controls.FirstName.pristine">
-          FirstName is required
+          *
         </span>
       </div>
       <div class="form-group">
-        <label for="LastName" class="control-label">Last Name</label>
+        <label for="LastName" class="control-label">Отчество</label>
 
         <input type="text" class="k-textbox" formControlName="LastName" />
         <span class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.LastName.valid || editForm.controls.LastName.pristine">
-          LastName is required
+          *
         </span>
       </div>
 
       <div class="form-group">
         <label>
           <input type="checkbox" formControlName="IsBlocked" />
-          IsBlocked
+          Заблокирован
         </label>
       </div>
     </form>
-    <app-role></app-role>
+    <app-role (onValueChange)="onValueChanged($event)"></app-role>
     <kendo-dialog-actions>
-      <button class="k-button" (click)="onCancel($event)">Cancel</button>
-      <button class="k-button k-primary" [disabled]="!editForm.valid" (click)="onSave($event)">Save</button>
-    </kendo-dialog-actions>
+      <button class="k-button" (click)="onCancel($event)">Отмена</button>
+      <button class="k-button k-primary" [disabled]="!editForm.valid" (click)="onSave($event)">Сохранить</button>
+     </kendo-dialog-actions>
   </kendo-dialog>
 </div>
