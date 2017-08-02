@@ -13,6 +13,7 @@ using IdealSysApp.ViewModels;
 using IdealSysApp.Helpers;
 using System.Security.Claims;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace IdealSysApp.Controllers
 {
@@ -77,7 +78,13 @@ namespace IdealSysApp.Controllers
           // check the credentials  
           if (await _userManager.CheckPasswordAsync(userToVerify, password))
           {
-            return await Task.FromResult(_jwtFactory.GenerateClaimsIdentity(userName, userToVerify.Id));
+            var r = _jwtFactory.GenerateClaimsIdentity(userName, userToVerify.Id);
+            foreach (var item in userToVerify.Roles)
+            {
+              r.AddClaim(new Claim("Role", "sasas"));
+            }
+         
+            return await Task.FromResult(r);
           }
         }
       }

@@ -66,6 +66,7 @@ namespace IdealSysApp
         options.Issuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
         options.Audience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)];
         options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
+       
       });
       // api user claim policy
       services.AddAuthorization(options =>
@@ -123,13 +124,15 @@ namespace IdealSysApp
 
         RequireExpirationTime = false,
         ValidateLifetime = false,
-        ClockSkew = TimeSpan.Zero
+        ClockSkew = TimeSpan.Zero,
+        
       };
       app.UseJwtBearerAuthentication(new JwtBearerOptions
       {
         AutomaticAuthenticate = true,
         AutomaticChallenge = true,
-        TokenValidationParameters = tokenValidationParameters
+        TokenValidationParameters = tokenValidationParameters,
+        
       });
       var myRouteHandler = new RouteHandler(Handle);
       var routeBuilder = new RouteBuilder(app, myRouteHandler);
