@@ -12,8 +12,11 @@ using IdealSysApp.ViewModels;
 using IdealSysApp.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using static IdealSysApp.Helpers.Constants.Strings;
+
 namespace IdealSysApp.Controllers
 {
+  [Authorize(Policy = "ApiUser", Roles = "Administrator")]//Permisson for Only Has Claim Role Administrator 
   [Route("api/[controller]")]
   public class AccountsController : Controller
   {
@@ -28,7 +31,7 @@ namespace IdealSysApp.Controllers
       _appDbContext = appDbContext;
     }
     // GET api/accounts/GetUserList
-    [Authorize(Policy = "ApiUser",Roles ="Administrator")]
+  
     [HttpGet("GetUserList")]
     public object GetUserList()
     {
@@ -60,18 +63,23 @@ namespace IdealSysApp.Controllers
 
       return new OkObjectResult("Account created");
     }
-    [Authorize(Policy = "ApiUser", Roles = "Administrator")]
-    [HttpPost("Add")]
-    public IActionResult Add([FromBody]UserViewModel model)
+    [HttpPost("AddNewUser")]
+    public async Task<IActionResult> AddNewUser([FromBody]UserViewModel model)
     {
-      return Ok(model);
+      var newUser = _mapper.Map<UserViewModel, AppUser>(model, new AppUser());
+      var result = await _userManager.CreateAsync(newUser,AppSettings.DefaultPassword);
+      if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
+      var result2=await _userManager.AddToRolesAsync(newUser, model.CheckedRoleNames);
+      if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
+      return new OkObjectResult("Account created");
     }
-    [HttpPut("Update")]
-    public async Task<IActionResult> Update([FromBody]UserViewModel model)
+    [HttpPut("UpdateUser")]
+    public async Task<IActionResult> UpdateUser([FromBody]UserViewModel model)
     {
       var user = await _userManager.FindByIdAsync(model.Id);
       var result = _mapper.Map<UserViewModel, AppUser>(model, user);
       await _userManager.UpdateAsync(result);
+      var roles = await _userManager.GetRolesAsync(user);
       return Ok(result);
     }
   }

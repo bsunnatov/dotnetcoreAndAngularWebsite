@@ -22,16 +22,19 @@ namespace IdealSysApp.Auth
 
     public async Task<string> GenerateEncodedToken(string userName, ClaimsIdentity identity)
     {
-      var claims = new[]
+      var claims = new List<Claim>
    {
                  new Claim(JwtRegisteredClaimNames.Sub, userName),
                  new Claim(JwtRegisteredClaimNames.Jti, await _jwtOptions.JtiGenerator()),
                  new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_jwtOptions.IssuedAt).ToString(), ClaimValueTypes.Integer64),
                  identity.FindFirst(Helpers.Constants.Strings.JwtClaimIdentifiers.Rol),
                  identity.FindFirst(Helpers.Constants.Strings.JwtClaimIdentifiers.Id),
-                 identity.FindFirst("Roles"),
              };
-
+      foreach (var item in identity.FindAll("roles"))
+      {
+        claims.Add(item);// add role name to encoded token
+      }
+  
       // Create the JWT security token and encode it.
       var jwt = new JwtSecurityToken(
           issuer: _jwtOptions.Issuer,
@@ -52,7 +55,7 @@ namespace IdealSysApp.Auth
       {
                 new Claim(Helpers.Constants.Strings.JwtClaimIdentifiers.Id, id),
                 new Claim(Helpers.Constants.Strings.JwtClaimIdentifiers.Rol, Helpers.Constants.Strings.JwtClaims.ApiAccess),
-               
+
             });
     }
 

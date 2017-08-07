@@ -13,6 +13,6 @@ namespace IdealSysApp.ViewModels
     public string FullName { get; set; }
     public string Email { get; set; }
     public string[] Roles { get; set; }
-    public string[] RoleNames { get; set; }
+    public string[] CheckedRoleNames { get; set; }
   }
 }

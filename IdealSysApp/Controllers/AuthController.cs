@@ -14,6 +14,8 @@ using IdealSysApp.Helpers;
 using System.Security.Claims;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using IdealSysApp.Data;
 
 namespace IdealSysApp.Controllers
 {
@@ -25,10 +27,11 @@ namespace IdealSysApp.Controllers
     private readonly JsonSerializerSettings _serializerSettings;
     private readonly JwtIssuerOptions _jwtOptions;
     private readonly ILogger<AuthController> _logger;
-
-    public AuthController(UserManager<AppUser> userManager, IJwtFactory jwtFactory, IOptions<JwtIssuerOptions> jwtOptions, ILogger<AuthController> logger)
+    private readonly ApplicationDbContext _appDbContext;
+    public AuthController(UserManager<AppUser> userManager, IJwtFactory jwtFactory, IOptions<JwtIssuerOptions> jwtOptions, ILogger<AuthController> logger, ApplicationDbContext appDbContext)
     {
       _userManager = userManager;
+      _userManager.Users.Include(p => p.Roles);
       _jwtFactory = jwtFactory;
       _jwtOptions = jwtOptions.Value;
       _logger = logger;
@@ -36,6 +39,7 @@ namespace IdealSysApp.Controllers
       {
         Formatting = Formatting.Indented
       };
+      _appDbContext = appDbContext;
     }
 
     // POST api/auth/login
@@ -72,16 +76,17 @@ namespace IdealSysApp.Controllers
       {
         // get the user to verifty
         var userToVerify = await _userManager.FindByNameAsync(userName);
-
+       
         if (userToVerify != null)
         {
           // check the credentials  
           if (await _userManager.CheckPasswordAsync(userToVerify, password))
           {
             var r = _jwtFactory.GenerateClaimsIdentity(userName, userToVerify.Id);
-            foreach (var item in userToVerify.Roles)
+        
+            foreach (var item in await _userManager.GetRolesAsync(userToVerify))
             {
-              r.AddClaim(new Claim("Role", "sasas"));
+              r.AddClaim(new Claim("roles", item));
             }
          
             return await Task.FromResult(r);
