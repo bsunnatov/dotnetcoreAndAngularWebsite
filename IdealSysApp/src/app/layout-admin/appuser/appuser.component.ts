@@ -52,7 +52,6 @@ export class AppuserComponent implements OnInit {
 
     public saveHandler(user: AppUser) {
         this.editService.save(user, this.isNew);
-
         this.editDataItem = undefined;
     }
  

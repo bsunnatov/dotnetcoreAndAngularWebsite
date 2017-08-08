@@ -29,8 +29,20 @@
           Заблокирован
         </label>
       </div>
+      <ul style="list-style:none">
+        <li *ngFor="let item of editForm.controls.OldSelectedRoles.controls; let i=index">
+          <label class="checkbox">
+            <input type="checkbox" [formControl]="item" />
+            <span>
+             {{roles[i].text}}
+            </span>
+
+          </label>
+
+        </li>
+      </ul>
     </form>
-    <app-role (onValueChange)="onValueChanged($event)"></app-role>
+  
     <kendo-dialog-actions>
       <button class="k-button" (click)="onCancel($event)">Отмена</button>
       <button class="k-button k-primary" [disabled]="!editForm.valid" (click)="onSave($event)">Сохранить</button>

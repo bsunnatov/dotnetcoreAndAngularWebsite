@@ -4,5 +4,7 @@
     FirstName: string;
     LastName: string;
     FullName: string;
-    RoleId: string
+    RoleIds: string[];
+    SelectedRoles: string[];
 }
+

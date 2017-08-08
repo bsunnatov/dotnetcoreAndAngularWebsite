@@ -37,7 +37,6 @@ namespace IdealSysApp.Controllers
     {
 
       var result= _mapper.Map<IList<UserViewModel>>(_userManager.Users.Include(r=>r.Roles));
-
       return result;
 
 
@@ -69,18 +68,30 @@ namespace IdealSysApp.Controllers
       var newUser = _mapper.Map<UserViewModel, AppUser>(model, new AppUser());
       var result = await _userManager.CreateAsync(newUser,AppSettings.DefaultPassword);
       if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
-      var result2=await _userManager.AddToRolesAsync(newUser, model.CheckedRoleNames);
+     // var result2=await _userManager.AddToRolesAsync(newUser, model.CheckedRoleNames);
       if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
       return new OkObjectResult("Account created");
     }
     [HttpPut("UpdateUser")]
     public async Task<IActionResult> UpdateUser([FromBody]UserViewModel model)
     {
-      var user = await _userManager.FindByIdAsync(model.Id);
-      var result = _mapper.Map<UserViewModel, AppUser>(model, user);
-      await _userManager.UpdateAsync(result);
-      var roles = await _userManager.GetRolesAsync(user);
-      return Ok(result);
+      try
+      {
+        var user = await _userManager.FindByIdAsync(model.Id);
+        var result = _mapper.Map<UserViewModel, AppUser>(model, user);
+        await _userManager.UpdateAsync(result);
+        var roles = await _userManager.GetRolesAsync(user);
+        await _userManager.RemoveFromRolesAsync(user, roles);
+        await _userManager.AddToRolesAsync(user, model.SelectedRoles.Select(s => s.text));
+
+        return Ok("UpdateUser success");
+      }
+      catch (Exception ex)
+      {
+
+        return BadRequest(ex.Message);
+      }
+     
     }
   }
 }
