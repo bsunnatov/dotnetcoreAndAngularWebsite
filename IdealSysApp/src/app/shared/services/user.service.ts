@@ -31,7 +31,7 @@ export class UserService extends BaseService  {
     }
 
     private data: any[] = [];
-
+    public currentUserName: string="Default user Name";
     register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<UserRegistration> {
         let body = JSON.stringify({ email, password, firstName, lastName, location });
        // let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -53,6 +53,8 @@ export class UserService extends BaseService  {
             .map(res => res.json())
             .map(res => {
                 localStorage.setItem('auth_token', res.auth_token);
+                console.log(res.userName);
+                this.currentUserName = res.userName;
                 this.loggedIn = true;
                 this._authNavStatusSource.next(true);
                 return true;
@@ -80,7 +82,7 @@ export class UserService extends BaseService  {
     save(data: any, isNew?: boolean) {
         
         if (isNew) {
-            this.http.post(this.baseUrl + '/Accounts/Add', JSON.stringify(data)).map(res => res.json).subscribe(result => console.log(result));
+            this.http.post(this.baseUrl + '/Accounts/AddNewUser', JSON.stringify(data)).map(res => res.json).subscribe(result => console.log(result));
         }
         else {
             this.http.put(this.baseUrl + '/Accounts/UpdateUser', JSON.stringify(data)).map(res => res.json).catch(this.handleError).subscribe(s => s);

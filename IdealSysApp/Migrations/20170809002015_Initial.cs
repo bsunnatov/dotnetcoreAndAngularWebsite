@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace IdealSysApp.Migrations
 {
-    public partial class Init : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,34 +21,6 @@ namespace IdealSysApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetRoles", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AspNetUsers",
-                columns: table => new
-                {
-                    Id = table.Column<string>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false),
-                    ConcurrencyStamp = table.Column<string>(nullable: true),
-                    Discriminator = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(nullable: false),
-                    LockoutEnabled = table.Column<bool>(nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
-                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
-                    PasswordHash = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<string>(nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
-                    SecurityStamp = table.Column<string>(nullable: true),
-                    TwoFactorEnabled = table.Column<bool>(nullable: false),
-                    UserName = table.Column<string>(maxLength: 256, nullable: true),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -87,19 +59,89 @@ namespace IdealSysApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "JobSeekers",
+                name: "OrderItems",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Amount = table.Column<decimal>(nullable: false),
+                    CreatedDate = table.Column<DateTime>(nullable: false),
                     IdentityId = table.Column<string>(nullable: true),
-                    Location = table.Column<string>(nullable: true)
+                    ModifiedDate = table.Column<DateTime>(nullable: false),
+                    OrderId = table.Column<long>(nullable: false),
+                    ProductId = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_JobSeekers", x => x.Id);
+                    table.PrimaryKey("PK_OrderItems", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CreatedDate = table.Column<DateTime>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    IdentityId = table.Column<string>(nullable: true),
+                    ImageUrl = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTime>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    ProductCategoryId = table.Column<long>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUsers",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    ConcurrencyStamp = table.Column<string>(nullable: true),
+                    Discriminator = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(nullable: false),
+                    LockoutEnabled = table.Column<bool>(nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
+                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
+                    PasswordHash = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(nullable: false),
+                    SecurityStamp = table.Column<string>(nullable: true),
+                    TwoFactorEnabled = table.Column<bool>(nullable: false),
+                    UserName = table.Column<string>(maxLength: 256, nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    StorageId = table.Column<long>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    AcceptedDate = table.Column<DateTime>(nullable: true),
+                    CreatedDate = table.Column<DateTime>(nullable: false),
+                    IdentityId = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTime>(nullable: false),
+                    OrderStatus = table.Column<int>(nullable: false),
+                    SendDate = table.Column<DateTime>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_JobSeekers_AspNetUsers_IdentityId",
+                        name: "FK_Orders_AspNetUsers_IdentityId",
                         column: x => x.IdentityId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -107,7 +149,7 @@ namespace IdealSysApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SiteLinks",
+                name: "ProductCategories",
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
@@ -119,9 +161,32 @@ namespace IdealSysApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SiteLinks", x => x.Id);
+                    table.PrimaryKey("PK_ProductCategories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SiteLinks_AspNetUsers_IdentityId",
+                        name: "FK_ProductCategories_AspNetUsers_IdentityId",
+                        column: x => x.IdentityId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Storages",
+                columns: table => new
+                {
+                    Id = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CreatedDate = table.Column<DateTime>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    IdentityId = table.Column<string>(nullable: true),
+                    ModifiedDate = table.Column<DateTime>(nullable: false),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Storages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Storages_AspNetUsers_IdentityId",
                         column: x => x.IdentityId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -194,13 +259,43 @@ namespace IdealSysApp.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_JobSeekers_IdentityId",
-                table: "JobSeekers",
+                name: "IX_Orders_IdentityId",
+                table: "Orders",
                 column: "IdentityId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SiteLinks_IdentityId",
-                table: "SiteLinks",
+                name: "IX_OrderItems_IdentityId",
+                table: "OrderItems",
+                column: "IdentityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderItems_OrderId",
+                table: "OrderItems",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderItems_ProductId",
+                table: "OrderItems",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_IdentityId",
+                table: "Products",
+                column: "IdentityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_ProductCategoryId",
+                table: "Products",
+                column: "ProductCategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCategories_IdentityId",
+                table: "ProductCategories",
+                column: "IdentityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Storages_IdentityId",
+                table: "Storages",
                 column: "IdentityId");
 
             migrationBuilder.CreateIndex(
@@ -226,6 +321,11 @@ namespace IdealSysApp.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_StorageId",
+                table: "AspNetUsers",
+                column: "StorageId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
                 table: "AspNetUserClaims",
                 column: "UserId");
@@ -239,15 +339,64 @@ namespace IdealSysApp.Migrations
                 name: "IX_AspNetUserRoles_RoleId",
                 table: "AspNetUserRoles",
                 column: "RoleId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_OrderItems_AspNetUsers_IdentityId",
+                table: "OrderItems",
+                column: "IdentityId",
+                principalTable: "AspNetUsers",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_OrderItems_Orders_OrderId",
+                table: "OrderItems",
+                column: "OrderId",
+                principalTable: "Orders",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_OrderItems_Products_ProductId",
+                table: "OrderItems",
+                column: "ProductId",
+                principalTable: "Products",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Products_AspNetUsers_IdentityId",
+                table: "Products",
+                column: "IdentityId",
+                principalTable: "AspNetUsers",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Products_ProductCategories_ProductCategoryId",
+                table: "Products",
+                column: "ProductCategoryId",
+                principalTable: "ProductCategories",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_AspNetUsers_Storages_StorageId",
+                table: "AspNetUsers",
+                column: "StorageId",
+                principalTable: "Storages",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.SetNull);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "JobSeekers");
+            migrationBuilder.DropForeignKey(
+                name: "FK_Storages_AspNetUsers_IdentityId",
+                table: "Storages");
 
             migrationBuilder.DropTable(
-                name: "SiteLinks");
+                name: "OrderItems");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -265,10 +414,22 @@ namespace IdealSysApp.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "ProductCategories");
+
+            migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Storages");
         }
     }
 }

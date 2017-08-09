@@ -4,10 +4,12 @@ import { AppUser } from '../../shared/models/appuser';
 import { GridDataResult } from '@progress/kendo-angular-grid';
 import { State, process } from '@progress/kendo-data-query';
 import { Observable } from 'rxjs/Rx';
+import { fadeAnimate, slideToBottom } from '../../router.animations';
 @Component({
     selector: 'app-appuser',
     templateUrl: './appuser.component.html',
-    styleUrls: ['./appuser.component.scss']
+    styleUrls: ['./appuser.component.scss'],
+    animations: [fadeAnimate()]
 })
 export class AppuserComponent implements OnInit {
     private gridData: any[];

@@ -63,7 +63,8 @@ namespace IdealSysApp.Controllers
       {
         id = identity.Claims.Single(c => c.Type == "id").Value,
         auth_token = await _jwtFactory.GenerateEncodedToken(credentials.UserName, identity),
-        expires_in = (int)_jwtOptions.ValidFor.TotalSeconds
+        expires_in = (int)_jwtOptions.ValidFor.TotalSeconds,
+        userName=identity.Name
       };
 
       var json = JsonConvert.SerializeObject(response, _serializerSettings);

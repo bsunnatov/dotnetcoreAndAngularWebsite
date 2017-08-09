@@ -1,6 +1,7 @@
 ﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Validators, FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
 import { AppUser } from '../../shared/models/appuser';
+import { GlobalValidator } from '../../shared/utils/validators';
 import { RoleService } from '../../shared/services/role.service';
 @Component({
     selector: 'kendo-grid-edit-form',
@@ -22,6 +23,7 @@ export class EditFormComponent {
     editForm = new FormGroup({
         'FirstName': new FormControl("", Validators.required),
         'LastName': new FormControl("", Validators.required),
+        'Email': new FormControl("", [Validators.required, GlobalValidator.mailFormat]),
         'IsBlocked': new FormControl(false),
         'Id': new FormControl(),
         'OldSelectedRoles': this.fb.array([]),

@@ -57,7 +57,7 @@ namespace IdealSysApp
       // Add framework services.
       services.AddDbContext<ApplicationDbContext>(options =>
       options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-      b => b.MigrationsAssembly("IdealSysApp")));
+      b => b.MigrationsAssembly("IdealSysApp").MigrationsHistoryTable("_Migrations")));
       services.AddSingleton<IJwtFactory, JwtFactory>();
       var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
       // Configure JwtIssuerOptions

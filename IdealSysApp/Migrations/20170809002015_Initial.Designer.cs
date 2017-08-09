@@ -4,12 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using IdealSysApp.Data;
+using IdealSysApp.Data.Enums;
 
 namespace IdealSysApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170713133645_Init")]
-    partial class Init
+    [Migration("20170809002015_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,23 +18,87 @@ namespace IdealSysApp.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("IdealSysApp.Models.Entities.JobSeeker", b =>
+            modelBuilder.Entity("IdealSysApp.Models.Entities.Order", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime?>("AcceptedDate");
+
+                    b.Property<DateTime>("CreatedDate");
 
                     b.Property<string>("IdentityId");
 
-                    b.Property<string>("Location");
+                    b.Property<DateTime>("ModifiedDate");
+
+                    b.Property<int>("OrderStatus");
+
+                    b.Property<DateTime?>("SendDate");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdentityId");
 
-                    b.ToTable("JobSeekers");
+                    b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("IdealSysApp.Models.Entities.SiteLink", b =>
+            modelBuilder.Entity("IdealSysApp.Models.Entities.OrderItem", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("Amount");
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("IdentityId");
+
+                    b.Property<DateTime>("ModifiedDate");
+
+                    b.Property<long>("OrderId");
+
+                    b.Property<long>("ProductId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdentityId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderItems");
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.Product", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("IdentityId");
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<DateTime>("ModifiedDate");
+
+                    b.Property<string>("Name");
+
+                    b.Property<long>("ProductCategoryId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdentityId");
+
+                    b.HasIndex("ProductCategoryId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.ProductCategory", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
@@ -50,7 +115,29 @@ namespace IdealSysApp.Migrations
 
                     b.HasIndex("IdentityId");
 
-                    b.ToTable("SiteLinks");
+                    b.ToTable("ProductCategories");
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.Storage", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("IdentityId");
+
+                    b.Property<DateTime>("ModifiedDate");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdentityId");
+
+                    b.ToTable("Storages");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole", b =>
@@ -223,19 +310,59 @@ namespace IdealSysApp.Migrations
 
                     b.Property<string>("LastName");
 
+                    b.Property<long?>("StorageId");
+
+                    b.HasIndex("StorageId");
+
                     b.ToTable("AppUser");
 
                     b.HasDiscriminator().HasValue("AppUser");
                 });
 
-            modelBuilder.Entity("IdealSysApp.Models.Entities.JobSeeker", b =>
+            modelBuilder.Entity("IdealSysApp.Models.Entities.Order", b =>
                 {
                     b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
                         .WithMany()
                         .HasForeignKey("IdentityId");
                 });
 
-            modelBuilder.Entity("IdealSysApp.Models.Entities.SiteLink", b =>
+            modelBuilder.Entity("IdealSysApp.Models.Entities.OrderItem", b =>
+                {
+                    b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
+                        .WithMany()
+                        .HasForeignKey("IdentityId");
+
+                    b.HasOne("IdealSysApp.Models.Entities.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("IdealSysApp.Models.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.Product", b =>
+                {
+                    b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
+                        .WithMany()
+                        .HasForeignKey("IdentityId");
+
+                    b.HasOne("IdealSysApp.Models.Entities.ProductCategory", "ProductCategory")
+                        .WithMany()
+                        .HasForeignKey("ProductCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.ProductCategory", b =>
+                {
+                    b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
+                        .WithMany()
+                        .HasForeignKey("IdentityId");
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.Storage", b =>
                 {
                     b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
                         .WithMany()
@@ -277,6 +404,14 @@ namespace IdealSysApp.Migrations
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.AppUser", b =>
+                {
+                    b.HasOne("IdealSysApp.Models.Entities.Storage", "Storage")
+                        .WithMany("Users")
+                        .HasForeignKey("StorageId")
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
         }
     }

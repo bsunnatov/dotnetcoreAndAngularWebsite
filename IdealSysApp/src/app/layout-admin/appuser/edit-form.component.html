@@ -1,34 +1,40 @@
 ﻿<div style="left:50%">
   <kendo-dialog *ngIf="active" (close)="closeForm()">
     <kendo-dialog-titlebar>
-      {{ isNew ? 'Add new product' : 'Edit product' }}
+      {{ isNew ? 'Добавить новый пользователь' : 'Редактировать пользователь' }}
     </kendo-dialog-titlebar>
 
     <form novalidate [formGroup]="editForm">
       <div class="form-group">
+        <label for="LastName" class="control-label">Email/Логин</label>
+
+        <input type="text" class="k-textbox form-control" formControlName="Email" />
+        <p class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.Email.valid || editForm.controls.LastName.pristine">
+          Поля обязательные для заполнения
+        </p>
+        <p class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.Email.valid || editForm.controls.Email.pristine">
+          Недопустимый формат электронной почты
+        </p>
+      </div>
+      <div class="form-group">
         <label for="FirstName" class="control-label">Имя</label>
 
-        <input type="text" class="k-textbox" formControlName="FirstName" />
+        <input type="text" class="k-textbox form-control" formControlName="FirstName" />
 
         <span class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.FirstName.valid || editForm.controls.FirstName.pristine">
-          *
+          Поля обязательные для заполнения
         </span>
       </div>
+      
       <div class="form-group">
         <label for="LastName" class="control-label">Отчество</label>
 
-        <input type="text" class="k-textbox" formControlName="LastName" />
+        <input type="text" class="k-textbox form-control" formControlName="LastName" />
         <span class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.LastName.valid || editForm.controls.LastName.pristine">
-          *
+          Поля обязательные для заполнения
         </span>
       </div>
 
-      <div class="form-group">
-        <label>
-          <input type="checkbox" formControlName="IsBlocked" />
-          Заблокирован
-        </label>
-      </div>
       <ul style="list-style:none">
         <li *ngFor="let item of editForm.controls.OldSelectedRoles.controls; let i=index">
           <label class="checkbox">

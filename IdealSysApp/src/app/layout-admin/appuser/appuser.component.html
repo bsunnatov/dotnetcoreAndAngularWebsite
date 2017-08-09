@@ -1,30 +1,31 @@
-﻿
+﻿<section [@routerTransition]>
 
-<kendo-grid [data]="gridData"
-          [height]="533"
-          [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
-          [pageable]="true" [sortable]="true"
-          (dataStateChange)="onStateChange($event)"
-          (edit)="editHandler($event)" (remove)="removeHandler($event)"
-          (add)="addHandler($event)">
-  <ng-template kendoGridToolbarTemplate>
-    <button kendoGridAddCommand>Добавить новая пользователь</button>
-  </ng-template>
-  <kendo-grid-column field="FirstName" title="Имя" width="120">
-  </kendo-grid-column>
-  <kendo-grid-column field="LastName" title="Фамилия" width="120">
-  </kendo-grid-column>
-  <kendo-grid-column field="FullName" title="FullName" width="120">
-  </kendo-grid-column>
-  <kendo-grid-column field="Email" title="Email" width="120">
-  </kendo-grid-column>
-  <kendo-grid-command-column title="Действие" width="220">
-    <ng-template kendoGridCellTemplate>
-      <button kendoGridEditCommand class="k-primary">Редактировать</button>
+  <kendo-grid [data]="gridData"
+              [height]="533"
+              [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+              [pageable]="true" [sortable]="true"
+              (dataStateChange)="onStateChange($event)"
+              (edit)="editHandler($event)" (remove)="removeHandler($event)"
+              (add)="addHandler($event)">
+    <ng-template kendoGridToolbarTemplate>
+      <button kendoGridAddCommand>Добавить новая пользователь</button>
     </ng-template>
-  </kendo-grid-command-column>
-</kendo-grid>  
-<kendo-grid-edit-form [model]="editDataItem" [isNew]="isNew"
-                      (save)="saveHandler($event)"
-                      (cancel)="cancelHandler()">
-</kendo-grid-edit-form>
+    <kendo-grid-column field="FirstName" title="Имя" width="120">
+    </kendo-grid-column>
+    <kendo-grid-column field="LastName" title="Фамилия" width="120">
+    </kendo-grid-column>
+    <kendo-grid-column field="FullName" title="FullName" width="120">
+    </kendo-grid-column>
+    <kendo-grid-column field="Email" title="Email" width="120">
+    </kendo-grid-column>
+    <kendo-grid-command-column title="Действие" width="220">
+      <ng-template kendoGridCellTemplate>
+        <button kendoGridEditCommand class="k-primary">Редактировать</button>
+      </ng-template>
+    </kendo-grid-command-column>
+  </kendo-grid>
+  <kendo-grid-edit-form [model]="editDataItem" [isNew]="isNew"
+                        (save)="saveHandler($event)"
+                        (cancel)="cancelHandler()">
+  </kendo-grid-edit-form>
+  </section>

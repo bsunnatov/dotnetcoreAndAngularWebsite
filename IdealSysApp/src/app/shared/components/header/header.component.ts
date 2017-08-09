@@ -8,13 +8,14 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+    private currentUserName: string = "";
     constructor(private translate: TranslateService, public router: Router, private userService: UserService) {
         this.router.events.subscribe((val) => {
             if (val instanceof NavigationEnd && window.innerWidth <= 992) {
                 this.toggleSidebar();
             }
         });
+        this.currentUserName = userService.currentUserName;
     }
 
   ngOnInit() {

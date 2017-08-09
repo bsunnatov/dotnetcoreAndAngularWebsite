@@ -57,7 +57,7 @@ namespace IdealSysApp.Controllers
 
       if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
 
-      await _appDbContext.JobSeekers.AddAsync(new JobSeeker { IdentityId = userIdentity.Id, Location = model.Location });
+      //await _appDbContext.JobSeekers.AddAsync(new JobSeeker { IdentityId = userIdentity.Id, Location = model.Location });
       await _appDbContext.SaveChangesAsync();
 
       return new OkObjectResult("Account created");
@@ -65,12 +65,26 @@ namespace IdealSysApp.Controllers
     [HttpPost("AddNewUser")]
     public async Task<IActionResult> AddNewUser([FromBody]UserViewModel model)
     {
-      var newUser = _mapper.Map<UserViewModel, AppUser>(model, new AppUser());
-      var result = await _userManager.CreateAsync(newUser,AppSettings.DefaultPassword);
-      if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
-     // var result2=await _userManager.AddToRolesAsync(newUser, model.CheckedRoleNames);
-      if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
-      return new OkObjectResult("Account created");
+      try
+      {
+        var newUser = _mapper.Map<UserViewModel, AppUser>(model, new AppUser());
+        newUser.UserName = model.Email;
+        newUser.NormalizedUserName = model.Email;
+        newUser.NormalizedEmail = model.Email;
+        newUser.EmailConfirmed = true;
+        newUser.PhoneNumberConfirmed = true;
+        var result = await _userManager.CreateAsync(newUser, AppSettings.DefaultPassword);
+        if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
+        var result2=await _userManager.AddToRolesAsync(newUser, model.SelectedRoles.Select(s=>s.text));
+        if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
+        return new OkObjectResult("Account created");
+      }
+      catch (Exception ex)
+      {
+
+        return BadRequest(ex.Message);
+      }
+     
     }
     [HttpPut("UpdateUser")]
     public async Task<IActionResult> UpdateUser([FromBody]UserViewModel model)

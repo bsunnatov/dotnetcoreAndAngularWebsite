@@ -15,14 +15,15 @@ namespace IdealSysApp.ViewModels.Mappings
 
     public AutoMapperProfileConfiguration()
     {
-        CreateMap<RegistrationViewModel, AppUser>().ForMember(au => au.UserName, map => map.MapFrom(vm => vm.Email));
-        CreateMap<UserViewModel, AppUser>();
-        CreateMap<AppUser, UserViewModel>().AfterMap((src, dist) => {
-          dist.RoleIds = src.Roles.Select(s => s.RoleId).ToArray();
-        }).ForMember(vm => vm.FullName, map => map.MapFrom(au => au.FirstName + " " + au.LastName));
-        //CreateMap<IList<AppUser>, IList<UserViewModel>>();
-
-
+      //ViewModel to Entity
+      CreateMap<RegistrationViewModel, AppUser>().ForMember(au => au.UserName, map => map.MapFrom(vm => vm.Email));
+      CreateMap<UserViewModel, AppUser>();
+      //Entity to ViewModel
+      CreateMap<ProductCategory, ProductCategoryViewModel>();
+      CreateMap<AppUser, UserViewModel>().AfterMap((src, dist) =>
+      {
+        dist.RoleIds = src.Roles.Select(s => s.RoleId).ToArray();
+      }).ForMember(vm => vm.FullName, map => map.MapFrom(au => au.FirstName + " " + au.LastName));
     }
   }
 }

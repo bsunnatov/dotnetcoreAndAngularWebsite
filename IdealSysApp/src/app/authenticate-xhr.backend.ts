@@ -22,7 +22,7 @@ export class AuthenticateXHRBackend extends XHRBackend {
         let xhrConnection = super.createConnection(request);
 
         xhrConnection.response = xhrConnection.response.catch((error: Response) => {
-            if ((error.status === 403 || error.status === 401) && (window.location.href.match(/\?/g) || []).length < 2) {
+            if ((error.status === 401) && (window.location.href.match(/\?/g) || []).length < 2) {
 
                 console.log('The authentication session expired or the user is not authorized. Force refresh of the current page.');
                 /* Great solution for bundling with Auth Guard! 
@@ -32,6 +32,9 @@ export class AuthenticateXHRBackend extends XHRBackend {
                 4. refreshing the same page will trigger the Guard checks, which will forward you to the login screen */
                 localStorage.removeItem('auth_token');
                 window.location.href = window.location.href + '?' + new Date().getMilliseconds();
+            }
+            if (error.status === 403) {
+                window.location.href ='/not-found' 
             }
             return Observable.throw(error);
         });
