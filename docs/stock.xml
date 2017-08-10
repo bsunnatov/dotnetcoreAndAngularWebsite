@@ -1,0 +1,8082 @@
+﻿<Stocks>
+	<stock>
+		<goodID>672511</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>41</qty>
+	</stock>
+	<stock>
+		<goodID>67152</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672512</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>176</qty>
+	</stock>
+	<stock>
+		<goodID>576742</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672513</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>46</qty>
+	</stock>
+	<stock>
+		<goodID>672514</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>576108</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672515</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>576128</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672521</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>672522</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>36</qty>
+	</stock>
+	<stock>
+		<goodID>672523</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>672524</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>672525</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>672531</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>25</qty>
+	</stock>
+	<stock>
+		<goodID>672532</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>27</qty>
+	</stock>
+	<stock>
+		<goodID>672533</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>672534</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>672535</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>672541</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>45</qty>
+	</stock>
+	<stock>
+		<goodID>672542</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>672543</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>782111</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672544</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>672545</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>782112</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672551</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>71</qty>
+	</stock>
+	<stock>
+		<goodID>782102</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>56</qty>
+	</stock>
+	<stock>
+		<goodID>672552</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>24</qty>
+	</stock>
+	<stock>
+		<goodID>672553</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>782132</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>720</qty>
+	</stock>
+	<stock>
+		<goodID>10224783</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782400</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672554</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>782133</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>460</qty>
+	</stock>
+	<stock>
+		<goodID>10191073</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6.84</qty>
+	</stock>
+	<stock>
+		<goodID>672555</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>782100</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>114</qty>
+	</stock>
+	<stock>
+		<goodID>10175393</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>76</qty>
+	</stock>
+	<stock>
+		<goodID>672561</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>782101</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1079</qty>
+	</stock>
+	<stock>
+		<goodID>782114</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672562</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>782130</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>541</qty>
+	</stock>
+	<stock>
+		<goodID>782144</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782402</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672563</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>782131</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1295</qty>
+	</stock>
+	<stock>
+		<goodID>672564</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>782110</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2578</qty>
+	</stock>
+	<stock>
+		<goodID>672565</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>782140</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1327</qty>
+	</stock>
+	<stock>
+		<goodID>774305</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774401</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>770151</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770001</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774351</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770011</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782414</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782415</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>604833</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>604836</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>572004</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>166</qty>
+	</stock>
+	<stock>
+		<goodID>572034</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>774007</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>572313</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>774008</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>572315</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>Шкаф</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774011</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572504</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>172</qty>
+	</stock>
+	<stock>
+		<goodID>774606</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>572534</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>53</qty>
+	</stock>
+	<stock>
+		<goodID>774607</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>572672</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>774608</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>572770</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>774611</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>572813</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>572814</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>572815</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>573014</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>67006</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>573114</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>575022</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>42</qty>
+	</stock>
+	<stock>
+		<goodID>575052</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>69639</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>575511</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>48</qty>
+	</stock>
+	<stock>
+		<goodID>66233</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>575512</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>53</qty>
+	</stock>
+	<stock>
+		<goodID>774407</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>575521</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>774307</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>575522</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>29</qty>
+	</stock>
+	<stock>
+		<goodID>575601</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>155</qty>
+	</stock>
+	<stock>
+		<goodID>6374</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575602</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>92</qty>
+	</stock>
+	<stock>
+		<goodID>576562</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>56</qty>
+	</stock>
+	<stock>
+		<goodID>66236</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576172</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>419666</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572530</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Мебель </goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575614</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10191074</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>10022269</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672251</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68981</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66721</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66671</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66740</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66640</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150701</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61107</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>66651</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61167</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>77210</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>A5440/2N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>A5979C5E</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>10224120</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>NT4005A</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>Муфты</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>90</qty>
+	</stock>
+	<stock>
+		<goodID>NT4003A</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>44</qty>
+	</stock>
+	<stock>
+		<goodID>NT4003M2A</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>NT4141MAP</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>37</qty>
+	</stock>
+	<stock>
+		<goodID>303900540401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>303900640401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4803KF</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>303902540401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>782102</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1100GN/DEORPC</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10191073</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>0.36</qty>
+	</stock>
+	<stock>
+		<goodID>782100</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>576125</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1202RD/DEOUPC</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782130</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576003</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782110</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>8001/EUPE3M</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1513BK/EUEXRM</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1500BK/REMOTE</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>9402/EUBANK</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672314</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>575560</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>OTN-1991</goodID>
+		<warehouse>Брак</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>774311</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>774411</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>575561</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67082</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>67032</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>576741</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68216</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>4163</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>752001</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>Монтаж</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774611</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575612</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672223</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>35</qty>
+	</stock>
+	<stock>
+		<goodID>67152</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68130</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672221</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>399</qty>
+	</stock>
+	<stock>
+		<goodID>672321</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>199</qty>
+	</stock>
+	<stock>
+		<goodID>ETR2-1550</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576148</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672220</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>100</qty>
+	</stock>
+	<stock>
+		<goodID>ETF-744/99</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>576248</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>ETN4-1999</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>576268</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>39</qty>
+	</stock>
+	<stock>
+		<goodID>ETF - 944/99-H</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>411160</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ETF-144/99T</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>ETNK</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>69715</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>MM-7595</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>555104</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>OTN2-1991</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>555234</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>412902</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>576124</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>404937</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>404943</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>27255</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>1100GN/DEORPC</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>68256</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1202GN/DEOUPC</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>770301</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>1202BL/DEOUPC</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>576114</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1202RD/DEOUPC</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>1202GY/DEOUPC</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>1402GY/DEEUPC</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>754151</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>8001/EUPE3M</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>754152</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>754153</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>753070</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>1513BK/EUEXRM</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>576127</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>754154</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1500BK/REMOTE</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>754155</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>9402/EUBANK</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>672253</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>10191074</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>419</qty>
+	</stock>
+	<stock>
+		<goodID>672265</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672365</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>98</qty>
+	</stock>
+	<stock>
+		<goodID>Компьютер</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782360</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>782380</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>782382</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576116</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>419699</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>755072</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672501</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>78</qty>
+	</stock>
+	<stock>
+		<goodID>419701</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672502</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>200</qty>
+	</stock>
+	<stock>
+		<goodID>419703</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672512</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>300</qty>
+	</stock>
+	<stock>
+		<goodID>753016</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Мебель </goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773642</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>B1 1B02N</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782373</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576125</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782393</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>67462</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576115</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782494</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774454</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782496</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575216</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>NT4915M2N</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774420</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>774320</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575616</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576120</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774411</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782112</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>150647NG</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782143</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>576110</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672434</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782145</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672612</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>604835</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782144</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672631</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>575215</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1414</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>150647NB</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150645N</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>150640NK</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575615</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672221</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672320</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672232</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672241</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672341</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672302</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672340</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576119</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>754760</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>576123</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>755412</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>753051</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>576113</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>419666</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672440</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672252</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672265</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672665</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150647NG</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150640NL</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>69241</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61167</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>OTN-1991</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61257</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61327</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61407</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672501</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61507</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672502</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150645N</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>N4141AN</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>672503</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150640NK</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67153</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63207</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>602138</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672511</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63257</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672513</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63507</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672521</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62047</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>80251</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672531</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62107</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66252</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62167</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672541</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>50190</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>22</qty>
+	</stock>
+	<stock>
+		<goodID>94212</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572488</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572303</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Vp380</goodID>
+		<warehouse>Брак</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572803</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>402026</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>572300</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572800</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1202GN/DEOUPC</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572671</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1202BL/DEOUPC</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>1202RD/DEOUPC</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>773651</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>782402</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>21</qty>
+	</stock>
+	<stock>
+		<goodID>1202GY/DEOUPC</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782432</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>1402GY/DEEUPC</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>8001/EUPE3M</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>9002/UC80CN</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>1513BK/EUEXRM</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>1500BK/REMOTE</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>782442</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>AM5440/2</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>782102</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>9402/EUBANK</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>782132</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>68131</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576116</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782415</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>AMP-кат.6e</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>-1</qty>
+	</stock>
+	<stock>
+		<goodID>774223</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Щит </goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69639</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774354</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10191074</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4397</qty>
+	</stock>
+	<stock>
+		<goodID>774355</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774429</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774438</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774338</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774420</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774130</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>77218</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>77210</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>21</qty>
+	</stock>
+	<stock>
+		<goodID>76561</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>604802</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>78730</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>604803</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774061</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>774062</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>575615</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>604810</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>604811</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576129</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572005</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>572505</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>572008</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>572535</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>573061</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>770128</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573161</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774428</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774328</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573023</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>573123</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782400</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573124</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573025</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>770491</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573125</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>770481</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770021</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782402</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>770391</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782432</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>770381</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770371</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672311</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672411</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782412</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770482</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>782442</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>ВВГ 3х1,5</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782414</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>782415</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>150647NG</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672611</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>150640NL</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672212</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672312</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>N4001A</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>672412</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672612</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>N4915M2N</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>150647NW</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150647NB</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>412500</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68331</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672213</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>150647NS</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672313</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>68317</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68016</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672201</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>68316</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672301</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>64904</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672202</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>39</qty>
+	</stock>
+	<stock>
+		<goodID>68335</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672302</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>672205</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>601117</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672305</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>601119</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>694643</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>695012</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>BT-LLVAL13</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>695017</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>770301</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>VA32A</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Vp380</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67152</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68130</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150703</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774061</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>AM5440/2</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>AM5979C6</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782360</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>NT4037</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61027</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>782380</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>28</qty>
+	</stock>
+	<stock>
+		<goodID>576021</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>576561</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61067</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61107</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>782362</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61167</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>782382</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61207</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>419699</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61327</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61407</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>419702</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61637</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>67001</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>419703</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>67153</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>67340</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63207</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67344</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67389</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63407</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63507</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63637</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>67013</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62037</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67016</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62047</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67091</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62107</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62137</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68003</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62167</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>68303</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782373</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>782393</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>975304</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782494</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>782496</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>782425</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68631</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782495</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>68751</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770381</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68731</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68741</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>NT4915M2N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>672311</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>89</qty>
+	</stock>
+	<stock>
+		<goodID>672411</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68691</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68651</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68671</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573110</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68921</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68901</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>68941</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>68304</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>64911</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69101</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68001</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69111</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774152</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>66200</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69151</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69211</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774154</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>64900</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>68002</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66201</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69321</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69311</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69341</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69281</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66227</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69291</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672611</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>41</qty>
+	</stock>
+	<stock>
+		<goodID>68431</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>672212</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>87</qty>
+	</stock>
+	<stock>
+		<goodID>752701</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672312</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>68237</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672412</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>29</qty>
+	</stock>
+	<stock>
+		<goodID>69301</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672612</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>70</qty>
+	</stock>
+	<stock>
+		<goodID>68537</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68251</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>573112</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68551</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672313</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>672214</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>672201</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>129</qty>
+	</stock>
+	<stock>
+		<goodID>573113</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>672301</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>31</qty>
+	</stock>
+	<stock>
+		<goodID>672202</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>80</qty>
+	</stock>
+	<stock>
+		<goodID>672302</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>80</qty>
+	</stock>
+	<stock>
+		<goodID>672205</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>105</qty>
+	</stock>
+	<stock>
+		<goodID>672305</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>8</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>NT4126S</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>419666</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>50172</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>50656</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Модем-4G</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>27105</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>26</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Vp16AS </goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782360</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782380</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782362</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>ПВС 2х2,5</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>OTN-1991</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>300</qty>
+	</stock>
+	<stock>
+		<goodID>604837</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>LN4702M</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61167</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>403001</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>602138</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>770303</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802AE</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>403038</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>31065</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>66252</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>27234</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>27235</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782373</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>403922</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>N4141</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782393</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>753029</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>27237</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>41610</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782494</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>574355</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782496</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573398</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782425</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>N4202D</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>572303</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>50</qty>
+	</stock>
+	<stock>
+		<goodID>402026</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>774611</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>572803</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>42</qty>
+	</stock>
+	<stock>
+		<goodID>572300</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>34</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802KF</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572800</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>41</qty>
+	</stock>
+	<stock>
+		<goodID>572171</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>50</qty>
+	</stock>
+	<stock>
+		<goodID>572671</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>27008</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Видеокамера</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ТТК-(3:1)-6/2</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1.2</qty>
+	</stock>
+	<stock>
+		<goodID>ТТК-(3:1)-18/6</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>2.6</qty>
+	</stock>
+	<stock>
+		<goodID>LN4703C</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>604838</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>602136</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774155</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>412500</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>770375</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>774220</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>774400</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>35</qty>
+	</stock>
+	<stock>
+		<goodID>774223</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>770062</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>694648</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>555239</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>774316</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774353</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>45</qty>
+	</stock>
+	<stock>
+		<goodID>770013</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>774454</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>35</qty>
+	</stock>
+	<stock>
+		<goodID>27228</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774354</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>24</qty>
+	</stock>
+	<stock>
+		<goodID>774455</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>774355</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>774429</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>32</qty>
+	</stock>
+	<stock>
+		<goodID>774438</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>774338</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>60</qty>
+	</stock>
+	<stock>
+		<goodID>774420</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>774230</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>774130</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Полотенцесуш-1</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>604802</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>Полотенцесуш-2</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>604803</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>Полотенцесуш-3</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>604808</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>70</qty>
+	</stock>
+	<stock>
+		<goodID>604809</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>37</qty>
+	</stock>
+	<stock>
+		<goodID>604810</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>97</qty>
+	</stock>
+	<stock>
+		<goodID>604811</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>102</qty>
+	</stock>
+	<stock>
+		<goodID>604835</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>25</qty>
+	</stock>
+	<stock>
+		<goodID>755200</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>755202</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>694614</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>48946</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>48945</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>Роутер</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>48944</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>31301</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>572005</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>21</qty>
+	</stock>
+	<stock>
+		<goodID>572505</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>572035</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>572535</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>37</qty>
+	</stock>
+	<stock>
+		<goodID>573061</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>27</qty>
+	</stock>
+	<stock>
+		<goodID>770128</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>573161</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>774428</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>752016</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>572488</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573163</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>774201</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>22</qty>
+	</stock>
+	<stock>
+		<goodID>572303</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>572803</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573123</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>752007</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>572300</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>573024</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>774239</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>27</qty>
+	</stock>
+	<stock>
+		<goodID>572800</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>573124</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>572171</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770491</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>29</qty>
+	</stock>
+	<stock>
+		<goodID>572671</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>573125</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770481</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>572211</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>770391</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>574305</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774151</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>770371</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>752011</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>VA32A</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>774462</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>VA40A</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>770492</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>31</qty>
+	</stock>
+	<stock>
+		<goodID>VA50A</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>770482</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>VA63A</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>21</qty>
+	</stock>
+	<stock>
+		<goodID>770392</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>770382</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>774152</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>303902740401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>774455</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770372</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>303902840401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>774463</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>303902940401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>63</qty>
+	</stock>
+	<stock>
+		<goodID>770493</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>303901540401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>770483</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>303903040401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>770023</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>303902640401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>770393</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>303903140401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>770383</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>303902340401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>774153</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>303902440401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>770373</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>303901340401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>770154</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>301200110101</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>301200310101</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>770014</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>NT4954</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>774464</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>150647NG</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>770494</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>150640NL</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>770484</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>150712</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>23</qty>
+	</stock>
+	<stock>
+		<goodID>411188</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782111</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>N4001A</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>134</qty>
+	</stock>
+	<stock>
+		<goodID>770394</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>770384</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>N4003A</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>49</qty>
+	</stock>
+	<stock>
+		<goodID>774154</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>411186</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ТК3</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770374</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>Nt4279C5E</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>770155</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782113</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>N4915M2N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>48</qty>
+	</stock>
+	<stock>
+		<goodID>770062</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770015</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>150647NW</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>782145</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>68733</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774465</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68211</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>150647NB</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>N4141AN</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>770495</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>68511</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>150645N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>782144</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>35</qty>
+	</stock>
+	<stock>
+		<goodID>3702/EUACWD</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770485</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>68516</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>150640NK</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>68331</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>150647NA</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>770395</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>64950</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>774620</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774305</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>770385</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>68017</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>774001</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>68317</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>672214</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>64906</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>774601</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>672201</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>68016</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>774605</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672301</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>180</qty>
+	</stock>
+	<stock>
+		<goodID>68316</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>10232247</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>672202</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>200</qty>
+	</stock>
+	<stock>
+		<goodID>64904</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>10232249</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>58</qty>
+	</stock>
+	<stock>
+		<goodID>774098</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>672302</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>154</qty>
+	</stock>
+	<stock>
+		<goodID>68335</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774038</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>774638</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>601117</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>31</qty>
+	</stock>
+	<stock>
+		<goodID>774072</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>601118</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>22</qty>
+	</stock>
+	<stock>
+		<goodID>774672</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>601119</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>39</qty>
+	</stock>
+	<stock>
+		<goodID>69282</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>774041</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>69292</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68694</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774042</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>24</qty>
+	</stock>
+	<stock>
+		<goodID>90460</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774043</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>694643</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>68633</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>56</qty>
+	</stock>
+	<stock>
+		<goodID>402024</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>774044</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>694647</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>68753</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>402025</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774641</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>44</qty>
+	</stock>
+	<stock>
+		<goodID>68733</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774642</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>695012</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>68743</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>695017</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>68643</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774644</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>68693</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>32</qty>
+	</stock>
+	<stock>
+		<goodID>68653</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>773616</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68683</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>68673</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>69331</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68923</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>69351</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773601</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>NT4126S</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68903</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>773605</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>68943</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>773701</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>N4202D</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68933</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773705</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>774429</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68634</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>69141</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773778</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68754</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>69371</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773678</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>68734</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69381</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68744</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>69361</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773738</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>774420</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68644</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69411</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774320</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68694</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>69391</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68654</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>69131</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773651</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>774130</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68684</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>25</qty>
+	</stock>
+	<stock>
+		<goodID>67001</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>773652</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>43</qty>
+	</stock>
+	<stock>
+		<goodID>68674</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>67153</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>773653</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>773654</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>68924</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>67344</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773655</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>68904</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>150703</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>67381</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773751</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>27</qty>
+	</stock>
+	<stock>
+		<goodID>68944</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>773752</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>73</qty>
+	</stock>
+	<stock>
+		<goodID>AM5440/2</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>773753</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>29</qty>
+	</stock>
+	<stock>
+		<goodID>68640</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>29</qty>
+	</stock>
+	<stock>
+		<goodID>AM5979C6</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>773754</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>68695</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>773755</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>LLVAL13</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>NT4037</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61027</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>56</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61047</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ТК4тп</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61067</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>71</qty>
+	</stock>
+	<stock>
+		<goodID>ТК7</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>80251</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>773665</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61107</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>61</qty>
+	</stock>
+	<stock>
+		<goodID>ТК6</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LN4703C</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>773671</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61167</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>861</qty>
+	</stock>
+	<stock>
+		<goodID>ТК3</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576111</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773672</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61207</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>393</qty>
+	</stock>
+	<stock>
+		<goodID>773673</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61257</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1121</qty>
+	</stock>
+	<stock>
+		<goodID>ОМ14</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>LN4702M</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>10175393</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773674</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61327</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>ОМ7</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>LN4703</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>773675</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61407</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>36</qty>
+	</stock>
+	<stock>
+		<goodID>NT4409N</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773681</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61507</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>61</qty>
+	</stock>
+	<stock>
+		<goodID>576122</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773682</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61637</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>105</qty>
+	</stock>
+	<stock>
+		<goodID>3702/EUACWD</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>67001</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>214</qty>
+	</stock>
+	<stock>
+		<goodID>1511/EUORRM</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>67153</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>157</qty>
+	</stock>
+	<stock>
+		<goodID>67340</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>36</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63207</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>67344</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>150645N</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>45</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63257</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67381</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>576112</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>67389</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>572508</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63407</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>572035</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63507</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>28</qty>
+	</stock>
+	<stock>
+		<goodID>572535</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63637</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>68751</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62017</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>67081</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68731</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575214</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67013</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>68741</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573061</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>770128</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67016</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>68641</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802AE</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>573161</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>774428</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62047</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>67091</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62067</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>80251</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>490</qty>
+	</stock>
+	<stock>
+		<goodID>68651</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62107</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>573023</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62137</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>68003</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>68671</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573123</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62167</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>24</qty>
+	</stock>
+	<stock>
+		<goodID>66210</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>601118</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>774239</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68303</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>64910</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>68901</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573025</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>770491</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773683</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68941</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69402</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573125</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>770481</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773684</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68304</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770021</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773685</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774641</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773691</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>770381</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773692</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>69151</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773693</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773694</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>575613</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773695</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672411</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>69201</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66201</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68631</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>35</qty>
+	</stock>
+	<stock>
+		<goodID>68731</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69281</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68741</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>576126</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802KF</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>69401</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68651</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>69171</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68681</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68671</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>770361</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573010</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>174</qty>
+	</stock>
+	<stock>
+		<goodID>68004</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>770351</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573110</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>164</qty>
+	</stock>
+	<stock>
+		<goodID>68921</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>68251</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66211</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>66204</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573011</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>68901</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>67015</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774153</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>573111</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>68941</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>68375</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68304</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>68343</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>ТТК-(3:1)-6/2</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>0.65</qty>
+	</stock>
+	<stock>
+		<goodID>64911</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770138</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ТТК-(3:1)-18/6</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1.16</qty>
+	</stock>
+	<stock>
+		<goodID>68001</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>ТТ-1800 квт</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66200</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>34</qty>
+	</stock>
+	<stock>
+		<goodID>69151</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>64931</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672611</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>64900</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>32</qty>
+	</stock>
+	<stock>
+		<goodID>773751</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>68002</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>48</qty>
+	</stock>
+	<stock>
+		<goodID>66201</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>69321</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672412</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68302</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>69311</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672612</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68131</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>149</qty>
+	</stock>
+	<stock>
+		<goodID>69281</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>66227</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68431</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>332</qty>
+	</stock>
+	<stock>
+		<goodID>69401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>782133</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>39</qty>
+	</stock>
+	<stock>
+		<goodID>Монтаж кабеля</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68237</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>38</qty>
+	</stock>
+	<stock>
+		<goodID>69171</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>782100</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>774465</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66230</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>29</qty>
+	</stock>
+	<stock>
+		<goodID>68537</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68632</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>672213</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68251</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>782110</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>44</qty>
+	</stock>
+	<stock>
+		<goodID>573012</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>174</qty>
+	</stock>
+	<stock>
+		<goodID>64950</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66235</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>68742</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>573112</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>162</qty>
+	</stock>
+	<stock>
+		<goodID>68551</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>573060</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>AMP-кат.5e</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>190</qty>
+	</stock>
+	<stock>
+		<goodID>68317</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802AR</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>64935</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68692</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>28</qty>
+	</stock>
+	<stock>
+		<goodID>573160</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>28</qty>
+	</stock>
+	<stock>
+		<goodID>AMP-кат.6e</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>186</qty>
+	</stock>
+	<stock>
+		<goodID>68282</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>32</qty>
+	</stock>
+	<stock>
+		<goodID>68652</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>774601</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68212</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>5SV43140</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672301</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68672</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>695004</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>572618</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672202</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>64904</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802BI</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68662</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>672302</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68335</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68285</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>68922</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576000</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>61</qty>
+	</stock>
+	<stock>
+		<goodID>572604</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>68902</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>573013</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>672305</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>68942</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>573115</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>572616</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>573015</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>576003</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>31</qty>
+	</stock>
+	<stock>
+		<goodID>69102</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>573113</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>22</qty>
+	</stock>
+	<stock>
+		<goodID>67081</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576001</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575200</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>694643</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69212</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67091</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774641</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572171</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69172</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>774644</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69322</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>575610</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>69312</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69342</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>69302</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>773601</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>773701</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773705</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ETOR-55</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>773778</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ETR2-1550</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576248</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>575611</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>ETN4-1999</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>MP63DIN   </goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ETF - 944/99-H</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68694</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ETNK</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572506</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>MM-7595</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572036</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575202</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>773653</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572536</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572133</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575162</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773751</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>VA40A</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>VA50A</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>VA63A</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>67152</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>Vp16AS </goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773661</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68130</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61027</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61047</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576108</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61067</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576128</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>69251</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61107</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576188</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61257</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782430</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ВА88-33</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61407</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>41</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61507</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>773681</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL61637</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67001</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>67153</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>755001</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>67340</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63207</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>755002</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67344</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63257</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LN4702M</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>34</qty>
+	</stock>
+	<stock>
+		<goodID>LN4703</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>150</qty>
+	</stock>
+	<stock>
+		<goodID>782111</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63407</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67311</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63507</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770304</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL63637</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67666</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>782142</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67081</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782143</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68282</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67013</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782113</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62037</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67016</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782115</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>67091</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782145</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62067</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782450</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>80251</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>33</qty>
+	</stock>
+	<stock>
+		<goodID>782114</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62107</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782144</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>5SL62167</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774405</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>HY3100LE</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774305</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>L36M 2C063/030</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>64910</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774301</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>L36M 2C080/030</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774401</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>753030</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>L36M 2C100/030</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774308</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>10232247</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>69222</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68349</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10232249</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>773692</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67041</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67031</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Муфты</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>132</qty>
+	</stock>
+	<stock>
+		<goodID>770001</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>B1 1B02N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>774351</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>B1 1B10N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>770011</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>B1 1B16N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68751</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68731</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>B1 1B32N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>B1 1B40N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>774352</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Муфты-Москва</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>SVC-N-5000VA</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>672221</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68004</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68921</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66200</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>69211</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>64900</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66201</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>68131</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>69281</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66227</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>ВВГ</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>68431</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>69401</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>754047</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69171</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>754042</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ТК7</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ТК6</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572035</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>ОМ14</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672253</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Огнетушитель </goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>3702/EUACWD</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>1511/EUORRM</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>69222</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>N4005M2A</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>N4005A</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Модем</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>69312</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770061</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672501</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>50162</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>MP63DIN   </goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>672521</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672531</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>67218</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672541</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672561</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>755201</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782132</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>10191073</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782133</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>694614</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10175393</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782100</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>21</qty>
+	</stock>
+	<stock>
+		<goodID>782101</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>48946</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>782130</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>48945</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>48944</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>782110</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>782140</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>774120</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>25</qty>
+	</stock>
+	<stock>
+		<goodID>572034</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>67006</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>31301</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774307</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774152</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>576562</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>51753</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>576124</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576021</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>616</qty>
+	</stock>
+	<stock>
+		<goodID>576561</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>58</qty>
+	</stock>
+	<stock>
+		<goodID>575021</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>575051</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>22</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576127</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774154</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576117</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>150701</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>N4141</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>104</qty>
+	</stock>
+	<stock>
+		<goodID>NT4005A</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>NT4141</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>60</qty>
+	</stock>
+	<stock>
+		<goodID>N4125</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>573110</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>L4125</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>Муфты</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>N4126S</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>NT4126S</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>975304</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>601119</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>L4126S</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>N4202D</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>NT4202D</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>40</qty>
+	</stock>
+	<stock>
+		<goodID>694647</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>N4202D/2  и  LN4202M2DI</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>22</qty>
+	</stock>
+	<stock>
+		<goodID>695012</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>L4279C6</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>N4258/11N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>50</qty>
+	</stock>
+	<stock>
+		<goodID>NT4258/11N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>576118</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>576138</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>576758</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>30</qty>
+	</stock>
+	<stock>
+		<goodID>336904</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576698</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>573112</goodID>
+		<warehouse>Чемоданы</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>Катушка</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576181</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>LN4742v230</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>576141</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576171</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>NT4915N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>503E</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576131</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>LN4702M</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>79</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>201</qty>
+	</stock>
+	<stock>
+		<goodID>LN4703</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>21</qty>
+	</stock>
+	<stock>
+		<goodID>NT4409N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>NT4950</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>120</qty>
+	</stock>
+	<stock>
+		<goodID>576122</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576182</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>576142</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576115</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576172</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>10191073</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>2.25</qty>
+	</stock>
+	<stock>
+		<goodID>10175393</goodID>
+		<warehouse>Брак</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672581</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576112</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576132</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M4SQ</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>672585</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575216</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575616</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M4AE</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID/>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M2VD</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>770012</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>25</qty>
+	</stock>
+	<stock>
+		<goodID>770153</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>21</qty>
+	</stock>
+	<stock>
+		<goodID>67032</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774453</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>71</qty>
+	</stock>
+	<stock>
+		<goodID>770003</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>4163</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576110</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672434</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>Муфты-Москва</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>672634</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672231</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>80251</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672431</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672631</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672223</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802KF</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>ETO2-4550</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672323</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M2KF</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672221</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>672321</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>672220</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>672320</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>27228</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>672232</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>576129</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672241</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>672341</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>672240</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>27105</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>672340</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>774307</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576119</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>412902</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M4KF</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576114</goodID>
+		<warehouse>Брак</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802AR</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M2AR</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>27142</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>672640</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572618</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>44</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802BI</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>65</qty>
+	</stock>
+	<stock>
+		<goodID>672252</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572104</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M2BI</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>25</qty>
+	</stock>
+	<stock>
+		<goodID>572604</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>47</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M3BI</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M4BI</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>572616</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802TE</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>NT4001N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>576003</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>128</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M2TE</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>L4001N</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>240</qty>
+	</stock>
+	<stock>
+		<goodID>576002</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M3TE</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>LNA4802M4TE</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>575200</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>28</qty>
+	</stock>
+	<stock>
+		<goodID>575210</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>672265</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>575160</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>672365</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>575080</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>672465</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575370</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>576700</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>575610</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>74</qty>
+	</stock>
+	<stock>
+		<goodID>575560</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>575550</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>576740</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>27234</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>576680</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>19</qty>
+	</stock>
+	<stock>
+		<goodID>27235</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>575201</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>575211</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>27237</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>575161</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>575081</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>575371</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576701</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>575611</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>26</qty>
+	</stock>
+	<stock>
+		<goodID>672501</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>575561</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>13</qty>
+	</stock>
+	<stock>
+		<goodID>672502</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>575551</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>672503</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>572006</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>672504</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576681</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>672505</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>572036</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>575202</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>672511</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>572536</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>412501</goodID>
+		<warehouse>Офис</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672512</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>575162</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>672513</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>572633</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>672514</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>572455</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>576118</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672515</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>572456</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>576702</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>575612</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>575562</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>67152</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>250</qty>
+	</stock>
+	<stock>
+		<goodID>575552</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>68130</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>120</qty>
+	</stock>
+	<stock>
+		<goodID>27008</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576682</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>15</qty>
+	</stock>
+	<stock>
+		<goodID>27009</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>672531</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576108</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>672532</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576128</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672533</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576188</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>576148</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>576111</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576178</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>672541</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576718</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>576122</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576112</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782111</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3155</qty>
+	</stock>
+	<stock>
+		<goodID>782141</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2411</qty>
+	</stock>
+	<stock>
+		<goodID>672561</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782112</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>31</qty>
+	</stock>
+	<stock>
+		<goodID>672573</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>782142</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>343</qty>
+	</stock>
+	<stock>
+		<goodID>672574</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>782143</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>520</qty>
+	</stock>
+	<stock>
+		<goodID>575214</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672575</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>782113</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>878</qty>
+	</stock>
+	<stock>
+		<goodID>672581</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>22</qty>
+	</stock>
+	<stock>
+		<goodID>782115</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>37</qty>
+	</stock>
+	<stock>
+		<goodID>672571</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672582</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>21</qty>
+	</stock>
+	<stock>
+		<goodID>RM4TR34</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672583</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>14</qty>
+	</stock>
+	<stock>
+		<goodID>782114</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>12</qty>
+	</stock>
+	<stock>
+		<goodID>672584</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>RM35TF30</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>782144</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575614</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672585</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>672314</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>RVD-260</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>774405</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>73</qty>
+	</stock>
+	<stock>
+		<goodID>774305</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>22</qty>
+	</stock>
+	<stock>
+		<goodID>774301</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>50</qty>
+	</stock>
+	<stock>
+		<goodID>774401</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>38</qty>
+	</stock>
+	<stock>
+		<goodID>575213</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774408</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>50</qty>
+	</stock>
+	<stock>
+		<goodID>10232230</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1193</qty>
+	</stock>
+	<stock>
+		<goodID>774308</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>10232247</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2992</qty>
+	</stock>
+	<stock>
+		<goodID>10232249</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2670</qty>
+	</stock>
+	<stock>
+		<goodID>774306</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>10156608</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>95</qty>
+	</stock>
+	<stock>
+		<goodID>770151</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>58</qty>
+	</stock>
+	<stock>
+		<goodID>10156613</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>73</qty>
+	</stock>
+	<stock>
+		<goodID>575613</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>576120</goodID>
+		<warehouse>Брак</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774451</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>138</qty>
+	</stock>
+	<stock>
+		<goodID>770001</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>24</qty>
+	</stock>
+	<stock>
+		<goodID>774351</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>95</qty>
+	</stock>
+	<stock>
+		<goodID>770011</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>55</qty>
+	</stock>
+	<stock>
+		<goodID>774452</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>80</qty>
+	</stock>
+	<stock>
+		<goodID>770152</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>29</qty>
+	</stock>
+	<stock>
+		<goodID>576126</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770002</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>774352</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>79</qty>
+	</stock>
+	<stock>
+		<goodID>672634</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>31</qty>
+	</stock>
+	<stock>
+		<goodID>672431</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>55</qty>
+	</stock>
+	<stock>
+		<goodID>575215</goodID>
+		<warehouse>Брак</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672631</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>672223</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>672323</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>672221</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>315</qty>
+	</stock>
+	<stock>
+		<goodID>672321</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>157</qty>
+	</stock>
+	<stock>
+		<goodID>672220</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>9</qty>
+	</stock>
+	<stock>
+		<goodID>672320</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>43</qty>
+	</stock>
+	<stock>
+		<goodID>672232</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>6858</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>672241</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>60</qty>
+	</stock>
+	<stock>
+		<goodID>672341</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>37</qty>
+	</stock>
+	<stock>
+		<goodID>672240</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>55</qty>
+	</stock>
+	<stock>
+		<goodID>672340</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>576123</goodID>
+		<warehouse>Брак</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66254</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68252</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>576113</goodID>
+		<warehouse>Брак</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572618</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>26352</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572604</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572116</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572616</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>576003</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>35</qty>
+	</stock>
+	<stock>
+		<goodID>672440</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>672640</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>7</qty>
+	</stock>
+	<stock>
+		<goodID>10232228</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1208</qty>
+	</stock>
+	<stock>
+		<goodID>421013</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>672252</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>17</qty>
+	</stock>
+	<stock>
+		<goodID>421019</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>10232232</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>7868</qty>
+	</stock>
+	<stock>
+		<goodID>10156611</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3300</qty>
+	</stock>
+	<stock>
+		<goodID>575210</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>421060</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>N4005M2A</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>N4950</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>346</qty>
+	</stock>
+	<stock>
+		<goodID>66631</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>770302</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>20</qty>
+	</stock>
+	<stock>
+		<goodID>N4005A</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>6</qty>
+	</stock>
+	<stock>
+		<goodID>29714</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>18</qty>
+	</stock>
+	<stock>
+		<goodID>N4294</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>66701</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66741</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>66711</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29716</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>8</qty>
+	</stock>
+	<stock>
+		<goodID>66731</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575610</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29504</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29761</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>68991</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29534</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>66621</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29717</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>672265</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>54</qty>
+	</stock>
+	<stock>
+		<goodID>67169</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>774408</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672365</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>44</qty>
+	</stock>
+	<stock>
+		<goodID>29458</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>Чемодан</goodID>
+		<warehouse>Юнус-Абад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672465</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>575201</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29461</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>10022261</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>672665</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>29460</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>10022262</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>10156608</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>25</qty>
+	</stock>
+	<stock>
+		<goodID>29472</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29473</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29474</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575371</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>419699</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29475</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29476</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>575611</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>419701</goodID>
+		<warehouse>Договора от Учредителей</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29477</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>29478</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10022293</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>11</qty>
+	</stock>
+	<stock>
+		<goodID>572006</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10022294</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>572506</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>774352</goodID>
+		<warehouse>Недостача на складе</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10022295</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>572036</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>50162</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>16</qty>
+	</stock>
+	<stock>
+		<goodID>572536</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>10022297</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>4</qty>
+	</stock>
+	<stock>
+		<goodID>50183</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>10022298</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>672501</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>273</qty>
+	</stock>
+	<stock>
+		<goodID>672502</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>62</qty>
+	</stock>
+	<stock>
+		<goodID>50172</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>10</qty>
+	</stock>
+	<stock>
+		<goodID>572455</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>10022289</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>5</qty>
+	</stock>
+	<stock>
+		<goodID>672503</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>39</qty>
+	</stock>
+	<stock>
+		<goodID>50190</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>1</qty>
+	</stock>
+	<stock>
+		<goodID>572456</goodID>
+		<warehouse>Стенды </warehouse>
+		<qty>2</qty>
+	</stock>
+	<stock>
+		<goodID>672504</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>66</qty>
+	</stock>
+	<stock>
+		<goodID>672505</goodID>
+		<warehouse>Чукурсай</warehouse>
+		<qty>3</qty>
+	</stock>
+	<stock>
+		<goodID>50663</goodID>
+		<warehouse>Основной склад</warehouse>
+		<qty>2</qty>
+	</stock>
+</Stocks>

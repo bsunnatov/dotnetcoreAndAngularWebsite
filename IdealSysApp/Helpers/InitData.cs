@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore;
+
 namespace IdealSysApp.Helpers
 {
   public static class DataSeeder
@@ -27,7 +29,8 @@ namespace IdealSysApp.Helpers
     {
       var context = app.ApplicationServices.GetService<ApplicationDbContext>();
       // Migrate and seed the database during startup. Must be synchronous.
-
+      //context.Database.EnsureCreated();
+      context.Database.Migrate();
       // TODO: Add seed logic here
       var owner = context.Users.FirstOrDefault(p => p.UserName == "Owner");
       string[] roles = new string[] { "Owner", "Administrator", "Manager", "Editor", "Buyer", "Business", "Seller", "Subscriber" };

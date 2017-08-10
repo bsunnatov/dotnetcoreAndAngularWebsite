@@ -43,7 +43,16 @@ namespace IdealSysApp.Data
       }
       entity.CreatedDate = DateTime.Now;
       entity.ModifiedDate = DateTime.Now;
-      entity.IdentityId = _userManager.GetUserId(ClaimsPrincipal.Current);
+      try
+      {
+        entity.IdentityId = _userManager.GetUserId(ClaimsPrincipal.Current);
+      }
+      catch (Exception)
+      {
+
+       
+      }
+ 
       entities.Add(entity);
       context.SaveChanges();
     }

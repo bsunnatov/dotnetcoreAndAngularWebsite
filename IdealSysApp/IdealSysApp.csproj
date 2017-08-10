@@ -35,6 +35,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.1.4" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.0.1" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
@@ -42,5 +43,9 @@
   <ItemGroup>
     <Folder Include="src\app\shared\components\" />
     <Folder Include="src\app\directives\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\AppData\goods.xml" />
+    <None Include="wwwroot\AppData\stock.xml" />
   </ItemGroup>
 </Project>

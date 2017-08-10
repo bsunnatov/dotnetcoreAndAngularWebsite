@@ -8,5 +8,6 @@ namespace IdealSysApp.Models.Entities
   public class ProductCategory : BaseEntity
   {
     public string Name { get; set; }
+    public string GroupId { get; set; }
   }
 }

@@ -12,6 +12,10 @@ namespace IdealSysApp.Models.Entities
     public string Description { get; set; }
     public string ImageUrl { get; set; }
     public long ProductCategoryId { get; set; }
+    public string goodID { get; set; }
+    public string GroupID { get; set; }
+    public decimal Price { get; set; }
     public virtual ProductCategory ProductCategory { get; set; }
+
   }
 }

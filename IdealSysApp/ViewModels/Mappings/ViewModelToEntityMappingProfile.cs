@@ -20,10 +20,13 @@ namespace IdealSysApp.ViewModels.Mappings
       CreateMap<UserViewModel, AppUser>();
       //Entity to ViewModel
       CreateMap<ProductCategory, ProductCategoryViewModel>();
+      CreateMap<Product, ProductViewModel>();
       CreateMap<AppUser, UserViewModel>().AfterMap((src, dist) =>
       {
         dist.RoleIds = src.Roles.Select(s => s.RoleId).ToArray();
       }).ForMember(vm => vm.FullName, map => map.MapFrom(au => au.FirstName + " " + au.LastName));
+      //Integration with 1c ViewModel
+      CreateMap<GoodViewModel, Product>().ForMember(p=>p.goodID,m=>m.MapFrom(vm=>vm.Id));
     }
   }
 }

@@ -78,6 +78,8 @@ namespace IdealSysApp.Migrations
 
                     b.Property<string>("Description");
 
+                    b.Property<string>("GroupID");
+
                     b.Property<string>("IdentityId");
 
                     b.Property<string>("ImageUrl");
@@ -86,7 +88,11 @@ namespace IdealSysApp.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<decimal>("Price");
+
                     b.Property<long>("ProductCategoryId");
+
+                    b.Property<string>("goodID");
 
                     b.HasKey("Id");
 
@@ -103,6 +109,8 @@ namespace IdealSysApp.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("GroupId");
 
                     b.Property<string>("IdentityId");
 

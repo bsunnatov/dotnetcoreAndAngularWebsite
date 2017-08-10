@@ -134,10 +134,10 @@ namespace IdealSysApp
         TokenValidationParameters = tokenValidationParameters,
         
       });
-      var myRouteHandler = new RouteHandler(Handle);
-      var routeBuilder = new RouteBuilder(app, myRouteHandler);
-      routeBuilder.MapRoute("default", "");
-      app.UseRouter(routeBuilder.Build());
+      //var myRouteHandler = new RouteHandler(Handle);
+      //var routeBuilder = new RouteBuilder(app, myRouteHandler);
+      //routeBuilder.MapRoute("default", "");
+      //app.UseRouter(routeBuilder.Build());
       app.UseDefaultFiles();
       app.UseStaticFiles();
       app.UseMvc();
