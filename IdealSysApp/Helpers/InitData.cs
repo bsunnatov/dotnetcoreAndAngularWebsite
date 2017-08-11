@@ -79,8 +79,10 @@ namespace IdealSysApp.Helpers
        await context.SaveChangesAsync();
 
       }
-     
-    
+      if (!context.ProductCategories.Any())
+      {
+        
+      }
     }
     public static async Task<IdentityResult> AssignRoles(IApplicationBuilder services, string email, string[] roles)
     {

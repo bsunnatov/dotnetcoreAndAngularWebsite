@@ -13,6 +13,7 @@ namespace IdealSysApp.Data
   {
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
+      this.Database.SetCommandTimeout(120);
     }
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -12,6 +12,7 @@ using System.IO;
 using System.Xml.Serialization;
 using IdealSysApp.Data;
 using AutoMapper;
+using Microsoft.Extensions.Logging;
 
 namespace IdealSysApp.Controllers
 {
@@ -23,12 +24,14 @@ namespace IdealSysApp.Controllers
     private readonly IRepository<Product> _service;
     private readonly IRepository<ProductCategory> _prc_service;
     private readonly IMapper _mapper;
-    public ProductController(IHostingEnvironment environment, IRepository<Product> service, IRepository<ProductCategory> prc_service, IMapper mapper)
+    private readonly ILogger _logger;
+    public ProductController(IHostingEnvironment environment, IRepository<Product> service, IRepository<ProductCategory> prc_service, IMapper mapper,ILogger<ProductController> logger)
     {
       _hostingEnvironment = environment;
       _service = service;
       _prc_service = prc_service;
       _mapper = mapper;
+      _logger = logger;
     }
     [HttpGet]
     public IEnumerable<ProductViewModel> Get()
@@ -49,7 +52,7 @@ namespace IdealSysApp.Controllers
         if (!_prc_service.GetAll().Any())
           foreach (var item in _groupList.Groups)
           {
-            _prc_service.Insert(new ProductCategory() { Name = item.Name, GroupId = item.Id });
+            _prc_service.Insert(new ProductCategory() { Name = item.Name, GroupId = item.ID });
             i++;
           }
         return string.Format("добавлен {0} кол-во записей", i);
@@ -69,10 +72,13 @@ namespace IdealSysApp.Controllers
       int i = 0;
       var allProducts = _service.GetAll();
       var allPrC = _prc_service.GetAll();
-      if(!allProducts.Any())
+      if (allProducts.Any())
+        _logger.LogWarning("product quantity="+allProducts.Count().ToString());
       foreach (var item in _goodList.Goods)
       {
-        var productCategory = allPrC.FirstOrDefault(p => p.GroupId == item.GroupID);
+
+        var productCategory = allPrC.FirstOrDefault(p => p.Name == item.Name);
+
         if (productCategory != null)
         {
           _service.Insert(new Product() { GroupID = item.GroupID, goodID = item.Id, Name = item.Name, Price = item.Price, ProductCategoryId = productCategory.Id });
