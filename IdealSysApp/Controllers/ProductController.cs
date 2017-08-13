@@ -21,11 +21,11 @@ namespace IdealSysApp.Controllers
   public class ProductController : Controller
   {
     private IHostingEnvironment _hostingEnvironment;
-    private readonly IRepository<Product> _service;
-    private readonly IRepository<ProductCategory> _prc_service;
+    private readonly IRepository<Product,ProductViewModel> _service;
+    private readonly IRepository<ProductCategory,ProductCategoryViewModel> _prc_service;
     private readonly IMapper _mapper;
     private readonly ILogger _logger;
-    public ProductController(IHostingEnvironment environment, IRepository<Product> service, IRepository<ProductCategory> prc_service, IMapper mapper,ILogger<ProductController> logger)
+    public ProductController(IHostingEnvironment environment, IRepository<Product,ProductViewModel> service, IRepository<ProductCategory,ProductCategoryViewModel> prc_service, IMapper mapper,ILogger<ProductController> logger)
     {
       _hostingEnvironment = environment;
       _service = service;
@@ -39,54 +39,54 @@ namespace IdealSysApp.Controllers
       var products = _mapper.Map<IEnumerable<ProductViewModel>>(_service.GetAll());
       return products;
     }
-    // GET: api/Product
-    [HttpGet("ProductCategoryImport")]
-    public string ProductCategoryImport()
-    {
-      var path = Path.Combine(_hostingEnvironment.ContentRootPath, "AppData", "Groups.xml");
-      try
-      {
+    //// GET: api/Product
+    //[HttpGet("ProductCategoryImport")]
+    //public string ProductCategoryImport()
+    //{
+    //  var path = Path.Combine(_hostingEnvironment.ContentRootPath, "AppData", "Groups.xml");
+    //  try
+    //  {
 
-        var _groupList = ForRemoteService.DeserializeXMLFileToObject<GroupList>(path);
-        int i = 0;
-        if (!_prc_service.GetAll().Any())
-          foreach (var item in _groupList.Groups)
-          {
-            _prc_service.Insert(new ProductCategory() { Name = item.Name, GroupId = item.ID });
-            i++;
-          }
-        return string.Format("добавлен {0} кол-во записей", i);
-      }
-      catch (Exception ex)
-      {
+    //    var _groupList = ForRemoteService.DeserializeXMLFileToObject<GroupList>(path);
+    //    int i = 0;
+    //    if (!_prc_service.GetAll().Any())
+    //      foreach (var item in _groupList.Groups)
+    //      {
+    //        _prc_service.Insert(new ProductCategory() { Name = item.Name, GroupId = item.ID });
+    //        i++;
+    //      }
+    //    return string.Format("добавлен {0} кол-во записей", i);
+    //  }
+    //  catch (Exception ex)
+    //  {
 
-        return string.Format("{0} path={1}", ex.Message, path);
-      }
+    //    return string.Format("{0} path={1}", ex.Message, path);
+    //  }
 
-    }
-    [HttpGet("ProductImport")]
-    public string DoXmlImport()
-    {
-      var path = Path.Combine(_hostingEnvironment.ContentRootPath, "AppData", "goods.xml");
-      var _goodList = ForRemoteService.DeserializeXMLFileToObject<GoodList>(path);
-      int i = 0;
-      var allProducts = _service.GetAll();
-      var allPrC = _prc_service.GetAll();
-      if (allProducts.Any())
-        _logger.LogWarning("product quantity="+allProducts.Count().ToString());
-      foreach (var item in _goodList.Goods)
-      {
+    //}
+    //[HttpGet("ProductImport")]
+    //public string DoXmlImport()
+    //{
+    //  var path = Path.Combine(_hostingEnvironment.ContentRootPath, "AppData", "goods.xml");
+    //  var _goodList = ForRemoteService.DeserializeXMLFileToObject<GoodList>(path);
+    //  int i = 0;
+    //  var allProducts = _service.GetAll();
+    //  var allPrC = _prc_service.GetAll();
+    //  if (allProducts.Any())
+    //    _logger.LogWarning("product quantity="+allProducts.Count().ToString());
+    //  foreach (var item in _goodList.Goods)
+    //  {
 
-        var productCategory = allPrC.FirstOrDefault(p => p.Name == item.Name);
+    //    var productCategory = allPrC.FirstOrDefault(p => p.Name == item.Name);
 
-        if (productCategory != null)
-        {
-          _service.Insert(new Product() { GroupID = item.GroupID, goodID = item.Id, Name = item.Name, Price = item.Price, ProductCategoryId = productCategory.Id });
-          i++;
-        }
-      }
-      return string.Format("добавлен {0} кол-во записей", i);
-    }
+    //    if (productCategory != null)
+    //    {
+    //      _service.Insert(new Product() { GroupID = item.GroupID, goodID = item.Id, Name = item.Name, Price = item.Price, ProductCategoryId = productCategory.Id });
+    //      i++;
+    //    }
+    //  }
+    //  return string.Format("добавлен {0} кол-во записей", i);
+    //}
     // GET: api/Product/5
     [HttpGet("{id}")]
     public ProductViewModel Get(long id)

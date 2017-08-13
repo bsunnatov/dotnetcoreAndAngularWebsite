@@ -1,0 +1,594 @@
+2017-08-14T01:15:58.2989143+05:00  [INF] Executed DbCommand (2,194ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE DATABASE [ASPELL_DBASE]; (6438bdd5)
+2017-08-14T01:15:59.3259004+05:00  [INF] Executed DbCommand (1,018ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [ASPELL_DBASE] SET READ_COMMITTED_SNAPSHOT ON;'); (6438bdd5)
+2017-08-14T01:15:59.5611263+05:00  [INF] Executed DbCommand (148ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [_Migrations] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK__Migrations] PRIMARY KEY ([MigrationId])
+); (6438bdd5)
+2017-08-14T01:15:59.6522135+05:00  [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-14T01:15:59.7254497+05:00  [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [_Migrations]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-08-14T01:15:59.8781633+05:00  [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [ConcurrencyStamp] nvarchar(max),
+    [Name] nvarchar(256),
+    [NormalizedName] nvarchar(256),
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+); (6438bdd5)
+2017-08-14T01:15:59.9121958+05:00  [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max),
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name])
+); (6438bdd5)
+2017-08-14T01:15:59.9307414+05:00  [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [ClaimType] nvarchar(max),
+    [ClaimValue] nvarchar(max),
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+); (6438bdd5)
+2017-08-14T01:15:59.9547651+05:00  [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [DynamicPropertyValues] (
+    [Id] bigint NOT NULL IDENTITY,
+    [DynamicPropertyId] bigint NOT NULL,
+    [IsSelected] bit NOT NULL,
+    [Key] nvarchar(max),
+    [Value] nvarchar(max),
+    CONSTRAINT [PK_DynamicPropertyValues] PRIMARY KEY ([Id])
+); (6438bdd5)
+2017-08-14T01:15:59.9612708+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [ProductFeatures] (
+    [Id] bigint NOT NULL IDENTITY,
+    [CreatedDate] datetime2 NOT NULL,
+    [DynamicPropertyId] bigint NOT NULL,
+    [IdentityId] nvarchar(450),
+    [IntegrationKey] nvarchar(max),
+    [ModifiedDate] datetime2 NOT NULL,
+    [ProductId] bigint NOT NULL,
+    CONSTRAINT [PK_ProductFeatures] PRIMARY KEY ([Id])
+); (6438bdd5)
+2017-08-14T01:15:59.9647742+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [OrderItems] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Amount] decimal(18, 2) NOT NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [IdentityId] nvarchar(450),
+    [IntegrationKey] nvarchar(max),
+    [ModifiedDate] datetime2 NOT NULL,
+    [OrderId] bigint NOT NULL,
+    [ProductId] bigint NOT NULL,
+    CONSTRAINT [PK_OrderItems] PRIMARY KEY ([Id])
+); (6438bdd5)
+2017-08-14T01:15:59.9948032+05:00  [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [DynamicProperties] (
+    [Id] bigint NOT NULL IDENTITY,
+    [CreatedDate] datetime2 NOT NULL,
+    [IdentityId] nvarchar(450),
+    [IntegrationKey] nvarchar(max),
+    [IsMultiSelect] bit NOT NULL,
+    [Key] nvarchar(max),
+    [ModifiedDate] datetime2 NOT NULL,
+    [ProductId] bigint,
+    [Value] nvarchar(max),
+    CONSTRAINT [PK_DynamicProperties] PRIMARY KEY ([Id])
+); (6438bdd5)
+2017-08-14T01:16:00.0208281+05:00  [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [ProductImages] (
+    [Id] bigint NOT NULL IDENTITY,
+    [CreatedDate] datetime2 NOT NULL,
+    [DisplayName] nvarchar(max),
+    [Extensions] nvarchar(10),
+    [IdentityId] nvarchar(450),
+    [IntegrationKey] nvarchar(max),
+    [ModifiedDate] datetime2 NOT NULL,
+    [Name] nvarchar(100),
+    [ProductId] bigint NOT NULL,
+    [Size] decimal(18, 2) NOT NULL,
+    [Url] nvarchar(max),
+    CONSTRAINT [PK_ProductImages] PRIMARY KEY ([Id])
+); (6438bdd5)
+2017-08-14T01:16:00.0263332+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [Products] (
+    [Id] bigint NOT NULL IDENTITY,
+    [CreatedDate] datetime2 NOT NULL,
+    [Description] nvarchar(max),
+    [IdentityId] nvarchar(450),
+    [ImageUrl] nvarchar(max),
+    [IntegrationKey] nvarchar(max),
+    [ModifiedDate] datetime2 NOT NULL,
+    [Name] nvarchar(max),
+    [Price] decimal(18, 2) NOT NULL,
+    [ProductCategoryId] bigint NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id])
+); (6438bdd5)
+2017-08-14T01:16:00.0353418+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    [ConcurrencyStamp] nvarchar(max),
+    [Discriminator] nvarchar(max) NOT NULL,
+    [Email] nvarchar(256),
+    [EmailConfirmed] bit NOT NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset,
+    [NormalizedEmail] nvarchar(256),
+    [NormalizedUserName] nvarchar(256),
+    [PasswordHash] nvarchar(max),
+    [PhoneNumber] nvarchar(max),
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [SecurityStamp] nvarchar(max),
+    [TwoFactorEnabled] bit NOT NULL,
+    [UserName] nvarchar(256),
+    [FirstName] nvarchar(max),
+    [LastName] nvarchar(max),
+    [StorageId] bigint,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+); (6438bdd5)
+2017-08-14T01:16:00.0413573+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [Orders] (
+    [Id] bigint NOT NULL IDENTITY,
+    [AcceptedDate] datetime2,
+    [CreatedDate] datetime2 NOT NULL,
+    [IdentityId] nvarchar(450),
+    [IntegrationKey] nvarchar(max),
+    [ModifiedDate] datetime2 NOT NULL,
+    [OrderStatus] int NOT NULL,
+    [SendDate] datetime2,
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Orders_AspNetUsers_IdentityId] FOREIGN KEY ([IdentityId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION
+); (6438bdd5)
+2017-08-14T01:16:00.0458517+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [ProductCategories] (
+    [Id] bigint NOT NULL IDENTITY,
+    [CreatedDate] datetime2 NOT NULL,
+    [IdentityId] nvarchar(450),
+    [IntegrationKey] nvarchar(max),
+    [ModifiedDate] datetime2 NOT NULL,
+    [Name] nvarchar(max),
+    CONSTRAINT [PK_ProductCategories] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_ProductCategories_AspNetUsers_IdentityId] FOREIGN KEY ([IdentityId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION
+); (6438bdd5)
+2017-08-14T01:16:00.0518579+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [Storages] (
+    [Id] bigint NOT NULL IDENTITY,
+    [CreatedDate] datetime2 NOT NULL,
+    [Description] nvarchar(max),
+    [IdentityId] nvarchar(450),
+    [IntegrationKey] nvarchar(max),
+    [ModifiedDate] datetime2 NOT NULL,
+    [Name] nvarchar(max),
+    CONSTRAINT [PK_Storages] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Storages_AspNetUsers_IdentityId] FOREIGN KEY ([IdentityId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION
+); (6438bdd5)
+2017-08-14T01:16:00.0553607+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [ClaimType] nvarchar(max),
+    [ClaimValue] nvarchar(max),
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+); (6438bdd5)
+2017-08-14T01:16:00.0588654+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max),
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+); (6438bdd5)
+2017-08-14T01:16:00.0638695+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+); (6438bdd5)
+2017-08-14T01:16:00.1639652+05:00  [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_DynamicProperties_IdentityId] ON [DynamicProperties] ([IdentityId]); (6438bdd5)
+2017-08-14T01:16:00.1664677+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_DynamicProperties_ProductId] ON [DynamicProperties] ([ProductId]); (6438bdd5)
+2017-08-14T01:16:00.1694707+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_DynamicPropertyValues_DynamicPropertyId] ON [DynamicPropertyValues] ([DynamicPropertyId]); (6438bdd5)
+2017-08-14T01:16:00.1719732+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_Orders_IdentityId] ON [Orders] ([IdentityId]); (6438bdd5)
+2017-08-14T01:16:00.1729804+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_OrderItems_IdentityId] ON [OrderItems] ([IdentityId]); (6438bdd5)
+2017-08-14T01:16:00.1744811+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_OrderItems_OrderId] ON [OrderItems] ([OrderId]); (6438bdd5)
+2017-08-14T01:16:00.1759771+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_OrderItems_ProductId] ON [OrderItems] ([ProductId]); (6438bdd5)
+2017-08-14T01:16:00.1779792+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_Products_IdentityId] ON [Products] ([IdentityId]); (6438bdd5)
+2017-08-14T01:16:00.1789896+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_Products_ProductCategoryId] ON [Products] ([ProductCategoryId]); (6438bdd5)
+2017-08-14T01:16:00.1814832+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_ProductCategories_IdentityId] ON [ProductCategories] ([IdentityId]); (6438bdd5)
+2017-08-14T01:16:00.2040037+05:00  [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_ProductFeatures_DynamicPropertyId] ON [ProductFeatures] ([DynamicPropertyId]); (6438bdd5)
+2017-08-14T01:16:00.2060057+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_ProductFeatures_IdentityId] ON [ProductFeatures] ([IdentityId]); (6438bdd5)
+2017-08-14T01:16:00.2080078+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_ProductFeatures_ProductId] ON [ProductFeatures] ([ProductId]); (6438bdd5)
+2017-08-14T01:16:00.2100096+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_ProductImages_IdentityId] ON [ProductImages] ([IdentityId]); (6438bdd5)
+2017-08-14T01:16:00.2365352+05:00  [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_ProductImages_ProductId] ON [ProductImages] ([ProductId]); (6438bdd5)
+2017-08-14T01:16:00.2385379+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_Storages_IdentityId] ON [Storages] ([IdentityId]); (6438bdd5)
+2017-08-14T01:16:00.2925890+05:00  [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL; (6438bdd5)
+2017-08-14T01:16:00.2945907+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]); (6438bdd5)
+2017-08-14T01:16:00.2955916+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]); (6438bdd5)
+2017-08-14T01:16:00.2975937+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL; (6438bdd5)
+2017-08-14T01:16:00.2991152+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_AspNetUsers_StorageId] ON [AspNetUsers] ([StorageId]); (6438bdd5)
+2017-08-14T01:16:00.3005963+05:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]); (6438bdd5)
+2017-08-14T01:16:00.3031009+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]); (6438bdd5)
+2017-08-14T01:16:00.3056014+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]); (6438bdd5)
+2017-08-14T01:16:00.3356307+05:00  [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [DynamicPropertyValues] ADD CONSTRAINT [FK_DynamicPropertyValues_DynamicProperties_DynamicPropertyId] FOREIGN KEY ([DynamicPropertyId]) REFERENCES [DynamicProperties] ([Id]) ON DELETE CASCADE; (6438bdd5)
+2017-08-14T01:16:00.3386330+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [ProductFeatures] ADD CONSTRAINT [FK_ProductFeatures_AspNetUsers_IdentityId] FOREIGN KEY ([IdentityId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION; (6438bdd5)
+2017-08-14T01:16:00.3411369+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [ProductFeatures] ADD CONSTRAINT [FK_ProductFeatures_Products_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [Products] ([Id]) ON DELETE CASCADE; (6438bdd5)
+2017-08-14T01:16:00.3441385+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [ProductFeatures] ADD CONSTRAINT [FK_ProductFeatures_DynamicProperties_DynamicPropertyId] FOREIGN KEY ([DynamicPropertyId]) REFERENCES [DynamicProperties] ([Id]) ON DELETE CASCADE; (6438bdd5)
+2017-08-14T01:16:00.3466404+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [OrderItems] ADD CONSTRAINT [FK_OrderItems_AspNetUsers_IdentityId] FOREIGN KEY ([IdentityId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION; (6438bdd5)
+2017-08-14T01:16:00.3496437+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [OrderItems] ADD CONSTRAINT [FK_OrderItems_Products_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [Products] ([Id]) ON DELETE CASCADE; (6438bdd5)
+2017-08-14T01:16:00.3536475+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [OrderItems] ADD CONSTRAINT [FK_OrderItems_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE CASCADE; (6438bdd5)
+2017-08-14T01:16:00.3691714+05:00  [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [DynamicProperties] ADD CONSTRAINT [FK_DynamicProperties_AspNetUsers_IdentityId] FOREIGN KEY ([IdentityId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION; (6438bdd5)
+2017-08-14T01:16:00.3721651+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [DynamicProperties] ADD CONSTRAINT [FK_DynamicProperties_Products_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [Products] ([Id]) ON DELETE NO ACTION; (6438bdd5)
+2017-08-14T01:16:00.3746693+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [ProductImages] ADD CONSTRAINT [FK_ProductImages_AspNetUsers_IdentityId] FOREIGN KEY ([IdentityId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION; (6438bdd5)
+2017-08-14T01:16:00.3776703+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [ProductImages] ADD CONSTRAINT [FK_ProductImages_Products_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [Products] ([Id]) ON DELETE CASCADE; (6438bdd5)
+2017-08-14T01:16:00.3801728+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [Products] ADD CONSTRAINT [FK_Products_AspNetUsers_IdentityId] FOREIGN KEY ([IdentityId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION; (6438bdd5)
+2017-08-14T01:16:00.4102018+05:00  [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [Products] ADD CONSTRAINT [FK_Products_ProductCategories_ProductCategoryId] FOREIGN KEY ([ProductCategoryId]) REFERENCES [ProductCategories] ([Id]) ON DELETE CASCADE; (6438bdd5)
+2017-08-14T01:16:00.4127043+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [AspNetUsers] ADD CONSTRAINT [FK_AspNetUsers_Storages_StorageId] FOREIGN KEY ([StorageId]) REFERENCES [Storages] ([Id]) ON DELETE SET NULL; (6438bdd5)
+2017-08-14T01:16:00.6334293+05:00  [INF] Executed DbCommand (219ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+INSERT INTO [_Migrations] ([MigrationId], [ProductVersion])
+VALUES (N'20170813201507_Init', N'1.1.2'); (6438bdd5)
+2017-08-14T01:16:01.3481153+05:00  [INF] Executed DbCommand (253ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName], [p].[StorageId]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-08-14T01:16:01.4211853+05:00  [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:01.5382980+05:00  [INF] Executed DbCommand (94ms) [Parameters=[@__role_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = @__role_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:01.8159215+05:00  [INF] Executed DbCommand (120ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); (6438bdd5)
+2017-08-14T01:16:01.9790908+05:00  [INF] Executed DbCommand (148ms) [Parameters=[@__role_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = @__role_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:01.9820941+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); (6438bdd5)
+2017-08-14T01:16:01.9851079+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__role_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = @__role_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:01.9870988+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); (6438bdd5)
+2017-08-14T01:16:01.9901018+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__role_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = @__role_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:01.9921045+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); (6438bdd5)
+2017-08-14T01:16:01.9941059+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__role_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = @__role_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:01.9961080+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); (6438bdd5)
+2017-08-14T01:16:01.9981094+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__role_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = @__role_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:02.0001112+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); (6438bdd5)
+2017-08-14T01:16:02.0034821+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__role_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = @__role_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:02.0055017+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); (6438bdd5)
+2017-08-14T01:16:02.0079861+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__role_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [r]
+        WHERE [r].[Name] = @__role_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:02.0099879+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3); (6438bdd5)
+2017-08-14T01:16:02.1873468+05:00  [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-08-14T01:16:02.1923545+05:00  [INF] Executed DbCommand (80ms) [Parameters=[@p0='?' (Size = 450), @p1='?', @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?', @p7='?', @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?', @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 256), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Discriminator], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [FirstName], [LastName], [StorageId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18); (6438bdd5)
+2017-08-14T01:16:02.3545067+05:00  [INF] Executed DbCommand (86ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName], [u].[StorageId]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedEmail] = @__normalizedEmail_0) (6438bdd5)
+2017-08-14T01:16:02.4215712+05:00  [INF] Executed DbCommand (22ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4475966+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-08-14T01:16:02.4546031+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4716194+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4756235+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-08-14T01:16:02.4776269+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4806283+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4836309+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-08-14T01:16:02.4870643+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4890660+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4920687+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-08-14T01:16:02.4940717+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4965729+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.4995759+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-08-14T01:16:02.5030793+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.5055822+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.5085851+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-08-14T01:16:02.5105866+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.5130888+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.5160921+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-08-14T01:16:02.5195955+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.5220977+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.5251006+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450), @__get_Item_1='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1) (6438bdd5)
+2017-08-14T01:16:02.5276028+05:00  [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0 (6438bdd5)
+2017-08-14T01:16:02.5586333+05:00  [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName], [u].[StorageId]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedUserName] = @__normalizedUserName_0) (6438bdd5)
+2017-08-14T01:16:02.7067062+05:00  [INF] Executed DbCommand (107ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (Size = 450), @p4='?' (Size = 450), @p5='?' (Size = 450), @p6='?' (Size = 450), @p7='?' (Size = 450), @p8='?' (Size = 450), @p9='?' (Size = 450), @p10='?' (Size = 450), @p11='?' (Size = 450), @p12='?' (Size = 450), @p13='?' (Size = 450), @p14='?' (Size = 450), @p15='?' (Size = 450), @p33='?' (Size = 450), @p16='?', @p17='?' (Size = 4000), @p34='?' (Size = 4000), @p18='?' (Size = 256), @p19='?', @p20='?', @p21='?', @p22='?' (Size = 256), @p23='?' (Size = 256), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?', @p27='?' (Size = 4000), @p28='?', @p29='?' (Size = 256), @p30='?' (Size = 4000), @p31='?' (Size = 4000), @p32='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1),
+(@p2, @p3),
+(@p4, @p5),
+(@p6, @p7),
+(@p8, @p9),
+(@p10, @p11),
+(@p12, @p13),
+(@p14, @p15);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p16, [ConcurrencyStamp] = @p17, [Email] = @p18, [EmailConfirmed] = @p19, [LockoutEnabled] = @p20, [LockoutEnd] = @p21, [NormalizedEmail] = @p22, [NormalizedUserName] = @p23, [PasswordHash] = @p24, [PhoneNumber] = @p25, [PhoneNumberConfirmed] = @p26, [SecurityStamp] = @p27, [TwoFactorEnabled] = @p28, [UserName] = @p29, [FirstName] = @p30, [LastName] = @p31, [StorageId] = @p32
+WHERE [Id] = @p33 AND [ConcurrencyStamp] = @p34;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-14T01:16:02.7162152+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductCategories] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-14T01:16:02.7192185+05:00  [INF] Working SeedData (e03f4adc)
+2017-08-14T01:30:14.0960294+05:00 0HL72H8D53EDC [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login   (e5be5b71)
+2017-08-14T01:30:14.6205018+05:00 0HL72H8D53EDC [INF] Request finished in 621.4285ms 204  (15c52c40)
+2017-08-14T01:30:14.8718759+05:00 0HL72H8D53EDD [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json,application/json 40 (e5be5b71)
+2017-08-14T01:30:14.9769896+05:00 0HL72H8D53EDD [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2017-08-14T01:30:16.8646976+05:00 0HL72H8D53EDD [INF] Executing action method "IdealSysApp.Controllers.AuthController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.CredentialsViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-14T01:30:17.9257882+05:00 0HL72H8D53EDD [INF] Executed DbCommand (404ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName], [u].[StorageId]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedUserName] = @__normalizedUserName_0) (6438bdd5)
+2017-08-14T01:30:18.5270908+05:00 0HL72H8D53EDD [INF] Executed DbCommand (212ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0 (6438bdd5)
+2017-08-14T01:30:18.8126586+05:00 0HL72H8D53EDD [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-14T01:30:18.8516961+05:00 0HL72H8D53EDD [INF] Executed action "IdealSysApp.Controllers.AuthController.Post (IdealSysApp)" in 2627.1411ms (afa2e885)
+2017-08-14T01:30:18.8597055+05:00 0HL72H8D53EDD [INF] Request finished in 3987.883ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-08-14T01:31:31.9681805+05:00 0HL72H8D53EDE [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Role   (e5be5b71)
+2017-08-14T01:31:31.9701856+05:00 0HL72H8D53EDE [INF] Request finished in 1.4914ms 204  (15c52c40)
+2017-08-14T01:31:31.9711835+05:00 0HL72H8D53EDF [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Accounts/GetUserList   (e5be5b71)
+2017-08-14T01:31:31.9721841+05:00 0HL72H8D53EDF [INF] Request finished in 0.7547ms 204  (15c52c40)
+2017-08-14T01:31:32.0448036+05:00 0HL72H8D53EDG [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-08-14T01:31:32.0463254+05:00 0HL72H8D53EDH [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Role application/json  (e5be5b71)
+2017-08-14T01:31:32.1687110+05:00 0HL72H8D53EDH [INF] Successfully validated the token. (60169667)
+2017-08-14T01:31:32.1742165+05:00 0HL72H8D53EDH [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-14T01:31:32.1847270+05:00 0HL72H8D53EDH [INF] Executing action method "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-14T01:31:32.1987555+05:00 0HL72H8D53EDG [INF] Successfully validated the token. (60169667)
+2017-08-14T01:31:32.1997554+05:00 0HL72H8D53EDG [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-14T01:31:32.2212762+05:00 0HL72H8D53EDG [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-14T01:31:32.2277823+05:00 0HL72H8D53EDH [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [s].[Name], [s].[Id]
+FROM [AspNetRoles] AS [s] (6438bdd5)
+2017-08-14T01:31:32.2372913+05:00 0HL72H8D53EDG [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-14T01:31:32.2382066+05:00 0HL72H8D53EDH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-14T01:31:32.2532310+05:00 0HL72H8D53EDH [INF] Executed action "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" in 70.9612ms (afa2e885)
+2017-08-14T01:31:32.2537209+05:00 0HL72H8D53EDH [INF] Request finished in 209.3166ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-14T01:31:32.3833964+05:00 0HL72H8D53EDG [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [r].[Id], [r].[AccessFailedCount], [r].[ConcurrencyStamp], [r].[Discriminator], [r].[Email], [r].[EmailConfirmed], [r].[LockoutEnabled], [r].[LockoutEnd], [r].[NormalizedEmail], [r].[NormalizedUserName], [r].[PasswordHash], [r].[PhoneNumber], [r].[PhoneNumberConfirmed], [r].[SecurityStamp], [r].[TwoFactorEnabled], [r].[UserName], [r].[FirstName], [r].[LastName], [r].[StorageId]
+FROM [AspNetUsers] AS [r]
+WHERE [r].[Discriminator] = N'AppUser'
+ORDER BY [r].[Id] (6438bdd5)
+2017-08-14T01:31:32.4331397+05:00 0HL72H8D53EDG [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [AspNetUsers] AS [r]
+    WHERE ([r].[Discriminator] = N'AppUser') AND ([a].[UserId] = [r].[Id]))
+ORDER BY [a].[UserId] (6438bdd5)
+2017-08-14T01:31:32.4486553+05:00 0HL72H8D53EDG [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-14T01:31:32.4551617+05:00 0HL72H8D53EDG [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 252.763ms (afa2e885)
+2017-08-14T01:31:32.4556615+05:00 0HL72H8D53EDG [INF] Request finished in 411.2044ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-14T01:58:40.4289813+05:00 0HL72H8D53EDI [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Role   (e5be5b71)
+2017-08-14T01:58:40.4733030+05:00 0HL72H8D53EDI [INF] Request finished in 93.9543ms 204  (15c52c40)
+2017-08-14T01:58:40.5158443+05:00 0HL72H8D53EDJ [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Role application/json  (e5be5b71)
+2017-08-14T01:58:40.5358629+05:00 0HL72H8D53EDJ [INF] Successfully validated the token. (60169667)
+2017-08-14T01:58:40.5378650+05:00 0HL72H8D53EDJ [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-14T01:58:40.5578842+05:00 0HL72H8D53EDJ [INF] Executing action method "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-14T01:58:40.9111972+05:00 0HL72H8D53EDJ [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [s].[Name], [s].[Id]
+FROM [AspNetRoles] AS [s] (6438bdd5)
+2017-08-14T01:58:40.9217094+05:00 0HL72H8D53EDJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-14T01:58:40.9302159+05:00 0HL72H8D53EDJ [INF] Executed action "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" in 385.5961ms (afa2e885)
+2017-08-14T01:58:40.9307160+05:00 0HL72H8D53EDJ [INF] Request finished in 416.1979ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-14T02:02:19.2421398+05:00 0HL72H8D53EDK [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/Role   (e5be5b71)
+2017-08-14T02:02:19.2451262+05:00 0HL72H8D53EDK [INF] Request finished in 7.3443ms 204  (15c52c40)
+2017-08-14T02:02:19.4002756+05:00 0HL72H8D53EDL [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/Role application/json  (e5be5b71)
+2017-08-14T02:02:19.4083579+05:00 0HL72H8D53EDL [INF] Successfully validated the token. (60169667)
+2017-08-14T02:02:19.4098576+05:00 0HL72H8D53EDL [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-14T02:02:19.4173661+05:00 0HL72H8D53EDL [INF] Executing action method "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-14T02:02:19.4423888+05:00 0HL72H8D53EDL [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [s].[Name], [s].[Id]
+FROM [AspNetRoles] AS [s] (6438bdd5)
+2017-08-14T02:02:19.4433896+05:00 0HL72H8D53EDL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-14T02:02:19.4448923+05:00 0HL72H8D53EDL [INF] Executed action "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" in 30.9832ms (afa2e885)
+2017-08-14T02:02:19.4463929+05:00 0HL72H8D53EDL [INF] Request finished in 47.0313ms 200 application/json; charset=utf-8 (15c52c40)

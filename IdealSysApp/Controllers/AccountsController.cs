@@ -31,12 +31,12 @@ namespace IdealSysApp.Controllers
       _appDbContext = appDbContext;
     }
     // GET api/accounts/GetUserList
-  
+
     [HttpGet("GetUserList")]
     public object GetUserList()
     {
 
-      var result= _mapper.Map<IList<UserViewModel>>(_userManager.Users.Include(r=>r.Roles));
+      var result = _mapper.Map<IList<UserViewModel>>(_userManager.Users.Include(r => r.Roles));
       return result;
 
 
@@ -52,7 +52,6 @@ namespace IdealSysApp.Controllers
       }
 
       var userIdentity = _mapper.Map<AppUser>(model);
-
       var result = await _userManager.CreateAsync(userIdentity, model.Password);
 
       if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
@@ -75,7 +74,7 @@ namespace IdealSysApp.Controllers
         newUser.PhoneNumberConfirmed = true;
         var result = await _userManager.CreateAsync(newUser, AppSettings.DefaultPassword);
         if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
-        var result2=await _userManager.AddToRolesAsync(newUser, model.SelectedRoles.Select(s=>s.text));
+        var result2 = await _userManager.AddToRolesAsync(newUser, model.SelectedRoles.Select(s => s.text));
         if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
         return new OkObjectResult("Account created");
       }
@@ -84,7 +83,7 @@ namespace IdealSysApp.Controllers
 
         return BadRequest(ex.Message);
       }
-     
+
     }
     [HttpPut("UpdateUser")]
     public async Task<IActionResult> UpdateUser([FromBody]UserViewModel model)
@@ -105,7 +104,7 @@ namespace IdealSysApp.Controllers
 
         return BadRequest(ex.Message);
       }
-     
+
     }
   }
 }

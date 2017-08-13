@@ -7,25 +7,33 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Security.Principal;
+using AutoMapper;
+using IdealSysApp.ViewModels;
 
 namespace IdealSysApp.Data
 {
-  public class Repository<T> : IRepository<T> where T : BaseEntity
+  public class Repository<T,ViewModel> : IRepository<T,ViewModel> where T : BaseEntity
+    where ViewModel:IViewModel
    
   {
     private readonly ApplicationDbContext context;
     private DbSet<T> entities;
     string errorMessage = string.Empty;
     private readonly UserManager<AppUser> _userManager;
+    private readonly IMapper _mapper;
 
-    public Repository(ApplicationDbContext context, UserManager<AppUser> userManager)
+    public Repository(ApplicationDbContext context, UserManager<AppUser> userManager,IMapper mapper)
     {
      
       this.context = context;
       this.entities = context.Set<T>();
       _userManager = userManager;
-    
+      _mapper = mapper;
       
+    }
+    public  T ViewModelToEntity(ViewModel viewModel) {
+
+      return _mapper.Map<T>(viewModel);
     }
     public IEnumerable<T> GetAll()
     {
@@ -53,6 +61,28 @@ namespace IdealSysApp.Data
        
       }
  
+      entities.Add(entity);
+      context.SaveChanges();
+    }
+    public void InsertViewModel(ViewModel viewModel)
+    {
+      var entity = this.ViewModelToEntity(viewModel);
+      if (entity == null)
+      {
+        throw new ArgumentNullException("entity");
+      }
+      entity.CreatedDate = DateTime.Now;
+      entity.ModifiedDate = DateTime.Now;
+      try
+      {
+        entity.IdentityId = _userManager.GetUserId(ClaimsPrincipal.Current);
+      }
+      catch (Exception)
+      {
+
+
+      }
+
       entities.Add(entity);
       context.SaveChanges();
     }

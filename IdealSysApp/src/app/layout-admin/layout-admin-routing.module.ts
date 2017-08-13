@@ -2,14 +2,13 @@
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutAdminComponent } from './layout-admin.component';
-import { ProductCategoryComponent } from './product-category/product-category.component';
 const routes: Routes = [
     {
         path: '', component: LayoutAdminComponent,
         children: [
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'appusers', loadChildren: './appuser/appuser.module#AppuserModule' },
-            { path: 'productCategory', component: ProductCategoryComponent },
+            { path: 'productCategory', loadChildren: './product-category/product-category.module#ProductCategoryModule' },
             //{ path: 'forms', loadChildren: './form/form.module#FormModule' },
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
             { path: 'grid', loadChildren: './grid/grid.module#GridsModule' },

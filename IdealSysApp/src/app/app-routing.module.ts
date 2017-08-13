@@ -2,11 +2,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './shared/auth.guard';
 
-
 const routes: Routes = [
     {
         path: '',
-        loadChildren: './layout-frontend/layout-frontend.module#LayoutFrontendModule',
+        redirectTo: 'admin',
+        pathMatch:'full'
+        //loadChildren: './layout-frontend/layout-frontend.module#LayoutFrontendModule',
         // canActivate: [AuthGuard]
     },
     {
@@ -21,6 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+   // declarations: [SpinnerComponent],
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })

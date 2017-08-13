@@ -24,6 +24,7 @@ using Microsoft.AspNetCore.Http;
 using IdealSysApp.Extensions;
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Routing;
+using IdealSysApp.ViewModels;
 
 namespace IdealSysApp
 {
@@ -86,7 +87,7 @@ namespace IdealSysApp
           })
           .AddEntityFrameworkStores<ApplicationDbContext>()
           .AddDefaultTokenProviders();
-      services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+      services.AddScoped(typeof(IRepository<BaseEntity,IViewModel>), typeof(Repository<BaseEntity,IViewModel>));
       services.AddMvc().AddJsonOptions(o =>
       {
         o.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;

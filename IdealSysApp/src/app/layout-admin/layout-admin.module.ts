@@ -6,11 +6,6 @@ import { HeaderComponent } from '../shared/components/header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminSidebarComponent } from '../shared/components/admin-sidebar/admin-sidebar.component';
-import { ProductCategoryComponent } from './product-category/product-category.component';
-
-
-//import { UserService } from '../shared/services/user.service';
-
 @NgModule({
   imports: [
       CommonModule,
@@ -19,7 +14,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
       NgbDropdownModule.forRoot(),
       
     ],
-  declarations: [LayoutAdminComponent, HeaderComponent, AdminSidebarComponent, ProductCategoryComponent],
+  declarations: [LayoutAdminComponent, HeaderComponent, AdminSidebarComponent],
   providers: []
 })
 export class LayoutAdminModule { }

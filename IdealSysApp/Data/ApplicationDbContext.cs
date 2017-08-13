@@ -26,6 +26,10 @@ namespace IdealSysApp.Data
     public DbSet<Storage> Storages { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<ProductFeature> ProductFeatures { get; set; }
+    public DbSet<DynamicProperty> DynamicProperties { get; set; }
+    public DbSet<DynamicPropertyValue> DynamicPropertyValues { get; set; }
+    public DbSet<ProductImage> ProductImages { get; set; }
 
   }
 }

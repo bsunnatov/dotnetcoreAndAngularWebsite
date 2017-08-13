@@ -26,7 +26,7 @@ namespace IdealSysApp.ViewModels.Mappings
         dist.RoleIds = src.Roles.Select(s => s.RoleId).ToArray();
       }).ForMember(vm => vm.FullName, map => map.MapFrom(au => au.FirstName + " " + au.LastName));
       //Integration with 1c ViewModel
-      CreateMap<GoodViewModel, Product>().ForMember(p=>p.goodID,m=>m.MapFrom(vm=>vm.Id));
+     // CreateMap<GoodViewModel, Product>().ForMember(p=>p.goodID,m=>m.MapFrom(vm=>vm.Id));
     }
   }
 }

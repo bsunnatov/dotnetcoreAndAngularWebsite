@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AuthenticateXHRBackend } from './authenticate-xhr.backend';
+
 //import { GridModule } from '@progress/kendo-angular-grid';
 export function HttpLoaderFactory(http: Http) {
     //     for development
@@ -23,8 +24,7 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
     declarations: [
         AppComponent,
-        
-       
+     
     ],
     imports: [
         BrowserModule,

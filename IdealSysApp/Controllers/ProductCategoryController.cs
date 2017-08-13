@@ -15,9 +15,9 @@ namespace IdealSysApp.Controllers
   [Route("api/ProductCategory")]
   public class ProductCategoryController : Controller
   {
-    private readonly IRepository<ProductCategory> _service;
+    private readonly IRepository<ProductCategory,ProductCategoryViewModel> _service;
     private readonly IMapper _mapper;
-    public ProductCategoryController(IRepository<ProductCategory> service,IMapper mapper)
+    public ProductCategoryController(IRepository<ProductCategory, ProductCategoryViewModel> service,IMapper mapper)
     {
       _service = service;
       _mapper = mapper;
@@ -38,8 +38,9 @@ namespace IdealSysApp.Controllers
 
     // POST: api/ProductCategory
     [HttpPost]
-    public void Post([FromBody]string value)
+    public void Post([FromBody]ProductCategoryViewModel model)
     {
+      _service.InsertViewModel(model);
     }
 
     // PUT: api/ProductCategory/5

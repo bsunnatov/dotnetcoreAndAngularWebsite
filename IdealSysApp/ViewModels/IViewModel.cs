@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace IdealSysApp.ViewModels
 {
-  public class ProductCategoryViewModel:IViewModel
-  {
-    public long Id { get; set; }
-    public string Name { get; set; }
-  }
+    public interface IViewModel
+    {
+    long Id { get; set; }
+    }
 }
