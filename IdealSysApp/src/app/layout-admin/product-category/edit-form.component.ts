@@ -1,6 +1,6 @@
 ﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Validators, FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
-import { AppUser } from '../../shared/models/appuser';
+import { ProductCategory } from './productCategory';
 import { GlobalValidator } from '../../shared/utils/validators';
 import { RoleService } from '../../shared/services/role.service';
 @Component({
@@ -10,62 +10,29 @@ import { RoleService } from '../../shared/services/role.service';
 })
 export class EditFormComponent {
     // The order retrieved from the server
-
-    private roleIds: any[]=[];
-    private roles: any[] = [];
   
-    constructor(private roleService: RoleService, private fb: FormBuilder) {
-        this.roleService.list().subscribe((d) => {
-            this.roles = d;
-        });
-
+    constructor() {
     }
     editForm = new FormGroup({
-        'FirstName': new FormControl("", Validators.required),
-        'LastName': new FormControl("", Validators.required),
-        'Email': new FormControl("", [Validators.required, GlobalValidator.mailFormat]),
-        'IsBlocked': new FormControl(false),
-        'Id': new FormControl(),
-        'OldSelectedRoles': this.fb.array([]),
-        'SelectedRoles': this.fb.array([])
+        'Name': new FormControl("", Validators.required),
+        'Id': new FormControl(0),
     });
-    setSelectedRoles() {
-        (<FormArray>this.editForm.controls['OldSelectedRoles']).controls=[];
-        this.roles.forEach((m, i) => {
-            var hasRole = hasRole = this.roleIds.find(x => x == m.id);
-            (<FormArray>this.editForm.controls['OldSelectedRoles']).push(new FormControl(hasRole ? true : false));
-        });
 
-        
-    }
-    getSelectedRoles() {
-        var r = [];
-        var selRoles = (<FormArray>this.editForm.controls['OldSelectedRoles']).controls;
-        selRoles.map((s, i) => { if (s.value) { r.push(this.roles[i]) } });
-        return r;
-    }
+
     private active: boolean = false;
     @Input() public isNew: boolean = false;
 
-    @Input() public set model(user: AppUser) {
-        this.editForm.reset(user);
-        if (user) {
-
-            this.roleIds = user.RoleIds ? user.RoleIds:[];
-
-            this.setSelectedRoles();
-        }
-       
-        this.active = user !== undefined;
+    @Input() public set model(model: ProductCategory) {
+        this.editForm.reset(model);
+        this.active = model !== undefined;
 
     }
 
     @Output() cancel: EventEmitter<any> = new EventEmitter();
-    @Output() save: EventEmitter<AppUser> = new EventEmitter();
+    @Output() save: EventEmitter<ProductCategory> = new EventEmitter();
     public onSave(e): void {
         e.preventDefault();
-        var u = <AppUser>this.editForm.value;
-        u.SelectedRoles = this.getSelectedRoles();
+        var u = <ProductCategory>this.editForm.value;
         this.save.emit(u);
         this.active = false;
     }

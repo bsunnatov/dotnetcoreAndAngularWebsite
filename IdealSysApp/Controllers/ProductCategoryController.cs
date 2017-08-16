@@ -38,9 +38,19 @@ namespace IdealSysApp.Controllers
 
     // POST: api/ProductCategory
     [HttpPost]
-    public void Post([FromBody]ProductCategoryViewModel model)
+    public IActionResult Post([FromBody]ProductCategoryViewModel model)
     {
-      _service.InsertViewModel(model);
+      try
+      {
+        _service.InsertViewModel(model);
+        return Ok();
+      }
+      catch (Exception ex)
+      {
+
+        return BadRequest(ex.Message);
+      }
+     
     }
 
     // PUT: api/ProductCategory/5
