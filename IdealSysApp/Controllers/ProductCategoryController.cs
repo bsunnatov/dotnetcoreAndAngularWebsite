@@ -8,25 +8,28 @@ using IdealSysApp.Data;
 using IdealSysApp.Models.Entities;
 using IdealSysApp.ViewModels;
 using AutoMapper;
-
+using IdealSysApp.Models;
+using IdealSysApp.Extensions;
 namespace IdealSysApp.Controllers
 {
   [Produces("application/json")]
   [Route("api/ProductCategory")]
   public class ProductCategoryController : Controller
   {
-    private readonly IRepository<ProductCategory,ProductCategoryViewModel> _service;
+    private readonly IRepository<ProductCategory> _service;
     private readonly IMapper _mapper;
-    public ProductCategoryController(IRepository<ProductCategory, ProductCategoryViewModel> service,IMapper mapper)
+    public ProductCategoryController(IRepository<ProductCategory> service,IMapper mapper)
     {
       _service = service;
       _mapper = mapper;
     }
     // GET: api/ProductCategory
     [HttpGet]
-    public IEnumerable<ProductCategoryViewModel> Get()
+    public object Get(DataSourceRequest filter)
     {
-      return _mapper.Map<IEnumerable<ProductCategoryViewModel>>(_service.GetAll());
+      var result = _service.AsQueryable().OrderBy(p=>p.Id).ToDataSourceResult(filter.Take, filter.Skip, filter.Sort, filter.Filter);
+      var vmResult= _mapper.Map<IEnumerable<ProductCategoryViewModel>>(result.Data);
+      return new { Data= vmResult, Total=result.Total };
     }
 
     // GET: api/ProductCategory/5
@@ -43,7 +46,7 @@ namespace IdealSysApp.Controllers
       try
       {
         _service.InsertViewModel(model);
-        return Ok();
+        return new OkObjectResult("Success");
       }
       catch (Exception ex)
       {
@@ -55,9 +58,20 @@ namespace IdealSysApp.Controllers
 
     // PUT: api/ProductCategory/5
     [HttpPut("{id}")]
-    public void Put(long id, [FromBody]string value)
+    public IActionResult Put(long id, [FromBody]ProductCategoryViewModel value)
     {
+      try
+      {
+        var ent = _service.Get(id);
+        _service.Update(ent);
+        return new OkObjectResult("OK");
+      }
+      catch (Exception ex)
+      {
 
+        return new BadRequestObjectResult(ex.Message);
+      }
+     
     }
 
     // DELETE: api/ApiWithActions/5

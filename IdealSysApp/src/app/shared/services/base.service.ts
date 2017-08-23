@@ -3,12 +3,13 @@ export abstract class BaseService {
 
   constructor() { }
   protected handleError(error: any) {
-      console.log(error);
-      var applicationError = error.headers.get('Application-Error');
+      if (error.headers) {
+          var applicationError = error.headers.get('Application-Error');
 
-      // either applicationError in header or model error in body
-      if (applicationError) {
-          return Observable.throw(applicationError);
+          // either applicationError in header or model error in body
+          if (applicationError) {
+              return Observable.throw(applicationError);
+          }
       }
 
       var modelStateErrors: string = '';

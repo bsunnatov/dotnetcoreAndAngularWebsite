@@ -9,4 +9,8 @@ namespace IdealSysApp.ViewModels
     {
     long Id { get; set; }
     }
+  public class ViewModel : IViewModel
+  {
+    public long Id { get; set; }
+  }
 }

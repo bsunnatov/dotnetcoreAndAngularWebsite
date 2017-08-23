@@ -12,8 +12,7 @@ using IdealSysApp.ViewModels;
 
 namespace IdealSysApp.Data
 {
-  public class Repository<T,ViewModel> : IRepository<T,ViewModel> where T : BaseEntity
-    where ViewModel:IViewModel
+  public class Repository<T> : IRepository<T> where T : BaseEntity
    
   {
     private readonly ApplicationDbContext context;
@@ -31,13 +30,23 @@ namespace IdealSysApp.Data
       _mapper = mapper;
       
     }
-    public  T ViewModelToEntity(ViewModel viewModel) {
-
+    public  T ViewModelToEntity(object viewModel) {
+      var vm = (IViewModel)viewModel;
+      if (vm.Id > 0)
+      {
+        T ent = this.Get(vm.Id);
+        ent= _mapper.Map<T>(viewModel);
+        return ent;
+      }
       return _mapper.Map<T>(viewModel);
     }
     public IEnumerable<T> GetAll()
     {
       return entities.AsEnumerable();
+    }
+    public IQueryable<T> AsQueryable()
+    {
+      return entities.AsQueryable();
     }
     public T Get(long id)
     {
@@ -64,7 +73,7 @@ namespace IdealSysApp.Data
       entities.Add(entity);
       context.SaveChanges();
     }
-    public void InsertViewModel(ViewModel viewModel)
+    public void InsertViewModel(object viewModel)
     {
       var entity = this.ViewModelToEntity(viewModel);
       if (entity == null)

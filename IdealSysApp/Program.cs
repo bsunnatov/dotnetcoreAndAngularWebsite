@@ -18,6 +18,7 @@ namespace IdealSysApp
                 .UseIISIntegration()
                 .ConfigureLogging(f => f.AddConsole(LogLevel.Information))
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:5050")
                 .UseApplicationInsights()
                 .Build();
 

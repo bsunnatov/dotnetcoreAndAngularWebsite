@@ -21,11 +21,11 @@ namespace IdealSysApp.Controllers
   public class ProductController : Controller
   {
     private IHostingEnvironment _hostingEnvironment;
-    private readonly IRepository<Product,ProductViewModel> _service;
-    private readonly IRepository<ProductCategory,ProductCategoryViewModel> _prc_service;
+    private readonly IRepository<Product> _service;
+    private readonly IRepository<ProductCategory> _prc_service;
     private readonly IMapper _mapper;
     private readonly ILogger _logger;
-    public ProductController(IHostingEnvironment environment, IRepository<Product,ProductViewModel> service, IRepository<ProductCategory,ProductCategoryViewModel> prc_service, IMapper mapper,ILogger<ProductController> logger)
+    public ProductController(IHostingEnvironment environment, IRepository<Product> service, IRepository<ProductCategory> prc_service, IMapper mapper,ILogger<ProductController> logger)
     {
       _hostingEnvironment = environment;
       _service = service;

@@ -10,23 +10,24 @@ export class ProductCategoryService extends BaseService  {
         super();
         this.apiUrl = configService.getApiURI()+"/ProductCategory";
     }
-    getAll() {
-        return this.http.get(this.apiUrl).map(res => res.json()).catch(this.handleError);
+    getAll(filter?: any) {
+        return this.http.get(this.apiUrl + "?filter=" + JSON.stringify(filter)).map(res => res.json()).catch(this.handleError);
     }
     getById(id) {
         return this.http.get(this.getbyidurl(id)).map(res => res.json()).catch(this.handleError);
     }
     add(model) {
-        return this.http.post(this.apiUrl, JSON.stringify(model))
-            .map(res => res.json()).catch(this.handleError);
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post(this.apiUrl, JSON.stringify(model), { headers });
     }
     update(model) {
-        return this.http.put(this.getbyidurl(model.Id), JSON.stringify(model))
-            .map(res => res.json());
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put(this.getbyidurl(model.Id), JSON.stringify(model), { headers });
     }
     delete(id) {
-        return this.http.delete(this.getbyidurl(id))
-            .map(res => res.json()).catch(this.handleError);
+        return this.http.delete(this.getbyidurl(id));
     }
     private getbyidurl(id) {
         return this.apiUrl + "/" + id

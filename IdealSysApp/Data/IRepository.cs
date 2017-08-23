@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace IdealSysApp.Data
 {
-  public interface IRepository<T,ViewModel> where T : BaseEntity
-    where ViewModel:IViewModel
+  public interface IRepository<T> 
   {
     IEnumerable<T> GetAll();
+    IQueryable<T> AsQueryable();
     T Get(long id);
     void Insert(T entity);
-    void InsertViewModel(ViewModel entity);
+    void InsertViewModel(object entity);
     void Update(T entity);
     void Delete(T entity);
-    T ViewModelToEntity(ViewModel viewModel);
+    T ViewModelToEntity(object viewModel);
 
   }
 }

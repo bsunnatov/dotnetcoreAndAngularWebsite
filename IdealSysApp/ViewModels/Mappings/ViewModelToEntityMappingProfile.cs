@@ -18,6 +18,7 @@ namespace IdealSysApp.ViewModels.Mappings
       //ViewModel to Entity
       CreateMap<RegistrationViewModel, AppUser>().ForMember(au => au.UserName, map => map.MapFrom(vm => vm.Email));
       CreateMap<UserViewModel, AppUser>();
+      CreateMap<ProductCategoryViewModel, ProductCategory>();
       //Entity to ViewModel
       CreateMap<ProductCategory, ProductCategoryViewModel>();
       CreateMap<Product, ProductViewModel>();

@@ -13,14 +13,17 @@ import { ProductCategoryService } from '../../shared/services/product-category.s
 })
 export class ProductCategoryComponent implements OnInit {
     private isNew: boolean;
-    private gridData: any[]=[];
+    private gridData: GridDataResult;  
     public view: Observable<GridDataResult>;
     public gridState: State = {
         sort: [],
         skip: 0,
-        take: 10
+        take: 10,
+       
     };
-    constructor(private service: ProductCategoryService) { }
+    constructor(private service: ProductCategoryService) {
+        service.getAll({}).subscribe(s => this.gridData = <GridDataResult>{ data: s.Data, total:s.Total });
+    }
 
   ngOnInit() {
   }
@@ -41,13 +44,19 @@ export class ProductCategoryComponent implements OnInit {
 
   public saveHandler(model: ProductCategory) {
       if (this.isNew)
-          this.service.add(model).subscribe();
+          this.service.add(model).subscribe(s => { this.reset() });
       else
-          this.service.update(model);
+          this.service.update(model).subscribe(s => { this.reset() });
       this.editDataItem = undefined;
+     
   }
-
+  private  reset(){
+      this.service.getAll({}).subscribe(s => this.gridData = <GridDataResult>{ data: s.Data, total: s.Total });
+}
   public removeHandler({dataItem}) {
       this.service.delete(dataItem.Id)
+  }
+  public onStateChange(e) {
+      this.service.getAll(e).subscribe(s => this.gridData = <GridDataResult>{ data: s.Data, total: s.Total });
   }
 }
