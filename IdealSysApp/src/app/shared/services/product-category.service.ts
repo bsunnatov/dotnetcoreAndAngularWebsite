@@ -2,6 +2,8 @@
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { BaseService } from "./base.service";
 import { ConfigService } from '../utils/config.service';
+import { GridDataResult } from '@progress/kendo-angular-grid';
+import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ProductCategoryService extends BaseService  {
 
@@ -10,8 +12,13 @@ export class ProductCategoryService extends BaseService  {
         super();
         this.apiUrl = configService.getApiURI()+"/ProductCategory";
     }
-    getAll(filter?: any) {
-        return this.http.get(this.apiUrl + "?filter=" + JSON.stringify(filter)).map(res => res.json()).catch(this.handleError);
+    getAll(filter?: any): Observable<GridDataResult> {
+        return this.http.get(this.apiUrl + "?filter=" + JSON.stringify(filter)).map(res => res.json())
+            .map(response => (<GridDataResult>{
+                data: response.Data,
+                total: response.Total
+            }))
+            .catch(this.handleError);
     }
     getById(id) {
         return this.http.get(this.getbyidurl(id)).map(res => res.json()).catch(this.handleError);

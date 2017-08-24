@@ -1,10 +1,11 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { GridDataResult } from '@progress/kendo-angular-grid';
+import { GridDataResult,RowClassArgs } from '@progress/kendo-angular-grid';
 import { State, process } from '@progress/kendo-data-query';
 import { Observable } from 'rxjs/Rx';
 import { fadeAnimate, slideToBottom } from '../../router.animations';
 import { ProductCategory } from './productCategory';
 import { ProductCategoryService } from '../../shared/services/product-category.service';
+
 @Component({
   selector: 'app-product-category',
   templateUrl: './product-category.component.html',
@@ -13,8 +14,9 @@ import { ProductCategoryService } from '../../shared/services/product-category.s
 })
 export class ProductCategoryComponent implements OnInit {
     private isNew: boolean;
-    private gridData: GridDataResult;  
-    public view: Observable<GridDataResult>;
+    private gridData: Observable<GridDataResult>;
+    private _sender: any;
+    private _rowIndex: number;
     public gridState: State = {
         sort: [],
         skip: 0,
@@ -22,7 +24,15 @@ export class ProductCategoryComponent implements OnInit {
        
     };
     constructor(private service: ProductCategoryService) {
-        service.getAll({}).subscribe(s => this.gridData = <GridDataResult>{ data: s.Data, total:s.Total });
+        this.gridData = service.getAll(this.gridState);
+       // this.gridData.subscribe();
+    }
+    rowCallback(context: RowClassArgs) {
+        const isEven = context.index % 2 == 0;
+        return {
+            even: isEven,
+            odd: !isEven
+        };
     }
 
   ngOnInit() {
@@ -33,9 +43,11 @@ export class ProductCategoryComponent implements OnInit {
       this.isNew = true;
   }
 
-  public editHandler({dataItem}) {
+  public editHandler({sender, rowIndex, dataItem, isNew}) {
       this.editDataItem = dataItem;
+      this._sender = sender;
       this.isNew = false;
+    
   }
 
   public cancelHandler() {
@@ -44,19 +56,23 @@ export class ProductCategoryComponent implements OnInit {
 
   public saveHandler(model: ProductCategory) {
       if (this.isNew)
-          this.service.add(model).subscribe(s => { this.reset() });
+          this.service.add(model).subscribe(s => { this.reset(this.gridState) });
       else
-          this.service.update(model).subscribe(s => { this.reset() });
+          this.service.update(model).subscribe(s => { this._sender.editRow(this._rowIndex, model); console.log(this._sender) });
       this.editDataItem = undefined;
      
   }
-  private  reset(){
-      this.service.getAll({}).subscribe(s => this.gridData = <GridDataResult>{ data: s.Data, total: s.Total });
+  private reset(filter) {
+      this.gridData= this.service.getAll(filter);
 }
-  public removeHandler({dataItem}) {
-      this.service.delete(dataItem.Id)
+  public removeHandler({rowIndex, dataItem}) {
+      if (confirm("Удалить?"))
+          this.service.delete(dataItem.Id).subscribe(s => {
+              this.gridData.subscribe(s => { s.data.splice(rowIndex, 1); });
+      });
   }
   public onStateChange(e) {
-      this.service.getAll(e).subscribe(s => this.gridData = <GridDataResult>{ data: s.Data, total: s.Total });
+      this.gridState = e;
+      this.reset(e);
   }
 }

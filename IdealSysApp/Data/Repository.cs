@@ -9,26 +9,44 @@ using System.Security.Claims;
 using System.Security.Principal;
 using AutoMapper;
 using IdealSysApp.ViewModels;
-
+using System.Linq.Expressions;
 namespace IdealSysApp.Data
 {
   public class Repository<T> : IRepository<T> where T : BaseEntity
    
   {
     private readonly ApplicationDbContext context;
-    private DbSet<T> entities;
+    private DbSet<T> _dbSet;
     string errorMessage = string.Empty;
     private readonly UserManager<AppUser> _userManager;
-    private readonly IMapper _mapper;
+    public object ViewModel { get; set; }
+    public  IMapper _mapper { get; }
 
     public Repository(ApplicationDbContext context, UserManager<AppUser> userManager,IMapper mapper)
     {
      
       this.context = context;
-      this.entities = context.Set<T>();
+      this._dbSet = context.Set<T>();
       _userManager = userManager;
       _mapper = mapper;
       
+    }
+    public IEnumerable<T> GetWithInclude(params Expression<Func<T, object>>[] includeProperties)
+    {
+      return Include(includeProperties).ToList();
+    }
+
+    public IEnumerable<T> GetWithInclude(Func<T, bool> predicate,
+        params Expression<Func<T, object>>[] includeProperties)
+    {
+      var query = Include(includeProperties);
+      return query.Where(predicate).ToList();
+    }
+    private IQueryable<T> Include(params Expression<Func<T, object>>[] includeProperties)
+    {
+      IQueryable<T> query = _dbSet.AsNoTracking();
+      return includeProperties
+          .Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
     }
     public  T ViewModelToEntity(object viewModel) {
       var vm = (IViewModel)viewModel;
@@ -42,15 +60,15 @@ namespace IdealSysApp.Data
     }
     public IEnumerable<T> GetAll()
     {
-      return entities.AsEnumerable();
+      return _dbSet.AsEnumerable();
     }
     public IQueryable<T> AsQueryable()
     {
-      return entities.AsQueryable();
+      return _dbSet.AsNoTracking();
     }
     public T Get(long id)
     {
-      return entities.SingleOrDefault(s => s.Id == id);
+      return _dbSet.AsNoTracking().FirstOrDefault(s => s.Id == id);
     }
     public void Insert(T entity)
     {
@@ -70,10 +88,10 @@ namespace IdealSysApp.Data
        
       }
  
-      entities.Add(entity);
+      _dbSet.Add(entity);
       context.SaveChanges();
     }
-    public void InsertViewModel(object viewModel)
+    public T InsertViewModel(object viewModel)
     {
       var entity = this.ViewModelToEntity(viewModel);
       if (entity == null)
@@ -92,17 +110,24 @@ namespace IdealSysApp.Data
 
       }
 
-      entities.Add(entity);
+      _dbSet.Add(entity);
       context.SaveChanges();
+      return entity;
     }
-    public void Update(T entity)
+    public T Update(T entity)
     {
       if (entity == null)
       {
         throw new ArgumentNullException("entity");
       }
+      if (ViewModel != null)
+      {
+        entity = _mapper.Map<T>(ViewModel);
+      }
       entity.ModifiedDate = DateTime.Now;
+      context.Entry(entity).State = EntityState.Modified;
       context.SaveChanges();
+      return entity;
     }
     public void Delete(T entity)
     {
@@ -110,7 +135,7 @@ namespace IdealSysApp.Data
       {
         throw new ArgumentNullException("entity");
       }
-      entities.Remove(entity);
+      _dbSet.Remove(entity);
       context.SaveChanges();
     }
 
