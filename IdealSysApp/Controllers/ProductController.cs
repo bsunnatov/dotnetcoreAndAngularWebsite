@@ -13,7 +13,8 @@ using System.Xml.Serialization;
 using IdealSysApp.Data;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
-
+using IdealSysApp.Models;
+using IdealSysApp.Extensions;
 namespace IdealSysApp.Controllers
 {
   [Produces("application/json")]
@@ -22,77 +23,51 @@ namespace IdealSysApp.Controllers
   {
     private IHostingEnvironment _hostingEnvironment;
     private readonly IRepository<Product> _service;
-    private readonly IRepository<ProductCategory> _prc_service;
     private readonly IMapper _mapper;
     private readonly ILogger _logger;
-    public ProductController(IHostingEnvironment environment, IRepository<Product> service, IRepository<ProductCategory> prc_service, IMapper mapper,ILogger<ProductController> logger)
+    public ProductController(IHostingEnvironment environment, IRepository<Product> service)
     {
       _hostingEnvironment = environment;
       _service = service;
-      _prc_service = prc_service;
-      _mapper = mapper;
-      _logger = logger;
     }
     [HttpGet]
-    public IEnumerable<ProductViewModel> Get()
+    public object Get([FromQuery]string filter)
     {
-      var products = _mapper.Map<IEnumerable<ProductViewModel>>(_service.GetAll());
-      return products;
+      if (!string.IsNullOrEmpty(filter))
+      {
+        DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
+        var result = _service.AsQueryable().OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
+        var vmResult = _service._mapper.Map<IEnumerable<ProductViewModel>>(result.Data);
+        return new { Data = vmResult, Total = result.Total };
+      }
+      else
+      {
+        var vmResult = _service._mapper.Map<IEnumerable<ProductViewModel>>(_service.AsQueryable());
+        return new { Data = vmResult, Total = _service.AsQueryable().Count() };
+      }
     }
-    //// GET: api/Product
-    //[HttpGet("ProductCategoryImport")]
-    //public string ProductCategoryImport()
-    //{
-    //  var path = Path.Combine(_hostingEnvironment.ContentRootPath, "AppData", "Groups.xml");
-    //  try
-    //  {
 
-    //    var _groupList = ForRemoteService.DeserializeXMLFileToObject<GroupList>(path);
-    //    int i = 0;
-    //    if (!_prc_service.GetAll().Any())
-    //      foreach (var item in _groupList.Groups)
-    //      {
-    //        _prc_service.Insert(new ProductCategory() { Name = item.Name, GroupId = item.ID });
-    //        i++;
-    //      }
-    //    return string.Format("добавлен {0} кол-во записей", i);
-    //  }
-    //  catch (Exception ex)
-    //  {
-
-    //    return string.Format("{0} path={1}", ex.Message, path);
-    //  }
-
-    //}
-    //[HttpGet("ProductImport")]
-    //public string DoXmlImport()
-    //{
-    //  var path = Path.Combine(_hostingEnvironment.ContentRootPath, "AppData", "goods.xml");
-    //  var _goodList = ForRemoteService.DeserializeXMLFileToObject<GoodList>(path);
-    //  int i = 0;
-    //  var allProducts = _service.GetAll();
-    //  var allPrC = _prc_service.GetAll();
-    //  if (allProducts.Any())
-    //    _logger.LogWarning("product quantity="+allProducts.Count().ToString());
-    //  foreach (var item in _goodList.Goods)
-    //  {
-
-    //    var productCategory = allPrC.FirstOrDefault(p => p.Name == item.Name);
-
-    //    if (productCategory != null)
-    //    {
-    //      _service.Insert(new Product() { GroupID = item.GroupID, goodID = item.Id, Name = item.Name, Price = item.Price, ProductCategoryId = productCategory.Id });
-    //      i++;
-    //    }
-    //  }
-    //  return string.Format("добавлен {0} кол-во записей", i);
-    //}
-    // GET: api/Product/5
     [HttpGet("{id}")]
     public ProductViewModel Get(long id)
     {
       var product = _service.Get(id);
       return _mapper.Map<ProductViewModel>(product);
+    }
+    // POST: api/Storage
+    [HttpPost]
+    public IActionResult Post([FromBody]ProductViewModel model)
+    {
+      try
+      {
+        var ent = _service.InsertViewModel(model);
+        return new OkObjectResult(_service._mapper.Map<ProductViewModel>(ent));
+      }
+      catch (Exception ex)
+      {
+
+        return BadRequest(ex.Message);
+      }
+
     }
   }
 }

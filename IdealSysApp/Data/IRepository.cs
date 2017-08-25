@@ -16,10 +16,10 @@ namespace IdealSysApp.Data
     IEnumerable<T> GetAll();
     IQueryable<T> AsQueryable();
     T Get(long id);
-    void Insert(T entity);
+    T Insert(T entity);
     T InsertViewModel(object entity);
     T Update(T entity);
-    void Delete(T entity);
+    int Delete(T entity);
     IMapper _mapper { get; }
     object ViewModel { get; set; }
     IEnumerable<T> GetWithInclude(params Expression<Func<T, object>>[] includeProperties);

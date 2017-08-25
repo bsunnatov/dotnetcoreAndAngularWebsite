@@ -10,21 +10,18 @@ using IdealSysApp.ViewModels;
 using AutoMapper;
 using IdealSysApp.Models;
 using IdealSysApp.Extensions;
-using Microsoft.AspNetCore.Authorization;
-
 namespace IdealSysApp.Controllers
 {
   [Produces("application/json")]
-  [Route("api/ProductCategory")]
-  [Authorize(Policy = "ApiUser")]
-  public class ProductCategoryController : Controller
+  [Route("api/Storage")]
+  public class StorageController : Controller
   {
-    private readonly IRepository<ProductCategory> _service;
-    public ProductCategoryController(IRepository<ProductCategory> service)
+    private readonly IRepository<Storage> _service;
+    public StorageController(IRepository<Storage> service)
     {
       _service = service;
     }
-    // GET: api/ProductCategory
+    // GET: api/Storage
     [HttpGet]
     public object Get([FromQuery]string filter)
     {
@@ -33,32 +30,32 @@ namespace IdealSysApp.Controllers
       {
         DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
         var result = _service.AsQueryable().OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
-        var vmResult =_service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(result.Data);
+        var vmResult =_service._mapper.Map<IEnumerable<StorageViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }
       else
       {
-        var vmResult = _service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(_service.AsQueryable());
+        var vmResult = _service._mapper.Map<IEnumerable<StorageViewModel>>(_service.AsQueryable());
         return new { Data = vmResult, Total = _service.AsQueryable().Count() };
       }
     }
 
-    // GET: api/ProductCategory/5
+    // GET: api/Storage/5
     [HttpGet("{id}")]
     public object Get(long id)
     {
       var ent = _service.Get(id);
-      return _service._mapper.Map<ProductCategoryViewModel>(ent);
+      return _service._mapper.Map<StorageViewModel>(ent);
     }
 
-    // POST: api/ProductCategory
+    // POST: api/Storage
     [HttpPost]
-    public IActionResult Post([FromBody]ProductCategoryViewModel model)
+    public IActionResult Post([FromBody]StorageViewModel model)
     {
       try
       {
         var ent = _service.InsertViewModel(model);
-        return new OkObjectResult(_service._mapper.Map<ProductCategoryViewModel>(ent));
+        return new OkObjectResult(_service._mapper.Map<StorageViewModel>(ent));
       }
       catch (Exception ex)
       {
@@ -68,16 +65,16 @@ namespace IdealSysApp.Controllers
 
     }
 
-    // PUT: api/ProductCategory/5
+    // PUT: api/Storage/5
     [HttpPut("{id}")]
-    public IActionResult Put(long id, [FromBody]ProductCategoryViewModel value)
+    public IActionResult Put(long id, [FromBody]StorageViewModel value)
     {
       try
       {
         var ent = _service.Get(id);
         _service.ViewModel = value;
         ent = _service.Update(ent);
-        return new OkObjectResult(_service._mapper.Map<ProductCategoryViewModel>(ent));
+        return new OkObjectResult(_service._mapper.Map<StorageViewModel>(ent));
       }
       catch (Exception ex)
       {

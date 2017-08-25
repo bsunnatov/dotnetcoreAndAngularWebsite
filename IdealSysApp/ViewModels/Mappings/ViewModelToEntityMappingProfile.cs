@@ -19,6 +19,7 @@ namespace IdealSysApp.ViewModels.Mappings
       CreateMap<RegistrationViewModel, AppUser>().ForMember(au => au.UserName, map => map.MapFrom(vm => vm.Email));
       CreateMap<UserViewModel, AppUser>();
       CreateMap<ProductCategoryViewModel, ProductCategory>();
+      CreateMap<StorageViewModel, Storage>();
       //Entity to ViewModel
       CreateMap<ProductCategory, ProductCategoryViewModel>();
       CreateMap<Product, ProductViewModel>();
@@ -26,8 +27,9 @@ namespace IdealSysApp.ViewModels.Mappings
       {
         dist.RoleIds = src.Roles.Select(s => s.RoleId).ToArray();
       }).ForMember(vm => vm.FullName, map => map.MapFrom(au => au.FirstName + " " + au.LastName));
+      CreateMap<Storage, StorageViewModel>();
       //Integration with 1c ViewModel
-     // CreateMap<GoodViewModel, Product>().ForMember(p=>p.goodID,m=>m.MapFrom(vm=>vm.Id));
+      // CreateMap<GoodViewModel, Product>().ForMember(p=>p.goodID,m=>m.MapFrom(vm=>vm.Id));
     }
   }
 }

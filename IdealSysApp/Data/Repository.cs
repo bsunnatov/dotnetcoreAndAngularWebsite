@@ -53,7 +53,7 @@ namespace IdealSysApp.Data
       if (vm.Id > 0)
       {
         T ent = this.Get(vm.Id);
-        ent= _mapper.Map<T>(viewModel);
+        ent= _mapper.Map<object,T>(viewModel,ent);
         return ent;
       }
       return _mapper.Map<T>(viewModel);
@@ -70,7 +70,7 @@ namespace IdealSysApp.Data
     {
       return _dbSet.AsNoTracking().FirstOrDefault(s => s.Id == id);
     }
-    public void Insert(T entity)
+    public T Insert(T entity)
     {
       if (entity == null)
       {
@@ -90,6 +90,7 @@ namespace IdealSysApp.Data
  
       _dbSet.Add(entity);
       context.SaveChanges();
+      return entity;
     }
     public T InsertViewModel(object viewModel)
     {
@@ -122,21 +123,21 @@ namespace IdealSysApp.Data
       }
       if (ViewModel != null)
       {
-        entity = _mapper.Map<T>(ViewModel);
+        entity = _mapper.Map<object,T>(ViewModel,entity);
       }
       entity.ModifiedDate = DateTime.Now;
       context.Entry(entity).State = EntityState.Modified;
       context.SaveChanges();
       return entity;
     }
-    public void Delete(T entity)
+    public int Delete(T entity)
     {
       if (entity == null)
       {
         throw new ArgumentNullException("entity");
       }
       _dbSet.Remove(entity);
-      context.SaveChanges();
+     return context.SaveChanges();
     }
 
   }

@@ -6,14 +6,13 @@ const routes: Routes = [
     {
         path: '', component: LayoutAdminComponent,
         children: [
+            { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
+            { path: 'grid', loadChildren: './grid/grid.module#GridsModule' },
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'appusers', loadChildren: './appuser/appuser.module#AppuserModule' },
             { path: 'productCategory', loadChildren: './product-category/product-category.module#ProductCategoryModule' },
-            //{ path: 'forms', loadChildren: './form/form.module#FormModule' },
-            { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
-            { path: 'grid', loadChildren: './grid/grid.module#GridsModule' },
-            //{ path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
-            //{ path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
+            { path: 'storage', loadChildren: './storage/storage.module#StorageModule' },
+            { path: 'product', loadChildren: './product/product.module#ProductModule' },
         ]
     }
 ];

@@ -39,16 +39,17 @@
               <a [routerLink]="['productCategory']" [routerLinkActive]="['router-link-active']"><span>{{ 'Категория товаров' | translate }}</span></a>
             </li>
             <li>
-              <a href="javascript:void(0)"><span>{{ 'Хранилище' | translate }}</span></a>
+              <a [routerLink]="['storage']" [routerLinkActive]="['router-link-active']"><span>{{ 'Хранилище' | translate }}</span></a>
             </li>
-            <li>
-              <a href="javascript:void(0)"><span>{{ 'Товары' | translate }}</span></a>
-            </li>
+            
           </ul>
         </div>
  
 
     </div>
+    <a routerLink="product" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-umbrella"></i>&nbsp;{{ 'Товары' | translate }}
+    </a>
   
   </div>
 </nav>

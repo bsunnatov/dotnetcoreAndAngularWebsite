@@ -3,16 +3,16 @@ import { GridDataResult,RowClassArgs } from '@progress/kendo-angular-grid';
 import { State, process } from '@progress/kendo-data-query';
 import { Observable } from 'rxjs/Rx';
 import { fadeAnimate, slideToBottom } from '../../router.animations';
-import { ProductCategory } from './model';
-import { ProductCategoryService } from '../../shared/services/product-category.service';
+import { Storage } from './model';
+import { StorageService } from '../../shared/services/storage.service';
 
 @Component({
-  selector: 'app-product-category',
-  templateUrl: './product-category.component.html',
-  styleUrls: ['./product-category.component.scss'],
+  selector: 'app-storage',
+  templateUrl: './storage.component.html',
+  styleUrls: ['./storage.component.scss'],
   animations: [fadeAnimate()]
 })
-export class ProductCategoryComponent implements OnInit {
+export class StorageComponent implements OnInit {
     private isNew: boolean;
     private gridData: Observable<GridDataResult>;
     private _sender: any;
@@ -23,7 +23,7 @@ export class ProductCategoryComponent implements OnInit {
         take: 8,
        
     };
-    constructor(private service: ProductCategoryService) {
+    constructor(private service: StorageService) {
         this.gridData = service.getAll(this.gridState);
     }
     rowCallback(context: RowClassArgs) {
@@ -36,9 +36,9 @@ export class ProductCategoryComponent implements OnInit {
 
   ngOnInit() {
   }
-  private editDataItem: ProductCategory;
+  private editDataItem: Storage;
   public addHandler() {
-      this.editDataItem = new ProductCategory();
+      this.editDataItem = new Storage();
       this.isNew = true;
   }
 
@@ -53,7 +53,7 @@ export class ProductCategoryComponent implements OnInit {
       this.editDataItem = undefined;
   }
 
-  public saveHandler(model: ProductCategory) {
+  public saveHandler(model: Storage) {
       if (this.isNew)
           this.service.add(model).subscribe(s => { this.reset(this.gridState) });
       else

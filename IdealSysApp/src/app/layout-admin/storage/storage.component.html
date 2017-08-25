@@ -14,7 +14,8 @@
     </ng-template>
     <kendo-grid-column field="Name" title="Имя" width="auto">
     </kendo-grid-column>
-   
+    <kendo-grid-column field="Description" title="Описание" width="auto">
+    </kendo-grid-column>
     <kendo-grid-command-column title="Действие" width="200">
       <ng-template kendoGridCellTemplate>
         <button kendoGridEditCommand class="k-default"><span class="fa fa-edit"></span></button>
@@ -24,8 +25,8 @@
     </kendo-grid-command-column>
 
   </kendo-grid>
-  <kendo-grid-edit-form [model]="editDataItem" [isNew]="isNew"
+  <kendo-grid-edit-form-storage [model]="editDataItem" [isNew]="isNew"
                         (save)="saveHandler($event)"
                         (cancel)="cancelHandler()">
-  </kendo-grid-edit-form>
+  </kendo-grid-edit-form-storage>
 </section>
