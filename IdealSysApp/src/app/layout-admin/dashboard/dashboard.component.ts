@@ -1,6 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { fadeAnimate, slideToBottom } from '../../router.animations';
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

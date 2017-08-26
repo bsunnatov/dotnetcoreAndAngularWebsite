@@ -39,7 +39,9 @@ export function HttpLoaderFactory(http: Http) {
                 useFactory: HttpLoaderFactory,
                 deps: [Http]
             }
-        })
+        }),
+        
+
     ],
     providers: [AuthGuard, UserService, ConfigService, RoleService, {
         provide: XHRBackend,

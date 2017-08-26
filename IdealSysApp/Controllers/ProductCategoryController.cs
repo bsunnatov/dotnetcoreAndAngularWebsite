@@ -16,7 +16,7 @@ namespace IdealSysApp.Controllers
 {
   [Produces("application/json")]
   [Route("api/ProductCategory")]
-  [Authorize(Policy = "ApiUser")]
+ // [Authorize(Policy = "ApiUser")]
   public class ProductCategoryController : Controller
   {
     private readonly IRepository<ProductCategory> _service;
