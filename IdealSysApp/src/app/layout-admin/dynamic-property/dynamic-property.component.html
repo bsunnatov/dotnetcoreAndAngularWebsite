@@ -1,31 +1,28 @@
 ﻿<product-navbar></product-navbar>
-<div>  <kendo-grid  rowClick [data]="view"
-            [height]="auto"
-            [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
-            [pageable]="true" [sortable]="true"
-            [filterable]="true"
-            (dataStateChange)="onStateChange($event)"
-           (saveRow)="saveClick()"
-            (editRow)="editClick($event)"
-            (add)="addHandler($event)">
-         <ng-template kendoGridToolbarTemplate>
-           <button kendoGridAddCommand>Add new</button>
-           <button *ngIf="isInEditingMode"
-                   (click)="cancelHandler()"
-                   class="k-button k-primary">
-             Cancel
-           </button>
-         </ng-template>
-  <kendo-grid-column field="Key" title="Ключ" width="auto">
-  </kendo-grid-column>
-  <kendo-grid-column field="Value" title="Наименования" width="auto">
-  </kendo-grid-column>
-  <kendo-grid-command-column title="Действие" width="200">
-    <ng-template kendoGridCellTemplate>
-      <button kendoGridEditCommand class="k-default"><span class="fa fa-edit"></span></button>
-      <button kendoGridRemoveCommand class="k-default"><span class="fa fa-trash"></span></button>
+<div> 
+  <kendo-grid [data]="view | async"
+              [height]="533"
+              [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+              [pageable]="true" [sortable]="true"
+              (dataStateChange)="onStateChange($event)"
+              (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+              (save)="saveHandler($event)" (remove)="removeHandler($event)"
+              (add)="addHandler($event)">
+    <ng-template kendoGridToolbarTemplate>
+      <button kendoGridAddCommand>Add new</button>
     </ng-template>
-
-  </kendo-grid-command-column>
-</kendo-grid>
+    <kendo-grid-column field="Key" title="Key"></kendo-grid-column>
+    <kendo-grid-column field="Value"  title="Value"></kendo-grid-column>
+    <kendo-grid-command-column title="command" width="220">
+      <ng-template kendoGridCellTemplate let-isNew="isNew">
+        <button kendoGridEditCommand class="k-primary"><span class="fa fa-edit"></span></button>
+        <button kendoGridRemoveCommand><span class="fa fa-trash"></span></button>
+        <button kendoGridSaveCommand [disabled]="formGroup?.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
+        <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+      </ng-template>
+    </kendo-grid-command-column>
+    <div *kendoGridDetailTemplate="let dataItem">
+      <dynamic-property-value [dynamicProperty]="dataItem"></dynamic-property-value>
+    </div>
+  </kendo-grid>
 </div>

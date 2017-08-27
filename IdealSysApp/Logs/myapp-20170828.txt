@@ -1,0 +1,1358 @@
+2017-08-28T00:00:10.4309589+05:00 0HL7DFIQVFR8O [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:00:10.4439703+05:00 0HL7DFIQVFR8O [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:00:10.4619514+05:00 0HL7DFIQVFR8O [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:00:10.4809701+05:00 0HL7DFIQVFR8O [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:00:10.5675528+05:00 0HL7DFIQVFR8O [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:00:10.6436255+05:00 0HL7DFIQVFR8O [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 129.8691ms (afa2e885)
+2017-08-28T00:00:10.6521340+05:00 0HL7DFIQVFR8O [INF] Request finished in 216.537ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:00:12.3554084+05:00 0HL7DFIQVFR8P [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:00:12.3702283+05:00 0HL7DFIQVFR8P [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\"}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:00:12.3922519+05:00 0HL7DFIQVFR8P [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] IS NULL (6438bdd5)
+2017-08-28T00:00:12.4142779+05:00 0HL7DFIQVFR8P [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:00:12.4207806+05:00 0HL7DFIQVFR8P [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:00:12.4287873+05:00 0HL7DFIQVFR8P [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 64.9015ms (afa2e885)
+2017-08-28T00:00:12.4382970+05:00 0HL7DFIQVFR8P [INF] Request finished in 82.6706ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:00:17.1242641+05:00 0HL7DFIQVFR8Q [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:00:17.1262665+05:00 0HL7DFIQVFR8Q [INF] Request finished in 15.7659ms 204  (15c52c40)
+2017-08-28T00:00:17.1397549+05:00 0HL7DFIQVFR8R [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 53 (e5be5b71)
+2017-08-28T00:00:17.1592770+05:00 0HL7DFIQVFR8R [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:00:17.2418525+05:00 0HL7DFIQVFR8R [INF] Executed DbCommand (12ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:00:17.4270300+05:00 0HL7DFIQVFR8R [ERR] An exception occurred in the database while saving changes.
+ (3b5ca34b)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DynamicPropertyValues_DynamicProperties_DynamicPropertyId". The conflict occurred in database "ASPELL_DBASE", table "dbo.DynamicProperties", column 'Id'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, String executeMethod, IReadOnlyDictionary`2 parameterValues, Boolean closeConnection)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](Func`2 operation, Func`2 verifySucceeded, TState state)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at IdealSysApp.Data.Repository`1.InsertViewModel(Object viewModel) in D:\PROGECTS\IdealSysApp\IdealSysApp\Data\Repository.cs:line 115
+   at IdealSysApp.Controllers.DynamicPropertyValueController.Post(DynamicPropertyValueViewModel model) in D:\PROGECTS\IdealSysApp\IdealSysApp\Controllers\DynamicPropertyValueController.cs:line 60
+2017-08-28T00:00:17.4345396+05:00 0HL7DFIQVFR8R [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:00:17.4385411+05:00 0HL7DFIQVFR8R [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 295.0687ms (afa2e885)
+2017-08-28T00:00:17.4445470+05:00 0HL7DFIQVFR8R [INF] Request finished in 299.9152ms 400 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:03:02.5158714+05:00 0HL7DFIQVFR8S [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:03:02.5338889+05:00 0HL7DFIQVFR8S [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:03:02.5418969+05:00 0HL7DFIQVFR8S [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:03:02.5565936+05:00 0HL7DFIQVFR8S [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:03:02.5575968+05:00 0HL7DFIQVFR8S [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:03:02.5646036+05:00 0HL7DFIQVFR8S [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 41.6557ms (afa2e885)
+2017-08-28T00:03:02.5951331+05:00 0HL7DFIQVFR8S [INF] Request finished in 49.6317ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:03:55.0221206+05:00 0HL7DFIQVFR8T [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:03:55.0291416+05:00 0HL7DFIQVFR8T [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:03:55.0418904+05:00 0HL7DFIQVFR8T [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:03:55.0614092+05:00 0HL7DFIQVFR8T [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:03:55.0629102+05:00 0HL7DFIQVFR8T [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:03:55.0694169+05:00 0HL7DFIQVFR8T [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 40.7136ms (afa2e885)
+2017-08-28T00:03:55.0774250+05:00 0HL7DFIQVFR8T [INF] Request finished in 48.7332ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:03:58.2928121+05:00 0HL7DFIQVFR8U [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:03:58.3131092+05:00 0HL7DFIQVFR8U [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\"}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:03:58.3271211+05:00 0HL7DFIQVFR8U [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] IS NULL (6438bdd5)
+2017-08-28T00:03:58.3591546+05:00 0HL7DFIQVFR8U [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:03:58.3701626+05:00 0HL7DFIQVFR8U [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:03:58.3791718+05:00 0HL7DFIQVFR8U [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 76.6283ms (afa2e885)
+2017-08-28T00:03:58.3861799+05:00 0HL7DFIQVFR8U [INF] Request finished in 87.6413ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:04:13.3424452+05:00 0HL7DFIQVFR8V [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:04:13.3484521+05:00 0HL7DFIQVFR8V [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:04:13.3604623+05:00 0HL7DFIQVFR8V [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:04:13.3756819+05:00 0HL7DFIQVFR8V [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:04:13.3767000+05:00 0HL7DFIQVFR8V [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:04:13.3836896+05:00 0HL7DFIQVFR8V [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 33.7834ms (afa2e885)
+2017-08-28T00:04:13.4047094+05:00 0HL7DFIQVFR8V [INF] Request finished in 42.4858ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:04:15.4681437+05:00 0HL7DFIQVFR90 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:04:15.5145210+05:00 0HL7DFIQVFR90 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\"}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:04:15.5485545+05:00 0HL7DFIQVFR90 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] IS NULL (6438bdd5)
+2017-08-28T00:04:15.5780825+05:00 0HL7DFIQVFR90 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:04:15.5845885+05:00 0HL7DFIQVFR90 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:04:15.5920964+05:00 0HL7DFIQVFR90 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 116.2301ms (afa2e885)
+2017-08-28T00:04:15.6136206+05:00 0HL7DFIQVFR90 [INF] Request finished in 178.1746ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:04:40.9844079+05:00 0HL7DFIQVFR91 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:04:40.9904142+05:00 0HL7DFIQVFR91 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:04:41.0039509+05:00 0HL7DFIQVFR91 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:04:41.0184653+05:00 0HL7DFIQVFR91 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:04:41.0194661+05:00 0HL7DFIQVFR91 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:04:41.0264723+05:00 0HL7DFIQVFR91 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 34.2472ms (afa2e885)
+2017-08-28T00:04:41.0434889+05:00 0HL7DFIQVFR91 [INF] Request finished in 42.5964ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:04:42.2341140+05:00 0HL7DFIQVFR92 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:04:42.2471275+05:00 0HL7DFIQVFR92 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\"}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:04:42.3701130+05:00 0HL7DFIQVFR92 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] IS NULL (6438bdd5)
+2017-08-28T00:04:42.3896318+05:00 0HL7DFIQVFR92 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:04:42.3956371+05:00 0HL7DFIQVFR92 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:04:42.4026436+05:00 0HL7DFIQVFR92 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 161.1917ms (afa2e885)
+2017-08-28T00:04:42.4076493+05:00 0HL7DFIQVFR92 [INF] Request finished in 178.2469ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:05:37.9048394+05:00 0HL7DFIQVFR93 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:05:37.9118465+05:00 0HL7DFIQVFR93 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:05:37.9339091+05:00 0HL7DFIQVFR93 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:05:37.9559288+05:00 0HL7DFIQVFR93 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:05:37.9609332+05:00 0HL7DFIQVFR93 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:05:37.9679407+05:00 0HL7DFIQVFR93 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 56.4822ms (afa2e885)
+2017-08-28T00:05:37.9784509+05:00 0HL7DFIQVFR93 [INF] Request finished in 69.5022ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:05:39.5504341+05:00 0HL7DFIQVFR94 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:05:39.5655675+05:00 0HL7DFIQVFR94 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:05:39.6231230+05:00 0HL7DFIQVFR94 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:05:39.6681662+05:00 0HL7DFIQVFR94 [INF] Executed DbCommand (27ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:05:39.6736720+05:00 0HL7DFIQVFR94 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:05:39.6861833+05:00 0HL7DFIQVFR94 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 122.3057ms (afa2e885)
+2017-08-28T00:05:39.6876856+05:00 0HL7DFIQVFR94 [INF] Request finished in 143.3123ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:06:01.6144831+05:00 0HL7DFIQVFR95 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:06:01.6215090+05:00 0HL7DFIQVFR95 [INF] Request finished in 1.3639ms 204  (15c52c40)
+2017-08-28T00:06:01.6394050+05:00 0HL7DFIQVFR96 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 52 (e5be5b71)
+2017-08-28T00:06:01.6584240+05:00 0HL7DFIQVFR96 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:06:01.7039666+05:00 0HL7DFIQVFR96 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:06:01.8912426+05:00 0HL7DFIQVFR96 [ERR] An exception occurred in the database while saving changes.
+ (3b5ca34b)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DynamicPropertyValues_DynamicProperties_DynamicPropertyId". The conflict occurred in database "ASPELL_DBASE", table "dbo.DynamicProperties", column 'Id'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, String executeMethod, IReadOnlyDictionary`2 parameterValues, Boolean closeConnection)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](Func`2 operation, Func`2 verifySucceeded, TState state)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at IdealSysApp.Data.Repository`1.InsertViewModel(Object viewModel) in D:\PROGECTS\IdealSysApp\IdealSysApp\Data\Repository.cs:line 115
+   at IdealSysApp.Controllers.DynamicPropertyValueController.Post(DynamicPropertyValueViewModel model) in D:\PROGECTS\IdealSysApp\IdealSysApp\Controllers\DynamicPropertyValueController.cs:line 60
+2017-08-28T00:06:01.8977490+05:00 0HL7DFIQVFR96 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:06:01.9037546+05:00 0HL7DFIQVFR96 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 258.3374ms (afa2e885)
+2017-08-28T00:06:01.9362885+05:00 0HL7DFIQVFR96 [INF] Request finished in 290.0649ms 400 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:06:45.9320541+05:00 0HL7DFIQVFR97 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:06:45.9390602+05:00 0HL7DFIQVFR97 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:06:45.9510817+05:00 0HL7DFIQVFR97 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:06:45.9667667+05:00 0HL7DFIQVFR97 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:06:45.9677676+05:00 0HL7DFIQVFR97 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:06:45.9747747+05:00 0HL7DFIQVFR97 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 34.7291ms (afa2e885)
+2017-08-28T00:06:45.9817816+05:00 0HL7DFIQVFR97 [INF] Request finished in 43.6436ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:06:52.7615485+05:00 0HL7DFIQVFR98 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:06:52.7680549+05:00 0HL7DFIQVFR98 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:06:52.7805672+05:00 0HL7DFIQVFR98 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:06:52.7955817+05:00 0HL7DFIQVFR98 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:06:52.7965826+05:00 0HL7DFIQVFR98 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:06:52.8030886+05:00 0HL7DFIQVFR98 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 34.7711ms (afa2e885)
+2017-08-28T00:06:52.8095947+05:00 0HL7DFIQVFR98 [INF] Request finished in 42.758ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:06:54.9951332+05:00 0HL7DFIQVFR99 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:06:55.0071659+05:00 0HL7DFIQVFR99 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:06:55.0275514+05:00 0HL7DFIQVFR99 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:06:55.0475720+05:00 0HL7DFIQVFR99 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:06:55.0575798+05:00 0HL7DFIQVFR99 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:06:55.0640885+05:00 0HL7DFIQVFR99 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 62.2721ms (afa2e885)
+2017-08-28T00:06:55.0705922+05:00 0HL7DFIQVFR99 [INF] Request finished in 76.5652ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:07:03.9668331+05:00 0HL7DFIQVFR9A [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:07:03.9738406+05:00 0HL7DFIQVFR9A [INF] Request finished in 1.2456ms 204  (15c52c40)
+2017-08-28T00:07:03.9940891+05:00 0HL7DFIQVFR9B [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 29 (e5be5b71)
+2017-08-28T00:07:04.0116094+05:00 0HL7DFIQVFR9B [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:07:04.0431361+05:00 0HL7DFIQVFR9B [INF] Executed DbCommand (6ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:07:04.1753261+05:00 0HL7DFIQVFR9B [ERR] An exception occurred in the database while saving changes.
+ (3b5ca34b)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_DynamicPropertyValues_DynamicProperties_DynamicPropertyId". The conflict occurred in database "ASPELL_DBASE", table "dbo.DynamicProperties", column 'Id'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, String executeMethod, IReadOnlyDictionary`2 parameterValues, Boolean closeConnection)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteReader(IRelationalConnection connection, IReadOnlyDictionary`2 parameterValues)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(Tuple`2 parameters)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](Func`2 operation, Func`2 verifySucceeded, TState state)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IReadOnlyList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at IdealSysApp.Data.Repository`1.InsertViewModel(Object viewModel) in D:\PROGECTS\IdealSysApp\IdealSysApp\Data\Repository.cs:line 115
+   at IdealSysApp.Controllers.DynamicPropertyValueController.Post(DynamicPropertyValueViewModel model) in D:\PROGECTS\IdealSysApp\IdealSysApp\Controllers\DynamicPropertyValueController.cs:line 60
+2017-08-28T00:07:04.1798311+05:00 0HL7DFIQVFR9B [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:07:04.1873383+05:00 0HL7DFIQVFR9B [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 185.3528ms (afa2e885)
+2017-08-28T00:07:04.1943461+05:00 0HL7DFIQVFR9B [INF] Request finished in 194.369ms 400 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:07:59.3309512+05:00 0HL7DFIQVFR9C [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:07:59.3369585+05:00 0HL7DFIQVFR9C [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:07:59.3506068+05:00 0HL7DFIQVFR9C [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:07:59.3661230+05:00 0HL7DFIQVFR9C [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:07:59.3666222+05:00 0HL7DFIQVFR9C [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:07:59.3811362+05:00 0HL7DFIQVFR9C [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 35.0125ms (afa2e885)
+2017-08-28T00:07:59.3851397+05:00 0HL7DFIQVFR9C [INF] Request finished in 51.9013ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:08:01.7142981+05:00 0HL7DFIQVFR9D [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:08:01.7283147+05:00 0HL7DFIQVFR9D [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:08:01.7423257+05:00 0HL7DFIQVFR9D [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:08:01.7804143+05:00 0HL7DFIQVFR9D [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:08:01.7894232+05:00 0HL7DFIQVFR9D [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:08:01.7959309+05:00 0HL7DFIQVFR9D [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 74.2685ms (afa2e885)
+2017-08-28T00:08:01.8039356+05:00 0HL7DFIQVFR9D [INF] Request finished in 90.4649ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:08:13.6298025+05:00 0HL7DFIQVFR9E [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:08:13.6482256+05:00 0HL7DFIQVFR9E [INF] Request finished in 1.2119ms 204  (15c52c40)
+2017-08-28T00:08:13.6537307+05:00 0HL7DFIQVFR9F [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 51 (e5be5b71)
+2017-08-28T00:08:13.6707470+05:00 0HL7DFIQVFR9F [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:08:13.7042794+05:00 0HL7DFIQVFR9F [INF] Executed DbCommand (5ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:08:13.9424183+05:00 0HL7DFIQVFR9F [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:08:13.9494264+05:00 0HL7DFIQVFR9F [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 290.4739ms (afa2e885)
+2017-08-28T00:08:13.9594382+05:00 0HL7DFIQVFR9F [INF] Request finished in 296.8537ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:08:13.9912361+05:00 0HL7DFIQVFR9G [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:08:14.0102518+05:00 0HL7DFIQVFR9G [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:08:14.0267676+05:00 0HL7DFIQVFR9G [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:08:14.0708102+05:00 0HL7DFIQVFR9G [INF] Executed DbCommand (31ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:08:14.0768158+05:00 0HL7DFIQVFR9G [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:08:14.0833219+05:00 0HL7DFIQVFR9G [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 85.289ms (afa2e885)
+2017-08-28T00:08:14.0898283+05:00 0HL7DFIQVFR9G [INF] Request finished in 112.2091ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:08:19.6944599+05:00 0HL7DFIQVFR9H [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:2}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:08:19.7034685+05:00 0HL7DFIQVFR9H [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":2}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:08:19.7350120+05:00 0HL7DFIQVFR9H [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2 (6438bdd5)
+2017-08-28T00:08:19.7985721+05:00 0HL7DFIQVFR9H [INF] Executed DbCommand (35ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:08:19.7990726+05:00 0HL7DFIQVFR9H [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:08:19.8065795+05:00 0HL7DFIQVFR9H [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 104.6655ms (afa2e885)
+2017-08-28T00:08:19.8175902+05:00 0HL7DFIQVFR9H [INF] Request finished in 127.58ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:08:22.0485005+05:00 0HL7DFIQVFR9I [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:08:22.0565092+05:00 0HL7DFIQVFR9I [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:08:22.0707319+05:00 0HL7DFIQVFR9I [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:08:22.1022629+05:00 0HL7DFIQVFR9I [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:08:22.1057687+05:00 0HL7DFIQVFR9I [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:08:22.1177776+05:00 0HL7DFIQVFR9I [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 60.3824ms (afa2e885)
+2017-08-28T00:08:22.1347941+05:00 0HL7DFIQVFR9I [INF] Request finished in 77.3134ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:08:50.1103559+05:00 0HL7DFIQVFR9J [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:08:50.1173610+05:00 0HL7DFIQVFR9J [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:08:50.1317036+05:00 0HL7DFIQVFR9J [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:08:50.1467231+05:00 0HL7DFIQVFR9J [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:08:50.1477303+05:00 0HL7DFIQVFR9J [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:08:50.1542274+05:00 0HL7DFIQVFR9J [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 37.1511ms (afa2e885)
+2017-08-28T00:08:50.1602340+05:00 0HL7DFIQVFR9J [INF] Request finished in 44.9097ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:08:51.7541595+05:00 0HL7DFIQVFR9K [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:08:51.7668948+05:00 0HL7DFIQVFR9K [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:08:51.7824101+05:00 0HL7DFIQVFR9K [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:08:51.8029304+05:00 0HL7DFIQVFR9K [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:08:51.8084353+05:00 0HL7DFIQVFR9K [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:08:51.8149413+05:00 0HL7DFIQVFR9K [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 53.6167ms (afa2e885)
+2017-08-28T00:08:51.8209469+05:00 0HL7DFIQVFR9K [INF] Request finished in 67.6211ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:09:33.0079369+05:00 0HL7DFIQVFR9L [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue/5   (e5be5b71)
+2017-08-28T00:09:33.0149397+05:00 0HL7DFIQVFR9L [INF] Request finished in 2.5613ms 204  (15c52c40)
+2017-08-28T00:09:33.0569803+05:00 0HL7DFIQVFR9M [INF] Request starting HTTP/1.1 PUT http://localhost:5050/api/DynamicPropertyValue/5 application/json 58 (e5be5b71)
+2017-08-28T00:09:33.0729956+05:00 0HL7DFIQVFR9M [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Put (IdealSysApp)" with arguments (["5", "IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:09:33.1010213+05:00 0HL7DFIQVFR9M [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[DynamicPropertyId], [s].[IdentityId], [s].[IntegrationKey], [s].[IsSelected], [s].[Key], [s].[ModifiedDate], [s].[Value]
+FROM [DynamicPropertyValues] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-28T00:09:33.2434407+05:00 0HL7DFIQVFR9M [INF] Executed DbCommand (100ms) [Parameters=[@p8='?', @p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+UPDATE [DynamicPropertyValues] SET [CreatedDate] = @p0, [DynamicPropertyId] = @p1, [IdentityId] = @p2, [IntegrationKey] = @p3, [IsSelected] = @p4, [Key] = @p5, [ModifiedDate] = @p6, [Value] = @p7
+WHERE [Id] = @p8;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-28T00:09:33.2504475+05:00 0HL7DFIQVFR9M [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:09:33.2589560+05:00 0HL7DFIQVFR9M [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Put (IdealSysApp)" in 189.6275ms (afa2e885)
+2017-08-28T00:09:33.2689664+05:00 0HL7DFIQVFR9M [INF] Request finished in 203.8314ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:09:33.2859814+05:00 0HL7DFIQVFR9N [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:09:33.2999947+05:00 0HL7DFIQVFR9N [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:09:33.3265203+05:00 0HL7DFIQVFR9N [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:09:33.3440370+05:00 0HL7DFIQVFR9N [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:09:33.3496406+05:00 0HL7DFIQVFR9N [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:09:33.3566494+05:00 0HL7DFIQVFR9N [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 63.8603ms (afa2e885)
+2017-08-28T00:09:33.3691610+05:00 0HL7DFIQVFR9N [INF] Request finished in 78.969ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:09:48.9899514+05:00 0HL7DFIQVFR9O [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:09:48.9969622+05:00 0HL7DFIQVFR9O [INF] Request finished in 1.2264ms 204  (15c52c40)
+2017-08-28T00:09:49.0203626+05:00 0HL7DFIQVFR9P [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 54 (e5be5b71)
+2017-08-28T00:09:49.0443860+05:00 0HL7DFIQVFR9P [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:09:49.0779198+05:00 0HL7DFIQVFR9P [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:09:49.0804207+05:00 0HL7DFIQVFR9P [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:09:49.0869267+05:00 0HL7DFIQVFR9P [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 60.0781ms (afa2e885)
+2017-08-28T00:09:49.0884300+05:00 0HL7DFIQVFR9P [INF] Request finished in 67.5616ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:09:49.1064465+05:00 0HL7DFIQVFR9Q [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:09:49.1269675+05:00 0HL7DFIQVFR9Q [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:09:49.1474891+05:00 0HL7DFIQVFR9Q [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:09:49.1680052+05:00 0HL7DFIQVFR9Q [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:09:49.1735097+05:00 0HL7DFIQVFR9Q [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:09:49.1855219+05:00 0HL7DFIQVFR9Q [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 67.1318ms (afa2e885)
+2017-08-28T00:09:49.1865231+05:00 0HL7DFIQVFR9Q [INF] Request finished in 80.5053ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:03.5902433+05:00 0HL7DFIQVFR9R [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:10:03.5902433+05:00 0HL7DFIQVFR9R [INF] Request finished in 1.1161ms 204  (15c52c40)
+2017-08-28T00:10:03.6117364+05:00 0HL7DFIQVFR9S [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 54 (e5be5b71)
+2017-08-28T00:10:03.6293417+05:00 0HL7DFIQVFR9S [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:03.6615092+05:00 0HL7DFIQVFR9S [INF] Executed DbCommand (5ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:10:03.6630118+05:00 0HL7DFIQVFR9S [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:03.6698779+05:00 0HL7DFIQVFR9S [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 51.2463ms (afa2e885)
+2017-08-28T00:10:03.6808883+05:00 0HL7DFIQVFR9S [INF] Request finished in 59.6335ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:03.6954013+05:00 0HL7DFIQVFR9T [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:10:03.7089178+05:00 0HL7DFIQVFR9T [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:03.7279322+05:00 0HL7DFIQVFR9T [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:10:03.7469502+05:00 0HL7DFIQVFR9T [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:10:03.7519573+05:00 0HL7DFIQVFR9T [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:03.7574605+05:00 0HL7DFIQVFR9T [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 56.1919ms (afa2e885)
+2017-08-28T00:10:03.7634661+05:00 0HL7DFIQVFR9T [INF] Request finished in 72.1904ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:17.5184819+05:00 0HL7DFIQVFR9U [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:10:17.5305110+05:00 0HL7DFIQVFR9U [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:17.5437335+05:00 0HL7DFIQVFR9U [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:10:17.5632516+05:00 0HL7DFIQVFR9U [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:10:17.5697593+05:00 0HL7DFIQVFR9U [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:17.5762667+05:00 0HL7DFIQVFR9U [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 51.1911ms (afa2e885)
+2017-08-28T00:10:17.5847715+05:00 0HL7DFIQVFR9U [INF] Request finished in 65.1317ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:19.6457838+05:00 0HL7DFIQVFR9V [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:2}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:10:19.6567948+05:00 0HL7DFIQVFR9V [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":2}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:19.6698069+05:00 0HL7DFIQVFR9V [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2 (6438bdd5)
+2017-08-28T00:10:19.6932281+05:00 0HL7DFIQVFR9V [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:10:19.6986933+05:00 0HL7DFIQVFR9V [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:19.7056701+05:00 0HL7DFIQVFR9V [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 52.9042ms (afa2e885)
+2017-08-28T00:10:19.7136735+05:00 0HL7DFIQVFR9V [INF] Request finished in 67.0674ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:39.0871355+05:00 0HL7DFIQVFRA0 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:10:39.0931404+05:00 0HL7DFIQVFRA0 [INF] Request finished in 1.0841ms 204  (15c52c40)
+2017-08-28T00:10:39.1129010+05:00 0HL7DFIQVFRA1 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 65 (e5be5b71)
+2017-08-28T00:10:39.1299189+05:00 0HL7DFIQVFRA1 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:39.1550733+05:00 0HL7DFIQVFRA1 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:10:39.1565743+05:00 0HL7DFIQVFRA1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:39.1625780+05:00 0HL7DFIQVFRA1 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 43.5382ms (afa2e885)
+2017-08-28T00:10:39.1685839+05:00 0HL7DFIQVFRA1 [INF] Request finished in 51.1393ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:39.1806043+05:00 0HL7DFIQVFRA2 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:2}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:10:39.1917504+05:00 0HL7DFIQVFRA2 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":2}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:39.2046400+05:00 0HL7DFIQVFRA2 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2 (6438bdd5)
+2017-08-28T00:10:39.2216473+05:00 0HL7DFIQVFRA2 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:10:39.2266309+05:00 0HL7DFIQVFRA2 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:39.2326078+05:00 0HL7DFIQVFRA2 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 46.123ms (afa2e885)
+2017-08-28T00:10:39.2386203+05:00 0HL7DFIQVFRA2 [INF] Request finished in 60.1046ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:51.1976692+05:00 0HL7DFIQVFRA3 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:10:51.2047285+05:00 0HL7DFIQVFRA3 [INF] Request finished in 1.7021ms 204  (15c52c40)
+2017-08-28T00:10:51.2187567+05:00 0HL7DFIQVFRA4 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 57 (e5be5b71)
+2017-08-28T00:10:51.2354829+05:00 0HL7DFIQVFRA4 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:51.2656840+05:00 0HL7DFIQVFRA4 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:10:51.2671850+05:00 0HL7DFIQVFRA4 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:51.2686870+05:00 0HL7DFIQVFRA4 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 48.8587ms (afa2e885)
+2017-08-28T00:10:51.2822018+05:00 0HL7DFIQVFRA4 [INF] Request finished in 51.9862ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:51.2967139+05:00 0HL7DFIQVFRA5 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:2}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:10:51.3141107+05:00 0HL7DFIQVFRA5 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":2}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:51.3286647+05:00 0HL7DFIQVFRA5 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2 (6438bdd5)
+2017-08-28T00:10:51.3465250+05:00 0HL7DFIQVFRA5 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:10:51.3524995+05:00 0HL7DFIQVFRA5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:51.3585035+05:00 0HL7DFIQVFRA5 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 55.6118ms (afa2e885)
+2017-08-28T00:10:51.3645107+05:00 0HL7DFIQVFRA5 [INF] Request finished in 75.9974ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:57.5096834+05:00 0HL7DFIQVFRA6 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:10:57.5266921+05:00 0HL7DFIQVFRA6 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:57.5392493+05:00 0HL7DFIQVFRA6 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:10:57.5575132+05:00 0HL7DFIQVFRA6 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:10:57.5645201+05:00 0HL7DFIQVFRA6 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:57.5730308+05:00 0HL7DFIQVFRA6 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 55.4368ms (afa2e885)
+2017-08-28T00:10:57.5810369+05:00 0HL7DFIQVFRA6 [INF] Request finished in 70.3697ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:10:58.9817142+05:00 0HL7DFIQVFRA7 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:2}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:10:58.9937274+05:00 0HL7DFIQVFRA7 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":2}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:10:59.0065175+05:00 0HL7DFIQVFRA7 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2 (6438bdd5)
+2017-08-28T00:10:59.0250354+05:00 0HL7DFIQVFRA7 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:10:59.0310334+05:00 0HL7DFIQVFRA7 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:10:59.0325344+05:00 0HL7DFIQVFRA7 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 48.677ms (afa2e885)
+2017-08-28T00:10:59.0475485+05:00 0HL7DFIQVFRA7 [INF] Request finished in 57.5412ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:11:04.8410157+05:00 0HL7DFIQVFRA8 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-28T00:11:04.8470424+05:00 0HL7DFIQVFRA8 [INF] Request finished in 1.2086ms 204  (15c52c40)
+2017-08-28T00:11:04.9140960+05:00 0HL7DFIQVFRA9 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-28T00:11:05.0746605+05:00 0HL7DFIQVFRA9 [INF] Successfully validated the token. (60169667)
+2017-08-28T00:11:05.0835455+05:00 0HL7DFIQVFRA9 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-28T00:11:05.0925240+05:00 0HL7DFIQVFRA9 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:11:05.1087383+05:00 0HL7DFIQVFRA9 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-28T00:11:05.1280017+05:00 0HL7DFIQVFRA9 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:11:05.1374988+05:00 0HL7DFIQVFRA9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:11:05.1445047+05:00 0HL7DFIQVFRA9 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 58.5685ms (afa2e885)
+2017-08-28T00:11:05.1510110+05:00 0HL7DFIQVFRA9 [INF] Request finished in 230.7855ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:12:00.4581854+05:00 0HL7DFIQVFRAA [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-28T00:12:00.4591870+05:00 0HL7DFIQVFRAA [INF] Request finished in 1.2978ms 204  (15c52c40)
+2017-08-28T00:12:00.5456870+05:00 0HL7DFIQVFRAB [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-28T00:12:00.5526932+05:00 0HL7DFIQVFRAB [INF] Successfully validated the token. (60169667)
+2017-08-28T00:12:00.5596996+05:00 0HL7DFIQVFRAB [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-28T00:12:00.5672086+05:00 0HL7DFIQVFRAB [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:12:00.5832226+05:00 0HL7DFIQVFRAB [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-28T00:12:00.5997391+05:00 0HL7DFIQVFRAB [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:12:00.6112449+05:00 0HL7DFIQVFRAB [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:12:00.6212590+05:00 0HL7DFIQVFRAB [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 51.278ms (afa2e885)
+2017-08-28T00:12:00.6332652+05:00 0HL7DFIQVFRAB [INF] Request finished in 77.6582ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:12:03.8755814+05:00 0HL7DFIQVFRAC [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-28T00:12:03.8826116+05:00 0HL7DFIQVFRAC [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:12:03.8959487+05:00 0HL7DFIQVFRAC [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-28T00:12:03.8959487+05:00 0HL7DFIQVFRAD [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-28T00:12:03.9164694+05:00 0HL7DFIQVFRAC [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:12:03.9219739+05:00 0HL7DFIQVFRAD [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:12:03.9289804+05:00 0HL7DFIQVFRAC [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:12:03.9354871+05:00 0HL7DFIQVFRAC [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 52.85ms (afa2e885)
+2017-08-28T00:12:03.9479984+05:00 0HL7DFIQVFRAD [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-28T00:12:03.9484992+05:00 0HL7DFIQVFRAC [INF] Request finished in 61.0797ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:12:03.9710206+05:00 0HL7DFIQVFRAD [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:12:04.0025513+05:00 0HL7DFIQVFRAD [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:12:04.0145625+05:00 0HL7DFIQVFRAD [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 114.8909ms (afa2e885)
+2017-08-28T00:12:04.0220724+05:00 0HL7DFIQVFRAD [INF] Request finished in 122.5445ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:12:05.4996383+05:00 0HL7DFIQVFRAE [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:12:05.5066481+05:00 0HL7DFIQVFRAE [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:12:05.5192357+05:00 0HL7DFIQVFRAE [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:12:05.5342506+05:00 0HL7DFIQVFRAE [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:12:05.5352514+05:00 0HL7DFIQVFRAE [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:12:05.5417578+05:00 0HL7DFIQVFRAE [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 35.0172ms (afa2e885)
+2017-08-28T00:12:05.5482649+05:00 0HL7DFIQVFRAE [INF] Request finished in 42.9152ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:12:08.3050407+05:00 0HL7DFIQVFRAF [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:12:08.3170664+05:00 0HL7DFIQVFRAF [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:12:08.3307659+05:00 0HL7DFIQVFRAF [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:12:08.3522987+05:00 0HL7DFIQVFRAF [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:12:08.3582901+05:00 0HL7DFIQVFRAF [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:12:08.3647968+05:00 0HL7DFIQVFRAF [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 52.7423ms (afa2e885)
+2017-08-28T00:12:08.3723074+05:00 0HL7DFIQVFRAF [INF] Request finished in 66.4111ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:13:22.9803803+05:00 0HL7DFIQVFRAG [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:13:22.9873868+05:00 0HL7DFIQVFRAG [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:13:22.9998737+05:00 0HL7DFIQVFRAG [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:13:23.0148991+05:00 0HL7DFIQVFRAG [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:13:23.0164077+05:00 0HL7DFIQVFRAG [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:13:23.0228985+05:00 0HL7DFIQVFRAG [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 35.1506ms (afa2e885)
+2017-08-28T00:13:23.0294046+05:00 0HL7DFIQVFRAG [INF] Request finished in 42.8855ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:13:42.9010311+05:00 0HL7DFIQVFRAH [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:13:42.9070370+05:00 0HL7DFIQVFRAH [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:13:42.9195487+05:00 0HL7DFIQVFRAH [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:13:42.9335630+05:00 0HL7DFIQVFRAH [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:13:42.9550832+05:00 0HL7DFIQVFRAH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:13:43.0066327+05:00 0HL7DFIQVFRAH [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 54.244ms (afa2e885)
+2017-08-28T00:13:43.0356619+05:00 0HL7DFIQVFRAH [INF] Request finished in 106.8492ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:13:45.9393750+05:00 0HL7DFIQVFRAI [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:13:45.9463825+05:00 0HL7DFIQVFRAI [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:13:45.9614009+05:00 0HL7DFIQVFRAI [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:13:45.9762070+05:00 0HL7DFIQVFRAI [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:13:45.9772079+05:00 0HL7DFIQVFRAI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:13:45.9837159+05:00 0HL7DFIQVFRAI [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 37.2201ms (afa2e885)
+2017-08-28T00:13:45.9902203+05:00 0HL7DFIQVFRAI [INF] Request finished in 46.2577ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:14:24.1325080+05:00 0HL7DFIQVFRAJ [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:14:24.1385301+05:00 0HL7DFIQVFRAJ [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:14:24.1515273+05:00 0HL7DFIQVFRAJ [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:14:24.1670409+05:00 0HL7DFIQVFRAJ [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:14:24.1685426+05:00 0HL7DFIQVFRAJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:14:24.1760512+05:00 0HL7DFIQVFRAJ [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 35.9199ms (afa2e885)
+2017-08-28T00:14:24.2501205+05:00 0HL7DFIQVFRAJ [INF] Request finished in 45.5759ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:14:29.1160123+05:00 0HL7DFIQVFRAK [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:14:29.1290234+05:00 0HL7DFIQVFRAK [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:14:29.1460559+05:00 0HL7DFIQVFRAK [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:14:29.1683434+05:00 0HL7DFIQVFRAK [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:14:29.1748283+05:00 0HL7DFIQVFRAK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:14:29.1813529+05:00 0HL7DFIQVFRAK [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 60.3312ms (afa2e885)
+2017-08-28T00:14:29.1943474+05:00 0HL7DFIQVFRAK [INF] Request finished in 72.7847ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:14:32.4552297+05:00 0HL7DFIQVFRAL [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue/7   (e5be5b71)
+2017-08-28T00:14:32.4612250+05:00 0HL7DFIQVFRAL [INF] Request finished in 1.2928ms 204  (15c52c40)
+2017-08-28T00:14:32.4902661+05:00 0HL7DFIQVFRAM [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/DynamicPropertyValue/7   (e5be5b71)
+2017-08-28T00:14:32.4939650+05:00 0HL7DFIQVFRAM [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Delete (IdealSysApp)" with arguments (["7"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:14:32.5076236+05:00 0HL7DFIQVFRAM [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[DynamicPropertyId], [s].[IdentityId], [s].[IntegrationKey], [s].[IsSelected], [s].[Key], [s].[ModifiedDate], [s].[Value]
+FROM [DynamicPropertyValues] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-28T00:14:32.6567932+05:00 0HL7DFIQVFRAM [INF] Executed DbCommand (134ms) [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+DELETE FROM [DynamicPropertyValues]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-28T00:14:32.6853222+05:00 0HL7DFIQVFRAM [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2017-08-28T00:14:32.6988341+05:00 0HL7DFIQVFRAM [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Delete (IdealSysApp)" in 193.5524ms (afa2e885)
+2017-08-28T00:14:32.7018360+05:00 0HL7DFIQVFRAM [INF] Request finished in 217.9458ms 200  (15c52c40)
+2017-08-28T00:14:32.7233572+05:00 0HL7DFIQVFRAN [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:14:32.7368701+05:00 0HL7DFIQVFRAN [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:14:32.7488816+05:00 0HL7DFIQVFRAN [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:14:32.7728505+05:00 0HL7DFIQVFRAN [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:14:32.7782335+05:00 0HL7DFIQVFRAN [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:14:32.7842427+05:00 0HL7DFIQVFRAN [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 54.7583ms (afa2e885)
+2017-08-28T00:14:32.7917493+05:00 0HL7DFIQVFRAN [INF] Request finished in 68.3927ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:15:30.0298792+05:00 0HL7DFIQVFRAO [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:15:30.0358858+05:00 0HL7DFIQVFRAO [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:15:30.0489105+05:00 0HL7DFIQVFRAO [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:15:30.0700280+05:00 0HL7DFIQVFRAO [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:15:30.0715158+05:00 0HL7DFIQVFRAO [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:15:30.0790237+05:00 0HL7DFIQVFRAO [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 41.5903ms (afa2e885)
+2017-08-28T00:15:30.1275690+05:00 0HL7DFIQVFRAO [INF] Request finished in 50.5955ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:15:31.8908165+05:00 0HL7DFIQVFRAP [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:15:31.9044291+05:00 0HL7DFIQVFRAP [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:15:31.9274517+05:00 0HL7DFIQVFRAP [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:15:31.9484754+05:00 0HL7DFIQVFRAP [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:15:31.9549805+05:00 0HL7DFIQVFRAP [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:15:31.9569809+05:00 0HL7DFIQVFRAP [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 63.2027ms (afa2e885)
+2017-08-28T00:15:31.9684910+05:00 0HL7DFIQVFRAP [INF] Request finished in 73.0532ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:16:11.2675309+05:00 0HL7DFIQVFRAQ [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:16:11.2735374+05:00 0HL7DFIQVFRAQ [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:16:11.2859150+05:00 0HL7DFIQVFRAQ [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:16:11.2999316+05:00 0HL7DFIQVFRAQ [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:16:11.3009341+05:00 0HL7DFIQVFRAQ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:16:11.3074392+05:00 0HL7DFIQVFRAQ [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 33.1086ms (afa2e885)
+2017-08-28T00:16:11.3134474+05:00 0HL7DFIQVFRAQ [INF] Request finished in 41.067ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:16:27.0521582+05:00 0HL7DFIQVFRAR [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:16:27.0586646+05:00 0HL7DFIQVFRAR [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:16:27.0716770+05:00 0HL7DFIQVFRAR [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:16:27.0872124+05:00 0HL7DFIQVFRAR [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:16:27.0886943+05:00 0HL7DFIQVFRAR [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:16:27.0947002+05:00 0HL7DFIQVFRAR [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 36.0147ms (afa2e885)
+2017-08-28T00:16:27.1022081+05:00 0HL7DFIQVFRAR [INF] Request finished in 44.1612ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:16:58.4194719+05:00 0HL7DFIQVFRAS [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:16:58.4264830+05:00 0HL7DFIQVFRAS [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:16:58.4398809+05:00 0HL7DFIQVFRAS [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:16:58.4558976+05:00 0HL7DFIQVFRAS [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:16:58.4573983+05:00 0HL7DFIQVFRAS [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:16:58.4769161+05:00 0HL7DFIQVFRAS [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 37.6337ms (afa2e885)
+2017-08-28T00:16:58.5354724+05:00 0HL7DFIQVFRAS [INF] Request finished in 62.0396ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:17:27.6862068+05:00 0HL7DFIQVFRAT [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:17:27.6993923+05:00 0HL7DFIQVFRAT [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:17:27.7084022+05:00 0HL7DFIQVFRAT [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:17:27.7239165+05:00 0HL7DFIQVFRAT [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:17:27.7249174+05:00 0HL7DFIQVFRAT [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:17:27.7314234+05:00 0HL7DFIQVFRAT [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 38.1536ms (afa2e885)
+2017-08-28T00:17:27.7439367+05:00 0HL7DFIQVFRAT [INF] Request finished in 46.0272ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:18:17.7501507+05:00 0HL7DFIQVFRAU [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:18:17.7571628+05:00 0HL7DFIQVFRAU [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:18:17.7702149+05:00 0HL7DFIQVFRAU [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:18:17.7856889+05:00 0HL7DFIQVFRAU [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:18:17.7941930+05:00 0HL7DFIQVFRAU [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:18:17.7976965+05:00 0HL7DFIQVFRAU [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 43.849ms (afa2e885)
+2017-08-28T00:18:17.8137118+05:00 0HL7DFIQVFRAU [INF] Request finished in 49.5246ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:18:51.5741764+05:00 0HL7DFIQVFRAV [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:18:51.5801823+05:00 0HL7DFIQVFRAV [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:18:51.5929216+05:00 0HL7DFIQVFRAV [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:18:51.6074327+05:00 0HL7DFIQVFRAV [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:18:51.6084339+05:00 0HL7DFIQVFRAV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:18:51.6154407+05:00 0HL7DFIQVFRAV [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 34.2535ms (afa2e885)
+2017-08-28T00:18:51.6234513+05:00 0HL7DFIQVFRAV [INF] Request finished in 43.1884ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:19:28.3300547+05:00 0HL7DFIQVFRB0 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-28T00:19:28.3320565+05:00 0HL7DFIQVFRB0 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:19:28.3335614+05:00 0HL7DFIQVFRB1 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-28T00:19:28.3450686+05:00 0HL7DFIQVFRB1 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:19:28.3585818+05:00 0HL7DFIQVFRB0 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-28T00:19:28.3665954+05:00 0HL7DFIQVFRB1 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-28T00:19:28.3851077+05:00 0HL7DFIQVFRB0 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:19:28.3976326+05:00 0HL7DFIQVFRB1 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:19:28.3986202+05:00 0HL7DFIQVFRB0 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:19:28.4046255+05:00 0HL7DFIQVFRB1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:19:28.4116340+05:00 0HL7DFIQVFRB0 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 68.8571ms (afa2e885)
+2017-08-28T00:19:28.4176386+05:00 0HL7DFIQVFRB1 [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 71.2143ms (afa2e885)
+2017-08-28T00:19:28.4236442+05:00 0HL7DFIQVFRB0 [INF] Request finished in 82.9068ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:19:28.4301506+05:00 0HL7DFIQVFRB1 [INF] Request finished in 85.4199ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:19:31.8749848+05:00 0HL7DFIQVFRB2 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:19:31.8819962+05:00 0HL7DFIQVFRB2 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:19:31.8951887+05:00 0HL7DFIQVFRB2 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:19:31.9097031+05:00 0HL7DFIQVFRB2 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:19:31.9167082+05:00 0HL7DFIQVFRB2 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:19:31.9232156+05:00 0HL7DFIQVFRB2 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 42.1538ms (afa2e885)
+2017-08-28T00:19:31.9297206+05:00 0HL7DFIQVFRB2 [INF] Request finished in 49.6184ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:19:33.7695106+05:00 0HL7DFIQVFRB3 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:19:33.7805358+05:00 0HL7DFIQVFRB3 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:19:33.7935344+05:00 0HL7DFIQVFRB3 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:19:33.8136646+05:00 0HL7DFIQVFRB3 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:19:33.8196692+05:00 0HL7DFIQVFRB3 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:19:33.8261756+05:00 0HL7DFIQVFRB3 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 50.3085ms (afa2e885)
+2017-08-28T00:19:33.8401899+05:00 0HL7DFIQVFRB3 [INF] Request finished in 63.9564ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:19:36.8489071+05:00 0HL7DFIQVFRB4 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:2}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:19:36.8619189+05:00 0HL7DFIQVFRB4 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":2}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:19:36.8759368+05:00 0HL7DFIQVFRB4 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2 (6438bdd5)
+2017-08-28T00:19:36.8953997+05:00 0HL7DFIQVFRB4 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:19:36.9014057+05:00 0HL7DFIQVFRB4 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:19:36.9074110+05:00 0HL7DFIQVFRB4 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 52.2452ms (afa2e885)
+2017-08-28T00:19:36.9139187+05:00 0HL7DFIQVFRB4 [INF] Request finished in 59.4528ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:19:40.3025193+05:00 0HL7DFIQVFRB5 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:2}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:19:40.3145441+05:00 0HL7DFIQVFRB5 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":2}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:19:40.3265411+05:00 0HL7DFIQVFRB5 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2 (6438bdd5)
+2017-08-28T00:19:40.3465151+05:00 0HL7DFIQVFRB5 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:19:40.3527869+05:00 0HL7DFIQVFRB5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:19:40.3667447+05:00 0HL7DFIQVFRB5 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 49.2452ms (afa2e885)
+2017-08-28T00:19:40.3747610+05:00 0HL7DFIQVFRB5 [INF] Request finished in 70.9249ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:20:30.4326019+05:00 0HL7DFIQVFRB6 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicProperty   (e5be5b71)
+2017-08-28T00:20:30.4385982+05:00 0HL7DFIQVFRB6 [INF] Request finished in 1.6545ms 204  (15c52c40)
+2017-08-28T00:20:30.4546133+05:00 0HL7DFIQVFRB7 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicProperty application/json 37 (e5be5b71)
+2017-08-28T00:20:30.4880004+05:00 0HL7DFIQVFRB7 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:20:30.5366672+05:00 0HL7DFIQVFRB7 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?', @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicProperties] ([CreatedDate], [IdentityId], [IntegrationKey], [IsMultiSelect], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [DynamicProperties]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:20:30.5564113+05:00 0HL7DFIQVFRB7 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:20:30.5624033+05:00 0HL7DFIQVFRB7 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Post (IdealSysApp)" in 98.4845ms (afa2e885)
+2017-08-28T00:20:30.5699169+05:00 0HL7DFIQVFRB7 [INF] Request finished in 109.0099ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:20:30.5774185+05:00 0HL7DFIQVFRB8 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:20:30.5909056+05:00 0HL7DFIQVFRB8 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:20:30.6014528+05:00 0HL7DFIQVFRB8 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:20:30.6161357+05:00 0HL7DFIQVFRB8 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:20:30.6175468+05:00 0HL7DFIQVFRB8 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:20:30.6231904+05:00 0HL7DFIQVFRB8 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 39.9393ms (afa2e885)
+2017-08-28T00:20:30.6298282+05:00 0HL7DFIQVFRB8 [INF] Request finished in 48.351ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:20:33.6007010+05:00 0HL7DFIQVFRB9 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:3}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:20:33.6117245+05:00 0HL7DFIQVFRB9 [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":3}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:20:33.6289539+05:00 0HL7DFIQVFRB9 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 3 (6438bdd5)
+2017-08-28T00:20:33.6504734+05:00 0HL7DFIQVFRB9 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 3
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:20:33.6579807+05:00 0HL7DFIQVFRB9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:20:33.6659890+05:00 0HL7DFIQVFRB9 [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 57.3259ms (afa2e885)
+2017-08-28T00:20:33.6734956+05:00 0HL7DFIQVFRB9 [INF] Request finished in 72.9782ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:20:56.0475872+05:00 0HL7DFIQVFRBA [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:20:56.0555946+05:00 0HL7DFIQVFRBA [INF] Request finished in 1.0705ms 204  (15c52c40)
+2017-08-28T00:20:56.0756138+05:00 0HL7DFIQVFRBB [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 47 (e5be5b71)
+2017-08-28T00:20:56.0897414+05:00 0HL7DFIQVFRBB [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:20:56.1217738+05:00 0HL7DFIQVFRBB [INF] Executed DbCommand (5ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:20:56.1247751+05:00 0HL7DFIQVFRBB [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:20:56.1312815+05:00 0HL7DFIQVFRBB [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 48.6959ms (afa2e885)
+2017-08-28T00:20:56.1377872+05:00 0HL7DFIQVFRBB [INF] Request finished in 57.0666ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:20:56.1513004+05:00 0HL7DFIQVFRBC [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:3}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:20:56.1648136+05:00 0HL7DFIQVFRBC [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":3}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:20:56.1783268+05:00 0HL7DFIQVFRBC [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 3 (6438bdd5)
+2017-08-28T00:20:56.1968440+05:00 0HL7DFIQVFRBC [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 3
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:20:56.2018359+05:00 0HL7DFIQVFRBC [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:20:56.2078418+05:00 0HL7DFIQVFRBC [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 50.3696ms (afa2e885)
+2017-08-28T00:20:56.2133470+05:00 0HL7DFIQVFRBC [INF] Request finished in 63.9224ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:21:05.2541524+05:00 0HL7DFIQVFRBD [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/DynamicPropertyValue   (e5be5b71)
+2017-08-28T00:21:05.2681786+05:00 0HL7DFIQVFRBD [INF] Request finished in 1.5135ms 204  (15c52c40)
+2017-08-28T00:21:05.2786908+05:00 0HL7DFIQVFRBE [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/DynamicPropertyValue application/json 49 (e5be5b71)
+2017-08-28T00:21:05.2956030+05:00 0HL7DFIQVFRBE [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.DynamicPropertyValueViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:21:05.3201926+05:00 0HL7DFIQVFRBE [INF] Executed DbCommand (3ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?', @p7='?' (Size = 4000)], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [DynamicPropertyValues] ([CreatedDate], [DynamicPropertyId], [IdentityId], [IntegrationKey], [IsSelected], [Key], [ModifiedDate], [Value])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [DynamicPropertyValues]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:21:05.3216804+05:00 0HL7DFIQVFRBE [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:21:05.3277085+05:00 0HL7DFIQVFRBE [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Post (IdealSysApp)" in 42.9109ms (afa2e885)
+2017-08-28T00:21:05.3337283+05:00 0HL7DFIQVFRBE [INF] Request finished in 50.0452ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:21:05.3467281+05:00 0HL7DFIQVFRBF [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:3}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:21:05.3592421+05:00 0HL7DFIQVFRBF [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":3}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:21:05.3785825+05:00 0HL7DFIQVFRBF [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 3 (6438bdd5)
+2017-08-28T00:21:05.3956067+05:00 0HL7DFIQVFRBF [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 3
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:21:05.4011043+05:00 0HL7DFIQVFRBF [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:21:05.4071102+05:00 0HL7DFIQVFRBF [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 53.8396ms (afa2e885)
+2017-08-28T00:21:05.4131168+05:00 0HL7DFIQVFRBF [INF] Request finished in 68.5139ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:21:30.3476887+05:00 0HL7DFIQVFRBG [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:21:30.3607011+05:00 0HL7DFIQVFRBG [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:21:30.3747161+05:00 0HL7DFIQVFRBG [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:21:30.3943571+05:00 0HL7DFIQVFRBG [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:21:30.4008780+05:00 0HL7DFIQVFRBG [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:21:30.4073794+05:00 0HL7DFIQVFRBG [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 52.888ms (afa2e885)
+2017-08-28T00:21:30.4148844+05:00 0HL7DFIQVFRBG [INF] Request finished in 60.5528ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:21:35.3669839+05:00 0HL7DFIQVFRBH [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:21:35.3789762+05:00 0HL7DFIQVFRBH [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:21:35.3969924+05:00 0HL7DFIQVFRBH [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:21:35.4178021+05:00 0HL7DFIQVFRBH [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:21:35.4248082+05:00 0HL7DFIQVFRBH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:21:35.4333174+05:00 0HL7DFIQVFRBH [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 57.7077ms (afa2e885)
+2017-08-28T00:21:35.4408240+05:00 0HL7DFIQVFRBH [INF] Request finished in 73.4856ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:03.6775556+05:00 0HL7DFIQVFRBI [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Role   (e5be5b71)
+2017-08-28T00:25:03.6845780+05:00 0HL7DFIQVFRBI [INF] Request finished in 6.4839ms 204  (15c52c40)
+2017-08-28T00:25:03.6915699+05:00 0HL7DFIQVFRBJ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Accounts/GetUserList   (e5be5b71)
+2017-08-28T00:25:03.6975749+05:00 0HL7DFIQVFRBJ [INF] Request finished in 13.0798ms 204  (15c52c40)
+2017-08-28T00:25:03.7156858+05:00 0HL7DFIQVFRBK [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Role application/json  (e5be5b71)
+2017-08-28T00:25:03.7226920+05:00 0HL7DFIQVFRBL [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Accounts/GetUserList application/json  (e5be5b71)
+2017-08-28T00:25:03.7296988+05:00 0HL7DFIQVFRBK [INF] Successfully validated the token. (60169667)
+2017-08-28T00:25:03.7447080+05:00 0HL7DFIQVFRBL [INF] Successfully validated the token. (60169667)
+2017-08-28T00:25:03.7515976+05:00 0HL7DFIQVFRBK [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-28T00:25:03.7631708+05:00 0HL7DFIQVFRBL [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-28T00:25:03.7706109+05:00 0HL7DFIQVFRBK [INF] Executing action method "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:03.7967421+05:00 0HL7DFIQVFRBL [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-28T00:25:03.8076735+05:00 0HL7DFIQVFRBL [INF] Executing action method "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:03.8925685+05:00 0HL7DFIQVFRBK [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [s].[Name], [s].[Id]
+FROM [AspNetRoles] AS [s] (6438bdd5)
+2017-08-28T00:25:03.8949898+05:00 0HL7DFIQVFRBK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:03.9074724+05:00 0HL7DFIQVFRBK [INF] Executed action "IdealSysApp.Controllers.RoleController.Get (IdealSysApp)" in 147.1622ms (afa2e885)
+2017-08-28T00:25:03.9144822+05:00 0HL7DFIQVFRBK [INF] Request finished in 193.1927ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:03.9535611+05:00 0HL7DFIQVFRBL [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [r].[Id], [r].[AccessFailedCount], [r].[ConcurrencyStamp], [r].[Discriminator], [r].[Email], [r].[EmailConfirmed], [r].[LockoutEnabled], [r].[LockoutEnd], [r].[NormalizedEmail], [r].[NormalizedUserName], [r].[PasswordHash], [r].[PhoneNumber], [r].[PhoneNumberConfirmed], [r].[SecurityStamp], [r].[TwoFactorEnabled], [r].[UserName], [r].[FirstName], [r].[LastName], [r].[StorageId]
+FROM [AspNetUsers] AS [r]
+WHERE [r].[Discriminator] = N'AppUser'
+ORDER BY [r].[Id] (6438bdd5)
+2017-08-28T00:25:04.0430386+05:00 0HL7DFIQVFRBL [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE EXISTS (
+    SELECT 1
+    FROM [AspNetUsers] AS [r]
+    WHERE ([r].[Discriminator] = N'AppUser') AND ([a].[UserId] = [r].[Id]))
+ORDER BY [a].[UserId] (6438bdd5)
+2017-08-28T00:25:04.0685257+05:00 0HL7DFIQVFRBL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:04.0760505+05:00 0HL7DFIQVFRBL [INF] Executed action "IdealSysApp.Controllers.AccountsController.GetUserList (IdealSysApp)" in 308.1432ms (afa2e885)
+2017-08-28T00:25:04.0885542+05:00 0HL7DFIQVFRBL [INF] Request finished in 361.7612ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:09.3919774+05:00 0HL7DFIQVFRBM [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-28T00:25:09.3979844+05:00 0HL7DFIQVFRBM [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:09.4149032+05:00 0HL7DFIQVFRBN [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-28T00:25:09.4224236+05:00 0HL7DFIQVFRBM [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-28T00:25:09.4229099+05:00 0HL7DFIQVFRBN [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:09.4424376+05:00 0HL7DFIQVFRBM [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:25:09.4499363+05:00 0HL7DFIQVFRBN [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-28T00:25:09.4509546+05:00 0HL7DFIQVFRBM [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:09.4569427+05:00 0HL7DFIQVFRBM [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 58.853ms (afa2e885)
+2017-08-28T00:25:09.4754610+05:00 0HL7DFIQVFRBN [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:25:09.4759614+05:00 0HL7DFIQVFRBM [INF] Request finished in 67.2108ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:09.4819670+05:00 0HL7DFIQVFRBN [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:09.4944787+05:00 0HL7DFIQVFRBN [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 66.9254ms (afa2e885)
+2017-08-28T00:25:09.5014865+05:00 0HL7DFIQVFRBN [INF] Request finished in 100.218ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:15.3429106+05:00 0HL7DFIQVFRBO [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicProperty?filter={%22sort%22:[],%22skip%22:0,%22take%22:4}   (e5be5b71)
+2017-08-28T00:25:15.3444112+05:00 0HL7DFIQVFRBO [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:15.3574256+05:00 0HL7DFIQVFRBO [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicProperties] AS [p] (6438bdd5)
+2017-08-28T00:25:15.3724388+05:00 0HL7DFIQVFRBO [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[IsMultiSelect], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicProperties] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:25:15.3739408+05:00 0HL7DFIQVFRBO [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:15.3802609+05:00 0HL7DFIQVFRBO [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyController.Get (IdealSysApp)" in 30.8848ms (afa2e885)
+2017-08-28T00:25:15.3912583+05:00 0HL7DFIQVFRBO [INF] Request finished in 45.5551ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:19.4334046+05:00 0HL7DFIQVFRBP [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:25:19.4454118+05:00 0HL7DFIQVFRBP [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:19.4575780+05:00 0HL7DFIQVFRBP [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1 (6438bdd5)
+2017-08-28T00:25:19.4771113+05:00 0HL7DFIQVFRBP [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:25:19.4836034+05:00 0HL7DFIQVFRBP [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:19.4971156+05:00 0HL7DFIQVFRBP [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 50.6557ms (afa2e885)
+2017-08-28T00:25:19.4996202+05:00 0HL7DFIQVFRBP [INF] Request finished in 71.5407ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:22.1438787+05:00 0HL7DFIQVFRBQ [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:2}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:25:22.1548903+05:00 0HL7DFIQVFRBQ [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":2}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:22.1679018+05:00 0HL7DFIQVFRBQ [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2 (6438bdd5)
+2017-08-28T00:25:22.1881070+05:00 0HL7DFIQVFRBQ [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 2
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:25:22.1975929+05:00 0HL7DFIQVFRBQ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:22.2035945+05:00 0HL7DFIQVFRBQ [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 53.6817ms (afa2e885)
+2017-08-28T00:25:22.2126041+05:00 0HL7DFIQVFRBQ [INF] Request finished in 67.3376ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:23.5675551+05:00 0HL7DFIQVFRBR [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/DynamicPropertyValue?filter={%22sort%22:[],%22skip%22:0,%22take%22:4,%22filter%22:{%22filters%22:[{%22field%22:%22DynamicPropertyId%22,%22operator%22:%22eq%22,%22value%22:3}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-28T00:25:23.5805876+05:00 0HL7DFIQVFRBR [INF] Executing action method "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":4,\"filter\":{\"filters\":[{\"field\":\"DynamicPropertyId\",\"operator\":\"eq\",\"value\":3}],\"logic\":\"and\"}}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:23.5940338+05:00 0HL7DFIQVFRBR [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 3 (6438bdd5)
+2017-08-28T00:25:23.6150535+05:00 0HL7DFIQVFRBR [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[DynamicPropertyId], [p].[IdentityId], [p].[IntegrationKey], [p].[IsSelected], [p].[Key], [p].[ModifiedDate], [p].[Value]
+FROM [DynamicPropertyValues] AS [p]
+WHERE [p].[DynamicPropertyId] = 3
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:25:23.6220607+05:00 0HL7DFIQVFRBR [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:23.6335715+05:00 0HL7DFIQVFRBR [INF] Executed action "IdealSysApp.Controllers.DynamicPropertyValueController.Get (IdealSysApp)" in 54.0646ms (afa2e885)
+2017-08-28T00:25:23.6405796+05:00 0HL7DFIQVFRBR [INF] Request finished in 73.008ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:45.2251117+05:00 0HL7DFIQVFRBS [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-28T00:25:45.2321202+05:00 0HL7DFIQVFRBT [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-28T00:25:45.2385153+05:00 0HL7DFIQVFRBS [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:45.2450233+05:00 0HL7DFIQVFRBT [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:25:45.2565473+05:00 0HL7DFIQVFRBS [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-28T00:25:45.2640413+05:00 0HL7DFIQVFRBT [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-28T00:25:45.2765556+05:00 0HL7DFIQVFRBS [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:25:45.2900668+05:00 0HL7DFIQVFRBT [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:25:45.2965729+05:00 0HL7DFIQVFRBS [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:45.3050813+05:00 0HL7DFIQVFRBT [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:25:45.3105868+05:00 0HL7DFIQVFRBS [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 71.433ms (afa2e885)
+2017-08-28T00:25:45.3175930+05:00 0HL7DFIQVFRBT [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 72.4936ms (afa2e885)
+2017-08-28T00:25:45.3246004+05:00 0HL7DFIQVFRBS [INF] Request finished in 91.0948ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:25:45.3402198+05:00 0HL7DFIQVFRBT [INF] Request finished in 95.9552ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:28:39.3843110+05:00 0HL7DFIQVFRBU [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product   (e5be5b71)
+2017-08-28T00:28:39.3913307+05:00 0HL7DFIQVFRBU [INF] Request finished in 2.626ms 204  (15c52c40)
+2017-08-28T00:28:39.4093343+05:00 0HL7DFIQVFRBV [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/Product application/json 65 (e5be5b71)
+2017-08-28T00:28:39.4544181+05:00 0HL7DFIQVFRBV [INF] Executing action method "IdealSysApp.Controllers.ProductController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.ProductViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:28:39.5546718+05:00 0HL7DFIQVFRBV [INF] Executed DbCommand (41ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 4000), @p7='?', @p8='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [Products] ([CreatedDate], [Description], [IdentityId], [ImageUrl], [IntegrationKey], [ModifiedDate], [Name], [Price], [ProductCategoryId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-28T00:28:39.5716785+05:00 0HL7DFIQVFRBV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:28:39.5826898+05:00 0HL7DFIQVFRBV [INF] Executed action "IdealSysApp.Controllers.ProductController.Post (IdealSysApp)" in 170.1322ms (afa2e885)
+2017-08-28T00:28:39.5891978+05:00 0HL7DFIQVFRBV [INF] Request finished in 174.62ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:28:39.5952011+05:00 0HL7DFIQVFRC0 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-28T00:28:39.6027094+05:00 0HL7DFIQVFRC0 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:28:39.6157211+05:00 0HL7DFIQVFRC0 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-28T00:28:39.6537601+05:00 0HL7DFIQVFRC0 [INF] Executed DbCommand (20ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-28T00:28:39.6607646+05:00 0HL7DFIQVFRC0 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:28:39.6677724+05:00 0HL7DFIQVFRC0 [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 65.5869ms (afa2e885)
+2017-08-28T00:28:39.6762799+05:00 0HL7DFIQVFRC0 [INF] Request finished in 74.4558ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-28T00:29:07.4804997+05:00 0HL7DFIQVFRC1 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product/1   (e5be5b71)
+2017-08-28T00:29:07.4865063+05:00 0HL7DFIQVFRC1 [INF] Request finished in 1.1521ms 204  (15c52c40)
+2017-08-28T00:29:07.5105337+05:00 0HL7DFIQVFRC2 [INF] Request starting HTTP/1.1 PUT http://localhost:5050/api/Product/1 application/json 65 (e5be5b71)
+2017-08-28T00:29:07.5225446+05:00 0HL7DFIQVFRC2 [INF] Working peer request (c3b573de)
+2017-08-28T00:29:07.5325550+05:00 0HL7DFIQVFRC2 [INF] Request finished in 16.3549ms 404  (15c52c40)
+2017-08-28T00:31:18.5778294+05:00  [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-28T00:31:18.5888272+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-28T00:31:18.6086671+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [_Migrations]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-08-28T00:31:19.0489032+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName], [p].[StorageId]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-08-28T00:31:19.1706117+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-28T00:31:19.1915063+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductCategories] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-28T00:31:19.1994080+05:00  [INF] Working SeedData (e03f4adc)
+2017-08-28T00:31:30.9477996+05:00 0HL7DG8S28FA7 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product/1   (e5be5b71)
+2017-08-28T00:31:31.0251616+05:00 0HL7DG8S28FA7 [INF] Request finished in 92.1214ms 204  (15c52c40)
+2017-08-28T00:31:31.0824799+05:00 0HL7DG8S28FA8 [INF] Request starting HTTP/1.1 PUT http://localhost:5050/api/Product/1 application/json 65 (e5be5b71)
+2017-08-28T00:31:31.3984438+05:00 0HL7DG8S28FA8 [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-08-28T00:31:31.6607065+05:00 0HL7DG8S28FA8 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Put (IdealSysApp)" with arguments (["1", "IdealSysApp.ViewModels.ProductViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-28T00:31:31.7938234+05:00 0HL7DG8S28FA8 [INF] Executed DbCommand (81ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-28T00:31:31.9449684+05:00 0HL7DG8S28FA8 [INF] Executed DbCommand (13ms) [Parameters=[@p9='?', @p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 4000), @p7='?', @p8='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+UPDATE [Products] SET [CreatedDate] = @p0, [Description] = @p1, [IdentityId] = @p2, [ImageUrl] = @p3, [IntegrationKey] = @p4, [ModifiedDate] = @p5, [Name] = @p6, [Price] = @p7, [ProductCategoryId] = @p8
+WHERE [Id] = @p9;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-28T00:31:32.0045933+05:00 0HL7DG8S28FA8 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-28T00:31:32.1217044+05:00 0HL7DG8S28FA8 [INF] Executed action "IdealSysApp.Controllers.ProductController.Put (IdealSysApp)" in 783.6618ms (afa2e885)
+2017-08-28T00:31:32.1512304+05:00 0HL7DG8S28FA8 [INF] Request finished in 1052.1206ms 200 application/json; charset=utf-8 (15c52c40)

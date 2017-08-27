@@ -69,5 +69,38 @@ namespace IdealSysApp.Controllers
       }
 
     }
+    // PUT: api/ProductCategory/5
+    [HttpPut("{id}")]
+    public IActionResult Put(long id, [FromBody]ProductViewModel value)
+    {
+      try
+      {
+        var ent = _service.Get(id);
+        _service.ViewModel = value;
+        ent = _service.Update(ent);
+        return new OkObjectResult(_service._mapper.Map<ProductViewModel>(ent));
+      }
+      catch (Exception ex)
+      {
+
+        return new BadRequestObjectResult(ex.Message);
+      }
+
+    }
+
+    // DELETE: api/ApiWithActions/5
+    [HttpDelete("{id}")]
+    public IActionResult Delete(long id)
+    {
+      var ent = _service.Get(id);
+      if (ent != null)
+      {
+        _service.Delete(ent);
+        return Ok();
+      }
+      else
+        return BadRequest("Entity not found");
+
+    }
   }
 }

@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace IdealSysApp.Models.Entities
 {
-  public class DynamicPropertyValue
+  public class DynamicPropertyValue:BaseEntity
   {
-    public long Id { get; set; }
     /// <summary>
     /// Examle:White,Black
     /// </summary>

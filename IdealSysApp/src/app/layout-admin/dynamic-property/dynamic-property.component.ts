@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Rx';
 import { State, process } from '@progress/kendo-data-query';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DynamicPropertyService } from '../../shared/services/dynamicProperty.service';
+import { DynamicPropertyViewModel } from '../../shared/models/entityViewModels';
+
 import { AddEvent, EditEvent, GridComponent } from '@progress/kendo-angular-grid';
 const formGroup = dataItem => new FormGroup({
     'Id': new FormControl(dataItem.Id),
@@ -16,94 +18,78 @@ const formGroup = dataItem => new FormGroup({
   styleUrls: ['./dynamic-property.component.scss']
 })
 export class DynamicPropertyComponent implements OnInit {
-    private gridState: State = {
+    public view: Observable<GridDataResult>;
+    public gridState: State = {
         sort: [],
         skip: 0,
-        take: 8,
-
+        take: 4
     };
-    public view: any[];
     public formGroup: FormGroup;
+
     private editedRowIndex: number;
 
-    public get isInEditingMode(): boolean {
-        return this.editedRowIndex !== undefined || this.isNew;
+    constructor(private editService: DynamicPropertyService) {
+      
     }
 
-    private isNew: boolean = false;
+    public ngOnInit(): void {
+        this.view = this.editService.getAll(this.gridState);
 
-    @ViewChild(GridComponent) private grid: GridComponent;
-
-
-    constructor(private service: DynamicPropertyService) { }
-
-    ngOnInit() {
-        this.view = [{Key:"asas",Value:"asas",Id:1}];
-            //= this.service.getAll(this.gridState);
     }
-    public addHandler({ sender, dataItem }: AddEvent): void {
+
+    public onStateChange(state: State) {
+        this.gridState = state;
+        this.load();
+    }
+
+    protected addHandler({sender}) {
         this.closeEditor(sender);
 
-        this.formGroup = formGroup({
-            Key: "",
-            Value: ""
+        this.formGroup = new FormGroup({
+            'Key': new FormControl(),
+            'Value': new FormControl("", Validators.required),
+           
         });
 
-        this.isNew = true;
         sender.addRow(this.formGroup);
-        this.saveRow();
     }
 
-    public editHandler({ sender, rowIndex, dataItem, isNew }: EditEvent): void {
-        if (this.formGroup && !this.formGroup.valid ) {
-            return;
-        }
-        this.saveRow();
+    protected editHandler({sender, rowIndex, dataItem}) {
+        this.closeEditor(sender);
 
-        this.formGroup = formGroup(dataItem);
+        this.formGroup = new FormGroup({
+            'Id': new FormControl(dataItem.Id),
+            'Key': new FormControl(dataItem.Key, Validators.required),
+            'Value': new FormControl(dataItem.Value),
+          
+        });
 
         this.editedRowIndex = rowIndex;
 
         sender.editRow(rowIndex, this.formGroup);
     }
 
-    public cancelHandler(): void {
-        this.closeEditor(this.grid, this.editedRowIndex);
+    protected cancelHandler({sender, rowIndex}) {
+        this.closeEditor(sender, rowIndex);
     }
 
-    public editClick(rowIndex: number): void {
-        this.editHandler({
-            sender: this.grid,
-            rowIndex: rowIndex,
-            dataItem: this.view[rowIndex],
-            isNew: this.isNew
-        });
-    }
-
-    public saveClick(rowIndex: number): void {
-        if (this.formGroup && !this.formGroup.valid) {
-            return;
-        }
-
-        this.saveRow();
-    }
-
-    private closeEditor(grid: GridComponent, rowIndex: number = this.editedRowIndex): void {
-        this.isNew = false;
+    private closeEditor(grid, rowIndex = this.editedRowIndex) {
         grid.closeRow(rowIndex);
         this.editedRowIndex = undefined;
         this.formGroup = undefined;
     }
 
-    private saveRow(): void {
-   
-        if (this.isInEditingMode) {
-            this.isNew ? this.service.add(this.formGroup.value) : this.service.update(this.formGroup.value);
-        }
+    protected saveHandler({sender, rowIndex, formGroup, isNew}) {
+        const product: DynamicPropertyViewModel = formGroup.value;
+        isNew ? this.editService.add(product).subscribe(s => { this.load() }) : this.editService.update(product).subscribe(s => { this.load() });
 
-        this.closeEditor(this.grid);
+        sender.closeRow(rowIndex);
     }
-    public onStateChange(e) {
-        this.gridState = e;
+    private load() {
+        this.view = this.editService.getAll(this.gridState);
+    }
+    protected removeHandler({dataItem}) {
+        if (confirm("Удалить?"))
+        this.editService.delete(dataItem.Id).subscribe(s => { this.load() });
     }
 }

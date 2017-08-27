@@ -48,17 +48,27 @@ namespace IdealSysApp.Migrations
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("CreatedDate");
+
                     b.Property<long>("DynamicPropertyId");
+
+                    b.Property<string>("IdentityId");
+
+                    b.Property<string>("IntegrationKey");
 
                     b.Property<bool>("IsSelected");
 
                     b.Property<string>("Key");
+
+                    b.Property<DateTime>("ModifiedDate");
 
                     b.Property<string>("Value");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DynamicPropertyId");
+
+                    b.HasIndex("IdentityId");
 
                     b.ToTable("DynamicPropertyValues");
                 });
@@ -485,6 +495,10 @@ namespace IdealSysApp.Migrations
                         .WithMany("DynamicPropertyValues")
                         .HasForeignKey("DynamicPropertyId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
+                        .WithMany()
+                        .HasForeignKey("IdentityId");
                 });
 
             modelBuilder.Entity("IdealSysApp.Models.Entities.Order", b =>
