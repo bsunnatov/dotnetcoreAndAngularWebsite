@@ -2,9 +2,10 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProductComponent } from './product.component';
-
+import { DynamicPropertyComponent } from '../dynamic-property/dynamic-property.component';
 const routes: Routes = [
-    { path: '', component: ProductComponent }
+    { path: '', component: ProductComponent },
+    { path: 'property', component: DynamicPropertyComponent }
 ];
 
 @NgModule({

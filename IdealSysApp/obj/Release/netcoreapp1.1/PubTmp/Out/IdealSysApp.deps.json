@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "1793dfdda8b496fcb34b96861361c55dc8222cd9"
+    "signature": "483c11e11b85249de8d925c5bc195c3d3c8894a4"
   },
   "compilationOptions": {
     "defines": [
@@ -46,6 +46,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "1.1.0",
           "Serilog.Extensions.Logging.File": "1.0.1",
           "System.IdentityModel.Tokens.Jwt": "5.1.4",
+          "System.Linq.Dynamic.Core": "1.0.7.6",
           "System.Xml.XmlSerializer": "4.3.0"
         },
         "runtime": {
@@ -2030,6 +2031,32 @@
           "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
         }
       },
+      "system.diagnostics.tracesource/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Diagnostics.TraceSource.dll": {}
+        }
+      },
       "system.identitymodel.tokens.jwt/5.1.4": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "5.1.4"
@@ -2090,6 +2117,23 @@
             "rid": "win",
             "assetType": "runtime"
           }
+        }
+      },
+      "system.linq.dynamic.core/1.0.7.6": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.TraceSource": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Linq.Dynamic.Core.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/System.Linq.Dynamic.Core.dll": {}
         }
       },
       "system.net.websockets/4.3.0": {
@@ -4757,6 +4801,13 @@
       "path": "system.diagnostics.stacktrace/4.3.0",
       "hashPath": "system.diagnostics.stacktrace.4.3.0.nupkg.sha512"
     },
+    "system.diagnostics.tracesource/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VnYp1NxGx8Ww731y2LJ1vpfb/DKVNKEZ8Jsh5SgQTZREL/YpWRArgh9pI8CDLmgHspZmLL697CaLvH85qQpRiw==",
+      "path": "system.diagnostics.tracesource/4.3.0",
+      "hashPath": "system.diagnostics.tracesource.4.3.0.nupkg.sha512"
+    },
     "system.identitymodel.tokens.jwt/5.1.4": {
       "type": "package",
       "serviceable": true,
@@ -4777,6 +4828,13 @@
       "sha512": "sha512-wpGJuACA6r8+KRckXoI6ghGTwgPRiICI6T7kgHI/m7S5eMqV/8jH37fzAUhTwIe9RwlH/j1sWwm2Q2zyXwZGHw==",
       "path": "system.io.pipes/4.3.0",
       "hashPath": "system.io.pipes.4.3.0.nupkg.sha512"
+    },
+    "system.linq.dynamic.core/1.0.7.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bt/dzI4v7lBJWULpPszAfDJOALaS08A6yddghODuFmQ7VRbtmOI4ZEjTnhjrrUczg4ayifq59G9Fpflci7I3cQ==",
+      "path": "system.linq.dynamic.core/1.0.7.6",
+      "hashPath": "system.linq.dynamic.core.1.0.7.6.nupkg.sha512"
     },
     "system.net.websockets/4.3.0": {
       "type": "package",

@@ -18,6 +18,18 @@
 
         <textarea type="text" class="k-textbox form-control" formControlName="Description" ></textarea>
       </div>
+      <div class="form-group">
+        <label for="LastName" class="control-label">Описание</label>
+
+        <kendo-combobox [data]="categoryItems"
+                        [textField]="'Name'"
+                        [valueField]="'Id'"
+                         [valuePrimitive]="true"
+                        [placeholder]="'Выберите группа'" formControlName="ProductCategoryId">
+
+        </kendo-combobox>
+      </div>
+     
     </form>
   
     <kendo-dialog-actions>

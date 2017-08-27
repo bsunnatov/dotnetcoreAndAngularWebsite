@@ -1,0 +1,105 @@
+2017-08-27T18:25:47.3925687+05:00  [INF] Executed DbCommand (209ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-27T18:25:47.4407073+05:00  [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-27T18:25:47.5222358+05:00  [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [_Migrations]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-08-27T18:25:48.3366185+05:00  [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName], [p].[StorageId]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-08-27T18:25:48.5203031+05:00  [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-27T18:25:48.5868672+05:00  [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductCategories] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-27T18:25:48.5918705+05:00  [INF] Working SeedData (e03f4adc)
+2017-08-27T18:25:49.4570276+05:00 0HL7D9SGVT1C6 [INF] Request starting HTTP/1.1 GET http://localhost:60737/   (e5be5b71)
+2017-08-27T18:25:49.4570276+05:00 0HL7D9SGVT1C5 [INF] Request starting HTTP/1.1 DEBUG http://localhost:60737/  0 (e5be5b71)
+2017-08-27T18:25:49.6649044+05:00 0HL7D9SGVT1C5 [INF] Request finished in 257.1247ms 200  (15c52c40)
+2017-08-27T18:25:50.0051301+05:00 0HL7D9SGVT1C6 [INF] Working peer request (c3b573de)
+2017-08-27T18:25:50.0221405+05:00 0HL7D9SGVT1C6 [INF] Request finished in 621.3344ms 404  (15c52c40)
+2017-08-27T18:25:50.0391634+05:00 0HL7D9SGVT1C7 [INF] Request starting HTTP/1.1 GET http://localhost:60737/favicon.ico   (e5be5b71)
+2017-08-27T18:25:50.0486050+05:00 0HL7D9SGVT1C7 [INF] Working peer request (c3b573de)
+2017-08-27T18:25:50.0541086+05:00 0HL7D9SGVT1C7 [INF] Request finished in 15.0299ms 404  (15c52c40)
+2017-08-27T18:26:30.9239859+05:00 0HL7D9SGVT1C8 [INF] Request starting HTTP/1.1 GET http://localhost:60737/api/productCategory   (e5be5b71)
+2017-08-27T18:26:31.1944889+05:00 0HL7D9SGVT1C8 [INF] User profile is available. Using '"C:\Users\b.sunnatov\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-08-27T18:26:31.3858382+05:00 0HL7D9SGVT1C8 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments ([""]) - ModelState is Valid (ba7f4ac2)
+2017-08-27T18:26:31.4442539+05:00 0HL7D9SGVT1C8 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-27T18:26:31.4993264+05:00 0HL7D9SGVT1C8 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-27T18:26:31.5407333+05:00 0HL7D9SGVT1C8 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-27T18:26:31.7335529+05:00 0HL7D9SGVT1C8 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 696.1575ms (afa2e885)
+2017-08-27T18:26:31.7415633+05:00 0HL7D9SGVT1C8 [INF] Request finished in 823.5057ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-27T18:27:09.8829059+05:00 0HL7D9SGVT1C9 [INF] Request starting HTTP/1.1 GET http://localhost:60737/api/productCategory   (e5be5b71)
+2017-08-27T18:27:09.9431549+05:00 0HL7D9SGVT1C9 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments ([""]) - ModelState is Valid (ba7f4ac2)
+2017-08-27T18:27:09.9962157+05:00 0HL7D9SGVT1C9 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-27T18:27:10.0190223+05:00 0HL7D9SGVT1C9 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-27T18:27:10.0255294+05:00 0HL7D9SGVT1C9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-27T18:27:10.0270298+05:00 0HL7D9SGVT1C9 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 105.0301ms (afa2e885)
+2017-08-27T18:27:10.0350422+05:00 0HL7D9SGVT1C9 [INF] Request finished in 175.76ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-27T18:27:10.0849519+05:00 0HL7D9SGVT1CA [INF] Request starting HTTP/1.1 GET http://localhost:60737/favicon.ico   (e5be5b71)
+2017-08-27T18:27:10.0914561+05:00 0HL7D9SGVT1CA [INF] Working peer request (c3b573de)
+2017-08-27T18:27:10.1029649+05:00 0HL7D9SGVT1CA [INF] Request finished in 11.7341ms 404  (15c52c40)
+2017-08-27T18:27:42.7885158+05:00  [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-27T18:27:42.7995255+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-27T18:27:42.8068030+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [_Migrations]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-08-27T18:27:43.2281627+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName], [p].[StorageId]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-08-27T18:27:43.3533435+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-27T18:27:43.3583470+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductCategories] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-27T18:27:43.3612106+05:00  [INF] Working SeedData (e03f4adc)
+2017-08-27T18:27:43.6959484+05:00 0HL7D9TJ1BQUK [INF] Request starting HTTP/1.1 GET http://localhost:60737/   (e5be5b71)
+2017-08-27T18:27:43.9726927+05:00 0HL7D9TJ1BQUK [INF] Working peer request (c3b573de)
+2017-08-27T18:27:44.0377534+05:00 0HL7D9TJ1BQUK [INF] Request finished in 343.5574ms 404  (15c52c40)
+2017-08-27T18:28:01.8391673+05:00 0HL7D9TJ1BQUL [INF] Request starting HTTP/1.1 GET http://localhost:60737/api/productCategory   (e5be5b71)
+2017-08-27T18:28:01.9704565+05:00 0HL7D9TJ1BQUL [INF] User profile is available. Using '"C:\Users\b.sunnatov\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-08-27T18:28:02.0678388+05:00 0HL7D9TJ1BQUL [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments ([""]) - ModelState is Valid (ba7f4ac2)
+2017-08-27T18:28:02.1033761+05:00 0HL7D9TJ1BQUL [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name]
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-27T18:28:02.1218895+05:00 0HL7D9TJ1BQUL [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p] (6438bdd5)
+2017-08-27T18:28:02.1513180+05:00 0HL7D9TJ1BQUL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-27T18:28:02.3380836+05:00 0HL7D9TJ1BQUL [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 420.2911ms (afa2e885)
+2017-08-27T18:28:02.3435872+05:00 0HL7D9TJ1BQUL [INF] Request finished in 504.0717ms 200 application/json; charset=utf-8 (15c52c40)

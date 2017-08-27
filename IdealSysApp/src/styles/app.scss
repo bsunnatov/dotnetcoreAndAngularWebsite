@@ -1,9 +1,10 @@
 ﻿/* You can add global styles to this file, and also import other style files */
-@import "bootstrap/bootstrap";
+
 @import "spinner";
 @import "utils";
 @import "rtl";
 @import "responsive";
+@import "../styles/bootstrap/bootstrap.scss";
 $color-primary: #218E44;
 $color-secondary: #6FB344;
 $accent: #218E44; //Customize telerik default theme color

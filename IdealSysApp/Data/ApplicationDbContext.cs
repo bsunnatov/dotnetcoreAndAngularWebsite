@@ -30,6 +30,7 @@ namespace IdealSysApp.Data
     public DbSet<DynamicProperty> DynamicProperties { get; set; }
     public DbSet<DynamicPropertyValue> DynamicPropertyValues { get; set; }
     public DbSet<ProductImage> ProductImages { get; set; }
+    public DbSet<ProductProperty> ProductProperties { get; set; }
 
   }
 }

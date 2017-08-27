@@ -2,6 +2,7 @@
 import { Validators, FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
 import { Product } from './model';
 import { GlobalValidator } from '../../shared/utils/validators';
+import { ProductCategoryService } from '../../shared/services/product-category.service';
 @Component({
     selector: 'kendo-grid-edit-form-product',
     templateUrl: './edit-form.component.html',
@@ -9,13 +10,15 @@ import { GlobalValidator } from '../../shared/utils/validators';
 })
 export class ProductEditFormComponent {
     // The order retrieved from the server
-  
-    constructor() {
+    private categoryItems: Array<any>;
+    constructor(private productCategoryService: ProductCategoryService) {
+        productCategoryService.getAll({}).subscribe(s => { this.categoryItems = s.data });  
     }
     editForm = new FormGroup({
         'Name': new FormControl("", Validators.required),
         'Description': new FormControl(""),
         'Id': new FormControl(0),
+        'ProductCategoryId': new FormControl(1)
     });
 
 

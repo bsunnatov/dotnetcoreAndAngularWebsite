@@ -1,13 +1,14 @@
 ﻿<section [@routerTransition]>
-  <ng-select [multiple]="true"
+  <product-navbar></product-navbar>
+  <!--<ng-select [multiple]="true"
              [items]="items"
              [disabled]="disabled"
              (data)="refreshValue($event)"
              (selected)="selected($event)"
              (removed)="removed($event)"
              placeholder="No category selected"></ng-select>
-  <pre>{{itemsToString(value)}}</pre>
-  <form [formGroup]="form">
+  <pre>{{itemsToString(value)}}</pre>-->
+  <!--<form [formGroup]="form">
     <div class="form-group">
       <label>Name</label>
       <input class="form-control input-sm" type="text" formControlName="firstname" />
@@ -93,8 +94,8 @@
         </div>
       </iq-select2>
     </div>
-    </form>
-
+    </form>-->
+  <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
     <kendo-grid [data]="gridData|async"
                 [height]="auto"
                 [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"

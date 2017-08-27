@@ -34,15 +34,11 @@ namespace IdealSysApp.Migrations
 
                     b.Property<DateTime>("ModifiedDate");
 
-                    b.Property<long?>("ProductId");
-
                     b.Property<string>("Value");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdentityId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("DynamicProperties");
                 });
@@ -239,6 +235,38 @@ namespace IdealSysApp.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.ProductProperty", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<long>("DynamicPropertyId");
+
+                    b.Property<long?>("DynamicPropertyValueId");
+
+                    b.Property<string>("IdentityId");
+
+                    b.Property<string>("IntegrationKey");
+
+                    b.Property<DateTime>("ModifiedDate");
+
+                    b.Property<long>("ProductId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DynamicPropertyId");
+
+                    b.HasIndex("DynamicPropertyValueId");
+
+                    b.HasIndex("IdentityId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductProperties");
                 });
 
             modelBuilder.Entity("IdealSysApp.Models.Entities.Storage", b =>
@@ -449,10 +477,6 @@ namespace IdealSysApp.Migrations
                     b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
                         .WithMany()
                         .HasForeignKey("IdentityId");
-
-                    b.HasOne("IdealSysApp.Models.Entities.Product")
-                        .WithMany("DynamicProperties")
-                        .HasForeignKey("ProductId");
                 });
 
             modelBuilder.Entity("IdealSysApp.Models.Entities.DynamicPropertyValue", b =>
@@ -530,7 +554,28 @@ namespace IdealSysApp.Migrations
                         .HasForeignKey("IdentityId");
 
                     b.HasOne("IdealSysApp.Models.Entities.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("IdealSysApp.Models.Entities.ProductProperty", b =>
+                {
+                    b.HasOne("IdealSysApp.Models.Entities.DynamicProperty", "DynamicProperty")
                         .WithMany()
+                        .HasForeignKey("DynamicPropertyId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("IdealSysApp.Models.Entities.DynamicPropertyValue", "DynamicPropertyValue")
+                        .WithMany()
+                        .HasForeignKey("DynamicPropertyValueId");
+
+                    b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
+                        .WithMany()
+                        .HasForeignKey("IdentityId");
+
+                    b.HasOne("IdealSysApp.Models.Entities.Product", "Product")
+                        .WithMany("ProductProperties")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

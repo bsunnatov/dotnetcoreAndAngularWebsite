@@ -9,7 +9,7 @@ namespace IdealSysApp.ViewModels
     {
     public ProductViewModel()
     {
-      DynamicProperties = new List<DynamicPropertyViewModel>();
+      ProductProperties = new List<ProductPropertyViewModel>();
     }
     public long Id { get; set; }
     public string Name { get; set; }
@@ -20,6 +20,6 @@ namespace IdealSysApp.ViewModels
     public string ImageUrl { get; set; }
     public long ProductCategoryId { get; set; }
     public decimal Price { get; set; }
-    public IList<DynamicPropertyViewModel> DynamicProperties { get; set; }
+    public IList<ProductPropertyViewModel> ProductProperties { get; set; }
   }
 }

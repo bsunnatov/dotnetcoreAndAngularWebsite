@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="mob_api" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="aspell_api" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\PersonFolder\\Projects\\dotnetcoreAndAngularWebsite\\IdealSysApp\\obj\\Release\\netcoreapp1\.1\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>
