@@ -26,7 +26,7 @@ namespace IdealSysApp.ViewModels.Mappings
       CreateMap<ProductPropertyViewModel, ProductProperty>();
       CreateMap<ProductImageViewModel, ProductImage>();
       //Entity to ViewModel
-      CreateMap<ProductCategory, ProductCategoryViewModel>();
+      CreateMap<ProductCategory, ProductCategoryViewModel>().ForMember(s=>s.HasChild,m=>m.MapFrom(v=>v.Childs.Any()));
       CreateMap<Product, ProductViewModel>();
       CreateMap<AppUser, UserViewModel>().AfterMap((src, dist) =>
       {

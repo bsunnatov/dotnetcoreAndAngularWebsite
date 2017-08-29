@@ -22,7 +22,9 @@
       </ng-template>
      
     </kendo-grid-command-column>
-
+    <div *kendoGridDetailTemplate="let dataItem">
+      <dynamic-property-value [dynamicProperty]="dataItem"></dynamic-property-value>
+    </div>
   </kendo-grid>
   <kendo-grid-edit-form [model]="editDataItem" [isNew]="isNew"
                         (save)="saveHandler($event)"

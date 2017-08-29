@@ -25,6 +25,7 @@ using IdealSysApp.Extensions;
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Routing;
 using IdealSysApp.ViewModels;
+using Microsoft.Extensions.FileProviders;
 
 namespace IdealSysApp
 {
@@ -140,7 +141,20 @@ namespace IdealSysApp
       //routeBuilder.MapRoute("default", "");
       //app.UseRouter(routeBuilder.Build());
       app.UseDefaultFiles();
-      app.UseStaticFiles();
+      app.UseStaticFiles();// For the wwwroot folder
+
+      app.UseStaticFiles(new StaticFileOptions()
+      {
+        FileProvider = new PhysicalFileProvider(
+            Path.Combine(Directory.GetCurrentDirectory(), @"Uploads")),//Dostup k Folder static file
+        RequestPath = new PathString("/Uploads")
+      });
+      app.UseDirectoryBrowser(new DirectoryBrowserOptions()
+      {
+        FileProvider = new PhysicalFileProvider(
+           Path.Combine(Directory.GetCurrentDirectory(), @"Uploads")),
+        RequestPath = new PathString("/Uploads")
+      });
       app.UseMvc();
       app.Use(async (context, next) =>//Per request handling
       {

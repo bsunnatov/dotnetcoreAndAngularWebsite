@@ -9,5 +9,7 @@ $color-primary: #218E44;
 $color-secondary: #6FB344;
 $accent: #218E44; //Customize telerik default theme color
 @import "~@progress/kendo-theme-bootstrap/dist/all";
-
+.text-bold{
+  font-weight:700;
+}
 

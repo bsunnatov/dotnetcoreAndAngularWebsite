@@ -23,8 +23,6 @@ namespace IdealSysApp.Controllers
   {
     private IHostingEnvironment _hostingEnvironment;
     private readonly IRepository<Product> _service;
-    private readonly IMapper _mapper;
-    private readonly ILogger _logger;
     public ProductController(IHostingEnvironment environment, IRepository<Product> service)
     {
       _hostingEnvironment = environment;
@@ -43,7 +41,7 @@ namespace IdealSysApp.Controllers
       else
       {
         var vmResult = _service._mapper.Map<IEnumerable<ProductViewModel>>(_service.AsQueryable());
-        return new { Data = vmResult, Total = _service.AsQueryable().Count() };
+        return vmResult;
       }
     }
 
@@ -51,7 +49,7 @@ namespace IdealSysApp.Controllers
     public ProductViewModel Get(long id)
     {
       var product = _service.Get(id);
-      return _mapper.Map<ProductViewModel>(product);
+      return _service._mapper.Map<ProductViewModel>(product);
     }
     // POST: api/Storage
     [HttpPost]

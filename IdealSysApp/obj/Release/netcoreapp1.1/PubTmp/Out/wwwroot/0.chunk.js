@@ -1,9 +1,143 @@
 webpackJsonp([0],{
 
+/***/ "../../../../../src/app/layout-admin/dynamic-property-value/dynamic-property-value.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div> \r\n  <kendo-grid [data]=\"view | async\"\r\n              [height]=\"auto\"\r\n              [pageSize]=\"gridState.take\" [skip]=\"gridState.skip\" [sort]=\"gridState.sort\"\r\n              [pageable]=\"true\" [sortable]=\"true\"\r\n              (dataStateChange)=\"onStateChange($event)\"\r\n              (edit)=\"editHandler($event)\" (cancel)=\"cancelHandler($event)\"\r\n              (save)=\"saveHandler($event)\" (remove)=\"removeHandler($event)\"\r\n              (add)=\"addHandler($event)\">\r\n    <ng-template kendoGridToolbarTemplate>\r\n      <button kendoGridAddCommand>Добавить новая</button>\r\n    </ng-template>\r\n    <kendo-grid-column field=\"Key\" title=\"Key\"></kendo-grid-column>\r\n    <kendo-grid-column field=\"Value\"  title=\"Value\"></kendo-grid-column>\r\n    <kendo-grid-command-column title=\"command\" width=\"220\">\r\n      <ng-template kendoGridCellTemplate let-isNew=\"isNew\">\r\n        <button kendoGridEditCommand class=\"k-primary\"><span class=\"fa fa-edit\"></span></button>\r\n        <button kendoGridRemoveCommand><span class=\"fa fa-trash\"></span></button>\r\n        <button kendoGridSaveCommand [disabled]=\"formGroup?.invalid\">{{ isNew ? 'Add' : 'Update' }}</button>\r\n        <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>\r\n      </ng-template>\r\n    </kendo-grid-command-column>\r\n  </kendo-grid>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/layout-admin/dynamic-property-value/dynamic-property-value.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/layout-admin/dynamic-property-value/dynamic-property-value.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_dynamicPropertyValue_service__ = __webpack_require__("../../../../../src/app/shared/services/dynamicPropertyValue.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DynamicPropertyValueComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var formGroup = function (dataItem) { return new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormGroup"]({
+    'Id': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Id),
+    'Key': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Key, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required),
+    'Value': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Value),
+}); };
+var DynamicPropertyValueComponent = (function () {
+    function DynamicPropertyValueComponent(editService) {
+        this.editService = editService;
+        this.gridState = {
+            sort: [],
+            skip: 0,
+            take: 4
+        };
+    }
+    DynamicPropertyValueComponent.prototype.ngOnInit = function () {
+        this.view = this.editService.queryForDynamicProperty(this.dynamicProperty, this.gridState);
+    };
+    DynamicPropertyValueComponent.prototype.onStateChange = function (state) {
+        this.gridState = state;
+        this.load();
+    };
+    DynamicPropertyValueComponent.prototype.addHandler = function (_a) {
+        var sender = _a.sender;
+        this.closeEditor(sender);
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormGroup"]({
+            'Key': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](),
+            'Value': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]("", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required),
+        });
+        sender.addRow(this.formGroup);
+    };
+    DynamicPropertyValueComponent.prototype.editHandler = function (_a) {
+        var sender = _a.sender, rowIndex = _a.rowIndex, dataItem = _a.dataItem;
+        this.closeEditor(sender);
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormGroup"]({
+            'Id': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Id),
+            'Key': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Key, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required),
+            'Value': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Value),
+        });
+        this.editedRowIndex = rowIndex;
+        sender.editRow(rowIndex, this.formGroup);
+    };
+    DynamicPropertyValueComponent.prototype.cancelHandler = function (_a) {
+        var sender = _a.sender, rowIndex = _a.rowIndex;
+        this.closeEditor(sender, rowIndex);
+    };
+    DynamicPropertyValueComponent.prototype.closeEditor = function (grid, rowIndex) {
+        if (rowIndex === void 0) { rowIndex = this.editedRowIndex; }
+        grid.closeRow(rowIndex);
+        this.editedRowIndex = undefined;
+        this.formGroup = undefined;
+    };
+    DynamicPropertyValueComponent.prototype.saveHandler = function (_a) {
+        var _this = this;
+        var sender = _a.sender, rowIndex = _a.rowIndex, formGroup = _a.formGroup, isNew = _a.isNew;
+        var product = formGroup.value;
+        product.DynamicPropertyId = this.dynamicProperty.Id;
+        isNew ? this.editService.add(product).subscribe(function (s) { _this.load(); }) : this.editService.update(product).subscribe(function (s) { _this.load(); });
+        sender.closeRow(rowIndex);
+    };
+    DynamicPropertyValueComponent.prototype.load = function () {
+        this.view = this.editService.queryForDynamicProperty(this.dynamicProperty, this.gridState);
+    };
+    DynamicPropertyValueComponent.prototype.removeHandler = function (_a) {
+        var _this = this;
+        var dataItem = _a.dataItem;
+        if (confirm("Удалить?"))
+            this.editService.delete(dataItem.Id).subscribe(function (s) { _this.load(); });
+        ;
+    };
+    return DynamicPropertyValueComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], DynamicPropertyValueComponent.prototype, "dynamicProperty", void 0);
+DynamicPropertyValueComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'dynamic-property-value',
+        template: __webpack_require__("../../../../../src/app/layout-admin/dynamic-property-value/dynamic-property-value.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/layout-admin/dynamic-property-value/dynamic-property-value.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_dynamicPropertyValue_service__["a" /* DynamicPropertyValueService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_dynamicPropertyValue_service__["a" /* DynamicPropertyValueService */]) === "function" && _a || Object])
+], DynamicPropertyValueComponent);
+
+var _a;
+//# sourceMappingURL=dynamic-property-value.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/layout-admin/dynamic-property/dynamic-property.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<product-navbar></product-navbar>\n<div>  <kendo-grid [data]=\"view|async\"\r\n            [height]=\"auto\"\r\n            [pageSize]=\"gridState.take\" [skip]=\"gridState.skip\" [sort]=\"gridState.sort\"\r\n            [pageable]=\"true\" [sortable]=\"true\"\r\n            [filterable]=\"true\"\r\n            (dataStateChange)=\"onStateChange($event)\"\r\n            (edit)=\"editHandler($event)\" (remove)=\"removeHandler($event)\"\r\n            (add)=\"addHandler($event)\">\r\n         <ng-template kendoGridToolbarTemplate>\r\n           <button kendoGridAddCommand>Add new</button>\r\n           <button *ngIf=\"isInEditingMode\"\r\n                   (click)=\"cancelHandler()\"\r\n                   class=\"k-button k-primary\">\r\n             Cancel\r\n           </button>\r\n         </ng-template>\r\n  <kendo-grid-column field=\"Key\" title=\"Ключ\" width=\"auto\">\r\n  </kendo-grid-column>\r\n  <kendo-grid-column field=\"Value\" title=\"Наименования\" width=\"auto\">\r\n  </kendo-grid-column>\r\n  <kendo-grid-command-column title=\"Действие\" width=\"200\">\r\n    <ng-template kendoGridCellTemplate>\r\n      <button kendoGridEditCommand class=\"k-default\"><span class=\"fa fa-edit\"></span></button>\r\n      <button kendoGridRemoveCommand class=\"k-default\"><span class=\"fa fa-trash\"></span></button>\r\n    </ng-template>\r\n\r\n  </kendo-grid-command-column>\r\n</kendo-grid>\r\n</div>"
+module.exports = "<product-navbar></product-navbar>\r\n<div> \r\n  <kendo-grid [data]=\"view | async\"\r\n              [height]=\"533\"\r\n              [pageSize]=\"gridState.take\" [skip]=\"gridState.skip\" [sort]=\"gridState.sort\"\r\n              [pageable]=\"true\" [sortable]=\"true\"\r\n              (dataStateChange)=\"onStateChange($event)\"\r\n              (edit)=\"editHandler($event)\" (cancel)=\"cancelHandler($event)\"\r\n              (save)=\"saveHandler($event)\" (remove)=\"removeHandler($event)\"\r\n              (add)=\"addHandler($event)\">\r\n    <ng-template kendoGridToolbarTemplate>\r\n      <button kendoGridAddCommand>Добавить новая</button>\r\n    </ng-template>\r\n    <kendo-grid-column field=\"Key\" title=\"Key\"></kendo-grid-column>\r\n    <kendo-grid-column field=\"Value\"  title=\"Value\"></kendo-grid-column>\r\n    <kendo-grid-command-column title=\"command\" width=\"220\">\r\n      <ng-template kendoGridCellTemplate let-isNew=\"isNew\">\r\n        <button kendoGridEditCommand class=\"k-primary\"><span class=\"fa fa-edit\"></span></button>\r\n        <button kendoGridRemoveCommand><span class=\"fa fa-trash\"></span></button>\r\n        <button kendoGridSaveCommand [disabled]=\"formGroup?.invalid\">{{ isNew ? 'Add' : 'Update' }}</button>\r\n        <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>\r\n      </ng-template>\r\n    </kendo-grid-command-column>\r\n    <div *kendoGridDetailTemplate=\"let dataItem\">\r\n      <dynamic-property-value [dynamicProperty]=\"dataItem\"></dynamic-property-value>\r\n    </div>\r\n  </kendo-grid>\r\n</div>"
 
 /***/ }),
 
@@ -32,7 +166,6 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_dynamicProperty_service__ = __webpack_require__("../../../../../src/app/shared/services/dynamicProperty.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progress_kendo_angular_grid__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/main.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DynamicPropertyComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -46,50 +179,85 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var formGroup = function (dataItem) { return new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormGroup"]({
-    'ProductID': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.ProductID),
-    'ProductName': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.ProductName, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required),
-    'UnitPrice': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.UnitPrice),
-    'Discontinued': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Discontinued),
-    'UnitsInStock': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.UnitsInStock, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].pattern('^[0-9]{1,2}')]))
+    'Id': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Id),
+    'Key': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Key, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required),
+    'Value': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Value),
 }); };
 var DynamicPropertyComponent = (function () {
-    function DynamicPropertyComponent(service) {
-        this.service = service;
+    function DynamicPropertyComponent(editService) {
+        this.editService = editService;
         this.gridState = {
             sort: [],
             skip: 0,
-            take: 8,
+            take: 4
         };
-        this.isNew = false;
     }
-    Object.defineProperty(DynamicPropertyComponent.prototype, "isInEditingMode", {
-        get: function () {
-            return this.editedRowIndex !== undefined || this.isNew;
-        },
-        enumerable: true,
-        configurable: true
-    });
     DynamicPropertyComponent.prototype.ngOnInit = function () {
-        this.view = this.service.getAll(this.gridState);
+        this.view = this.editService.getAll(this.gridState);
+    };
+    DynamicPropertyComponent.prototype.onStateChange = function (state) {
+        this.gridState = state;
+        this.load();
+    };
+    DynamicPropertyComponent.prototype.addHandler = function (_a) {
+        var sender = _a.sender;
+        this.closeEditor(sender);
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormGroup"]({
+            'Key': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](),
+            'Value': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]("", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required),
+        });
+        sender.addRow(this.formGroup);
+    };
+    DynamicPropertyComponent.prototype.editHandler = function (_a) {
+        var sender = _a.sender, rowIndex = _a.rowIndex, dataItem = _a.dataItem;
+        this.closeEditor(sender);
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormGroup"]({
+            'Id': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Id),
+            'Key': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Key, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required),
+            'Value': new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"](dataItem.Value),
+        });
+        this.editedRowIndex = rowIndex;
+        sender.editRow(rowIndex, this.formGroup);
+    };
+    DynamicPropertyComponent.prototype.cancelHandler = function (_a) {
+        var sender = _a.sender, rowIndex = _a.rowIndex;
+        this.closeEditor(sender, rowIndex);
+    };
+    DynamicPropertyComponent.prototype.closeEditor = function (grid, rowIndex) {
+        if (rowIndex === void 0) { rowIndex = this.editedRowIndex; }
+        grid.closeRow(rowIndex);
+        this.editedRowIndex = undefined;
+        this.formGroup = undefined;
+    };
+    DynamicPropertyComponent.prototype.saveHandler = function (_a) {
+        var _this = this;
+        var sender = _a.sender, rowIndex = _a.rowIndex, formGroup = _a.formGroup, isNew = _a.isNew;
+        var product = formGroup.value;
+        isNew ? this.editService.add(product).subscribe(function (s) { _this.load(); }) : this.editService.update(product).subscribe(function (s) { _this.load(); });
+        sender.closeRow(rowIndex);
+    };
+    DynamicPropertyComponent.prototype.load = function () {
+        this.view = this.editService.getAll(this.gridState);
+    };
+    DynamicPropertyComponent.prototype.removeHandler = function (_a) {
+        var _this = this;
+        var dataItem = _a.dataItem;
+        if (confirm("Удалить?"))
+            this.editService.delete(dataItem.Id).subscribe(function (s) { _this.load(); });
     };
     return DynamicPropertyComponent;
 }());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__progress_kendo_angular_grid__["b" /* GridComponent */]),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__progress_kendo_angular_grid__["b" /* GridComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__progress_kendo_angular_grid__["b" /* GridComponent */]) === "function" && _a || Object)
-], DynamicPropertyComponent.prototype, "grid", void 0);
 DynamicPropertyComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-dynamic-property',
         template: __webpack_require__("../../../../../src/app/layout-admin/dynamic-property/dynamic-property.component.html"),
         styles: [__webpack_require__("../../../../../src/app/layout-admin/dynamic-property/dynamic-property.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_dynamicProperty_service__["a" /* DynamicPropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_dynamicProperty_service__["a" /* DynamicPropertyService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_dynamicProperty_service__["a" /* DynamicPropertyService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_dynamicProperty_service__["a" /* DynamicPropertyService */]) === "function" && _a || Object])
 ], DynamicPropertyComponent);
 
-var _a, _b;
+var _a;
 //# sourceMappingURL=dynamic-property.component.js.map
 
 /***/ }),
@@ -97,7 +265,7 @@ var _a, _b;
 /***/ "../../../../../src/app/layout-admin/product/edit-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"left:50%\">\r\n  <kendo-dialog *ngIf=\"active\" (close)=\"closeForm()\">\r\n    <kendo-dialog-titlebar>\r\n      {{ isNew ? 'Добавить новый товар' : 'Редактировать товар' }}\r\n    </kendo-dialog-titlebar>\r\n\r\n    <form novalidate [formGroup]=\"editForm\">\r\n      <div class=\"form-group\">\r\n        <label for=\"LastName\" class=\"control-label\">Наименование</label>\r\n\r\n        <input type=\"text\" class=\"k-textbox form-control\" formControlName=\"Name\" />\r\n        <p class=\"k-tooltip k-tooltip-validation\" [hidden]=\"editForm.controls.Name.valid || editForm.controls.Name.pristine\">\r\n          Поля обязательные для заполнения\r\n        </p>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"LastName\" class=\"control-label\">Описание</label>\r\n\r\n        <textarea type=\"text\" class=\"k-textbox form-control\" formControlName=\"Description\" ></textarea>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"LastName\" class=\"control-label\">Описание</label>\r\n\r\n        <kendo-combobox [data]=\"categoryItems\"\r\n                        [textField]=\"'Name'\"\r\n                        [valueField]=\"'Id'\"\r\n                         [valuePrimitive]=\"true\"\r\n                        [placeholder]=\"'Выберите группа'\" formControlName=\"ProductCategoryId\">\r\n\r\n        </kendo-combobox>\r\n      </div>\r\n     \r\n    </form>\r\n  \r\n    <kendo-dialog-actions>\r\n      <button class=\"k-button\" (click)=\"onCancel($event)\">Отмена</button>\r\n      <button class=\"k-button k-primary\" [disabled]=\"!editForm.valid\" (click)=\"onSave($event)\">Сохранить</button>\r\n     </kendo-dialog-actions>\r\n  </kendo-dialog>\r\n</div>\r\n"
+module.exports = "<div style=\"left:50%\">\r\n  <kendo-dialog *ngIf=\"active\" (close)=\"closeForm()\">\r\n    <kendo-dialog-titlebar>\r\n      {{ isNew ? 'Добавить новый товар' : 'Редактировать товар' }}\r\n    </kendo-dialog-titlebar>\r\n\r\n    <form novalidate [formGroup]=\"editForm\">\r\n      <div class=\"form-group\">\r\n        <label for=\"ProductCategoryId\" class=\"control-label text-bold\">Группа товаров</label>\r\n        <div>\r\n          <kendo-combobox [data]=\"categoryItems\"\r\n                          [textField]=\"'Name'\"\r\n                          [valueField]=\"'Id'\"\r\n                          [valuePrimitive]=\"true\"\r\n                          [placeholder]=\"'Выберите группа'\" formControlName=\"ProductCategoryId\" style=\"width:100% !important\">\r\n\r\n          </kendo-combobox>\r\n        </div>\r\n        \r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"Name\" class=\"control-label text-bold\">Наименование</label>\r\n\r\n        <input type=\"text\" class=\"k-textbox form-control\" formControlName=\"Name\" />\r\n        <p class=\"k-tooltip k-tooltip-validation\" [hidden]=\"editForm.controls.Name.valid || editForm.controls.Name.pristine\">\r\n          Поля обязательные для заполнения\r\n        </p>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label for=\"Description\" class=\"control-label text-bold\">Описание</label>\r\n\r\n        <textarea type=\"text\" class=\"k-textbox form-control\" formControlName=\"Description\" ></textarea>\r\n      </div>\r\n\r\n    </form>\r\n  \r\n    <kendo-dialog-actions>\r\n      <button class=\"k-button\" (click)=\"onCancel($event)\">Отмена</button>\r\n      <button class=\"k-button k-primary\" [disabled]=\"!editForm.valid\" (click)=\"onSave($event)\">Сохранить</button>\r\n     </kendo-dialog-actions>\r\n  </kendo-dialog>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -334,7 +502,7 @@ ProductRoutingModule = __decorate([
 /***/ "../../../../../src/app/layout-admin/product/product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section [@routerTransition]>\r\n  <product-navbar></product-navbar>\r\n  <!--<ng-select [multiple]=\"true\"\r\n             [items]=\"items\"\r\n             [disabled]=\"disabled\"\r\n             (data)=\"refreshValue($event)\"\r\n             (selected)=\"selected($event)\"\r\n             (removed)=\"removed($event)\"\r\n             placeholder=\"No category selected\"></ng-select>\r\n  <pre>{{itemsToString(value)}}</pre>-->\r\n  <!--<form [formGroup]=\"form\">\r\n    <div class=\"form-group\">\r\n      <label>Name</label>\r\n      <input class=\"form-control input-sm\" type=\"text\" formControlName=\"firstname\" />\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label>Lastname</label>\r\n      <input class=\"form-control input-sm\" type=\"text\" formControlName=\"lastname\" />\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label>Options (standard select)</label>\r\n      <select class=\"form-control input-sm\" formControlName=\"option\">\r\n        <option>Option 1</option>\r\n        <option>Option 2</option>\r\n        <option>Option 3</option>\r\n        <option>Option 4</option>\r\n      </select>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label>Country (Single)</label>\r\n      <input type=\"checkbox\" formControlName=\"habilitado\" />\r\n      <a (click)=\"countrySingle.focus()\"> set focus</a>\r\n      <iq-select2 #countrySingle css=\"form-control input-sm\" placeholder=\"Start writing...\"\r\n                  formControlName=\"countrySingle\"\r\n                  [dataSourceProvider]=\"listItems\"\r\n                  [iqSelect2ItemAdapter]=\"entityToIqSelect2Item\"\r\n                  referenceMode='entity' [multiple]='false' (onSelect)=\"onSelect($event)\"\r\n                  (onRemove)=\"onRemove($event)\" [selectedProvider]=\"getItems\"\r\n                  *ngIf=\"form.controls.habilitado.value\"></iq-select2>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label>Country (Multiple)</label>\r\n      <iq-select2 css=\"form-control input-sm\" placeholder=\"Start writing...\" formControlName=\"countryMultiple\"\r\n                  [dataSourceProvider]=\"listItems\"\r\n                  [iqSelect2ItemAdapter]=\"entityToIqSelect2Item\"\r\n                  [clientMode]=\"true\"\r\n                  referenceMode='entity' [multiple]='true' (onSelect)=\"onSelect($event)\"\r\n                  (onRemove)=\"onRemove($event)\" [selectedProvider]=\"getItems\"></iq-select2>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label>Country (Multiple disabled)</label>\r\n      <iq-select2 css=\"form-control input-sm\" placeholder=\"Start writing...\"\r\n                  formControlName=\"countryMultipleDisabled\" [dataSourceProvider]=\"listItems\"\r\n                  referenceMode='entity' [multiple]='true' (onSelect)=\"onSelect($event)\"\r\n                  [iqSelect2ItemAdapter]=\"entityToIqSelect2Item\"\r\n                  (onRemove)=\"onRemove($event)\" [selectedProvider]=\"getItems\"></iq-select2>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label>Country (Single minimumInputLength = 0)</label>\r\n      <iq-select2 css=\"form-control input-sm\" placeholder=\"Start writing...\" formControlName=\"countrySingleMin0\"\r\n                  [dataSourceProvider]=\"listItems\"\r\n                  [iqSelect2ItemAdapter]=\"entityToIqSelect2Item\"\r\n                  [minimumInputLength]='0' referenceMode='entity' [multiple]='false' (onSelect)=\"onSelect($event)\"\r\n                  (onRemove)=\"onRemove($event)\" [selectedProvider]=\"getItems\"></iq-select2>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label>Country (Multiple minimumInputLength = 0)</label>\r\n      <iq-select2 css=\"form-control input-sm\" placeholder=\"Start writing...\" formControlName=\"countryMultipleMin0\"\r\n                  [dataSourceProvider]=\"listItems\"\r\n                  [iqSelect2ItemAdapter]=\"entityToIqSelect2Item\"\r\n                  [minimumInputLength]='0' referenceMode='entity' [multiple]='true' (onSelect)=\"onSelect($event)\"\r\n                  (onRemove)=\"onRemove($event)\" [selectedProvider]=\"getItems\" [clientMode]=\"true\"></iq-select2>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label>Country (Single minimumInputLength = 0 using results count and delayed response)</label>\r\n      <iq-select2 css=\"form-control input-sm\" placeholder=\"Start writing...\" formControlName=\"countryMin0Count\"\r\n                  [dataSourceProvider]=\"listItemsMax\"\r\n                  [iqSelect2ItemAdapter]=\"entityToIqSelect2Item\"\r\n                  [resultsCount]=\"count\"\r\n                  [minimumInputLength]='0' referenceMode='entity' (onSelect)=\"onSelect($event)\"\r\n                  (onRemove)=\"onRemove($event)\" [selectedProvider]=\"getItems\"></iq-select2>\r\n    </div>\r\n    <div class=\"form-group\">\r\n      <label>Country Custom Template</label>\r\n      <iq-select2 css=\"form-control input-sm\" placeholder=\"Start writing...\" formControlName=\"countrySingleMin0\"\r\n                  [dataSourceProvider]=\"listItems\"\r\n                  [iqSelect2ItemAdapter]=\"entityToIqSelect2Item\"\r\n                  [minimumInputLength]='0' referenceMode='entity' (onSelect)=\"onSelect($event)\"\r\n                  (onRemove)=\"onRemove($event)\" [selectedProvider]=\"getItems\" [clientMode]=\"true\">\r\n        <div *iq-select2-template=\"let item = $entity; let i = $index\">\r\n          <span [style.color]=\"item.color\">[{{item.code}}]</span> {{item.name}}\r\n        </div>\r\n      </iq-select2>\r\n    </div>\r\n    </form>-->\r\n  <p-fileUpload name=\"myfile[]\" url=\"./upload.php\"></p-fileUpload>\r\n    <kendo-grid [data]=\"gridData|async\"\r\n                [height]=\"auto\"\r\n                [pageSize]=\"gridState.take\" [skip]=\"gridState.skip\" [sort]=\"gridState.sort\"\r\n                [pageable]=\"true\" [sortable]=\"true\"\r\n                [filterable]=\"true\"\r\n                [rowClass]=\"rowCallback\"\r\n                (dataStateChange)=\"onStateChange($event)\"\r\n                (edit)=\"editHandler($event)\" (remove)=\"removeHandler($event)\"\r\n                (add)=\"addHandler($event)\">\r\n      <ng-template kendoGridToolbarTemplate>\r\n        <button kendoGridAddCommand>Добавить</button>\r\n      </ng-template>\r\n      <kendo-grid-column field=\"Name\" title=\"Имя\" width=\"auto\">\r\n      </kendo-grid-column>\r\n      <kendo-grid-column field=\"Description\" title=\"Описание\" width=\"auto\">\r\n      </kendo-grid-column>\r\n      <kendo-grid-command-column title=\"Действие\" width=\"200\">\r\n        <ng-template kendoGridCellTemplate>\r\n          <button kendoGridEditCommand class=\"k-default\"><span class=\"fa fa-edit\"></span></button>\r\n          <button kendoGridRemoveCommand class=\"k-default\"><span class=\"fa fa-trash\"></span></button>\r\n        </ng-template>\r\n\r\n      </kendo-grid-command-column>\r\n\r\n    </kendo-grid>\r\n    <kendo-grid-edit-form-product [model]=\"editDataItem\" [isNew]=\"isNew\"\r\n                                  (save)=\"saveHandler($event)\"\r\n                                  (cancel)=\"cancelHandler()\">\r\n    </kendo-grid-edit-form-product>\r\n</section>\r\n"
+module.exports = "<section [@routerTransition]>\r\n  <product-navbar></product-navbar>\r\n\r\n  \r\n    <kendo-grid #gridProduct [data]=\"gridData|async\"\r\n                [height]=\"auto\"\r\n                [pageSize]=\"gridState.take\" [skip]=\"gridState.skip\" [sort]=\"gridState.sort\"\r\n                [pageable]=\"true\" [sortable]=\"true\"\r\n                [filterable]=\"true\"\r\n                [selectable]=\"true\"\r\n                [rowClass]=\"rowCallback\"\r\n                (dataStateChange)=\"onStateChange($event)\"\r\n                (edit)=\"editHandler($event)\" (remove)=\"removeHandler($event)\"\r\n                (add)=\"addHandler($event)\"\r\n                (selectionChange)=\"gridProductSelectionChange(gridProduct, $event)\">\r\n      <ng-template kendoGridToolbarTemplate>\r\n        <button kendoGridAddCommand>Добавить</button>\r\n      </ng-template>\r\n      <kendo-grid-column field=\"Name\" title=\"Имя\" width=\"auto\">\r\n      </kendo-grid-column>\r\n      <kendo-grid-column field=\"ProductCategoryId\" title=\"Категория\" width=\"auto\">\r\n      </kendo-grid-column>\r\n\r\n      <kendo-grid-command-column title=\"Действие\" width=\"200\">\r\n        <ng-template kendoGridCellTemplate>\r\n          <button kendoGridEditCommand class=\"k-default\"><span class=\"fa fa-edit\"></span></button>\r\n          <button kendoGridRemoveCommand class=\"k-default\"><span class=\"fa fa-trash\"></span></button>\r\n        </ng-template>\r\n\r\n      </kendo-grid-command-column>\r\n\r\n    </kendo-grid>\r\n    <kendo-grid-edit-form-product [model]=\"editDataItem\" [isNew]=\"isNew\"\r\n                                  (save)=\"saveHandler($event)\"\r\n                                  (cancel)=\"cancelHandler()\">\r\n    </kendo-grid-edit-form-product>\r\n  <div class=\"card\" [hidden]=\"!selectedItem\">\r\n    <div class=\"card-header\">\r\n      <b>{{selectedItem?selectedItem.Name:''}}</b>\r\n    </div>\r\n    <div class=\"card-block\">\r\n      <div id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\" >\r\n        <div class=\"card\">\r\n          <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\r\n            <h5 class=\"mb-0\">\r\n              <a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\r\n                Свойство товаров\r\n              </a>\r\n            </h5>\r\n          </div>\r\n\r\n          <div id=\"collapseOne\" class=\"collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\">\r\n            <div class=\"card-block\">\r\n              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"card\">\r\n          <div class=\"card-header\" role=\"tab\" id=\"headingTwo\">\r\n            <h5 class=\"mb-0\">\r\n              <a class=\"collapsed\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseTwo\" aria-expanded=\"false\" aria-controls=\"collapseTwo\">\r\n                Картинки\r\n              </a>\r\n            </h5>\r\n          </div>\r\n          <div id=\"collapseTwo\" class=\"collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\">\r\n            <img width=\"100\" src=\"{{baseUrl}}/ReturnFile/{{selectedItem?selectedItem.Id:0}}\" />\r\n            <div class=\"card-block\">\r\n              <p-fileUpload name=\"file\" url=\"{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}\"></p-fileUpload>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    \r\n  </div>\r\n \r\n\r\n</section>\r\n"
 
 /***/ }),
 
@@ -361,11 +529,10 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_data_service__ = __webpack_require__("../../../../../src/app/shared/services/data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router_animations__ = __webpack_require__("../../../../../src/app/router.animations.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model__ = __webpack_require__("../../../../../src/app/layout-admin/product/model.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_product_service__ = __webpack_require__("../../../../../src/app/shared/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router_animations__ = __webpack_require__("../../../../../src/app/router.animations.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__("../../../../../src/app/layout-admin/product/model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_product_service__ = __webpack_require__("../../../../../src/app/shared/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_utils_config_service__ = __webpack_require__("../../../../../src/app/shared/utils/config.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -381,59 +548,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var ProductComponent = (function () {
-    function ProductComponent(service, dataService, formBuilder) {
+    function ProductComponent(service, configService) {
         this.service = service;
-        this.dataService = dataService;
-        this.formBuilder = formBuilder;
-        // @ViewChild('countrySingle') countrySingle: IqSelect2Component<Country>;
-        this.items = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',
-            'Berlin', 'Birmingham', 'Bradford', 'Bremen', 'Brussels', 'Bucharest',
-            'Budapest', 'Cologne', 'Copenhagen', 'Dortmund', 'Dresden', 'Dublin', 'Düsseldorf',
-            'Essen', 'Frankfurt', 'Genoa', 'Glasgow', 'Gothenburg', 'Hamburg', 'Hannover',
-            'Helsinki', 'Leeds', 'Leipzig', 'Lisbon', 'Łódź', 'London', 'Kraków', 'Madrid',
-            'Málaga', 'Manchester', 'Marseille', 'Milan', 'Munich', 'Naples', 'Palermo',
-            'Paris', 'Poznań', 'Prague', 'Riga', 'Rome', 'Rotterdam', 'Seville', 'Sheffield',
-            'Sofia', 'Stockholm', 'Stuttgart', 'The Hague', 'Turin', 'Valencia', 'Vienna',
-            'Vilnius', 'Warsaw', 'Wrocław', 'Zagreb', 'Zaragoza'];
-        this.value = ['Athens'];
-        this._disabledV = '0';
-        this.disabled = false;
+        this.configService = configService;
         this.gridState = {
             sort: [],
             skip: 0,
             take: 8,
         };
+        this.baseUrl = "";
         this.gridData = service.getAll(this.gridState);
+        this.baseUrl = this.configService.getApiURI();
     }
-    Object.defineProperty(ProductComponent.prototype, "disabledV", {
-        get: function () {
-            return this._disabledV;
-        },
-        set: function (value) {
-            this._disabledV = value;
-            this.disabled = this._disabledV === '1';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ProductComponent.prototype.selected = function (value) {
-        console.log('Selected value is: ', value);
-    };
-    ProductComponent.prototype.removed = function (value) {
-        console.log('Removed value is: ', value);
-    };
-    ProductComponent.prototype.refreshValue = function (value) {
-        this.value = value;
-    };
-    ProductComponent.prototype.itemsToString = function (value) {
-        if (value === void 0) { value = []; }
-        return value
-            .map(function (item) {
-            return item.text;
-        }).join(',');
-    };
     ProductComponent.prototype.rowCallback = function (context) {
         var isEven = context.index % 2 == 0;
         return {
@@ -442,82 +569,9 @@ var ProductComponent = (function () {
         };
     };
     ProductComponent.prototype.ngOnInit = function () {
-        this.form = this.formBuilder.group({
-            firstname: {
-                value: '',
-                disabled: true
-            },
-            lastname: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormControl"](''),
-            option: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormControl"](''),
-            countrySingle: [{
-                    id: '16',
-                    name: 'Argentina',
-                    code: 'AR',
-                    color: '#c1ee5b'
-                }, __WEBPACK_IMPORTED_MODULE_5__angular_forms__["Validators"].required],
-            countryMultiple: null,
-            countryMultipleDisabled: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormControl"]({
-                value: [{
-                        id: '16',
-                        name: 'Argentina',
-                        code: 'AR',
-                        color: '#c1ee5b'
-                    }, {
-                        id: '17',
-                        name: 'Indonesia',
-                        code: 'ID',
-                        color: '#19f77a'
-                    }],
-                disabled: true
-            }),
-            countrySingleMin0: null,
-            countryMultipleMin0: [[{
-                        id: '16',
-                        name: 'Argentina',
-                        code: 'AR',
-                        color: '#c1ee5b'
-                    }]],
-            countryMin0Count: null,
-            habilitado: true
-        });
-        this.initializeCountryIqSelect2();
-        this.form.valueChanges.subscribe(function () {
-            // console.log('-->' + this.form.controls['countrySingle'].value);
-        });
-    };
-    ProductComponent.prototype.initializeCountryIqSelect2 = function () {
-        var _this = this;
-        this.listItems = function (term) { return _this.dataService.listData(term); };
-        this.listItemsMax = function (term) {
-            return _this.dataService.listDataMax(term, 3).map(function (response) {
-                _this.count = response.count;
-                return response.results;
-            });
-        };
-        this.getItems = function (ids) { return _this.dataService.getItems(ids); };
-        this.entityToIqSelect2Item = function (entity) {
-            return {
-                id: entity.id,
-                text: entity.name,
-                entity: entity
-            };
-        };
-    };
-    ProductComponent.prototype.send = function (formJson) {
-        // console.log(formJson);
-    };
-    ProductComponent.prototype.onSelect = function (item) {
-        // console.log('Item selected: ' + item.text);
-    };
-    ProductComponent.prototype.onRemove = function (item) {
-        // console.log('Item removed: ' + item.text);
-    };
-    ProductComponent.prototype.reset2 = function () {
-        // console.log('Resetting form');
-        this.form.reset();
     };
     ProductComponent.prototype.addHandler = function () {
-        this.editDataItem = new __WEBPACK_IMPORTED_MODULE_3__model__["a" /* Product */]();
+        this.editDataItem = new __WEBPACK_IMPORTED_MODULE_2__model__["a" /* Product */]();
         this.isNew = true;
     };
     ProductComponent.prototype.editHandler = function (_a) {
@@ -555,6 +609,9 @@ var ProductComponent = (function () {
         this.gridState = e;
         this.reset(e);
     };
+    ProductComponent.prototype.gridProductSelectionChange = function (gridProduct, selection) {
+        this.selectedItem = gridProduct.data.data[selection.index];
+    };
     return ProductComponent;
 }());
 ProductComponent = __decorate([
@@ -562,12 +619,12 @@ ProductComponent = __decorate([
         selector: 'app-product',
         template: __webpack_require__("../../../../../src/app/layout-admin/product/product.component.html"),
         styles: [__webpack_require__("../../../../../src/app/layout-admin/product/product.component.scss")],
-        animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__router_animations__["b" /* fadeAnimate */])()]
+        animations: [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__router_animations__["b" /* fadeAnimate */])()]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_data_service__["a" /* DataService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_product_service__["a" /* ProductService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_product_service__["a" /* ProductService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__shared_utils_config_service__["a" /* ConfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_utils_config_service__["a" /* ConfigService */]) === "function" && _b || Object])
 ], ProductComponent);
 
-var _a, _b, _c;
+var _a, _b;
 //# sourceMappingURL=product.component.js.map
 
 /***/ }),
@@ -585,21 +642,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_product_service__ = __webpack_require__("../../../../../src/app/shared/services/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_product_category_service__ = __webpack_require__("../../../../../src/app/shared/services/product-category.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_services_dynamicProperty_service__ = __webpack_require__("../../../../../src/app/shared/services/dynamicProperty.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_modules__ = __webpack_require__("../../../../../src/app/shared/modules/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__progress_kendo_angular_dialog__ = __webpack_require__("../../../../@progress/kendo-angular-dialog/dist/es/main.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__progress_kendo_angular_dropdowns__ = __webpack_require__("../../../../@progress/kendo-angular-dropdowns/dist/es/main.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__edit_form_component__ = __webpack_require__("../../../../../src/app/layout-admin/product/edit-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ng2_select__ = __webpack_require__("../../../../ng2-select/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ng2_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_ng2_select__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_iq_select2__ = __webpack_require__("../../../../ng2-iq-select2/component.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_iq_select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_ng2_iq_select2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__shared_services_data_service__ = __webpack_require__("../../../../../src/app/shared/services/data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_primeng_primeng__ = __webpack_require__("../../../../primeng/primeng.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_primeng_primeng__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__dynamic_property_dynamic_property_component__ = __webpack_require__("../../../../../src/app/layout-admin/dynamic-property/dynamic-property.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__navbar_component__ = __webpack_require__("../../../../../src/app/layout-admin/product/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_services_dynamicPropertyValue_service__ = __webpack_require__("../../../../../src/app/shared/services/dynamicPropertyValue.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_modules__ = __webpack_require__("../../../../../src/app/shared/modules/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ngx_translate_core__ = __webpack_require__("../../../../@ngx-translate/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__progress_kendo_angular_dialog__ = __webpack_require__("../../../../@progress/kendo-angular-dialog/dist/es/main.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__progress_kendo_angular_dropdowns__ = __webpack_require__("../../../../@progress/kendo-angular-dropdowns/dist/es/main.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__edit_form_component__ = __webpack_require__("../../../../../src/app/layout-admin/product/edit-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_select__ = __webpack_require__("../../../../ng2-select/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ng2_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_ng2_select__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_iq_select2__ = __webpack_require__("../../../../ng2-iq-select2/component.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng2_iq_select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_ng2_iq_select2__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__shared_services_data_service__ = __webpack_require__("../../../../../src/app/shared/services/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_primeng_primeng__ = __webpack_require__("../../../../primeng/primeng.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_primeng_primeng___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_primeng_primeng__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__dynamic_property_dynamic_property_component__ = __webpack_require__("../../../../../src/app/layout-admin/dynamic-property/dynamic-property.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__dynamic_property_value_dynamic_property_value_component__ = __webpack_require__("../../../../../src/app/layout-admin/dynamic-property-value/dynamic-property-value.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__navbar_component__ = __webpack_require__("../../../../../src/app/layout-admin/product/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__shared_directives_row_click__ = __webpack_require__("../../../../../src/app/shared/directives/row-click.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductModule", function() { return ProductModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -607,6 +667,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -637,18 +700,18 @@ ProductModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_3__product_routing_module__["a" /* ProductRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_8__shared_modules__["a" /* PageHeaderModule */],
-            __WEBPACK_IMPORTED_MODULE_9__ngx_translate_core__["a" /* TranslateModule */],
+            __WEBPACK_IMPORTED_MODULE_9__shared_modules__["a" /* PageHeaderModule */],
+            __WEBPACK_IMPORTED_MODULE_10__ngx_translate_core__["a" /* TranslateModule */],
             __WEBPACK_IMPORTED_MODULE_2__progress_kendo_angular_grid__["a" /* GridModule */],
-            __WEBPACK_IMPORTED_MODULE_10__progress_kendo_angular_dialog__["a" /* DialogModule */],
-            __WEBPACK_IMPORTED_MODULE_11__angular_forms__["ReactiveFormsModule"],
-            __WEBPACK_IMPORTED_MODULE_12__progress_kendo_angular_dropdowns__["a" /* DropDownsModule */],
-            __WEBPACK_IMPORTED_MODULE_14_ng2_select__["SelectModule"],
-            __WEBPACK_IMPORTED_MODULE_15_ng2_iq_select2__["IqSelect2Module"],
-            __WEBPACK_IMPORTED_MODULE_17_primeng_primeng__["FileUploadModule"]
+            __WEBPACK_IMPORTED_MODULE_11__progress_kendo_angular_dialog__["a" /* DialogModule */],
+            __WEBPACK_IMPORTED_MODULE_12__angular_forms__["ReactiveFormsModule"],
+            __WEBPACK_IMPORTED_MODULE_13__progress_kendo_angular_dropdowns__["a" /* DropDownsModule */],
+            __WEBPACK_IMPORTED_MODULE_15_ng2_select__["SelectModule"],
+            __WEBPACK_IMPORTED_MODULE_16_ng2_iq_select2__["IqSelect2Module"],
+            __WEBPACK_IMPORTED_MODULE_18_primeng_primeng__["FileUploadModule"]
         ],
-        declarations: [__WEBPACK_IMPORTED_MODULE_4__product_component__["a" /* ProductComponent */], __WEBPACK_IMPORTED_MODULE_13__edit_form_component__["a" /* ProductEditFormComponent */], __WEBPACK_IMPORTED_MODULE_18__dynamic_property_dynamic_property_component__["a" /* DynamicPropertyComponent */], __WEBPACK_IMPORTED_MODULE_19__navbar_component__["a" /* NavbarComponent */]],
-        providers: [__WEBPACK_IMPORTED_MODULE_5__shared_services_product_service__["a" /* ProductService */], __WEBPACK_IMPORTED_MODULE_16__shared_services_data_service__["a" /* DataService */], __WEBPACK_IMPORTED_MODULE_6__shared_services_product_category_service__["a" /* ProductCategoryService */], __WEBPACK_IMPORTED_MODULE_7__shared_services_dynamicProperty_service__["a" /* DynamicPropertyService */]]
+        declarations: [__WEBPACK_IMPORTED_MODULE_4__product_component__["a" /* ProductComponent */], __WEBPACK_IMPORTED_MODULE_14__edit_form_component__["a" /* ProductEditFormComponent */], __WEBPACK_IMPORTED_MODULE_19__dynamic_property_dynamic_property_component__["a" /* DynamicPropertyComponent */], __WEBPACK_IMPORTED_MODULE_21__navbar_component__["a" /* NavbarComponent */], __WEBPACK_IMPORTED_MODULE_22__shared_directives_row_click__["a" /* RowClickDirective */], __WEBPACK_IMPORTED_MODULE_20__dynamic_property_value_dynamic_property_value_component__["a" /* DynamicPropertyValueComponent */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_5__shared_services_product_service__["a" /* ProductService */], __WEBPACK_IMPORTED_MODULE_17__shared_services_data_service__["a" /* DataService */], __WEBPACK_IMPORTED_MODULE_6__shared_services_product_category_service__["a" /* ProductCategoryService */], __WEBPACK_IMPORTED_MODULE_7__shared_services_dynamicProperty_service__["a" /* DynamicPropertyService */], __WEBPACK_IMPORTED_MODULE_8__shared_services_dynamicPropertyValue_service__["a" /* DynamicPropertyValueService */]]
     })
 ], ProductModule);
 
@@ -740,6 +803,85 @@ function slideToTop() {
     ]);
 }
 //# sourceMappingURL=router.animations.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/directives/row-click.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RowClickDirective; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var hasClass = function (el, className) { return new RegExp(className).test(el.className); };
+var isChildOf = function (el, className) {
+    while (el && el.parentElement) {
+        if (hasClass(el.parentElement, className)) {
+            return true;
+        }
+        el = el.parentElement;
+    }
+    return false;
+};
+var eq = function (s1, s2) { return s1.toLowerCase() === s2.toLowerCase(); };
+var closest = function (el, nodeName) {
+    while (el && el.parentElement) {
+        if (eq(el.nodeName, nodeName) || eq(el.parentElement.nodeName, nodeName)) {
+            return el.parentElement;
+        }
+        el = el.parentElement;
+    }
+    return null;
+};
+var RowClickDirective = (function () {
+    function RowClickDirective(el, renderer) {
+        this.el = el;
+        this.renderer = renderer;
+        this.editRow = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.saveRow = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+    }
+    RowClickDirective.prototype.ngOnInit = function () {
+        var _this = this;
+        this.renderer.listen(this.el.nativeElement, "click", function (_a) {
+            var target = _a.target;
+            var tr = closest(target, "tr");
+            if (tr && !hasClass(tr, "k-grid-edit-row") && isChildOf(target, "k-grid-content")) {
+                _this.editRow.emit(tr.rowIndex);
+            }
+        });
+        this.renderer.listen("document", "click", function (_a) {
+            var target = _a.target;
+            if (!isChildOf(target, "k-grid-content") && !isChildOf(target, "k-grid-toolbar")) {
+                _this.saveRow.emit();
+            }
+        });
+    };
+    return RowClickDirective;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _a || Object)
+], RowClickDirective.prototype, "editRow", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]) === "function" && _b || Object)
+], RowClickDirective.prototype, "saveRow", void 0);
+RowClickDirective = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({ selector: '[rowClick]' }),
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"]) === "function" && _d || Object])
+], RowClickDirective);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=row-click.js.map
 
 /***/ }),
 
@@ -1231,6 +1373,98 @@ DynamicPropertyService = __decorate([
 
 var _a, _b;
 //# sourceMappingURL=dynamicProperty.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/services/dynamicPropertyValue.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_service__ = __webpack_require__("../../../../../src/app/shared/services/base.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_config_service__ = __webpack_require__("../../../../../src/app/shared/utils/config.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DynamicPropertyValueService; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var DynamicPropertyValueService = (function (_super) {
+    __extends(DynamicPropertyValueService, _super);
+    function DynamicPropertyValueService(http, configService) {
+        var _this = _super.call(this) || this;
+        _this.http = http;
+        _this.configService = configService;
+        _this.apiUrl = '';
+        _this.apiUrl = configService.getApiURI() + "/DynamicPropertyValue";
+        return _this;
+    }
+    DynamicPropertyValueService.prototype.getAll = function (filter) {
+        return this.http.get(this.apiUrl + "?filter=" + JSON.stringify(filter)).map(function (res) { return res.json(); })
+            .map(function (response) { return ({
+            data: response.Data,
+            total: response.Total
+        }); })
+            .catch(this.handleError);
+    };
+    DynamicPropertyValueService.prototype.queryForDynamicProperty = function (_a, state) {
+        var Id = _a.Id;
+        return this.getAll(Object.assign({}, state, {
+            filter: {
+                filters: [{
+                        field: "DynamicPropertyId", operator: "eq", value: Id
+                    }],
+                logic: "and"
+            }
+        }));
+    };
+    DynamicPropertyValueService.prototype.getById = function (id) {
+        return this.http.get(this.getbyidurl(id)).map(function (res) { return res.json(); }).catch(this.handleError);
+    };
+    DynamicPropertyValueService.prototype.add = function (model) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post(this.apiUrl, JSON.stringify(model), { headers: headers });
+    };
+    DynamicPropertyValueService.prototype.update = function (model) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put(this.getbyidurl(model.Id), JSON.stringify(model), { headers: headers });
+    };
+    DynamicPropertyValueService.prototype.delete = function (id) {
+        return this.http.delete(this.getbyidurl(id));
+    };
+    DynamicPropertyValueService.prototype.getbyidurl = function (id) {
+        return this.apiUrl + "/" + id;
+    };
+    return DynamicPropertyValueService;
+}(__WEBPACK_IMPORTED_MODULE_2__base_service__["a" /* BaseService */]));
+DynamicPropertyValueService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__utils_config_service__["a" /* ConfigService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__utils_config_service__["a" /* ConfigService */]) === "function" && _b || Object])
+], DynamicPropertyValueService);
+
+var _a, _b;
+//# sourceMappingURL=dynamicPropertyValue.service.js.map
 
 /***/ }),
 
@@ -12250,7 +12484,7 @@ var CellComponent = (function () {
     Object.defineProperty(CellComponent.prototype, "format", {
         get: function () {
             if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__column_component__["b" /* isColumnComponent */])(this.column) && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["f" /* isNullOrEmptyString */])(this.column.format)) {
-                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["h" /* extractFormat */])(this.column.format);
+                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["i" /* extractFormat */])(this.column.format);
             }
             return undefined;
         },
@@ -15097,7 +15331,7 @@ var DateFilterCellComponent = (function (_super) {
     Object.defineProperty(DateFilterCellComponent.prototype, "columnFormat", {
         get: function () {
             return this.column && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["f" /* isNullOrEmptyString */])(this.column.format) ?
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["h" /* extractFormat */])(this.column.format) : "d";
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["i" /* extractFormat */])(this.column.format) : "d";
         },
         enumerable: true,
         configurable: true
@@ -15337,7 +15571,7 @@ var FilterCellWrapperComponent = (function (_super) {
     Object.defineProperty(FilterCellWrapperComponent.prototype, "showButton", {
         get: function () {
             var filter = this.currentFilter;
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* isPresent */])(filter) && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* isBlank */])(filter.value);
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* isPresent */])(filter) && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["j" /* isBlank */])(filter.value);
         },
         enumerable: true,
         configurable: true
@@ -15355,7 +15589,7 @@ var FilterCellWrapperComponent = (function (_super) {
             if (value === "isnull" || value === "isnotnull" || value === "isempty" || value === "isnotempty") {
                 this.applyNoValueFilter(value);
             }
-            else if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* isBlank */])(value) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* isPresent */])(this.currentFilter)) {
+            else if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["j" /* isBlank */])(value) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* isPresent */])(this.currentFilter)) {
                 this.onChange(this.currentFilter.value);
             }
         },
@@ -15390,7 +15624,7 @@ var FilterCellWrapperComponent = (function (_super) {
         }
     };
     FilterCellWrapperComponent.prototype.onChange = function (value) {
-        this.applyFilter(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* isBlank */])(value) ?
+        this.applyFilter(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["j" /* isBlank */])(value) ?
             this.removeFilter(this.column.field) :
             this.updateFilter({
                 field: this.column.field,
@@ -15967,7 +16201,7 @@ var NumericFilterCellComponent = (function (_super) {
     Object.defineProperty(NumericFilterCellComponent.prototype, "columnFormat", {
         get: function () {
             return this.column && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["f" /* isNullOrEmptyString */])(this.column.format) ?
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["h" /* extractFormat */])(this.column.format) : "n2";
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["i" /* extractFormat */])(this.column.format) : "n2";
         },
         enumerable: true,
         configurable: true
@@ -17425,7 +17659,7 @@ var GridComponent = (function () {
          * The descriptors by which the data will be sorted.
          */
         set: function (value) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__utils__["j" /* isArray */])(value)) {
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__utils__["h" /* isArray */])(value)) {
                 this._sort = value;
             }
         },
@@ -17442,7 +17676,7 @@ var GridComponent = (function () {
          * The descriptors by which the data will to be grouped.
          */
         set: function (value) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__utils__["j" /* isArray */])(value)) {
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__utils__["h" /* isArray */])(value)) {
                 this._group = value;
             }
         },
@@ -19843,7 +20077,7 @@ Messages.propDecorators = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_module__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/shared.module.js");
 /* unused harmony reexport SharedModule */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__grid_component__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/grid.component.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__grid_component__["a"]; });
+/* unused harmony reexport GridComponent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__column_component__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/column.component.js");
 /* unused harmony reexport ColumnComponent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__span_column_component__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/span-column.component.js");
@@ -23521,15 +23755,15 @@ ToolbarComponent.propDecorators = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_observable_from__ = __webpack_require__("../../../../rxjs/add/observable/from.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_observable_from__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isPresent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return isBlank; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return isArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return isBlank; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return isArray; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return isTruthy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return isNullOrEmptyString; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isChanged; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return anyChanged; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return observe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return isUniversal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return extractFormat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return extractFormat; });
 
 
 /**

@@ -176,9 +176,13 @@ namespace IdealSysApp.Migrations
 
                     b.Property<string>("Name");
 
+                    b.Property<long?>("ParentId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdentityId");
+
+                    b.HasIndex("ParentId");
 
                     b.ToTable("ProductCategories");
                 });
@@ -542,6 +546,10 @@ namespace IdealSysApp.Migrations
                     b.HasOne("IdealSysApp.Models.Entities.AppUser", "Identity")
                         .WithMany()
                         .HasForeignKey("IdentityId");
+
+                    b.HasOne("IdealSysApp.Models.Entities.ProductCategory", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId");
                 });
 
             modelBuilder.Entity("IdealSysApp.Models.Entities.ProductFeature", b =>

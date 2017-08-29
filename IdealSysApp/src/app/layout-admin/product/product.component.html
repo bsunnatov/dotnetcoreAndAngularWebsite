@@ -1,117 +1,32 @@
 ﻿<section [@routerTransition]>
   <product-navbar></product-navbar>
-  <!--<ng-select [multiple]="true"
-             [items]="items"
-             [disabled]="disabled"
-             (data)="refreshValue($event)"
-             (selected)="selected($event)"
-             (removed)="removed($event)"
-             placeholder="No category selected"></ng-select>
-  <pre>{{itemsToString(value)}}</pre>-->
-  <!--<form [formGroup]="form">
-    <div class="form-group">
-      <label>Name</label>
-      <input class="form-control input-sm" type="text" formControlName="firstname" />
-    </div>
-    <div class="form-group">
-      <label>Lastname</label>
-      <input class="form-control input-sm" type="text" formControlName="lastname" />
-    </div>
-    <div class="form-group">
-      <label>Options (standard select)</label>
-      <select class="form-control input-sm" formControlName="option">
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-        <option>Option 4</option>
-      </select>
-    </div>
 
-    <div class="form-group">
-      <label>Country (Single)</label>
-      <input type="checkbox" formControlName="habilitado" />
-      <a (click)="countrySingle.focus()"> set focus</a>
-      <iq-select2 #countrySingle css="form-control input-sm" placeholder="Start writing..."
-                  formControlName="countrySingle"
-                  [dataSourceProvider]="listItems"
-                  [iqSelect2ItemAdapter]="entityToIqSelect2Item"
-                  referenceMode='entity' [multiple]='false' (onSelect)="onSelect($event)"
-                  (onRemove)="onRemove($event)" [selectedProvider]="getItems"
-                  *ngIf="form.controls.habilitado.value"></iq-select2>
-    </div>
-    <div class="form-group">
-      <label>Country (Multiple)</label>
-      <iq-select2 css="form-control input-sm" placeholder="Start writing..." formControlName="countryMultiple"
-                  [dataSourceProvider]="listItems"
-                  [iqSelect2ItemAdapter]="entityToIqSelect2Item"
-                  [clientMode]="true"
-                  referenceMode='entity' [multiple]='true' (onSelect)="onSelect($event)"
-                  (onRemove)="onRemove($event)" [selectedProvider]="getItems"></iq-select2>
-    </div>
-    <div class="form-group">
-      <label>Country (Multiple disabled)</label>
-      <iq-select2 css="form-control input-sm" placeholder="Start writing..."
-                  formControlName="countryMultipleDisabled" [dataSourceProvider]="listItems"
-                  referenceMode='entity' [multiple]='true' (onSelect)="onSelect($event)"
-                  [iqSelect2ItemAdapter]="entityToIqSelect2Item"
-                  (onRemove)="onRemove($event)" [selectedProvider]="getItems"></iq-select2>
-    </div>
-    <div class="form-group">
-      <label>Country (Single minimumInputLength = 0)</label>
-      <iq-select2 css="form-control input-sm" placeholder="Start writing..." formControlName="countrySingleMin0"
-                  [dataSourceProvider]="listItems"
-                  [iqSelect2ItemAdapter]="entityToIqSelect2Item"
-                  [minimumInputLength]='0' referenceMode='entity' [multiple]='false' (onSelect)="onSelect($event)"
-                  (onRemove)="onRemove($event)" [selectedProvider]="getItems"></iq-select2>
-    </div>
-    <div class="form-group">
-      <label>Country (Multiple minimumInputLength = 0)</label>
-      <iq-select2 css="form-control input-sm" placeholder="Start writing..." formControlName="countryMultipleMin0"
-                  [dataSourceProvider]="listItems"
-                  [iqSelect2ItemAdapter]="entityToIqSelect2Item"
-                  [minimumInputLength]='0' referenceMode='entity' [multiple]='true' (onSelect)="onSelect($event)"
-                  (onRemove)="onRemove($event)" [selectedProvider]="getItems" [clientMode]="true"></iq-select2>
-    </div>
-
-    <div class="form-group">
-      <label>Country (Single minimumInputLength = 0 using results count and delayed response)</label>
-      <iq-select2 css="form-control input-sm" placeholder="Start writing..." formControlName="countryMin0Count"
-                  [dataSourceProvider]="listItemsMax"
-                  [iqSelect2ItemAdapter]="entityToIqSelect2Item"
-                  [resultsCount]="count"
-                  [minimumInputLength]='0' referenceMode='entity' (onSelect)="onSelect($event)"
-                  (onRemove)="onRemove($event)" [selectedProvider]="getItems"></iq-select2>
-    </div>
-    <div class="form-group">
-      <label>Country Custom Template</label>
-      <iq-select2 css="form-control input-sm" placeholder="Start writing..." formControlName="countrySingleMin0"
-                  [dataSourceProvider]="listItems"
-                  [iqSelect2ItemAdapter]="entityToIqSelect2Item"
-                  [minimumInputLength]='0' referenceMode='entity' (onSelect)="onSelect($event)"
-                  (onRemove)="onRemove($event)" [selectedProvider]="getItems" [clientMode]="true">
-        <div *iq-select2-template="let item = $entity; let i = $index">
-          <span [style.color]="item.color">[{{item.code}}]</span> {{item.name}}
-        </div>
-      </iq-select2>
-    </div>
-    </form>-->
-  <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
-    <kendo-grid [data]="gridData|async"
+  
+    <kendo-grid #gridProduct [data]="gridData|async"
                 [height]="auto"
                 [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
                 [pageable]="true" [sortable]="true"
                 [filterable]="true"
+                [selectable]="true"
                 [rowClass]="rowCallback"
                 (dataStateChange)="onStateChange($event)"
                 (edit)="editHandler($event)" (remove)="removeHandler($event)"
-                (add)="addHandler($event)">
+                (add)="addHandler($event)"
+                (selectionChange)="gridProductSelectionChange(gridProduct, $event)">
       <ng-template kendoGridToolbarTemplate>
         <button kendoGridAddCommand>Добавить</button>
       </ng-template>
+      <kendo-grid-column>
+        <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+          <img width="100" src="{{baseUrl}}/ReturnFile/{{dataItem?dataItem.Id:0}}" />
+        </ng-template>
+      </kendo-grid-column>
+   
       <kendo-grid-column field="Name" title="Имя" width="auto">
       </kendo-grid-column>
-      <kendo-grid-column field="Description" title="Описание" width="auto">
+      <kendo-grid-column field="ProductCategoryId" title="Категория" width="auto">
       </kendo-grid-column>
+     
       <kendo-grid-command-column title="Действие" width="200">
         <ng-template kendoGridCellTemplate>
           <button kendoGridEditCommand class="k-default"><span class="fa fa-edit"></span></button>
@@ -125,4 +40,63 @@
                                   (save)="saveHandler($event)"
                                   (cancel)="cancelHandler()">
     </kendo-grid-edit-form-product>
+  <div class="card" [hidden]="!selectedItem">
+    <div class="card-header">
+      <b>{{selectedItem?selectedItem.Name:''}}</b>
+    </div>
+    <div class="card-block">
+      <div id="accordion" role="tablist" aria-multiselectable="true" >
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Свойство товаров
+              </a>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-block">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Картинки
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+           
+            <div class="card-block">
+              <h3>Основные</h3>
+              <div class="row">
+                <div class="col-xl-3">
+                  <img width="100" src="{{baseUrl}}/ReturnFile/{{selectedItem?selectedItem.Id:0}}" />
+                </div>
+                <div class="col-xl-9">
+                  <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}">
+
+
+                  </p-fileUpload>
+                </div>
+              </div>
+              <h3>Допольнительные</h3>
+              <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}">  </p-fileUpload>
+              <div *ngFor="let item of selectedItemImages">
+
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+ 
+
 </section>

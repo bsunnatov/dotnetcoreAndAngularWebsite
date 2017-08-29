@@ -6,7 +6,21 @@
 
     <form novalidate [formGroup]="editForm">
       <div class="form-group">
-        <label for="LastName" class="control-label">Наименование</label>
+        <label for="ProductCategoryId" class="control-label text-bold">Группа товаров</label>
+        <div>
+          <kendo-combobox [data]="categoryItems"
+                          [textField]="'Name'"
+                          [valueField]="'Id'"
+                          [valuePrimitive]="true"
+                          [placeholder]="'Выберите группа'" formControlName="ProductCategoryId" style="width:100% !important">
+
+          </kendo-combobox>
+        </div>
+        
+      </div>
+
+      <div class="form-group">
+        <label for="Name" class="control-label text-bold">Наименование</label>
 
         <input type="text" class="k-textbox form-control" formControlName="Name" />
         <p class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.Name.valid || editForm.controls.Name.pristine">
@@ -14,22 +28,11 @@
         </p>
       </div>
       <div class="form-group">
-        <label for="LastName" class="control-label">Описание</label>
+        <label for="Description" class="control-label text-bold">Описание</label>
 
         <textarea type="text" class="k-textbox form-control" formControlName="Description" ></textarea>
       </div>
-      <div class="form-group">
-        <label for="LastName" class="control-label">Описание</label>
 
-        <kendo-combobox [data]="categoryItems"
-                        [textField]="'Name'"
-                        [valueField]="'Id'"
-                         [valuePrimitive]="true"
-                        [placeholder]="'Выберите группа'" formControlName="ProductCategoryId">
-
-        </kendo-combobox>
-      </div>
-     
     </form>
   
     <kendo-dialog-actions>

@@ -10618,7 +10618,7 @@ var CellComponent = (function () {
     Object.defineProperty(CellComponent.prototype, "format", {
         get: function () {
             if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__column_component__["b" /* isColumnComponent */])(this.column) && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["f" /* isNullOrEmptyString */])(this.column.format)) {
-                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["h" /* extractFormat */])(this.column.format);
+                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["i" /* extractFormat */])(this.column.format);
             }
             return undefined;
         },
@@ -13465,7 +13465,7 @@ var DateFilterCellComponent = (function (_super) {
     Object.defineProperty(DateFilterCellComponent.prototype, "columnFormat", {
         get: function () {
             return this.column && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["f" /* isNullOrEmptyString */])(this.column.format) ?
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["h" /* extractFormat */])(this.column.format) : "d";
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["i" /* extractFormat */])(this.column.format) : "d";
         },
         enumerable: true,
         configurable: true
@@ -13705,7 +13705,7 @@ var FilterCellWrapperComponent = (function (_super) {
     Object.defineProperty(FilterCellWrapperComponent.prototype, "showButton", {
         get: function () {
             var filter = this.currentFilter;
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* isPresent */])(filter) && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* isBlank */])(filter.value);
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* isPresent */])(filter) && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["j" /* isBlank */])(filter.value);
         },
         enumerable: true,
         configurable: true
@@ -13723,7 +13723,7 @@ var FilterCellWrapperComponent = (function (_super) {
             if (value === "isnull" || value === "isnotnull" || value === "isempty" || value === "isnotempty") {
                 this.applyNoValueFilter(value);
             }
-            else if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* isBlank */])(value) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* isPresent */])(this.currentFilter)) {
+            else if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["j" /* isBlank */])(value) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* isPresent */])(this.currentFilter)) {
                 this.onChange(this.currentFilter.value);
             }
         },
@@ -13758,7 +13758,7 @@ var FilterCellWrapperComponent = (function (_super) {
         }
     };
     FilterCellWrapperComponent.prototype.onChange = function (value) {
-        this.applyFilter(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* isBlank */])(value) ?
+        this.applyFilter(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utils__["j" /* isBlank */])(value) ?
             this.removeFilter(this.column.field) :
             this.updateFilter({
                 field: this.column.field,
@@ -14335,7 +14335,7 @@ var NumericFilterCellComponent = (function (_super) {
     Object.defineProperty(NumericFilterCellComponent.prototype, "columnFormat", {
         get: function () {
             return this.column && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["f" /* isNullOrEmptyString */])(this.column.format) ?
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["h" /* extractFormat */])(this.column.format) : "n2";
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__utils__["i" /* extractFormat */])(this.column.format) : "n2";
         },
         enumerable: true,
         configurable: true
@@ -15793,7 +15793,7 @@ var GridComponent = (function () {
          * The descriptors by which the data will be sorted.
          */
         set: function (value) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__utils__["j" /* isArray */])(value)) {
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__utils__["h" /* isArray */])(value)) {
                 this._sort = value;
             }
         },
@@ -15810,7 +15810,7 @@ var GridComponent = (function () {
          * The descriptors by which the data will to be grouped.
          */
         set: function (value) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__utils__["j" /* isArray */])(value)) {
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__utils__["h" /* isArray */])(value)) {
                 this._group = value;
             }
         },
@@ -18211,7 +18211,7 @@ Messages.propDecorators = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_module__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/shared.module.js");
 /* unused harmony reexport SharedModule */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__grid_component__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/grid.component.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__grid_component__["a"]; });
+/* unused harmony reexport GridComponent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__column_component__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/column.component.js");
 /* unused harmony reexport ColumnComponent */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__span_column_component__ = __webpack_require__("../../../../@progress/kendo-angular-grid/dist/es/span-column.component.js");
@@ -21889,15 +21889,15 @@ ToolbarComponent.propDecorators = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_observable_from__ = __webpack_require__("../../../../rxjs/add/observable/from.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_observable_from__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isPresent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return isBlank; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return isArray; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return isBlank; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return isArray; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return isTruthy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return isNullOrEmptyString; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isChanged; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return anyChanged; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return observe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return isUniversal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return extractFormat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return extractFormat; });
 
 
 /**

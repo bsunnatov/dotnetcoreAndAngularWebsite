@@ -658,7 +658,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ConfigService = (function () {
     function ConfigService() {
-        this._apiURI = 'http://localhost:5050/api';
+        this._apiURI = '/api';
     }
     ConfigService.prototype.getApiURI = function () {
         return this._apiURI;

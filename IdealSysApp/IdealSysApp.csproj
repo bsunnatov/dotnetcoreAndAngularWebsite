@@ -45,5 +45,6 @@
     <Folder Include="src\app\shared\components\" />
     <Folder Include="src\app\directives\" />
     <Folder Include="wwwroot\AppData\" />
+    <Folder Include="Uploads" />
   </ItemGroup>
 </Project>

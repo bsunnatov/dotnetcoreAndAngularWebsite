@@ -26,8 +26,17 @@ namespace IdealSysApp.Controllers
     }
     // GET: api/ProductCategory
     [HttpGet]
-    public object Get([FromQuery]string filter)
+    public object Get([FromQuery]string filter,long? ParentId)
     {
+      if (ParentId.HasValue)
+      {
+        var query = _service.GetWithInclude(p => p.Parent);
+        if (ParentId.Value == 0)
+          query = query.Where(p => !p.ParentId.HasValue);
+        else
+          query = query.Where(p => p.ParentId == ParentId);
+       return _service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(query);
+      }
  
       if (!string.IsNullOrEmpty(filter))
       {
@@ -38,8 +47,8 @@ namespace IdealSysApp.Controllers
       }
       else
       {
-        var vmResult = _service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(_service.AsQueryable());
-        return new { Data = vmResult, Total = _service.AsQueryable().Count() };
+        var vmResult = _service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(_service.GetWithInclude(p=>p.Parent));
+        return vmResult;
       }
     }
 
@@ -50,7 +59,6 @@ namespace IdealSysApp.Controllers
       var ent = _service.Get(id);
       return _service._mapper.Map<ProductCategoryViewModel>(ent);
     }
-
     // POST: api/ProductCategory
     [HttpPost]
     public IActionResult Post([FromBody]ProductCategoryViewModel model)
