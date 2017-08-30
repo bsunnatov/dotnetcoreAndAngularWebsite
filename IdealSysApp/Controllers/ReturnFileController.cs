@@ -17,10 +17,12 @@ namespace IdealSysApp.Controllers
   {
     private IHostingEnvironment _appEnvironment;
     private readonly IRepository<Product> _service;
-    public ReturnFileController(IHostingEnvironment appEnvironment, IRepository<Product> service)
+    IRepository<ProductImage> _pi_service;
+    public ReturnFileController(IHostingEnvironment appEnvironment, IRepository<Product> service, IRepository<ProductImage> pi_service)
     {
       _appEnvironment = appEnvironment;
       _service = service;
+      _pi_service = pi_service;
     }
     [HttpGet("{Id}")]
     public IActionResult Get(long Id)
@@ -34,6 +36,17 @@ namespace IdealSysApp.Controllers
       var image = System.IO.File.OpenRead(filePath);
       return File(image, "image/jpeg");
     }
-
+    [HttpGet("{Id}/{fileName}")]
+    public IActionResult Get(string fileName,long Id)
+    {
+      var ent = _pi_service.AsQueryable().FirstOrDefault(p=>p.Name==fileName);
+      if (ent == null)
+      {
+        return new EmptyResult();
+      }
+      var filePath = Path.Combine(_appEnvironment.ContentRootPath, "uploads", ent.Name ?? "no-image-box.png");
+      var image = System.IO.File.OpenRead(filePath);
+      return File(image, "image/*");
+    }
   }
 }

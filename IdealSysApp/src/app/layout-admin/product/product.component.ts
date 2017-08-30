@@ -86,5 +86,12 @@ export class ProductComponent implements OnInit {
   private selectedItem: any;
   public gridProductSelectionChange (gridProduct, selection) {
       this.selectedItem = gridProduct.data.data[selection.index];
-    }
+  }
+  private onBeforeSend(event) {
+      event.xhr.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem("auth_token"));
+
+  }
+  private onUpload(res) {
+      console.log(res);
+  }
 }

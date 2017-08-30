@@ -16,7 +16,7 @@ export class AuthenticateXHRBackend extends XHRBackend {
 
     createConnection(request: Request) {
         //Default header settings
-        let authToken = localStorage.getItem('auth_token');
+        let authToken = sessionStorage.getItem('auth_token');
         console.log(authToken);
         request.headers.append('Content-Type', 'application/json');
         request.headers.append('Authorization', `Bearer ${authToken}`);
@@ -31,7 +31,7 @@ export class AuthenticateXHRBackend extends XHRBackend {
                 2. On 401/403 response you clean authorized user for the Guard (e.g. by removing coresponding parameters in LocalStorage). 
                 3. As at this early stage you can't access the Router for forwarding to the login page,
                 4. refreshing the same page will trigger the Guard checks, which will forward you to the login screen */
-                localStorage.removeItem('auth_token');
+                sessionStorage.removeItem('auth_token');
                 window.location.href = window.location.href + '?' + new Date().getMilliseconds();
             }
             if (error.status === 403) {

@@ -13,14 +13,11 @@ import { DialogModule } from '@progress/kendo-angular-dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { ProductEditFormComponent } from './edit-form.component';
-import { SelectModule } from 'ng2-select';
-import { IqSelect2Module } from 'ng2-iq-select2';
-import {  DataService } from '../../shared/services/data.service';
 import { FileUploadModule } from 'primeng/primeng';
 import { DynamicPropertyComponent } from '../dynamic-property/dynamic-property.component';
 import { DynamicPropertyValueComponent } from '../dynamic-property-value/dynamic-property-value.component';
 import { NavbarComponent } from './navbar.component';
-import { RowClickDirective } from '../../shared/directives/row-click';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -31,12 +28,10 @@ import { RowClickDirective } from '../../shared/directives/row-click';
         DialogModule,
         ReactiveFormsModule,
         DropDownsModule,
-        SelectModule,
-        IqSelect2Module,
         FileUploadModule
         
     ],
-    declarations: [ProductComponent, ProductEditFormComponent, DynamicPropertyComponent, NavbarComponent, RowClickDirective, DynamicPropertyValueComponent],
-    providers: [ProductService, DataService, ProductCategoryService, DynamicPropertyService, DynamicPropertyValueService]
+    declarations: [ProductComponent, ProductEditFormComponent, DynamicPropertyComponent, NavbarComponent, DynamicPropertyValueComponent],
+    providers: [ProductService, ProductCategoryService, DynamicPropertyService, DynamicPropertyValueService]
     })
 export class ProductModule { }

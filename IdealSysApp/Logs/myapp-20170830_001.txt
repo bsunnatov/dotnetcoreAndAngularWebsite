@@ -5162,3 +5162,1824 @@ OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
 2017-08-30T20:08:51.8575224+05:00 0HL7FN3TKPEMV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
 2017-08-30T20:08:51.8605244+05:00 0HL7FN3TKPEMV [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 40.8728ms (afa2e885)
 2017-08-30T20:08:51.8635260+05:00 0HL7FN3TKPEMV [INF] Request finished in 54.2298ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:22:48.4409399+05:00  [INF] Executed DbCommand (1,441ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-30T21:22:48.4519522+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-30T21:22:48.6057397+05:00  [INF] Executed DbCommand (147ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [_Migrations]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-08-30T21:22:49.1498140+05:00  [INF] Executed DbCommand (435ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [ProductCategories] ADD [ParentId] bigint; (6438bdd5)
+2017-08-30T21:22:49.6913333+05:00  [INF] Executed DbCommand (540ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+CREATE INDEX [IX_ProductCategories_ParentId] ON [ProductCategories] ([ParentId]); (6438bdd5)
+2017-08-30T21:22:49.8685040+05:00  [INF] Executed DbCommand (176ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+ALTER TABLE [ProductCategories] ADD CONSTRAINT [FK_ProductCategories_ProductCategories_ParentId] FOREIGN KEY ([ParentId]) REFERENCES [ProductCategories] ([Id]) ON DELETE NO ACTION; (6438bdd5)
+2017-08-30T21:22:49.9405855+05:00  [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+INSERT INTO [_Migrations] ([MigrationId], [ProductVersion])
+VALUES (N'20170829122226_productCategory_Changed', N'1.1.2'); (6438bdd5)
+2017-08-30T21:22:50.7438557+05:00  [INF] Executed DbCommand (335ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName], [p].[StorageId]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-08-30T21:22:50.9710733+05:00  [INF] Executed DbCommand (72ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-30T21:22:51.0151166+05:00  [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductCategories] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-30T21:22:51.0191201+05:00  [INF] Working SeedData (e03f4adc)
+2017-08-30T21:34:43.2812066+05:00 0HL7FOK2BGFT2 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T21:34:43.2822078+05:00 0HL7FOK2BGFT3 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T21:34:44.1108752+05:00 0HL7FOK2BGFT2 [INF] Authorization failed for user: null. (a4ab1676)
+2017-08-30T21:34:44.1148791+05:00 0HL7FOK2BGFT2 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-08-30T21:34:44.1208883+05:00 0HL7FOK2BGFT2 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-08-30T21:34:44.1388711+05:00 0HL7FOK2BGFT2 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-08-30T21:34:44.1428769+05:00 0HL7FOK2BGFT2 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 91.0089ms (afa2e885)
+2017-08-30T21:34:44.1561533+05:00 0HL7FOK2BGFT3 [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-08-30T21:34:44.2102050+05:00 0HL7FOK2BGFT2 [INF] Request finished in 971.6074ms 401  (15c52c40)
+2017-08-30T21:34:44.2924944+05:00 0HL7FOK2BGFT3 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:34:44.5747386+05:00 0HL7FOK2BGFT3 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T21:34:44.7058656+05:00 0HL7FOK2BGFT3 [INF] Executed DbCommand (49ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:34:44.9037905+05:00 0HL7FOK2BGFT3 [INF] Executed DbCommand (107ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T21:34:45.0088794+05:00 0HL7FOK2BGFT3 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:34:45.1120446+05:00 0HL7FOK2BGFT3 [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 1062.6262ms (afa2e885)
+2017-08-30T21:34:45.1160497+05:00 0HL7FOK2BGFT3 [INF] Request finished in 1880.9116ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:34:45.1390723+05:00 0HL7FOK2BGFT4 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T21:34:45.1485813+05:00 0HL7FOK2BGFT4 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:34:45.1956328+05:00 0HL7FOK2BGFT4 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T21:34:45.2234037+05:00 0HL7FOK2BGFT4 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T21:34:45.2576377+05:00 0HL7FOK2BGFT4 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 116.089ms (afa2e885)
+2017-08-30T21:34:45.2611411+05:00 0HL7FOK2BGFT4 [INF] Request finished in 121.5803ms 200 image/jpeg (15c52c40)
+2017-08-30T21:35:28.7289733+05:00 0HL7FOK2BGFT5 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:0}   (e5be5b71)
+2017-08-30T21:35:28.7369674+05:00 0HL7FOK2BGFT5 [INF] Request finished in 8.8549ms 204  (15c52c40)
+2017-08-30T21:35:28.7670064+05:00 0HL7FOK2BGFT6 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:0} application/json  (e5be5b71)
+2017-08-30T21:35:28.8437338+05:00 0HL7FOK2BGFT6 [INF] Successfully validated the token. (60169667)
+2017-08-30T21:35:28.8477551+05:00 0HL7FOK2BGFT6 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:35:28.8497394+05:00 0HL7FOK2BGFT6 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T21:35:28.8537439+05:00 0HL7FOK2BGFT6 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":20,\"ParentId\":0}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:35:28.9277699+05:00 0HL7FOK2BGFT6 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T21:35:28.9476260+05:00 0HL7FOK2BGFT6 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:35:28.9696440+05:00 0HL7FOK2BGFT6 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:35:28.9826544+05:00 0HL7FOK2BGFT6 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 132.9645ms (afa2e885)
+2017-08-30T21:35:28.9846562+05:00 0HL7FOK2BGFT6 [INF] Request finished in 216.7377ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:35:33.1549667+05:00 0HL7FOK2BGFT7 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:1,%22filter%22:{%22filters%22:[{%22field%22:%22ParentId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-30T21:35:33.1559680+05:00 0HL7FOK2BGFT7 [INF] Request finished in 1.3698ms 204  (15c52c40)
+2017-08-30T21:35:33.2032669+05:00 0HL7FOK2BGFT8 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:1,%22filter%22:{%22filters%22:[{%22field%22:%22ParentId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}} application/json  (e5be5b71)
+2017-08-30T21:35:33.2047679+05:00 0HL7FOK2BGFT8 [INF] Successfully validated the token. (60169667)
+2017-08-30T21:35:33.2057688+05:00 0HL7FOK2BGFT8 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:35:33.2097726+05:00 0HL7FOK2BGFT8 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T21:35:33.2127753+05:00 0HL7FOK2BGFT8 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":20,\"ParentId\":1,\"filter\":{\"filters\":[{\"field\":\"ParentId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:35:33.4328453+05:00 0HL7FOK2BGFT8 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] = 1 (6438bdd5)
+2017-08-30T21:35:33.4378497+05:00 0HL7FOK2BGFT8 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:35:33.4393524+05:00 0HL7FOK2BGFT8 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:35:33.4398522+05:00 0HL7FOK2BGFT8 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 232.6781ms (afa2e885)
+2017-08-30T21:35:33.4453567+05:00 0HL7FOK2BGFT8 [INF] Request finished in 237.7053ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:35:55.3209293+05:00 0HL7FOK2BGFT9 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T21:35:55.3249328+05:00 0HL7FOK2BGFT9 [INF] Authorization failed for user: null. (a4ab1676)
+2017-08-30T21:35:55.3299375+05:00 0HL7FOK2BGFTA [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T21:35:55.3329408+05:00 0HL7FOK2BGFTA [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:35:55.3419497+05:00 0HL7FOK2BGFT9 [INF] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'. (8b6446cb)
+2017-08-30T21:35:55.3449523+05:00 0HL7FOK2BGFT9 [INF] Executing ChallengeResult with authentication schemes ([]). (f3dca807)
+2017-08-30T21:35:55.3459552+05:00 0HL7FOK2BGFTA [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T21:35:55.3509579+05:00 0HL7FOK2BGFT9 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2017-08-30T21:35:55.3539629+05:00 0HL7FOK2BGFT9 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 29.3518ms (afa2e885)
+2017-08-30T21:35:55.3549631+05:00 0HL7FOK2BGFTA [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:35:55.3619686+05:00 0HL7FOK2BGFT9 [INF] Request finished in 36.5099ms 401  (15c52c40)
+2017-08-30T21:35:55.3649716+05:00 0HL7FOK2BGFTA [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T21:35:55.3669340+05:00 0HL7FOK2BGFTA [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:35:55.3689358+05:00 0HL7FOK2BGFTA [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 36.9142ms (afa2e885)
+2017-08-30T21:35:55.3724389+05:00 0HL7FOK2BGFTA [INF] Request finished in 50.2341ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:35:55.4610245+05:00 0HL7FOK2BGFTB [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T21:35:55.4625249+05:00 0HL7FOK2BGFTB [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:35:55.4865483+05:00 0HL7FOK2BGFTB [INF] Executed DbCommand (19ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T21:35:55.4875491+05:00 0HL7FOK2BGFTB [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T21:35:55.4885507+05:00 0HL7FOK2BGFTB [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 26.6943ms (afa2e885)
+2017-08-30T21:35:55.4900523+05:00 0HL7FOK2BGFTB [INF] Request finished in 28.6072ms 200 image/jpeg (15c52c40)
+2017-08-30T21:37:25.8723708+05:00 0HL7FOK2BGFTC [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:0}   (e5be5b71)
+2017-08-30T21:37:25.8733714+05:00 0HL7FOK2BGFTC [INF] Request finished in 1.2786ms 204  (15c52c40)
+2017-08-30T21:37:25.9224223+05:00 0HL7FOK2BGFTD [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:0} application/json  (e5be5b71)
+2017-08-30T21:37:25.9239240+05:00 0HL7FOK2BGFTD [INF] Successfully validated the token. (60169667)
+2017-08-30T21:37:25.9244244+05:00 0HL7FOK2BGFTD [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:37:25.9254263+05:00 0HL7FOK2BGFTD [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T21:37:25.9269273+05:00 0HL7FOK2BGFTD [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":20,\"ParentId\":0}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:37:25.9314441+05:00 0HL7FOK2BGFTD [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T21:37:25.9344339+05:00 0HL7FOK2BGFTD [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:37:25.9351530+05:00 0HL7FOK2BGFTD [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:37:25.9361549+05:00 0HL7FOK2BGFTD [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 10.6618ms (afa2e885)
+2017-08-30T21:37:25.9371564+05:00 0HL7FOK2BGFTD [INF] Request finished in 14.8618ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:37:32.9789214+05:00 0HL7FOK2BGFTE [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:1,%22filter%22:{%22filters%22:[{%22field%22:%22ParentId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}}   (e5be5b71)
+2017-08-30T21:37:32.9799223+05:00 0HL7FOK2BGFTE [INF] Request finished in 1.1838ms 204  (15c52c40)
+2017-08-30T21:37:33.0364703+05:00 0HL7FOK2BGFTF [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:1,%22filter%22:{%22filters%22:[{%22field%22:%22ParentId%22,%22operator%22:%22eq%22,%22value%22:1}],%22logic%22:%22and%22}} application/json  (e5be5b71)
+2017-08-30T21:37:33.0379779+05:00 0HL7FOK2BGFTF [INF] Successfully validated the token. (60169667)
+2017-08-30T21:37:33.0384717+05:00 0HL7FOK2BGFTF [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:37:33.0394736+05:00 0HL7FOK2BGFTF [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T21:37:33.0414747+05:00 0HL7FOK2BGFTF [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":20,\"ParentId\":1,\"filter\":{\"filters\":[{\"field\":\"ParentId\",\"operator\":\"eq\",\"value\":1}],\"logic\":\"and\"}}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:37:33.0464798+05:00 0HL7FOK2BGFTF [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] = 1 (6438bdd5)
+2017-08-30T21:37:33.0560651+05:00 0HL7FOK2BGFTF [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] = 1
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:37:33.0564743+05:00 0HL7FOK2BGFTF [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:37:33.0574765+05:00 0HL7FOK2BGFTF [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 17.9593ms (afa2e885)
+2017-08-30T21:37:33.0579763+05:00 0HL7FOK2BGFTF [INF] Request finished in 23.0218ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:41:28.6330396+05:00 0HL7FOK2BGFTG [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:0}   (e5be5b71)
+2017-08-30T21:41:28.6380443+05:00 0HL7FOK2BGFTG [INF] Request finished in 22.9287ms 204  (15c52c40)
+2017-08-30T21:41:28.7681701+05:00 0HL7FOK2BGFTH [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={%22sort%22:[],%22skip%22:0,%22take%22:20,%22ParentId%22:0} application/json  (e5be5b71)
+2017-08-30T21:41:28.7701735+05:00 0HL7FOK2BGFTH [INF] Successfully validated the token. (60169667)
+2017-08-30T21:41:28.7711724+05:00 0HL7FOK2BGFTH [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:41:28.7721749+05:00 0HL7FOK2BGFTH [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T21:41:28.7741757+05:00 0HL7FOK2BGFTH [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":20,\"ParentId\":0}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:41:28.7781792+05:00 0HL7FOK2BGFTH [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T21:41:28.8180822+05:00 0HL7FOK2BGFTH [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:41:28.8200860+05:00 0HL7FOK2BGFTH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:41:28.8235884+05:00 0HL7FOK2BGFTH [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 48.9267ms (afa2e885)
+2017-08-30T21:41:28.8270905+05:00 0HL7FOK2BGFTH [INF] Request finished in 57.0408ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:41:33.2953877+05:00 0HL7FOK2BGFTI [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T21:41:33.2983907+05:00 0HL7FOK2BGFTI [INF] Request finished in 1.2575ms 204  (15c52c40)
+2017-08-30T21:41:33.3003921+05:00 0HL7FOK2BGFTJ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T21:41:33.3013946+05:00 0HL7FOK2BGFTJ [INF] Request finished in 1.127ms 204  (15c52c40)
+2017-08-30T21:41:33.4074980+05:00 0HL7FOK2BGFTK [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T21:41:33.4084959+05:00 0HL7FOK2BGFTK [INF] Successfully validated the token. (60169667)
+2017-08-30T21:41:33.4094971+05:00 0HL7FOK2BGFTK [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:41:33.4094971+05:00 0HL7FOK2BGFTK [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T21:41:33.4125034+05:00 0HL7FOK2BGFTK [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:41:33.4165039+05:00 0HL7FOK2BGFTK [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T21:41:33.4195062+05:00 0HL7FOK2BGFTK [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:41:33.4205127+05:00 0HL7FOK2BGFTK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:41:33.4235114+05:00 0HL7FOK2BGFTK [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 11.3971ms (afa2e885)
+2017-08-30T21:41:33.4259125+05:00 0HL7FOK2BGFTK [INF] Request finished in 16.998ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:41:33.4599437+05:00 0HL7FOK2BGFTL [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T21:41:33.4614454+05:00 0HL7FOK2BGFTL [INF] Successfully validated the token. (60169667)
+2017-08-30T21:41:33.4644483+05:00 0HL7FOK2BGFTL [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:41:33.4659503+05:00 0HL7FOK2BGFTL [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:41:33.4684522+05:00 0HL7FOK2BGFTL [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T21:41:33.4744578+05:00 0HL7FOK2BGFTL [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:41:33.4819650+05:00 0HL7FOK2BGFTL [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T21:41:33.4829659+05:00 0HL7FOK2BGFTL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:41:33.4864693+05:00 0HL7FOK2BGFTL [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 19.1124ms (afa2e885)
+2017-08-30T21:41:33.5004829+05:00 0HL7FOK2BGFTL [INF] Request finished in 39.129ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:41:33.6830416+05:00 0HL7FOK2BGFTM [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T21:41:33.6840603+05:00 0HL7FOK2BGFTM [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:41:33.6895502+05:00 0HL7FOK2BGFTM [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T21:41:33.7355917+05:00 0HL7FOK2BGFTM [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T21:41:33.7561787+05:00 0HL7FOK2BGFTM [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 72.4418ms (afa2e885)
+2017-08-30T21:41:33.7571882+05:00 0HL7FOK2BGFTM [INF] Request finished in 74.2939ms 200 image/jpeg (15c52c40)
+2017-08-30T21:45:18.5295471+05:00 0HL7FOK2BGFTN [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/UploadFiles/UploadFiles/1?isGeneral=false   (e5be5b71)
+2017-08-30T21:45:18.5305470+05:00 0HL7FOK2BGFTN [INF] Request finished in 1.1742ms 204  (15c52c40)
+2017-08-30T21:45:18.5721399+05:00 0HL7FOK2BGFTO [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/UploadFiles/UploadFiles/1?isGeneral=false multipart/form-data; boundary=----WebKitFormBoundaryHDqS3EubMJdix8tJ 258904 (e5be5b71)
+2017-08-30T21:45:19.0754032+05:00 0HL7FOK2BGFTO [INF] Executing action method "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" with arguments (["1", "Microsoft.AspNetCore.Http.Internal.FormFile", "False"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:45:19.1302107+05:00 0HL7FOK2BGFTO [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T21:45:21.4793680+05:00 0HL7FOK2BGFTO [INF] Executed DbCommand (1,582ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 10), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 100), @p7='?', @p8='?', @p9='?' (Size = 4000), @p19='?', @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?', @p16='?' (Size = 4000), @p17='?', @p18='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [ProductImages] ([CreatedDate], [DisplayName], [Extensions], [IdentityId], [IntegrationKey], [ModifiedDate], [Name], [ProductId], [Size], [Url])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [ProductImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [Products] SET [CreatedDate] = @p10, [Description] = @p11, [IdentityId] = @p12, [ImageUrl] = @p13, [IntegrationKey] = @p14, [ModifiedDate] = @p15, [Name] = @p16, [Price] = @p17, [ProductCategoryId] = @p18
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-30T21:45:21.4971771+05:00 0HL7FOK2BGFTO [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:45:21.4991676+05:00 0HL7FOK2BGFTO [INF] Executed action "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" in 2868.5687ms (afa2e885)
+2017-08-30T21:45:21.5031662+05:00 0HL7FOK2BGFTO [INF] Request finished in 2931.854ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:45:32.5228293+05:00 0HL7FOK2BGFTP [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22group%22:[],%22skip%22:0,%22sort%22:[],%22take%22:8}   (e5be5b71)
+2017-08-30T21:45:32.5238322+05:00 0HL7FOK2BGFTP [INF] Request finished in 36.31ms 204  (15c52c40)
+2017-08-30T21:45:32.5298371+05:00 0HL7FOK2BGFTQ [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22group%22:[],%22skip%22:0,%22sort%22:[],%22take%22:8} application/json  (e5be5b71)
+2017-08-30T21:45:32.5318379+05:00 0HL7FOK2BGFTQ [INF] Successfully validated the token. (60169667)
+2017-08-30T21:45:32.5328394+05:00 0HL7FOK2BGFTQ [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:45:32.5348412+05:00 0HL7FOK2BGFTQ [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"group\":[],\"skip\":0,\"sort\":[],\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:45:32.6067300+05:00 0HL7FOK2BGFTQ [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T21:45:32.6297519+05:00 0HL7FOK2BGFTQ [INF] Executed DbCommand (21ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:45:33.0571809+05:00 0HL7FOK2BGFTQ [INF] Executed DbCommand (425ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T21:45:33.0601664+05:00 0HL7FOK2BGFTQ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:45:33.0641705+05:00 0HL7FOK2BGFTQ [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 529.3809ms (afa2e885)
+2017-08-30T21:45:33.0651737+05:00 0HL7FOK2BGFTQ [INF] Request finished in 535.7089ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:46:17.5849521+05:00 0HL7FOK2BGFTR [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product   (e5be5b71)
+2017-08-30T21:46:17.5884562+05:00 0HL7FOK2BGFTR [INF] Request finished in 1.9178ms 204  (15c52c40)
+2017-08-30T21:46:17.6169829+05:00 0HL7FOK2BGFTS [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/Product application/json 63 (e5be5b71)
+2017-08-30T21:46:17.6184842+05:00 0HL7FOK2BGFTS [INF] Successfully validated the token. (60169667)
+2017-08-30T21:46:17.6194858+05:00 0HL7FOK2BGFTS [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:46:17.8131716+05:00 0HL7FOK2BGFTS [INF] Executing action method "IdealSysApp.Controllers.ProductController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.ProductViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:46:18.2431029+05:00 0HL7FOK2BGFTS [INF] Executed DbCommand (205ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName], [u].[StorageId]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedUserName] = @__normalizedUserName_0) (6438bdd5)
+2017-08-30T21:46:18.3698868+05:00 0HL7FOK2BGFTS [INF] Executed DbCommand (22ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 4000), @p7='?', @p8='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [Products] ([CreatedDate], [Description], [IdentityId], [ImageUrl], [IntegrationKey], [ModifiedDate], [Name], [Price], [ProductCategoryId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-08-30T21:46:18.3979021+05:00 0HL7FOK2BGFTS [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:46:18.3984016+05:00 0HL7FOK2BGFTS [INF] Executed action "IdealSysApp.Controllers.ProductController.Post (IdealSysApp)" in 777.3679ms (afa2e885)
+2017-08-30T21:46:18.3994038+05:00 0HL7FOK2BGFTS [INF] Request finished in 782.3723ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:46:18.4084114+05:00 0HL7FOK2BGFTT [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22group%22:[],%22skip%22:0,%22sort%22:[],%22take%22:8}   (e5be5b71)
+2017-08-30T21:46:18.4094126+05:00 0HL7FOK2BGFTT [INF] Request finished in 1.1488ms 204  (15c52c40)
+2017-08-30T21:46:18.4194217+05:00 0HL7FOK2BGFTU [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22group%22:[],%22skip%22:0,%22sort%22:[],%22take%22:8} application/json  (e5be5b71)
+2017-08-30T21:46:18.4204407+05:00 0HL7FOK2BGFTU [INF] Successfully validated the token. (60169667)
+2017-08-30T21:46:18.4214419+05:00 0HL7FOK2BGFTU [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T21:46:18.4229261+05:00 0HL7FOK2BGFTU [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"group\":[],\"skip\":0,\"sort\":[],\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:46:18.4254279+05:00 0HL7FOK2BGFTU [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T21:46:18.4314349+05:00 0HL7FOK2BGFTU [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T21:46:18.4518029+05:00 0HL7FOK2BGFTU [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T21:46:18.4528031+05:00 0HL7FOK2BGFTU [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T21:46:18.4533039+05:00 0HL7FOK2BGFTU [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 31.5058ms (afa2e885)
+2017-08-30T21:46:18.4548069+05:00 0HL7FOK2BGFTU [INF] Request finished in 34.8778ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T21:46:18.4708206+05:00 0HL7FOK2BGFTV [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T21:46:18.4723222+05:00 0HL7FOK2BGFTV [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T21:46:18.4763297+05:00 0HL7FOK2BGFTV [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T21:46:18.4967830+05:00 0HL7FOK2BGFTV [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T21:46:18.5177535+05:00 0HL7FOK2BGFTV [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 45.933ms (afa2e885)
+2017-08-30T21:46:18.5187548+05:00 0HL7FOK2BGFTV [INF] Request finished in 47.9883ms 200 image/jpeg (15c52c40)
+2017-08-30T22:01:21.9900239+05:00  [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-30T22:01:22.0020365+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-30T22:01:22.0362127+05:00  [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [_Migrations]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-08-30T22:01:22.4434424+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName], [p].[StorageId]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-08-30T22:01:22.5453590+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-30T22:01:22.5543669+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductCategories] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-30T22:01:22.5563858+05:00  [INF] Working SeedData (e03f4adc)
+2017-08-30T22:03:58.8702673+05:00 0HL7FP4DI34OS [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:03:58.8702673+05:00 0HL7FP4DI34OT [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:03:58.9873797+05:00 0HL7FP4DI34OT [INF] Request finished in 127.7339ms 204  (15c52c40)
+2017-08-30T22:03:58.9873797+05:00 0HL7FP4DI34OS [INF] Request finished in 127.7339ms 204  (15c52c40)
+2017-08-30T22:03:59.0594489+05:00 0HL7FP4DI34OU [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:03:59.0594489+05:00 0HL7FP4DI34OV [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:03:59.2636453+05:00 0HL7FP4DI34OV [INF] Successfully validated the token. (60169667)
+2017-08-30T22:03:59.2636453+05:00 0HL7FP4DI34OU [INF] Successfully validated the token. (60169667)
+2017-08-30T22:03:59.2716530+05:00 0HL7FP4DI34OU [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:03:59.2716530+05:00 0HL7FP4DI34OV [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:03:59.7731342+05:00 0HL7FP4DI34OU [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:03:59.8091685+05:00 0HL7FP4DI34OV [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-08-30T22:03:59.9222783+05:00 0HL7FP4DI34OU [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:03:59.9222783+05:00 0HL7FP4DI34OV [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:04:00.0110566+05:00 0HL7FP4DI34OU [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:04:00.0150578+05:00 0HL7FP4DI34OV [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:04:00.1065196+05:00 0HL7FP4DI34OU [INF] Executed DbCommand (66ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:04:00.1080209+05:00 0HL7FP4DI34OV [INF] Executed DbCommand (24ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:04:00.1575786+05:00 0HL7FP4DI34OU [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:04:00.2186322+05:00 0HL7FP4DI34OV [INF] Executed DbCommand (31ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:04:00.2576823+05:00 0HL7FP4DI34OU [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 502.5398ms (afa2e885)
+2017-08-30T22:04:00.2661779+05:00 0HL7FP4DI34OU [INF] Request finished in 1216.421ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:04:00.2671993+05:00 0HL7FP4DI34OV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:04:00.2806920+05:00 0HL7FP4DI34OV [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 528.4659ms (afa2e885)
+2017-08-30T22:04:00.2816928+05:00 0HL7FP4DI34OV [INF] Request finished in 1231.8768ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:04:00.2997100+05:00 0HL7FP4DI34P0 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:04:00.3037142+05:00 0HL7FP4DI34P1 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:04:00.3047150+05:00 0HL7FP4DI34P0 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:04:00.3072179+05:00 0HL7FP4DI34P1 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:04:00.3362543+05:00 0HL7FP4DI34P0 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:04:00.3382567+05:00 0HL7FP4DI34P1 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:04:00.3632843+05:00 0HL7FP4DI34P1 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:04:00.3637850+05:00 0HL7FP4DI34P0 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:04:00.3707915+05:00 0HL7FP4DI34P1 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 65.2335ms (afa2e885)
+2017-08-30T22:04:00.3712949+05:00 0HL7FP4DI34P0 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 68.6867ms (afa2e885)
+2017-08-30T22:04:00.3737955+05:00 0HL7FP4DI34P1 [INF] Request finished in 69.6092ms 200 image/jpeg (15c52c40)
+2017-08-30T22:04:00.3742949+05:00 0HL7FP4DI34P0 [INF] Request finished in 74.1248ms 200 image/jpeg (15c52c40)
+2017-08-30T22:04:35.8445094+05:00 0HL7FP4DI34P2 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:04:35.8465118+05:00 0HL7FP4DI34P3 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:04:35.8475130+05:00 0HL7FP4DI34P3 [INF] Request finished in 31.2287ms 204  (15c52c40)
+2017-08-30T22:04:35.8495167+05:00 0HL7FP4DI34P2 [INF] Request finished in 42.8888ms 204  (15c52c40)
+2017-08-30T22:04:35.9602866+05:00 0HL7FP4DI34P4 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:04:35.9617873+05:00 0HL7FP4DI34P5 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:04:35.9627888+05:00 0HL7FP4DI34P4 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:04:35.9632886+05:00 0HL7FP4DI34P5 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:04:35.9637890+05:00 0HL7FP4DI34P4 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:04:35.9652907+05:00 0HL7FP4DI34P5 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:04:35.9667916+05:00 0HL7FP4DI34P4 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:04:35.9697946+05:00 0HL7FP4DI34P5 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:04:35.9783031+05:00 0HL7FP4DI34P4 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:04:35.9798054+05:00 0HL7FP4DI34P5 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:04:35.9823069+05:00 0HL7FP4DI34P4 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:04:35.9858110+05:00 0HL7FP4DI34P5 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:04:35.9898181+05:00 0HL7FP4DI34P4 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:04:35.9978235+05:00 0HL7FP4DI34P5 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:04:35.9978235+05:00 0HL7FP4DI34P4 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:04:35.9988231+05:00 0HL7FP4DI34P4 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 33.8019ms (afa2e885)
+2017-08-30T22:04:36.0013253+05:00 0HL7FP4DI34P4 [INF] Request finished in 39.8022ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:04:36.0018260+05:00 0HL7FP4DI34P5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:04:36.0028269+05:00 0HL7FP4DI34P5 [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 35.871ms (afa2e885)
+2017-08-30T22:04:36.0048293+05:00 0HL7FP4DI34P5 [INF] Request finished in 42.5964ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:04:36.0498718+05:00 0HL7FP4DI34P6 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:04:36.0523740+05:00 0HL7FP4DI34P7 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:04:36.0588811+05:00 0HL7FP4DI34P6 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:04:36.0593812+05:00 0HL7FP4DI34P7 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:04:36.0623858+05:00 0HL7FP4DI34P6 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:04:36.0643856+05:00 0HL7FP4DI34P6 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:04:36.0653868+05:00 0HL7FP4DI34P6 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 14.5474ms (afa2e885)
+2017-08-30T22:04:36.0663883+05:00 0HL7FP4DI34P6 [INF] Request finished in 16.3367ms 200 image/jpeg (15c52c40)
+2017-08-30T22:04:36.1144338+05:00 0HL7FP4DI34P7 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:04:36.1534714+05:00 0HL7FP4DI34P7 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:04:36.1619802+05:00 0HL7FP4DI34P7 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 105.4774ms (afa2e885)
+2017-08-30T22:04:36.1639819+05:00 0HL7FP4DI34P7 [INF] Request finished in 112.7118ms 200 image/jpeg (15c52c40)
+2017-08-30T22:04:55.4742844+05:00 0HL7FP4DI34P8 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/UploadFiles/UploadFiles/1?isGeneral=false   (e5be5b71)
+2017-08-30T22:04:55.4752859+05:00 0HL7FP4DI34P8 [INF] Request finished in 1.2644ms 204  (15c52c40)
+2017-08-30T22:04:55.4958052+05:00 0HL7FP4DI34P9 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/UploadFiles/UploadFiles/1?isGeneral=false multipart/form-data; boundary=----WebKitFormBoundarygV4A6g2UAelAYQsh 147806 (e5be5b71)
+2017-08-30T22:04:55.5994041+05:00 0HL7FP4DI34P9 [INF] Executing action method "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" with arguments (["1", "Microsoft.AspNetCore.Http.Internal.FormFile", "False"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:04:55.6074121+05:00 0HL7FP4DI34P9 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:04:55.8753064+05:00 0HL7FP4DI34P9 [INF] Executed DbCommand (66ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 10), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 100), @p7='?', @p8='?', @p9='?' (Size = 4000), @p19='?', @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?', @p16='?' (Size = 4000), @p17='?', @p18='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [ProductImages] ([CreatedDate], [DisplayName], [Extensions], [IdentityId], [IntegrationKey], [ModifiedDate], [Name], [ProductId], [Size], [Url])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [ProductImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [Products] SET [CreatedDate] = @p10, [Description] = @p11, [IdentityId] = @p12, [ImageUrl] = @p13, [IntegrationKey] = @p14, [ModifiedDate] = @p15, [Name] = @p16, [Price] = @p17, [ProductCategoryId] = @p18
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-30T22:04:55.9048349+05:00 0HL7FP4DI34P9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:04:55.9258551+05:00 0HL7FP4DI34P9 [INF] Executed action "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" in 408.7938ms (afa2e885)
+2017-08-30T22:04:56.0059323+05:00 0HL7FP4DI34P9 [INF] Request finished in 440.3727ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:08:54.5499036+05:00 0HL7FP4DI34PA [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:08:54.5529075+05:00 0HL7FP4DI34PB [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:08:54.5539071+05:00 0HL7FP4DI34PA [INF] Request finished in 4.8045ms 204  (15c52c40)
+2017-08-30T22:08:54.5549099+05:00 0HL7FP4DI34PB [INF] Request finished in 1.9578ms 204  (15c52c40)
+2017-08-30T22:08:54.7237621+05:00 0HL7FP4DI34PC [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:08:54.7277663+05:00 0HL7FP4DI34PC [INF] Successfully validated the token. (60169667)
+2017-08-30T22:08:54.7287668+05:00 0HL7FP4DI34PD [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:08:54.7287668+05:00 0HL7FP4DI34PC [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:08:54.7297677+05:00 0HL7FP4DI34PD [INF] Successfully validated the token. (60169667)
+2017-08-30T22:08:54.7307703+05:00 0HL7FP4DI34PD [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:08:54.7337719+05:00 0HL7FP4DI34PC [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:08:54.7397768+05:00 0HL7FP4DI34PD [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:08:54.7407804+05:00 0HL7FP4DI34PC [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:08:54.7477845+05:00 0HL7FP4DI34PD [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:08:54.7497870+05:00 0HL7FP4DI34PC [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:08:54.7539622+05:00 0HL7FP4DI34PD [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:08:54.7754332+05:00 0HL7FP4DI34PC [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:08:54.7774363+05:00 0HL7FP4DI34PD [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:08:54.7779371+05:00 0HL7FP4DI34PC [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:08:54.7789380+05:00 0HL7FP4DI34PD [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:08:54.7799395+05:00 0HL7FP4DI34PC [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 46.0087ms (afa2e885)
+2017-08-30T22:08:54.7814411+05:00 0HL7FP4DI34PC [INF] Request finished in 56.874ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:08:54.7824420+05:00 0HL7FP4DI34PD [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 47.6061ms (afa2e885)
+2017-08-30T22:08:54.7829425+05:00 0HL7FP4DI34PD [INF] Request finished in 54.8171ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:08:54.8763284+05:00 0HL7FP4DI34PE [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:08:54.8773296+05:00 0HL7FP4DI34PF [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:08:54.8783302+05:00 0HL7FP4DI34PE [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:08:54.8788332+05:00 0HL7FP4DI34PF [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:08:54.8818332+05:00 0HL7FP4DI34PE [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:08:54.8833346+05:00 0HL7FP4DI34PF [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:08:54.8838353+05:00 0HL7FP4DI34PE [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:08:54.8848375+05:00 0HL7FP4DI34PF [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:08:54.9053559+05:00 0HL7FP4DI34PF [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 27.2361ms (afa2e885)
+2017-08-30T22:08:54.9053559+05:00 0HL7FP4DI34PE [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 27.4881ms (afa2e885)
+2017-08-30T22:08:54.9063567+05:00 0HL7FP4DI34PF [INF] Request finished in 29.5913ms 200 image/jpeg (15c52c40)
+2017-08-30T22:08:54.9068575+05:00 0HL7FP4DI34PE [INF] Request finished in 30.2707ms 200 image/jpeg (15c52c40)
+2017-08-30T22:09:13.2525508+05:00 0HL7FP4DI34PG [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:09:13.2535510+05:00 0HL7FP4DI34PG [INF] Request finished in 0.9975ms 204  (15c52c40)
+2017-08-30T22:09:13.2565536+05:00 0HL7FP4DI34PH [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:09:13.2585593+05:00 0HL7FP4DI34PH [INF] Request finished in 0.7944ms 204  (15c52c40)
+2017-08-30T22:09:13.3996826+05:00 0HL7FP4DI34PI [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:09:13.4001827+05:00 0HL7FP4DI34PJ [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:09:13.4011845+05:00 0HL7FP4DI34PI [INF] Successfully validated the token. (60169667)
+2017-08-30T22:09:13.4021861+05:00 0HL7FP4DI34PI [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:09:13.4026852+05:00 0HL7FP4DI34PJ [INF] Successfully validated the token. (60169667)
+2017-08-30T22:09:13.4036871+05:00 0HL7FP4DI34PI [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:09:13.4046870+05:00 0HL7FP4DI34PJ [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:09:13.4051874+05:00 0HL7FP4DI34PI [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:09:13.4061886+05:00 0HL7FP4DI34PJ [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:09:13.4106929+05:00 0HL7FP4DI34PI [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:09:13.4111933+05:00 0HL7FP4DI34PJ [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:09:13.4141963+05:00 0HL7FP4DI34PI [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:09:13.4166988+05:00 0HL7FP4DI34PJ [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:09:13.4177010+05:00 0HL7FP4DI34PI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:09:13.4187003+05:00 0HL7FP4DI34PI [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 15.5578ms (afa2e885)
+2017-08-30T22:09:13.4197021+05:00 0HL7FP4DI34PI [INF] Request finished in 20.5728ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:09:13.4242071+05:00 0HL7FP4DI34PJ [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:09:13.4257081+05:00 0HL7FP4DI34PJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:09:13.4282122+05:00 0HL7FP4DI34PJ [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 21.4346ms (afa2e885)
+2017-08-30T22:09:13.4297109+05:00 0HL7FP4DI34PJ [INF] Request finished in 29.151ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:09:13.5127908+05:00 0HL7FP4DI34PK [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:09:13.5132912+05:00 0HL7FP4DI34PL [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:09:13.5142931+05:00 0HL7FP4DI34PK [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:09:13.5152930+05:00 0HL7FP4DI34PL [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:09:13.5177958+05:00 0HL7FP4DI34PK [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:09:13.5192971+05:00 0HL7FP4DI34PL [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:09:13.5197989+05:00 0HL7FP4DI34PK [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:09:13.5208011+05:00 0HL7FP4DI34PL [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:09:13.5222998+05:00 0HL7FP4DI34PK [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 7.5703ms (afa2e885)
+2017-08-30T22:09:13.5233010+05:00 0HL7FP4DI34PL [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 7.6796ms (afa2e885)
+2017-08-30T22:09:13.5243042+05:00 0HL7FP4DI34PK [INF] Request finished in 10.4983ms 200 image/jpeg (15c52c40)
+2017-08-30T22:09:13.5258035+05:00 0HL7FP4DI34PL [INF] Request finished in 11.0671ms 200 image/jpeg (15c52c40)
+2017-08-30T22:11:33.5845792+05:00 0HL7FP4DI34PM [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:11:33.5865823+05:00 0HL7FP4DI34PM [INF] Request finished in 1.345ms 204  (15c52c40)
+2017-08-30T22:11:33.5910331+05:00 0HL7FP4DI34PN [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:11:33.5925354+05:00 0HL7FP4DI34PN [INF] Request finished in 1.0322ms 204  (15c52c40)
+2017-08-30T22:11:33.7276649+05:00 0HL7FP4DI34PO [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:11:33.7286651+05:00 0HL7FP4DI34PP [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:11:33.7291652+05:00 0HL7FP4DI34PO [INF] Successfully validated the token. (60169667)
+2017-08-30T22:11:33.7296690+05:00 0HL7FP4DI34PO [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:11:33.7306665+05:00 0HL7FP4DI34PP [INF] Successfully validated the token. (60169667)
+2017-08-30T22:11:33.7311680+05:00 0HL7FP4DI34PP [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:11:33.7316677+05:00 0HL7FP4DI34PO [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:11:33.7326686+05:00 0HL7FP4DI34PP [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:11:33.7331701+05:00 0HL7FP4DI34PO [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:11:33.7356719+05:00 0HL7FP4DI34PP [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:11:33.7371736+05:00 0HL7FP4DI34PO [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:11:33.7391750+05:00 0HL7FP4DI34PP [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:11:33.7411771+05:00 0HL7FP4DI34PO [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:11:33.7421776+05:00 0HL7FP4DI34PO [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:11:33.7431788+05:00 0HL7FP4DI34PO [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 12.4862ms (afa2e885)
+2017-08-30T22:11:33.7436796+05:00 0HL7FP4DI34PO [INF] Request finished in 16.5997ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:11:33.7466826+05:00 0HL7FP4DI34PP [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:11:33.7476831+05:00 0HL7FP4DI34PP [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:11:33.7486847+05:00 0HL7FP4DI34PP [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 16.8378ms (afa2e885)
+2017-08-30T22:11:33.7496862+05:00 0HL7FP4DI34PP [INF] Request finished in 21.4201ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:11:33.8017359+05:00 0HL7FP4DI34PQ [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:11:33.8037376+05:00 0HL7FP4DI34PR [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:11:33.8052396+05:00 0HL7FP4DI34PQ [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:11:33.8062401+05:00 0HL7FP4DI34PR [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:11:33.8087420+05:00 0HL7FP4DI34PQ [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:11:33.8102433+05:00 0HL7FP4DI34PR [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:11:33.8112442+05:00 0HL7FP4DI34PQ [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:11:33.8117456+05:00 0HL7FP4DI34PR [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:11:33.8122451+05:00 0HL7FP4DI34PQ [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 9.4251ms (afa2e885)
+2017-08-30T22:11:33.8132463+05:00 0HL7FP4DI34PR [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 7.9551ms (afa2e885)
+2017-08-30T22:11:33.8137471+05:00 0HL7FP4DI34PQ [INF] Request finished in 11.3323ms 200 image/jpeg (15c52c40)
+2017-08-30T22:11:33.8147479+05:00 0HL7FP4DI34PR [INF] Request finished in 11.9375ms 200 image/jpeg (15c52c40)
+2017-08-30T22:12:19.1113245+05:00 0HL7FP4DI34PS [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:12:19.1113245+05:00 0HL7FP4DI34PS [INF] Request finished in 1.1306ms 204  (15c52c40)
+2017-08-30T22:12:19.1181215+05:00 0HL7FP4DI34PT [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:12:19.1191257+05:00 0HL7FP4DI34PT [INF] Request finished in 1.2397ms 204  (15c52c40)
+2017-08-30T22:12:19.2197190+05:00 0HL7FP4DI34PU [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:12:19.2207195+05:00 0HL7FP4DI34PV [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:12:19.2217204+05:00 0HL7FP4DI34PU [INF] Successfully validated the token. (60169667)
+2017-08-30T22:12:19.2222208+05:00 0HL7FP4DI34PV [INF] Successfully validated the token. (60169667)
+2017-08-30T22:12:19.2232217+05:00 0HL7FP4DI34PV [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:12:19.2237222+05:00 0HL7FP4DI34PU [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:12:19.2247230+05:00 0HL7FP4DI34PV [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:19.2252238+05:00 0HL7FP4DI34PU [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:12:19.2257246+05:00 0HL7FP4DI34PU [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:19.2277260+05:00 0HL7FP4DI34PV [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:12:19.2287272+05:00 0HL7FP4DI34PU [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:12:19.2312294+05:00 0HL7FP4DI34PV [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:12:19.2347331+05:00 0HL7FP4DI34PU [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:12:19.2357340+05:00 0HL7FP4DI34PU [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:12:19.2372353+05:00 0HL7FP4DI34PU [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 12.4624ms (afa2e885)
+2017-08-30T22:12:19.2397379+05:00 0HL7FP4DI34PV [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:12:19.2422397+05:00 0HL7FP4DI34PU [INF] Request finished in 18.3606ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:12:19.2427405+05:00 0HL7FP4DI34PV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:12:19.2442418+05:00 0HL7FP4DI34PV [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 19.7817ms (afa2e885)
+2017-08-30T22:12:19.2452430+05:00 0HL7FP4DI34PV [INF] Request finished in 24.1096ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:12:19.2792755+05:00 0HL7FP4DI34Q0 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:12:19.2797763+05:00 0HL7FP4DI34Q1 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:12:19.2802771+05:00 0HL7FP4DI34Q0 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:19.2812776+05:00 0HL7FP4DI34Q1 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:19.2847827+05:00 0HL7FP4DI34Q1 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:12:19.2867828+05:00 0HL7FP4DI34Q0 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:12:19.2877939+05:00 0HL7FP4DI34Q1 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:12:19.2882841+05:00 0HL7FP4DI34Q0 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:12:19.2887846+05:00 0HL7FP4DI34Q1 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 8.3925ms (afa2e885)
+2017-08-30T22:12:19.2897858+05:00 0HL7FP4DI34Q0 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 9.1915ms (afa2e885)
+2017-08-30T22:12:19.2902869+05:00 0HL7FP4DI34Q1 [INF] Request finished in 10.4606ms 200 image/jpeg (15c52c40)
+2017-08-30T22:12:19.2912881+05:00 0HL7FP4DI34Q0 [INF] Request finished in 11.4301ms 200 image/jpeg (15c52c40)
+2017-08-30T22:12:32.3041710+05:00 0HL7FP4DI34Q2 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:12:32.3061728+05:00 0HL7FP4DI34Q2 [INF] Request finished in 1.4831ms 204  (15c52c40)
+2017-08-30T22:12:32.3091757+05:00 0HL7FP4DI34Q3 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:12:32.3111775+05:00 0HL7FP4DI34Q3 [INF] Request finished in 1.3374ms 204  (15c52c40)
+2017-08-30T22:12:32.4251313+05:00 0HL7FP4DI34Q4 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:12:32.4256318+05:00 0HL7FP4DI34Q4 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:12:32.4261315+05:00 0HL7FP4DI34Q4 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:12:32.4266316+05:00 0HL7FP4DI34Q4 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:12:32.4276328+05:00 0HL7FP4DI34Q4 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:32.4631673+05:00 0HL7FP4DI34Q5 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:12:32.4656695+05:00 0HL7FP4DI34Q4 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:12:32.4791827+05:00 0HL7FP4DI34Q5 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:12:32.5007033+05:00 0HL7FP4DI34Q5 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:12:32.5037072+05:00 0HL7FP4DI34Q4 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:12:32.5082105+05:00 0HL7FP4DI34Q4 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:12:32.5092117+05:00 0HL7FP4DI34Q5 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:32.5147166+05:00 0HL7FP4DI34Q4 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 83.2823ms (afa2e885)
+2017-08-30T22:12:32.5367379+05:00 0HL7FP4DI34Q4 [INF] Request finished in 92.9836ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:12:32.5372383+05:00 0HL7FP4DI34Q5 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:12:32.5497513+05:00 0HL7FP4DI34Q5 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:12:32.5607619+05:00 0HL7FP4DI34Q5 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:12:32.5622626+05:00 0HL7FP4DI34Q5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:12:32.5652649+05:00 0HL7FP4DI34Q5 [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 62.7709ms (afa2e885)
+2017-08-30T22:12:32.5907903+05:00 0HL7FP4DI34Q5 [INF] Request finished in 162.2533ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:12:32.6138118+05:00 0HL7FP4DI34Q6 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:12:32.6158142+05:00 0HL7FP4DI34Q6 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:32.6163150+05:00 0HL7FP4DI34Q7 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:12:32.6178157+05:00 0HL7FP4DI34Q7 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:32.6293271+05:00 0HL7FP4DI34Q7 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:12:32.6303280+05:00 0HL7FP4DI34Q7 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:12:32.6323320+05:00 0HL7FP4DI34Q7 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 13.9465ms (afa2e885)
+2017-08-30T22:12:32.6343318+05:00 0HL7FP4DI34Q7 [INF] Request finished in 22.8874ms 200 image/jpeg (15c52c40)
+2017-08-30T22:12:32.6663622+05:00 0HL7FP4DI34Q6 [INF] Executed DbCommand (48ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:12:32.6678649+05:00 0HL7FP4DI34Q6 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:12:32.6688648+05:00 0HL7FP4DI34Q6 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 54.0755ms (afa2e885)
+2017-08-30T22:12:32.6698656+05:00 0HL7FP4DI34Q6 [INF] Request finished in 59.0756ms 200 image/jpeg (15c52c40)
+2017-08-30T22:12:40.3013150+05:00 0HL7FP4DI34Q8 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/UploadFiles/UploadFiles/2?isGeneral=false   (e5be5b71)
+2017-08-30T22:12:40.3023133+05:00 0HL7FP4DI34Q8 [INF] Request finished in 1.2228ms 204  (15c52c40)
+2017-08-30T22:12:40.3381966+05:00 0HL7FP4DI34Q9 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/UploadFiles/UploadFiles/2?isGeneral=false multipart/form-data; boundary=----WebKitFormBoundaryQ1bpioAOBOCk0cFL 258904 (e5be5b71)
+2017-08-30T22:12:40.3607180+05:00 0HL7FP4DI34Q9 [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2017-08-30T22:12:40.5368845+05:00 0HL7FP4DI34Q9 [INF] Executing action method "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" with arguments (["2", "Microsoft.AspNetCore.Http.Internal.FormFile", "False"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:12:40.5453953+05:00 0HL7FP4DI34Q9 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:12:40.6144589+05:00 0HL7FP4DI34Q9 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 10), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 100), @p7='?', @p8='?', @p9='?' (Size = 4000), @p19='?', @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?', @p16='?' (Size = 4000), @p17='?', @p18='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [ProductImages] ([CreatedDate], [DisplayName], [Extensions], [IdentityId], [IntegrationKey], [ModifiedDate], [Name], [ProductId], [Size], [Url])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [ProductImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [Products] SET [CreatedDate] = @p10, [Description] = @p11, [IdentityId] = @p12, [ImageUrl] = @p13, [IntegrationKey] = @p14, [ModifiedDate] = @p15, [Name] = @p16, [Price] = @p17, [ProductCategoryId] = @p18
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-30T22:12:40.6164607+05:00 0HL7FP4DI34Q9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:12:40.6174619+05:00 0HL7FP4DI34Q9 [INF] Executed action "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" in 255.0704ms (afa2e885)
+2017-08-30T22:12:40.6559987+05:00 0HL7FP4DI34Q9 [INF] Request finished in 293.0235ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:21:58.5910664+05:00 0HL7FP4DI34QA [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:21:58.5920680+05:00 0HL7FP4DI34QB [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:21:58.5930688+05:00 0HL7FP4DI34QB [INF] Request finished in 1.3094ms 204  (15c52c40)
+2017-08-30T22:21:58.5940694+05:00 0HL7FP4DI34QA [INF] Request finished in 4.8389ms 204  (15c52c40)
+2017-08-30T22:21:58.9684955+05:00 0HL7FP4DI34QC [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:21:58.9694960+05:00 0HL7FP4DI34QD [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:21:58.9714984+05:00 0HL7FP4DI34QD [INF] Successfully validated the token. (60169667)
+2017-08-30T22:21:58.9724996+05:00 0HL7FP4DI34QD [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:21:58.9735012+05:00 0HL7FP4DI34QC [INF] Successfully validated the token. (60169667)
+2017-08-30T22:21:58.9745050+05:00 0HL7FP4DI34QC [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:21:58.9765041+05:00 0HL7FP4DI34QC [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:21:58.9815099+05:00 0HL7FP4DI34QC [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:21:58.9835156+05:00 0HL7FP4DI34QD [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:21:59.0456711+05:00 0HL7FP4DI34QD [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:21:59.0481737+05:00 0HL7FP4DI34QC [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:21:59.0516764+05:00 0HL7FP4DI34QD [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:21:59.0536801+05:00 0HL7FP4DI34QC [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:21:59.0546797+05:00 0HL7FP4DI34QC [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:21:59.0561823+05:00 0HL7FP4DI34QC [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 79.6478ms (afa2e885)
+2017-08-30T22:21:59.0586832+05:00 0HL7FP4DI34QD [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:21:59.0591853+05:00 0HL7FP4DI34QC [INF] Request finished in 89.0425ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:21:59.0601951+05:00 0HL7FP4DI34QD [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:21:59.0907146+05:00 0HL7FP4DI34QD [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 114.3498ms (afa2e885)
+2017-08-30T22:21:59.0912147+05:00 0HL7FP4DI34QD [INF] Request finished in 123.0492ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:21:59.2053251+05:00 0HL7FP4DI34QE [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:21:59.2063250+05:00 0HL7FP4DI34QF [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:21:59.2068255+05:00 0HL7FP4DI34QE [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:21:59.2078267+05:00 0HL7FP4DI34QF [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:21:59.2103289+05:00 0HL7FP4DI34QF [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:21:59.2123316+05:00 0HL7FP4DI34QE [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:21:59.3032672+05:00 0HL7FP4DI34QF [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:21:59.3042688+05:00 0HL7FP4DI34QE [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:21:59.3052690+05:00 0HL7FP4DI34QF [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 97.509ms (afa2e885)
+2017-08-30T22:21:59.3062702+05:00 0HL7FP4DI34QF [INF] Request finished in 101.2423ms 200 image/jpeg (15c52c40)
+2017-08-30T22:21:59.3072714+05:00 0HL7FP4DI34QE [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 99.7852ms (afa2e885)
+2017-08-30T22:21:59.3082756+05:00 0HL7FP4DI34QE [INF] Request finished in 103.03ms 200 image/jpeg (15c52c40)
+2017-08-30T22:23:46.8624525+05:00 0HL7FP4DI34QG [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:23:46.8634544+05:00 0HL7FP4DI34QG [INF] Request finished in 1.8283ms 204  (15c52c40)
+2017-08-30T22:23:46.9114992+05:00 0HL7FP4DI34QH [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:23:46.9135059+05:00 0HL7FP4DI34QH [INF] Request finished in 33.4065ms 204  (15c52c40)
+2017-08-30T22:23:46.9975824+05:00 0HL7FP4DI34QI [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:23:47.0005853+05:00 0HL7FP4DI34QI [INF] Successfully validated the token. (60169667)
+2017-08-30T22:23:47.0025891+05:00 0HL7FP4DI34QI [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:23:47.0035883+05:00 0HL7FP4DI34QI [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:23:47.0045892+05:00 0HL7FP4DI34QI [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:23:47.0466301+05:00 0HL7FP4DI34QJ [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:23:47.0580080+05:00 0HL7FP4DI34QJ [INF] Successfully validated the token. (60169667)
+2017-08-30T22:23:47.0595093+05:00 0HL7FP4DI34QI [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:23:47.0640136+05:00 0HL7FP4DI34QJ [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:23:47.0725218+05:00 0HL7FP4DI34QJ [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:23:47.0735236+05:00 0HL7FP4DI34QI [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:23:47.0745245+05:00 0HL7FP4DI34QI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:23:47.0750246+05:00 0HL7FP4DI34QI [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 71.8274ms (afa2e885)
+2017-08-30T22:23:47.0775268+05:00 0HL7FP4DI34QI [INF] Request finished in 78.3387ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:23:47.0950438+05:00 0HL7FP4DI34QJ [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:23:47.0995491+05:00 0HL7FP4DI34QJ [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:23:47.1080569+05:00 0HL7FP4DI34QJ [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:23:47.1095576+05:00 0HL7FP4DI34QJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:23:47.1110592+05:00 0HL7FP4DI34QJ [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 45.8765ms (afa2e885)
+2017-08-30T22:23:47.1125602+05:00 0HL7FP4DI34QJ [INF] Request finished in 101.0619ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:23:47.1956404+05:00 0HL7FP4DI34QK [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:23:47.1981436+05:00 0HL7FP4DI34QK [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:23:47.1986434+05:00 0HL7FP4DI34QL [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:23:47.2021468+05:00 0HL7FP4DI34QL [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:23:47.2286717+05:00 0HL7FP4DI34QK [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:23:47.2582079+05:00 0HL7FP4DI34QL [INF] Executed DbCommand (36ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:23:47.2737228+05:00 0HL7FP4DI34QL [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:23:47.2742233+05:00 0HL7FP4DI34QK [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:23:47.3117592+05:00 0HL7FP4DI34QL [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 111.4615ms (afa2e885)
+2017-08-30T22:23:47.3197672+05:00 0HL7FP4DI34QL [INF] Request finished in 119.6198ms 200 image/jpeg (15c52c40)
+2017-08-30T22:23:47.3217686+05:00 0HL7FP4DI34QK [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 114.7912ms (afa2e885)
+2017-08-30T22:23:47.3232732+05:00 0HL7FP4DI34QK [INF] Request finished in 129.9599ms 200 image/jpeg (15c52c40)
+2017-08-30T22:23:57.4287900+05:00 0HL7FP4DI34QM [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/UploadFiles/UploadFiles/2?isGeneral=false   (e5be5b71)
+2017-08-30T22:23:57.4302929+05:00 0HL7FP4DI34QM [INF] Request finished in 1.3354ms 204  (15c52c40)
+2017-08-30T22:23:57.4558167+05:00 0HL7FP4DI34QN [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/UploadFiles/UploadFiles/2?isGeneral=false multipart/form-data; boundary=----WebKitFormBoundaryblO7y5ZPDgO5KmEp 163080 (e5be5b71)
+2017-08-30T22:23:57.4968547+05:00 0HL7FP4DI34QN [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2017-08-30T22:23:57.5919467+05:00 0HL7FP4DI34QN [INF] Executing action method "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" with arguments (["2", "Microsoft.AspNetCore.Http.Internal.FormFile", "False"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:23:57.5954498+05:00 0HL7FP4DI34QN [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:23:57.9265669+05:00 0HL7FP4DI34QN [INF] Executed DbCommand (8ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 10), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 100), @p7='?', @p8='?', @p9='?' (Size = 4000), @p19='?', @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?', @p16='?' (Size = 4000), @p17='?', @p18='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [ProductImages] ([CreatedDate], [DisplayName], [Extensions], [IdentityId], [IntegrationKey], [ModifiedDate], [Name], [ProductId], [Size], [Url])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [ProductImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [Products] SET [CreatedDate] = @p10, [Description] = @p11, [IdentityId] = @p12, [ImageUrl] = @p13, [IntegrationKey] = @p14, [ModifiedDate] = @p15, [Name] = @p16, [Price] = @p17, [ProductCategoryId] = @p18
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-30T22:23:57.9425816+05:00 0HL7FP4DI34QN [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:23:57.9435832+05:00 0HL7FP4DI34QN [INF] Executed action "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" in 445.5891ms (afa2e885)
+2017-08-30T22:23:57.9465907+05:00 0HL7FP4DI34QN [INF] Request finished in 494.1846ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:25:04.7504215+05:00 0HL7FP4DI34QO [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:25:04.7554259+05:00 0HL7FP4DI34QO [INF] Request finished in 14.4664ms 204  (15c52c40)
+2017-08-30T22:25:04.7599298+05:00 0HL7FP4DI34QP [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:25:04.7614335+05:00 0HL7FP4DI34QP [INF] Request finished in 16.2423ms 204  (15c52c40)
+2017-08-30T22:25:04.8835486+05:00 0HL7FP4DI34QQ [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:25:04.8845495+05:00 0HL7FP4DI34QQ [INF] Successfully validated the token. (60169667)
+2017-08-30T22:25:04.8890538+05:00 0HL7FP4DI34QQ [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:25:04.8940582+05:00 0HL7FP4DI34QQ [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:25:04.8965607+05:00 0HL7FP4DI34QR [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:25:04.8975619+05:00 0HL7FP4DI34QR [INF] Successfully validated the token. (60169667)
+2017-08-30T22:25:04.8980623+05:00 0HL7FP4DI34QR [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:25:04.8990632+05:00 0HL7FP4DI34QR [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:25:04.9185823+05:00 0HL7FP4DI34QQ [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:25:04.9265897+05:00 0HL7FP4DI34QR [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:25:04.9360990+05:00 0HL7FP4DI34QQ [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:25:04.9646264+05:00 0HL7FP4DI34QR [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:25:04.9651268+05:00 0HL7FP4DI34QQ [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:25:04.9656273+05:00 0HL7FP4DI34QQ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:25:04.9666285+05:00 0HL7FP4DI34QQ [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 76.8503ms (afa2e885)
+2017-08-30T22:25:04.9706326+05:00 0HL7FP4DI34QQ [INF] Request finished in 84.6769ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:25:04.9981588+05:00 0HL7FP4DI34QR [INF] Executed DbCommand (28ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:25:04.9991600+05:00 0HL7FP4DI34QR [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:25:05.0001609+05:00 0HL7FP4DI34QR [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 101.0818ms (afa2e885)
+2017-08-30T22:25:05.0041647+05:00 0HL7FP4DI34QR [INF] Request finished in 117.5662ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:25:05.0517101+05:00 0HL7FP4DI34QS [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:25:05.0522105+05:00 0HL7FP4DI34QT [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:25:05.0542123+05:00 0HL7FP4DI34QS [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:25:05.0547131+05:00 0HL7FP4DI34QT [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:25:05.0617195+05:00 0HL7FP4DI34QS [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:25:05.0632215+05:00 0HL7FP4DI34QS [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:25:05.0642224+05:00 0HL7FP4DI34QS [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 11.5338ms (afa2e885)
+2017-08-30T22:25:05.0667249+05:00 0HL7FP4DI34QS [INF] Request finished in 13.8342ms 200 image/jpeg (15c52c40)
+2017-08-30T22:25:05.1002570+05:00 0HL7FP4DI34QT [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:25:05.1017586+05:00 0HL7FP4DI34QT [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:25:05.1027602+05:00 0HL7FP4DI34QT [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 49.5081ms (afa2e885)
+2017-08-30T22:25:05.1047613+05:00 0HL7FP4DI34QT [INF] Request finished in 51.9244ms 200 image/jpeg (15c52c40)
+2017-08-30T22:25:41.5409085+05:00 0HL7FP4DI34QU [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/login   (e5be5b71)
+2017-08-30T22:25:41.5419107+05:00 0HL7FP4DI34QU [INF] Request finished in 1.1799ms 204  (15c52c40)
+2017-08-30T22:25:41.5439115+05:00 0HL7FP4DI34QV [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/login application/json,application/json 40 (e5be5b71)
+2017-08-30T22:25:41.5439115+05:00 0HL7FP4DI34QV [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2017-08-30T22:25:42.6724468+05:00 0HL7FP4DI34QV [INF] Executing action method "IdealSysApp.Controllers.AuthController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.CredentialsViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:25:43.3767733+05:00 0HL7FP4DI34QV [INF] Executed DbCommand (405ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName], [u].[StorageId]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedUserName] = @__normalizedUserName_0) (6438bdd5)
+2017-08-30T22:25:43.9702201+05:00 0HL7FP4DI34QV [INF] Executed DbCommand (246ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0 (6438bdd5)
+2017-08-30T22:25:44.0415797+05:00 0HL7FP4DI34QV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:25:44.0445830+05:00 0HL7FP4DI34QV [INF] Executed action "IdealSysApp.Controllers.AuthController.Post (IdealSysApp)" in 2062.9681ms (afa2e885)
+2017-08-30T22:25:44.0460850+05:00 0HL7FP4DI34QV [INF] Request finished in 2501.5125ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-08-30T22:26:10.4752004+05:00 0HL7FP4DI34R0 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/login   (e5be5b71)
+2017-08-30T22:26:10.4752004+05:00 0HL7FP4DI34R0 [INF] Request finished in 1.0279ms 204  (15c52c40)
+2017-08-30T22:26:10.4782060+05:00 0HL7FP4DI34R1 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/login application/json,application/json 40 (e5be5b71)
+2017-08-30T22:26:10.4802087+05:00 0HL7FP4DI34R1 [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2017-08-30T22:26:10.4849310+05:00 0HL7FP4DI34R1 [INF] Executing action method "IdealSysApp.Controllers.AuthController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.CredentialsViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:26:10.4914268+05:00 0HL7FP4DI34R1 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName], [u].[StorageId]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedUserName] = @__normalizedUserName_0) (6438bdd5)
+2017-08-30T22:26:10.5052323+05:00 0HL7FP4DI34R1 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0 (6438bdd5)
+2017-08-30T22:26:10.5057318+05:00 0HL7FP4DI34R1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:26:10.5067333+05:00 0HL7FP4DI34R1 [INF] Executed action "IdealSysApp.Controllers.AuthController.Post (IdealSysApp)" in 24.8019ms (afa2e885)
+2017-08-30T22:26:10.5077339+05:00 0HL7FP4DI34R1 [INF] Request finished in 30.4742ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-08-30T22:26:14.7339453+05:00 0HL7FP4DI34R2 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:26:14.7349310+05:00 0HL7FP4DI34R2 [INF] Request finished in 1.1079ms 204  (15c52c40)
+2017-08-30T22:26:14.7369503+05:00 0HL7FP4DI34R3 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:26:14.7655255+05:00 0HL7FP4DI34R3 [INF] Request finished in 0.8505ms 204  (15c52c40)
+2017-08-30T22:26:14.8476048+05:00 0HL7FP4DI34R4 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:26:14.8506081+05:00 0HL7FP4DI34R5 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:26:14.8851408+05:00 0HL7FP4DI34R5 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:26:14.8856412+05:00 0HL7FP4DI34R4 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:26:14.8866431+05:00 0HL7FP4DI34R4 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:26:14.8871428+05:00 0HL7FP4DI34R5 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:26:14.8881441+05:00 0HL7FP4DI34R4 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:26:14.8891446+05:00 0HL7FP4DI34R5 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:26:14.8896450+05:00 0HL7FP4DI34R4 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:26:14.8916478+05:00 0HL7FP4DI34R5 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:26:14.8926477+05:00 0HL7FP4DI34R4 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:26:14.8961544+05:00 0HL7FP4DI34R5 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:26:14.9041588+05:00 0HL7FP4DI34R4 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:26:14.9066610+05:00 0HL7FP4DI34R5 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:26:14.9071617+05:00 0HL7FP4DI34R4 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:26:14.9091655+05:00 0HL7FP4DI34R5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:26:14.9111653+05:00 0HL7FP4DI34R5 [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 22.1511ms (afa2e885)
+2017-08-30T22:26:14.9221762+05:00 0HL7FP4DI34R5 [INF] Request finished in 62.2345ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:26:14.9226767+05:00 0HL7FP4DI34R4 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 20.5272ms (afa2e885)
+2017-08-30T22:26:14.9236782+05:00 0HL7FP4DI34R4 [INF] Request finished in 78.6981ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:26:14.9532065+05:00 0HL7FP4DI34R6 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:26:14.9542073+05:00 0HL7FP4DI34R7 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:26:14.9557080+05:00 0HL7FP4DI34R7 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:26:14.9567092+05:00 0HL7FP4DI34R6 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:26:14.9587116+05:00 0HL7FP4DI34R7 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:26:14.9607130+05:00 0HL7FP4DI34R7 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:26:14.9612135+05:00 0HL7FP4DI34R7 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 6.2292ms (afa2e885)
+2017-08-30T22:26:14.9642168+05:00 0HL7FP4DI34R7 [INF] Request finished in 8.6329ms 200 image/jpeg (15c52c40)
+2017-08-30T22:26:14.9672194+05:00 0HL7FP4DI34R6 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:26:14.9682213+05:00 0HL7FP4DI34R6 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:26:14.9692218+05:00 0HL7FP4DI34R6 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 14.8853ms (afa2e885)
+2017-08-30T22:26:14.9697219+05:00 0HL7FP4DI34R6 [INF] Request finished in 16.4226ms 200 image/jpeg (15c52c40)
+2017-08-30T22:26:30.6928776+05:00 0HL7FP4DI34R8 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/UploadFiles/UploadFiles/2?isGeneral=false   (e5be5b71)
+2017-08-30T22:26:30.6948807+05:00 0HL7FP4DI34R8 [INF] Request finished in 1.4296ms 204  (15c52c40)
+2017-08-30T22:26:30.8320123+05:00 0HL7FP4DI34R9 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/UploadFiles/UploadFiles/2?isGeneral=false multipart/form-data; boundary=----WebKitFormBoundarym3itPInrSNKMBPnB 258904 (e5be5b71)
+2017-08-30T22:26:30.8370170+05:00 0HL7FP4DI34R9 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:26:30.8400196+05:00 0HL7FP4DI34R9 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:26:31.0068238+05:00 0HL7FP4DI34R9 [INF] Executing action method "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" with arguments (["2", "Microsoft.AspNetCore.Http.Internal.FormFile", "False"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:26:31.0118282+05:00 0HL7FP4DI34R9 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:26:31.0573718+05:00 0HL7FP4DI34R9 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 10), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 100), @p7='?', @p8='?', @p9='?' (Size = 4000), @p19='?', @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?', @p16='?' (Size = 4000), @p17='?', @p18='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [ProductImages] ([CreatedDate], [DisplayName], [Extensions], [IdentityId], [IntegrationKey], [ModifiedDate], [Name], [ProductId], [Size], [Url])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [ProductImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [Products] SET [CreatedDate] = @p10, [Description] = @p11, [IdentityId] = @p12, [ImageUrl] = @p13, [IntegrationKey] = @p14, [ModifiedDate] = @p15, [Name] = @p16, [Price] = @p17, [ProductCategoryId] = @p18
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-30T22:26:31.0618761+05:00 0HL7FP4DI34R9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:26:31.0628770+05:00 0HL7FP4DI34R9 [INF] Executed action "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" in 221.3923ms (afa2e885)
+2017-08-30T22:26:31.0894023+05:00 0HL7FP4DI34R9 [INF] Request finished in 259.0115ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:30:53.1237198+05:00 0HL7FP4DI34RA [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:30:53.1397349+05:00 0HL7FP4DI34RA [INF] Request finished in 16.5326ms 204  (15c52c40)
+2017-08-30T22:30:53.1407358+05:00 0HL7FP4DI34RB [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:30:53.1417400+05:00 0HL7FP4DI34RB [INF] Request finished in 29.474ms 204  (15c52c40)
+2017-08-30T22:30:53.3523793+05:00 0HL7FP4DI34RC [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:30:53.3533786+05:00 0HL7FP4DI34RD [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:30:53.3558811+05:00 0HL7FP4DI34RC [INF] Successfully validated the token. (60169667)
+2017-08-30T22:30:53.3563812+05:00 0HL7FP4DI34RC [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:30:53.3573827+05:00 0HL7FP4DI34RD [INF] Successfully validated the token. (60169667)
+2017-08-30T22:30:53.3588860+05:00 0HL7FP4DI34RD [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:30:53.3598853+05:00 0HL7FP4DI34RC [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:30:53.3899139+05:00 0HL7FP4DI34RC [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:30:53.3939178+05:00 0HL7FP4DI34RD [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:30:53.9260440+05:00 0HL7FP4DI34RC [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:30:53.9280461+05:00 0HL7FP4DI34RD [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:30:53.9378877+05:00 0HL7FP4DI34RD [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:30:53.9413905+05:00 0HL7FP4DI34RC [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:30:53.9448942+05:00 0HL7FP4DI34RC [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:30:53.9484240+05:00 0HL7FP4DI34RC [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 588.3815ms (afa2e885)
+2017-08-30T22:30:53.9554048+05:00 0HL7FP4DI34RD [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:30:53.9589062+05:00 0HL7FP4DI34RC [INF] Request finished in 597.768ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:30:53.9599077+05:00 0HL7FP4DI34RD [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:30:53.9619111+05:00 0HL7FP4DI34RD [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 601.7067ms (afa2e885)
+2017-08-30T22:30:53.9629104+05:00 0HL7FP4DI34RD [INF] Request finished in 610.6849ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:30:53.9939409+05:00 0HL7FP4DI34RE [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:30:53.9954449+05:00 0HL7FP4DI34RE [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:30:53.9989463+05:00 0HL7FP4DI34RE [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:30:54.0099556+05:00 0HL7FP4DI34RF [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:30:54.0114576+05:00 0HL7FP4DI34RF [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:30:54.0144599+05:00 0HL7FP4DI34RF [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:30:54.0259707+05:00 0HL7FP4DI34RE [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:30:54.0455037+05:00 0HL7FP4DI34RE [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 50.2031ms (afa2e885)
+2017-08-30T22:30:54.0460034+05:00 0HL7FP4DI34RF [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:30:54.0465039+05:00 0HL7FP4DI34RE [INF] Request finished in 52.3763ms 200 image/jpeg (15c52c40)
+2017-08-30T22:30:54.0472329+05:00 0HL7FP4DI34RF [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 35.8354ms (afa2e885)
+2017-08-30T22:30:54.0482348+05:00 0HL7FP4DI34RF [INF] Request finished in 38.404ms 200 image/jpeg (15c52c40)
+2017-08-30T22:31:07.9887469+05:00 0HL7FP4DI34RG [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/login   (e5be5b71)
+2017-08-30T22:31:07.9897438+05:00 0HL7FP4DI34RG [INF] Request finished in 2.4282ms 204  (15c52c40)
+2017-08-30T22:31:07.9925261+05:00 0HL7FP4DI34RH [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/login application/json,application/json 40 (e5be5b71)
+2017-08-30T22:31:07.9938745+05:00 0HL7FP4DI34RH [INF] "Bearer" was not authenticated. Failure message: "No SecurityTokenValidator available for token: null" (48071232)
+2017-08-30T22:31:07.9968781+05:00 0HL7FP4DI34RH [INF] Executing action method "IdealSysApp.Controllers.AuthController.Post (IdealSysApp)" with arguments (["IdealSysApp.ViewModels.CredentialsViewModel"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:31:08.0048885+05:00 0HL7FP4DI34RH [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Discriminator], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName], [u].[FirstName], [u].[LastName], [u].[StorageId]
+FROM [AspNetUsers] AS [u]
+WHERE ([u].[Discriminator] = N'AppUser') AND ([u].[NormalizedUserName] = @__normalizedUserName_0) (6438bdd5)
+2017-08-30T22:31:08.0223549+05:00 0HL7FP4DI34RH [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='120']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0 (6438bdd5)
+2017-08-30T22:31:08.0248842+05:00 0HL7FP4DI34RH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:31:08.0263585+05:00 0HL7FP4DI34RH [INF] Executed action "IdealSysApp.Controllers.AuthController.Post (IdealSysApp)" in 30.7438ms (afa2e885)
+2017-08-30T22:31:08.0268586+05:00 0HL7FP4DI34RH [INF] Request finished in 34.6142ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-08-30T22:31:11.2195964+05:00 0HL7FP4DI34RI [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:31:11.2205973+05:00 0HL7FP4DI34RI [INF] Request finished in 0.9926ms 204  (15c52c40)
+2017-08-30T22:31:11.2226017+05:00 0HL7FP4DI34RJ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:31:11.2246008+05:00 0HL7FP4DI34RJ [INF] Request finished in 1.3212ms 204  (15c52c40)
+2017-08-30T22:31:11.3006749+05:00 0HL7FP4DI34RK [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:31:11.3016751+05:00 0HL7FP4DI34RL [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:31:11.3016751+05:00 0HL7FP4DI34RK [INF] Successfully validated the token. (60169667)
+2017-08-30T22:31:11.3026760+05:00 0HL7FP4DI34RK [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:31:11.3046810+05:00 0HL7FP4DI34RL [INF] Successfully validated the token. (60169667)
+2017-08-30T22:31:11.3066798+05:00 0HL7FP4DI34RK [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:31:11.3076813+05:00 0HL7FP4DI34RL [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:31:11.3086825+05:00 0HL7FP4DI34RK [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:31:11.3106850+05:00 0HL7FP4DI34RL [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:31:11.3136889+05:00 0HL7FP4DI34RK [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:31:11.3146885+05:00 0HL7FP4DI34RL [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:31:11.3176914+05:00 0HL7FP4DI34RK [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:31:11.3196942+05:00 0HL7FP4DI34RK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:31:11.3266376+05:00 0HL7FP4DI34RL [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:31:11.3271420+05:00 0HL7FP4DI34RK [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 16.4652ms (afa2e885)
+2017-08-30T22:31:11.3281600+05:00 0HL7FP4DI34RK [INF] Request finished in 27.0475ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:31:11.3326462+05:00 0HL7FP4DI34RL [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:31:11.3361499+05:00 0HL7FP4DI34RL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:31:11.3381526+05:00 0HL7FP4DI34RL [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 28.49ms (afa2e885)
+2017-08-30T22:31:11.3396526+05:00 0HL7FP4DI34RL [INF] Request finished in 38.0175ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:31:11.3786905+05:00 0HL7FP4DI34RM [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:31:11.3791910+05:00 0HL7FP4DI34RN [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:31:11.3801925+05:00 0HL7FP4DI34RM [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:31:11.3806923+05:00 0HL7FP4DI34RN [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:31:11.3836953+05:00 0HL7FP4DI34RN [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:31:11.3856974+05:00 0HL7FP4DI34RM [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:31:11.3861981+05:00 0HL7FP4DI34RN [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:31:11.3897022+05:00 0HL7FP4DI34RM [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:31:11.3932059+05:00 0HL7FP4DI34RN [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 7.274ms (afa2e885)
+2017-08-30T22:31:11.3957075+05:00 0HL7FP4DI34RM [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 11.7373ms (afa2e885)
+2017-08-30T22:31:11.3972094+05:00 0HL7FP4DI34RN [INF] Request finished in 15.4865ms 200 image/jpeg (15c52c40)
+2017-08-30T22:31:11.3982093+05:00 0HL7FP4DI34RM [INF] Request finished in 18.7121ms 200 image/jpeg (15c52c40)
+2017-08-30T22:38:04.2008648+05:00  [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-30T22:38:04.2108733+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-30T22:38:04.2496317+05:00  [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [_Migrations]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-08-30T22:38:04.6672558+05:00  [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName], [p].[StorageId]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-08-30T22:38:04.8054054+05:00  [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-30T22:38:04.8113938+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductCategories] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-30T22:38:04.8144156+05:00  [INF] Working SeedData (e03f4adc)
+2017-08-30T22:38:20.2866896+05:00 0HL7FPNJT9GH0 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:38:20.2866896+05:00 0HL7FPNJT9GGV [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:38:20.4156088+05:00 0HL7FPNJT9GGV [INF] Request finished in 165.357ms 204  (15c52c40)
+2017-08-30T22:38:20.4326254+05:00 0HL7FPNJT9GH0 [INF] Request finished in 165.357ms 204  (15c52c40)
+2017-08-30T22:38:20.4681595+05:00 0HL7FPNJT9GH1 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:38:20.4796706+05:00 0HL7FPNJT9GH2 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:38:20.6698528+05:00 0HL7FPNJT9GH2 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:38:20.6698528+05:00 0HL7FPNJT9GH1 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:38:20.6783619+05:00 0HL7FPNJT9GH1 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:38:20.6783619+05:00 0HL7FPNJT9GH2 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:38:21.0241810+05:00 0HL7FPNJT9GH2 [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:38:21.0739342+05:00 0HL7FPNJT9GH1 [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-08-30T22:38:21.1820394+05:00 0HL7FPNJT9GH2 [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:38:21.1820394+05:00 0HL7FPNJT9GH1 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:38:21.2449609+05:00 0HL7FPNJT9GH2 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:38:21.2459628+05:00 0HL7FPNJT9GH1 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:38:21.3210340+05:00 0HL7FPNJT9GH2 [INF] Executed DbCommand (48ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:38:21.3230361+05:00 0HL7FPNJT9GH1 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:38:21.3690801+05:00 0HL7FPNJT9GH2 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:38:21.4431511+05:00 0HL7FPNJT9GH2 [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 437.6267ms (afa2e885)
+2017-08-30T22:38:21.4491574+05:00 0HL7FPNJT9GH1 [INF] Executed DbCommand (42ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:38:21.4686755+05:00 0HL7FPNJT9GH2 [INF] Request finished in 971.4706ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:38:21.5002058+05:00 0HL7FPNJT9GH1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:38:21.5282360+05:00 0HL7FPNJT9GH1 [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 524.8247ms (afa2e885)
+2017-08-30T22:38:21.5292339+05:00 0HL7FPNJT9GH1 [INF] Request finished in 1062.6688ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:38:21.5647678+05:00 0HL7FPNJT9GH3 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:38:21.5862886+05:00 0HL7FPNJT9GH3 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:38:21.5862886+05:00 0HL7FPNJT9GH4 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:38:21.5892919+05:00 0HL7FPNJT9GH4 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:38:21.6943924+05:00 0HL7FPNJT9GH4 [INF] Executed DbCommand (91ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:38:21.6963949+05:00 0HL7FPNJT9GH4 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 107.3232ms (afa2e885)
+2017-08-30T22:38:21.6973954+05:00 0HL7FPNJT9GH4 [INF] Request finished in 135.1457ms 200  (15c52c40)
+2017-08-30T22:38:21.8054989+05:00 0HL7FPNJT9GH3 [INF] Executed DbCommand (201ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:38:21.8059993+05:00 0HL7FPNJT9GH3 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 239.6506ms (afa2e885)
+2017-08-30T22:38:21.8080014+05:00 0HL7FPNJT9GH3 [INF] Request finished in 244.4624ms 200  (15c52c40)
+2017-08-30T22:38:26.0521570+05:00 0HL7FPNJT9GH5 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/34d203ae38ea4f77870e19d07c82e454.jpg   (e5be5b71)
+2017-08-30T22:38:26.0541591+05:00 0HL7FPNJT9GH6 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg   (e5be5b71)
+2017-08-30T22:38:26.0551613+05:00 0HL7FPNJT9GH5 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["34d203ae38ea4f77870e19d07c82e454.jpg"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:38:26.0561615+05:00 0HL7FPNJT9GH7 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2aa382fad78d43b28c35acc71ef588d1.jpg   (e5be5b71)
+2017-08-30T22:38:26.0561615+05:00 0HL7FPNJT9GH8 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:38:26.0591638+05:00 0HL7FPNJT9GH7 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2aa382fad78d43b28c35acc71ef588d1.jpg"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:38:26.0611686+05:00 0HL7FPNJT9GH6 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:38:26.0641689+05:00 0HL7FPNJT9GH7 [INF] Executed DbCommand (0ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:38:26.0651694+05:00 0HL7FPNJT9GH8 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:38:26.0671725+05:00 0HL7FPNJT9GH5 [INF] Executed DbCommand (3ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:38:26.0701785+05:00 0HL7FPNJT9GH8 [INF] Executed DbCommand (0ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:38:26.0721772+05:00 0HL7FPNJT9GH6 [INF] Executed DbCommand (0ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:38:26.0731771+05:00 0HL7FPNJT9GH8 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 13.2271ms (afa2e885)
+2017-08-30T22:38:26.0771810+05:00 0HL7FPNJT9GH8 [INF] Request finished in 24.2691ms 200  (15c52c40)
+2017-08-30T22:38:26.1084602+05:00 0HL7FPNJT9GH5 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:38:26.1169674+05:00 0HL7FPNJT9GH7 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:38:26.1399509+05:00 0HL7FPNJT9GH5 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 84.9194ms (afa2e885)
+2017-08-30T22:38:26.1404514+05:00 0HL7FPNJT9GH5 [INF] Request finished in 91.5083ms 200 image/* (15c52c40)
+2017-08-30T22:38:26.1542235+05:00 0HL7FPNJT9GH7 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 97.0122ms (afa2e885)
+2017-08-30T22:38:26.1547226+05:00 0HL7FPNJT9GH7 [INF] Request finished in 104.9465ms 200 image/* (15c52c40)
+2017-08-30T22:38:26.1983157+05:00 0HL7FPNJT9GH6 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:38:26.2425720+05:00 0HL7FPNJT9GH6 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 185.5757ms (afa2e885)
+2017-08-30T22:38:26.2447994+05:00 0HL7FPNJT9GH6 [INF] Request finished in 193.4265ms 200 image/* (15c52c40)
+2017-08-30T22:40:56.5042172+05:00  [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-30T22:40:56.5172306+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT OBJECT_ID(N'_Migrations'); (6438bdd5)
+2017-08-30T22:40:56.5272398+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT [MigrationId], [ProductVersion]
+FROM [_Migrations]
+ORDER BY [MigrationId]; (6438bdd5)
+2017-08-30T22:40:56.8776953+05:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[AccessFailedCount], [p].[ConcurrencyStamp], [p].[Discriminator], [p].[Email], [p].[EmailConfirmed], [p].[LockoutEnabled], [p].[LockoutEnd], [p].[NormalizedEmail], [p].[NormalizedUserName], [p].[PasswordHash], [p].[PhoneNumber], [p].[PhoneNumberConfirmed], [p].[SecurityStamp], [p].[TwoFactorEnabled], [p].[UserName], [p].[FirstName], [p].[LastName], [p].[StorageId]
+FROM [AspNetUsers] AS [p]
+WHERE [p].[Discriminator] IN (N'AppUser', N'IdentityUser') AND ([p].[UserName] = N'Owner') (6438bdd5)
+2017-08-30T22:40:56.9803375+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a]
+        WHERE ([a].[Discriminator] = N'AppUser') OR ([a].[Discriminator] = N'IdentityUser'))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-30T22:40:56.9880810+05:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ProductCategories] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-08-30T22:40:56.9909211+05:00  [INF] Working SeedData (e03f4adc)
+2017-08-30T22:41:09.2677744+05:00 0HL7FPP68QO6N [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/ProductCategory?filter={}   (e5be5b71)
+2017-08-30T22:41:09.2677744+05:00 0HL7FPP68QO6O [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8}   (e5be5b71)
+2017-08-30T22:41:09.3548584+05:00 0HL7FPP68QO6N [INF] Request finished in 98.7312ms 204  (15c52c40)
+2017-08-30T22:41:09.4159183+05:00 0HL7FPP68QO6O [INF] Request finished in 98.7312ms 204  (15c52c40)
+2017-08-30T22:41:09.4179187+05:00 0HL7FPP68QO6P [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ProductCategory?filter={} application/json  (e5be5b71)
+2017-08-30T22:41:09.4179187+05:00 0HL7FPP68QO6Q [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22sort%22:[],%22skip%22:0,%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:41:09.6418116+05:00 0HL7FPP68QO6Q [INF] Successfully validated the token. (60169667)
+2017-08-30T22:41:09.6418116+05:00 0HL7FPP68QO6P [INF] Successfully validated the token. (60169667)
+2017-08-30T22:41:09.6518214+05:00 0HL7FPP68QO6Q [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:41:09.6518214+05:00 0HL7FPP68QO6P [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:41:09.9314266+05:00 0HL7FPP68QO6P [INF] Authorization was successful for user: "owner". (d7eb274a)
+2017-08-30T22:41:09.9654585+05:00 0HL7FPP68QO6P [INF] User profile is available. Using '"C:\Users\BS\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-08-30T22:41:10.0825715+05:00 0HL7FPP68QO6P [INF] Executing action method "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" with arguments (["{}", ""]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:10.1320090+05:00 0HL7FPP68QO6Q [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"sort\":[],\"skip\":0,\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:10.1630388+05:00 0HL7FPP68QO6P [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL (6438bdd5)
+2017-08-30T22:41:10.2331063+05:00 0HL7FPP68QO6Q [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:41:10.2376103+05:00 0HL7FPP68QO6P [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ParentId]
+FROM [ProductCategories] AS [p]
+WHERE [p].[ParentId] IS NULL
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:41:10.2771483+05:00 0HL7FPP68QO6Q [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:41:10.2912957+05:00 0HL7FPP68QO6P [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:41:10.3266904+05:00 0HL7FPP68QO6Q [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:41:10.3737347+05:00 0HL7FPP68QO6P [INF] Executed action "IdealSysApp.Controllers.ProductCategoryController.Get (IdealSysApp)" in 460.0454ms (afa2e885)
+2017-08-30T22:41:10.3787404+05:00 0HL7FPP68QO6Q [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:41:10.4152751+05:00 0HL7FPP68QO6P [INF] Request finished in 966.2244ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:41:10.4227821+05:00 0HL7FPP68QO6Q [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 511.403ms (afa2e885)
+2017-08-30T22:41:10.4237836+05:00 0HL7FPP68QO6Q [INF] Request finished in 1028.336ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:41:10.4558137+05:00 0HL7FPP68QO6R [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/1   (e5be5b71)
+2017-08-30T22:41:10.4678252+05:00 0HL7FPP68QO6R [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["1"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:10.4683260+05:00 0HL7FPP68QO6S [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/2   (e5be5b71)
+2017-08-30T22:41:10.4713290+05:00 0HL7FPP68QO6S [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:10.4858434+05:00 0HL7FPP68QO6R [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:41:10.4948516+05:00 0HL7FPP68QO6S [INF] Executed DbCommand (17ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:41:10.5123310+05:00 0HL7FPP68QO6S [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:41:10.5128314+05:00 0HL7FPP68QO6R [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:41:10.5314392+05:00 0HL7FPP68QO6S [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 61.224ms (afa2e885)
+2017-08-30T22:41:10.5324404+05:00 0HL7FPP68QO6R [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 73.5817ms (afa2e885)
+2017-08-30T22:41:10.5334412+05:00 0HL7FPP68QO6S [INF] Request finished in 80.9254ms 200 image/jpeg (15c52c40)
+2017-08-30T22:41:10.5344434+05:00 0HL7FPP68QO6R [INF] Request finished in 82.8628ms 200 image/jpeg (15c52c40)
+2017-08-30T22:41:11.7325907+05:00 0HL7FPP68QO6T [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/34d203ae38ea4f77870e19d07c82e454.jpg   (e5be5b71)
+2017-08-30T22:41:11.7335889+05:00 0HL7FPP68QO6U [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/2aa382fad78d43b28c35acc71ef588d1.jpg   (e5be5b71)
+2017-08-30T22:41:11.7365919+05:00 0HL7FPP68QO6U [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2aa382fad78d43b28c35acc71ef588d1.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:11.7375927+05:00 0HL7FPP68QO6T [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["34d203ae38ea4f77870e19d07c82e454.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:11.7496046+05:00 0HL7FPP68QO6U [INF] Executed DbCommand (2ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:41:11.7516064+05:00 0HL7FPP68QO6U [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:41:11.7536098+05:00 0HL7FPP68QO6T [INF] Executed DbCommand (6ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:41:11.7556115+05:00 0HL7FPP68QO6T [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:41:11.7566124+05:00 0HL7FPP68QO6V [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg   (e5be5b71)
+2017-08-30T22:41:11.7586152+05:00 0HL7FPP68QO6V [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:11.7625440+05:00 0HL7FPP68QO6V [INF] Executed DbCommand (0ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:41:11.7650469+05:00 0HL7FPP68QO6V [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:41:11.8482430+05:00 0HL7FPP68QO6V [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 80.2215ms (afa2e885)
+2017-08-30T22:41:11.8507465+05:00 0HL7FPP68QO6T [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 111.2712ms (afa2e885)
+2017-08-30T22:41:11.8552495+05:00 0HL7FPP68QO6T [INF] Request finished in 120.2296ms 200 image/* (15c52c40)
+2017-08-30T22:41:11.8557499+05:00 0HL7FPP68QO6U [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 118.8488ms (afa2e885)
+2017-08-30T22:41:11.8562507+05:00 0HL7FPP68QO6V [INF] Request finished in 92.6724ms 200 image/* (15c52c40)
+2017-08-30T22:41:11.8572526+05:00 0HL7FPP68QO6U [INF] Request finished in 124.2457ms 200 image/* (15c52c40)
+2017-08-30T22:41:23.1773131+05:00 0HL7FPP68QO70 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/3e4bcf85c3fa42668b6ba0515dbc750e.jpg   (e5be5b71)
+2017-08-30T22:41:23.1783140+05:00 0HL7FPP68QO71 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/a9a43b3ee1474a459bae2a6fee2e76e6.jpg   (e5be5b71)
+2017-08-30T22:41:23.1803194+05:00 0HL7FPP68QO70 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["3e4bcf85c3fa42668b6ba0515dbc750e.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:23.1813212+05:00 0HL7FPP68QO71 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["a9a43b3ee1474a459bae2a6fee2e76e6.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:23.1853208+05:00 0HL7FPP68QO70 [INF] Executed DbCommand (1ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:41:23.1873229+05:00 0HL7FPP68QO71 [INF] Executed DbCommand (1ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:41:23.2171643+05:00 0HL7FPP68QO71 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:41:23.2201666+05:00 0HL7FPP68QO70 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:41:23.2501952+05:00 0HL7FPP68QO71 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 58.3528ms (afa2e885)
+2017-08-30T22:41:23.2511971+05:00 0HL7FPP68QO70 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 70.847ms (afa2e885)
+2017-08-30T22:41:23.2557004+05:00 0HL7FPP68QO70 [INF] Request finished in 75.7176ms 200 image/* (15c52c40)
+2017-08-30T22:41:23.2562008+05:00 0HL7FPP68QO71 [INF] Request finished in 73.0112ms 200 image/* (15c52c40)
+2017-08-30T22:41:57.8155985+05:00 0HL7FPP68QO72 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/UploadFiles/UploadFiles/1?isGeneral=false   (e5be5b71)
+2017-08-30T22:41:57.8165994+05:00 0HL7FPP68QO72 [INF] Request finished in 1.3513ms 204  (15c52c40)
+2017-08-30T22:41:57.8776682+05:00 0HL7FPP68QO73 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/UploadFiles/UploadFiles/1?isGeneral=false multipart/form-data; boundary=----WebKitFormBoundaryEJzxMoEXcB6EMDB3 482541 (e5be5b71)
+2017-08-30T22:41:57.8791877+05:00 0HL7FPP68QO73 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:41:57.8796709+05:00 0HL7FPP68QO73 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:41:58.1200480+05:00 0HL7FPP68QO73 [INF] Executing action method "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" with arguments (["1", "Microsoft.AspNetCore.Http.Internal.FormFile", "False"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:41:58.1300766+05:00 0HL7FPP68QO73 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [s].[Id], [s].[CreatedDate], [s].[Description], [s].[IdentityId], [s].[ImageUrl], [s].[IntegrationKey], [s].[ModifiedDate], [s].[Name], [s].[Price], [s].[ProductCategoryId]
+FROM [Products] AS [s]
+WHERE [s].[Id] = @__id_0 (6438bdd5)
+2017-08-30T22:41:58.3973155+05:00 0HL7FPP68QO73 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 10), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?', @p6='?' (Size = 100), @p7='?', @p8='?', @p9='?' (Size = 4000), @p19='?', @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 450), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?', @p16='?' (Size = 4000), @p17='?', @p18='?'], CommandType='Text', CommandTimeout='120']
+SET NOCOUNT ON;
+INSERT INTO [ProductImages] ([CreatedDate], [DisplayName], [Extensions], [IdentityId], [IntegrationKey], [ModifiedDate], [Name], [ProductId], [Size], [Url])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [ProductImages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+
+UPDATE [Products] SET [CreatedDate] = @p10, [Description] = @p11, [IdentityId] = @p12, [ImageUrl] = @p13, [IntegrationKey] = @p14, [ModifiedDate] = @p15, [Name] = @p16, [Price] = @p17, [ProductCategoryId] = @p18
+WHERE [Id] = @p19;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-30T22:41:58.4163338+05:00 0HL7FPP68QO73 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:41:58.4173347+05:00 0HL7FPP68QO73 [INF] Executed action "IdealSysApp.Controllers.UploadFilesController.Post (IdealSysApp)" in 535.7928ms (afa2e885)
+2017-08-30T22:41:58.4213405+05:00 0HL7FPP68QO73 [INF] Request finished in 545.5115ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:42:01.8446048+05:00 0HL7FPP68QO74 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/34d203ae38ea4f77870e19d07c82e454.jpg   (e5be5b71)
+2017-08-30T22:42:01.8536131+05:00 0HL7FPP68QO75 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg   (e5be5b71)
+2017-08-30T22:42:01.8546146+05:00 0HL7FPP68QO75 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:42:01.8556155+05:00 0HL7FPP68QO76 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/2aa382fad78d43b28c35acc71ef588d1.jpg   (e5be5b71)
+2017-08-30T22:42:01.8666262+05:00 0HL7FPP68QO74 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["34d203ae38ea4f77870e19d07c82e454.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:42:01.8726321+05:00 0HL7FPP68QO75 [INF] Executed DbCommand (2ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:42:01.8726321+05:00 0HL7FPP68QO76 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["2aa382fad78d43b28c35acc71ef588d1.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:42:01.8746342+05:00 0HL7FPP68QO75 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:42:01.8841455+05:00 0HL7FPP68QO74 [INF] Executed DbCommand (1ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:42:01.8871488+05:00 0HL7FPP68QO76 [INF] Executed DbCommand (0ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:42:01.8881487+05:00 0HL7FPP68QO74 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:42:01.8886514+05:00 0HL7FPP68QO76 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:42:01.9822392+05:00 0HL7FPP68QO75 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 111.3908ms (afa2e885)
+2017-08-30T22:42:02.0102658+05:00 0HL7FPP68QO75 [INF] Request finished in 141.545ms 200 image/* (15c52c40)
+2017-08-30T22:42:02.0112667+05:00 0HL7FPP68QO74 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 141.1774ms (afa2e885)
+2017-08-30T22:42:02.0122685+05:00 0HL7FPP68QO74 [INF] Request finished in 169.3615ms 200 image/* (15c52c40)
+2017-08-30T22:42:02.0513051+05:00 0HL7FPP68QO76 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 193.6155ms (afa2e885)
+2017-08-30T22:42:02.0528087+05:00 0HL7FPP68QO76 [INF] Request finished in 208.4724ms 200 image/* (15c52c40)
+2017-08-30T22:42:05.3165257+05:00 0HL7FPP68QO77 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/Product?filter={%22group%22:[],%22skip%22:0,%22sort%22:[],%22take%22:8}   (e5be5b71)
+2017-08-30T22:42:05.3195320+05:00 0HL7FPP68QO77 [INF] Request finished in 1.8825ms 204  (15c52c40)
+2017-08-30T22:42:05.3745810+05:00 0HL7FPP68QO78 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/Product?filter={%22group%22:[],%22skip%22:0,%22sort%22:[],%22take%22:8} application/json  (e5be5b71)
+2017-08-30T22:42:05.3755822+05:00 0HL7FPP68QO78 [INF] Successfully validated the token. (60169667)
+2017-08-30T22:42:05.3755822+05:00 0HL7FPP68QO78 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-30T22:42:05.3839807+05:00 0HL7FPP68QO78 [INF] Executing action method "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" with arguments (["{\"group\":[],\"skip\":0,\"sort\":[],\"take\":8}"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:42:05.3869836+05:00 0HL7FPP68QO78 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Products] AS [p] (6438bdd5)
+2017-08-30T22:42:05.3889870+05:00 0HL7FPP68QO78 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p].[Id], [p].[CreatedDate], [p].[Description], [p].[IdentityId], [p].[ImageUrl], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[Price], [p].[ProductCategoryId]
+FROM [Products] AS [p]
+ORDER BY [p].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-08-30T22:42:05.3969934+05:00 0HL7FPP68QO78 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='120']
+SELECT [p0].[Id], [p0].[CreatedDate], [p0].[DisplayName], [p0].[Extensions], [p0].[IdentityId], [p0].[IntegrationKey], [p0].[ModifiedDate], [p0].[Name], [p0].[ProductId], [p0].[Size], [p0].[Url]
+FROM [ProductImages] AS [p0]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [p].[Id]
+        FROM [Products] AS [p]
+        ORDER BY [p].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [p1] ON [p0].[ProductId] = [p1].[Id]
+ORDER BY [p1].[Id] (6438bdd5)
+2017-08-30T22:42:05.3984947+05:00 0HL7FPP68QO78 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-30T22:42:05.3989952+05:00 0HL7FPP68QO78 [INF] Executed action "IdealSysApp.Controllers.ProductController.Get (IdealSysApp)" in 21.7897ms (afa2e885)
+2017-08-30T22:42:05.4004975+05:00 0HL7FPP68QO78 [INF] Request finished in 25.384ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-30T22:42:09.1070917+05:00 0HL7FPP68QO79 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/ReturnFile/0/bf05888a75ce4be483f11027de3f3321.jpg   (e5be5b71)
+2017-08-30T22:42:09.1080870+05:00 0HL7FPP68QO79 [INF] Executing action method "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" with arguments (["bf05888a75ce4be483f11027de3f3321.jpg", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-08-30T22:42:09.1129028+05:00 0HL7FPP68QO79 [INF] Executed DbCommand (1ms) [Parameters=[@__fileName_0='?' (Size = 100)], CommandType='Text', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[CreatedDate], [p].[DisplayName], [p].[Extensions], [p].[IdentityId], [p].[IntegrationKey], [p].[ModifiedDate], [p].[Name], [p].[ProductId], [p].[Size], [p].[Url]
+FROM [ProductImages] AS [p]
+WHERE [p].[Name] = @__fileName_0 (6438bdd5)
+2017-08-30T22:42:09.1144024+05:00 0HL7FPP68QO79 [INF] Executing FileResult, sending file as "" (3a97f597)
+2017-08-30T22:42:09.1259132+05:00 0HL7FPP68QO79 [INF] Executed action "IdealSysApp.Controllers.ReturnFileController.Get (IdealSysApp)" in 17.5675ms (afa2e885)
+2017-08-30T22:42:09.1299174+05:00 0HL7FPP68QO79 [INF] Request finished in 19.678ms 200 image/* (15c52c40)
+2017-08-30T22:43:18.1568506+05:00 0HL7FPP68QO7A [INF] Request starting HTTP/1.1 GET http://localhost:5050/uploads/   (e5be5b71)
+2017-08-30T22:43:18.2145398+05:00 0HL7FPP68QO7A [INF] Request finished in 57.2439ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-30T22:43:18.4199185+05:00 0HL7FPP68QO7B [INF] Request starting HTTP/1.1 GET http://localhost:5050/favicon.ico   (e5be5b71)
+2017-08-30T22:43:18.4249219+05:00 0HL7FPP68QO7B [INF] Working peer request (c3b573de)
+2017-08-30T22:43:18.4259211+05:00 0HL7FPP68QO7B [INF] Request finished in 6.9869ms 404  (15c52c40)
+2017-08-30T22:43:35.1475804+05:00 0HL7FPP68QO7C [INF] Request starting HTTP/1.1 GET http://localhost:5050/uploads/eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg   (e5be5b71)
+2017-08-30T22:43:35.1575895+05:00 0HL7FPP68QO7C [INF] Sending file. Request path: '"/eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg"'. Physical path: '"D:\PROGECTS\IdealSysApp\IdealSysApp\Uploads\eadcb5c5b2f640b3bc2ef8e52ad2ea63.jpg"' (27b0a520)
+2017-08-30T22:43:35.1706026+05:00 0HL7FPP68QO7C [INF] Request finished in 23.2781ms 200 image/jpeg (15c52c40)
+2017-08-30T22:43:37.9064060+05:00 0HL7FPP68QO7D [INF] Request starting HTTP/1.1 GET http://localhost:5050/uploads/207fe205-da2d-49e7-a9f5-e54f57542f30..jpg   (e5be5b71)
+2017-08-30T22:43:37.9234255+05:00 0HL7FPP68QO7D [INF] Sending file. Request path: '"/207fe205-da2d-49e7-a9f5-e54f57542f30..jpg"'. Physical path: '"D:\PROGECTS\IdealSysApp\IdealSysApp\Uploads\207fe205-da2d-49e7-a9f5-e54f57542f30..jpg"' (27b0a520)
+2017-08-30T22:43:37.9804773+05:00 0HL7FPP68QO7D [INF] Request finished in 71.2391ms 200 image/jpeg (15c52c40)

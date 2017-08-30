@@ -91,16 +91,7 @@ namespace IdealSysApp.Data
       {
         throw new ArgumentNullException("entity");
       }
-      try
-      {
-        entity.IdentityId = this.userService.GetUserId();
-      }
-      catch (Exception ex)
-      {
-        entity.IntegrationKey = ex.Message;
-        log.LogError(ex.Message);
-      }
-
+      entity.IdentityId = userService.GetUserId();
       _dbSet.Add(entity);
       context.SaveChanges();
       return entity;

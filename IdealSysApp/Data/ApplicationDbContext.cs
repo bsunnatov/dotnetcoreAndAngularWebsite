@@ -1,5 +1,6 @@
 ﻿
 using IdealSysApp.Models.Entities;
+using IdealSysApp.Services;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,6 +12,7 @@ namespace IdealSysApp.Data
 {
   public class ApplicationDbContext : IdentityDbContext
   {
+
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
       this.Database.SetCommandTimeout(120);
@@ -44,6 +46,7 @@ namespace IdealSysApp.Data
           {
             entry.Entity.ModifiedDate = DateTime.Now;
             entry.Entity.CreatedDate = DateTime.Now;
+           
           }
 
         }

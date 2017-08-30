@@ -85,9 +85,9 @@
                 </div>
               </div>
               <h3>Допольнительные</h3>
-              <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}?isGeneral=false">  </p-fileUpload>
+              <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}?isGeneral=false" (onBeforeSend)="onBeforeSend($event)" auto="auto" maxFileSize="1000000" onUpload="onUpload($event)">  </p-fileUpload>
               <div *ngFor="let item of selectedItem.ProductImages">
-                <img width="100" src="{{baseUrl}}/ReturnFile/{{selectedItem?selectedItem.Id:0}}" />
+                <img width="100" src="{{baseUrl}}/ReturnFile/0/{{item.Name}}" />
               </div>
              
             </div>
