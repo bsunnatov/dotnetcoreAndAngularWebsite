@@ -7,7 +7,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminSidebarComponent } from '../shared/components/admin-sidebar/admin-sidebar.component';
 
-
 @NgModule({
   imports: [
       CommonModule,
@@ -18,6 +17,8 @@ import { AdminSidebarComponent } from '../shared/components/admin-sidebar/admin-
       
     ],
   declarations: [LayoutAdminComponent, HeaderComponent, AdminSidebarComponent],
-  providers: []
+  providers: [
+      
+  ]
 })
 export class LayoutAdminModule { }

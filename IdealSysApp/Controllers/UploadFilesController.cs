@@ -27,13 +27,14 @@ namespace IdealSysApp.Controllers
     [HttpPost("UploadFiles/{Id}/{isGeneral?}")]
     public IActionResult Post(long Id,IFormFile file,bool isGeneral = true)
     {
-      var ent = _service.Get(Id);
+      var ent = _service.GetTrack(Id);
       if (Id > 0&&ent!=null) {
         try
         {
           if (file != null && file.Length > 0)
           {
-            var savePath = Path.Combine(_appEnvironment.ContentRootPath, "uploads", generateFilename(Path.GetExtension(file.FileName)));
+            var g_filename = generateFilename(Path.GetExtension(file.FileName));
+            var savePath = Path.Combine(_appEnvironment.ContentRootPath, "uploads", g_filename);
 
             using (var fileStream = new FileStream(savePath, FileMode.Create))
             {
@@ -42,13 +43,14 @@ namespace IdealSysApp.Controllers
 
             var created= Created(savePath, file);
             if(isGeneral)
-            ent.ImageUrl = file.FileName;
+            ent.ImageUrl = g_filename;
             else
             {
-              ent.ProductImages.Add(new ProductImage() { });
+              var newImgEnt = new ProductImage() {Name= g_filename, Extensions= Path.GetExtension(file.FileName),DisplayName=file.FileName,Size=file.Length };
+              ent.ProductImages.Add(newImgEnt);
             }
             _service.Update(ent);
-            return Ok(ent);
+            return Ok(g_filename);
 
           }
         }
@@ -71,7 +73,7 @@ namespace IdealSysApp.Controllers
     }
     private string generateFilename(string ext)
     {
-      return string.Format("{0}.{1}", Guid.NewGuid().ToString("D"), ext);
+      return string.Format("{0}{1}", Guid.NewGuid().ToString("N"), ext);
     }
     #endregion
   }

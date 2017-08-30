@@ -127,6 +127,7 @@ namespace IdealSysApp.Models
     }
     public int Take { get; set; }
     public int Skip { get; set; }
+    public long ParentId { get; set; }
     public IEnumerable<Sort> Sort { get; set; }
     public Filter Filter { get; set; }
   }

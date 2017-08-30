@@ -26,6 +26,7 @@ using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Routing;
 using IdealSysApp.ViewModels;
 using Microsoft.Extensions.FileProviders;
+using IdealSysApp.Services;
 
 namespace IdealSysApp
 {
@@ -50,12 +51,7 @@ namespace IdealSysApp
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
-      {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
-      }));
+      services.AddCors();
       // Add framework services.
       services.AddDbContext<ApplicationDbContext>(options =>
       options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
@@ -94,6 +90,9 @@ namespace IdealSysApp
         o.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
         o.SerializerSettings.ContractResolver = new DefaultContractResolver();
       });
+      services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+      services.AddTransient<IUserResolverService, UserResolverService>();
+      
       services.AddAutoMapper();
       services.AddRouting();
       _logger.LogInformation($"Total Services Initially: {services.Count}");
@@ -105,7 +104,11 @@ namespace IdealSysApp
       loggerFactory.AddFile("Logs/myapp-{Date}.txt");
       app.SeedData().Wait();
       _logger.LogInformation("Working SeedData");
-      app.UseCors("MyPolicy");
+      app.UseCors(builder => builder
+      .AllowAnyOrigin()
+      .AllowAnyMethod()
+      .AllowAnyHeader()
+      .AllowCredentials());
       //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
       //loggerFactory.AddDebug();
       if (env.IsDevelopment())

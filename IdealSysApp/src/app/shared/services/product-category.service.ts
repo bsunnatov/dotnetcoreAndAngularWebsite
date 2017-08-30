@@ -20,6 +20,18 @@ export class ProductCategoryService extends BaseService  {
             }))
             .catch(this.handleError);
     }
+    public queryForChild({ Id }: { Id: number }, state?: any): Observable<GridDataResult> {
+        if (Id>0)
+            return this.getAll(Object.assign({}, state, {
+                filter: {
+                    filters: [{
+                        field: "ParentId", operator: "eq", value: Id
+                    }],
+                    logic: "and"
+                }
+            }));
+        else return this.getAll(state);
+    }
     getById(id) {
         return this.http.get(this.getbyidurl(id)).map(res => res.json()).catch(this.handleError);
     }

@@ -23,7 +23,7 @@
      
     </kendo-grid-command-column>
     <div *kendoGridDetailTemplate="let dataItem">
-      <dynamic-property-value [dynamicProperty]="dataItem"></dynamic-property-value>
+      <app-product-category [parentItem]="dataItem"></app-product-category>
     </div>
   </kendo-grid>
   <kendo-grid-edit-form [model]="editDataItem" [isNew]="isNew"

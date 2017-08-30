@@ -40,7 +40,7 @@
                                   (save)="saveHandler($event)"
                                   (cancel)="cancelHandler()">
     </kendo-grid-edit-form-product>
-  <div class="card" [hidden]="!selectedItem">
+  <div class="card" [hidden]="!selectedItem" *ngIf="selectedItem">
     <div class="card-header">
       <b>{{selectedItem?selectedItem.Name:''}}</b>
     </div>
@@ -85,9 +85,9 @@
                 </div>
               </div>
               <h3>Допольнительные</h3>
-              <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}">  </p-fileUpload>
-              <div *ngFor="let item of selectedItemImages">
-
+              <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}?isGeneral=false">  </p-fileUpload>
+              <div *ngFor="let item of selectedItem.ProductImages">
+                <img width="100" src="{{baseUrl}}/ReturnFile/{{selectedItem?selectedItem.Id:0}}" />
               </div>
              
             </div>

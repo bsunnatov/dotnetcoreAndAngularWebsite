@@ -15,7 +15,9 @@ namespace IdealSysApp.Data
   {
     IEnumerable<T> GetAll();
     IQueryable<T> AsQueryable();
+    IQueryable<T> AsQueryableTrack();
     T Get(long id);
+    T GetTrack(long id);
     T Insert(T entity);
     T InsertViewModel(object entity);
     T Update(T entity);

@@ -16,7 +16,7 @@ namespace IdealSysApp.Controllers
 {
   [Produces("application/json")]
   [Route("api/ProductCategory")]
- // [Authorize(Policy = "ApiUser")]
+  [Authorize(Policy = "ApiUser")]
   public class ProductCategoryController : Controller
   {
     private readonly IRepository<ProductCategory> _service;
@@ -41,7 +41,10 @@ namespace IdealSysApp.Controllers
       if (!string.IsNullOrEmpty(filter))
       {
         DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
-        var result = _service.AsQueryable().OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
+        var q = _service.AsQueryable();
+        if ((_filter.ParentId ==0))
+          q = q.Where(p =>p.ParentId==null);
+        var result = q.OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
         var vmResult =_service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }

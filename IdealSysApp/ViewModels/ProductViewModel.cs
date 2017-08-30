@@ -10,6 +10,7 @@ namespace IdealSysApp.ViewModels
     public ProductViewModel()
     {
       ProductProperties = new List<ProductPropertyViewModel>();
+      ProductImages = new List<ProductImageViewModel>();
     }
     public long Id { get; set; }
     public string Name { get; set; }
@@ -21,5 +22,6 @@ namespace IdealSysApp.ViewModels
     public long ProductCategoryId { get; set; }
     public decimal Price { get; set; }
     public IList<ProductPropertyViewModel> ProductProperties { get; set; }
+    public IList<ProductImageViewModel> ProductImages { get; set; }
   }
 }

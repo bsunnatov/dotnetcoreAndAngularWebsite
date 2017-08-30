@@ -15,6 +15,7 @@ using AutoMapper;
 using Microsoft.Extensions.Logging;
 using IdealSysApp.Models;
 using IdealSysApp.Extensions;
+using Microsoft.EntityFrameworkCore;
 namespace IdealSysApp.Controllers
 {
   [Produces("application/json")]
@@ -34,7 +35,7 @@ namespace IdealSysApp.Controllers
       if (!string.IsNullOrEmpty(filter))
       {
         DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
-        var result = _service.AsQueryable().OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
+        var result = _service.AsQueryable().Include(p=>p.ProductImages).OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
         var vmResult = _service._mapper.Map<IEnumerable<ProductViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }

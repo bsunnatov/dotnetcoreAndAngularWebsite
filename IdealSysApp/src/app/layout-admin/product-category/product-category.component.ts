@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, Input } from '@angular/core';
 import { GridDataResult,RowClassArgs } from '@progress/kendo-angular-grid';
 import { State, process } from '@progress/kendo-data-query';
 import { Observable } from 'rxjs/Rx';
@@ -17,14 +17,17 @@ export class ProductCategoryComponent implements OnInit {
     private gridData: Observable<GridDataResult>;
     private _sender: any;
     private _rowIndex: number;
-    public gridState: State = {
+    public gridState = {
         sort: [],
         skip: 0,
-        take: 8,
+        take: 20,
+        ParentId:0
        
     };
+    @Input() public parentItem: ProductCategory = new ProductCategory();
     constructor(private service: ProductCategoryService) {
-        this.gridData = service.getAll(this.gridState);
+       
+      
     }
     rowCallback(context: RowClassArgs) {
         const isEven = context.index % 2 == 0;
@@ -34,7 +37,8 @@ export class ProductCategoryComponent implements OnInit {
         };
     }
 
-  ngOnInit() {
+    ngOnInit() {
+        this.reset();
   }
   private editDataItem: ProductCategory;
   public addHandler() {
@@ -54,8 +58,11 @@ export class ProductCategoryComponent implements OnInit {
   }
 
   public saveHandler(model: ProductCategory) {
-      if (this.isNew)
-          this.service.add(model).subscribe(s => { this.reset(this.gridState) });
+     
+      if (this.isNew) {
+          model.ParentId = this.parentItem.Id > 0 ? this.parentItem.Id : null;
+          this.service.add(model).subscribe(s => { this.reset() });
+      }
       else
           this.service.update(model).subscribe(s => {
               this._sender.data["data"][this._rowIndex - this.gridState.skip] = s.json()
@@ -63,8 +70,9 @@ export class ProductCategoryComponent implements OnInit {
       this.editDataItem = undefined;
      
   }
-  private reset(filter) {
-      this.gridData= this.service.getAll(filter);
+  private reset() {
+      this.gridState.ParentId = this.parentItem.Id;
+      this.gridData = this.service.queryForChild(this.parentItem, this.gridState);
 }
   public removeHandler({rowIndex, dataItem}) {
       if (confirm("Удалить?"))
@@ -73,7 +81,7 @@ export class ProductCategoryComponent implements OnInit {
       });
   }
   public onStateChange(e) {
-      this.gridState = e;
-      this.reset(e);
+      Object.assign(this.gridState,e);
+      this.reset();
   }
 }

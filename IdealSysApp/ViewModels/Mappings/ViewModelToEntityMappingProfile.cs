@@ -33,7 +33,7 @@ namespace IdealSysApp.ViewModels.Mappings
         dist.RoleIds = src.Roles.Select(s => s.RoleId).ToArray();
       }).ForMember(vm => vm.FullName, map => map.MapFrom(au => au.FirstName + " " + au.LastName));
       CreateMap<Storage, StorageViewModel>();
-      CreateMap<Product, ProductViewModel>();
+      CreateMap<Product, ProductViewModel>().ForMember(p=>p.ProductImages,m=>m.MapFrom(v=>v.ProductImages));
       CreateMap<DynamicProperty, DynamicPropertyViewModel>();
       CreateMap<DynamicPropertyValue, DynamicPropertyValueViewModel>();
       CreateMap<ProductProperty, ProductPropertyViewModel>();

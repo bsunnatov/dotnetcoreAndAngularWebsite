@@ -16,7 +16,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   animations: [fadeAnimate()]
 })
 export class ProductComponent implements OnInit {
-    private selectedItemImages: any[] = [];
     private isNew: boolean;
     private gridData: Observable<GridDataResult>;
     private _sender: any;

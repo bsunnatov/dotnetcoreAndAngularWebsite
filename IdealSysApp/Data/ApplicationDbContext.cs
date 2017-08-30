@@ -21,6 +21,35 @@ namespace IdealSysApp.Data
       base.OnModelCreating(builder);
 
     }
+    public override int SaveChanges()
+    {
+      foreach (var entry in this.ChangeTracker.Entries<BaseEntity>())
+      {
+        var ent = entry.Entity;
+        if (entry.State == EntityState.Modified)
+        {
+       
+          // use entry.OriginalValues
+          if (ent != null)
+          {
+            entry.Entity.ModifiedDate = DateTime.Now;
+          }
+         
+        }
+        if (entry.State == EntityState.Added)
+        {
+
+          // use entry.OriginalValues
+          if (ent != null)
+          {
+            entry.Entity.ModifiedDate = DateTime.Now;
+            entry.Entity.CreatedDate = DateTime.Now;
+          }
+
+        }
+      }
+      return base.SaveChanges();
+    }
     public DbSet<ProductCategory> ProductCategories { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Storage> Storages { get; set; }

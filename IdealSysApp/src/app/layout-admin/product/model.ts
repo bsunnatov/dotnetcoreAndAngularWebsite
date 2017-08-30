@@ -4,4 +4,5 @@
     public Id: number = 0;
     public ProductCategoryId: number = 2;
     public Price: number;
+    public ProductImages: any[];
 }

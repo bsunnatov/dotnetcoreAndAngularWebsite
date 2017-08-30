@@ -20,18 +20,15 @@ export class ProductService extends BaseService  {
             }))
             .catch(this.handleError);
     }
+
     getById(id) {
         return this.http.get(this.getbyidurl(id)).map(res => res.json()).catch(this.handleError);
     }
     add(model) {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        return this.http.post(this.apiUrl, JSON.stringify(model), { headers });
+        return this.http.post(this.apiUrl, JSON.stringify(model));
     }
     update(model) {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        return this.http.put(this.getbyidurl(model.Id), JSON.stringify(model), { headers });
+        return this.http.put(this.getbyidurl(model.Id), JSON.stringify(model));
     }
     delete(id) {
         return this.http.delete(this.getbyidurl(id));
