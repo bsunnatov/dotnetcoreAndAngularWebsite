@@ -11,7 +11,7 @@ using AutoMapper;
 using IdealSysApp.Models;
 using IdealSysApp.Extensions;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.EntityFrameworkCore;
 namespace IdealSysApp.Controllers
 {
   [Produces("application/json")]
@@ -41,10 +41,19 @@ namespace IdealSysApp.Controllers
       if (!string.IsNullOrEmpty(filter))
       {
         DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
-        var q = _service.AsQueryable();
+        var q = _service.AsQueryable().Include("Childs.Childs.Childs.Childs").AsQueryable();
+        if (!string.IsNullOrEmpty(_filter.Term))
+        {
+          q = q.Where(p => p.Name.Contains(_filter.Term)||p.Childs.Any(s=>s.Name.Contains(_filter.Term)));
+        }
         if ((_filter.ParentId ==0))
           q = q.Where(p =>p.ParentId==null);
         var result = q.OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
+        if (_filter.AsSelect2)
+        {
+          var select2Result = _service._mapper.Map<IEnumerable<Select2ViewModel>>(result.Data);
+          return new { Data = select2Result, Total = result.Total };
+        }
         var vmResult =_service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }

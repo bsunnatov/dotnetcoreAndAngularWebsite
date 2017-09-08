@@ -18,7 +18,7 @@ export class ProductEditFormComponent {
         'Name': new FormControl("", Validators.required),
         'Description': new FormControl(""),
         'Id': new FormControl(0),
-        'ProductCategoryId': new FormControl(1)
+        'ProductCategoryId': new FormControl('')
     });
 
 

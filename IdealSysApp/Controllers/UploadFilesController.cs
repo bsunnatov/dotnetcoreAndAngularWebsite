@@ -42,11 +42,21 @@ namespace IdealSysApp.Controllers
             }
 
             var created= Created(savePath, file);
-            if(isGeneral)
-            ent.ImageUrl = g_filename;
+            if (isGeneral)
+            {
+              if (ent.ImageUrl != null)
+              {
+                var currentFilePath = Path.Combine(_appEnvironment.ContentRootPath, "uploads", ent.ImageUrl);
+                if (System.IO.File.Exists(currentFilePath))
+                {
+                  System.IO.File.Delete(currentFilePath);
+                }
+              }
+              ent.ImageUrl = g_filename;
+            }
             else
             {
-              var newImgEnt = new ProductImage() {Name= g_filename, Extensions= Path.GetExtension(file.FileName),DisplayName=file.FileName,Size=file.Length };
+              var newImgEnt = new ProductImage() { Name = g_filename, Extensions = Path.GetExtension(file.FileName), DisplayName = file.FileName, Size = file.Length };
               ent.ProductImages.Add(newImgEnt);
             }
             _service.Update(ent);

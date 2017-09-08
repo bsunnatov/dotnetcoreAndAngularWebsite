@@ -124,10 +124,13 @@ namespace IdealSysApp.Models
     {
       Take = 10;
       Skip = 0;
+      AsSelect2 = false;
     }
+    public string Term { get; set; }
     public int Take { get; set; }
     public int Skip { get; set; }
     public long ParentId { get; set; }
+    public bool AsSelect2 { get; set; }
     public IEnumerable<Sort> Sort { get; set; }
     public Filter Filter { get; set; }
   }

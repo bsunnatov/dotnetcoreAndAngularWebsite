@@ -1,5 +1,5 @@
-﻿import { Component, OnInit,Inject, ElementRef, ViewChild} from '@angular/core';
-import { GridDataResult, RowClassArgs } from '@progress/kendo-angular-grid';
+﻿import { Component, OnInit,Inject, ElementRef, ViewChild,Input} from '@angular/core';
+import { GridDataResult, RowClassArgs, SelectionEvent} from '@progress/kendo-angular-grid';
 import { Observable } from 'rxjs/Rx';
 import { State, process } from '@progress/kendo-data-query';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -18,6 +18,9 @@ const formGroup = dataItem => new FormGroup({
   styleUrls: ['./dynamic-property.component.scss']
 })
 export class DynamicPropertyComponent implements OnInit {
+    @Input() public AsSelect: boolean = false;
+    private mySelection = [1, 3, 5];
+
     public view: Observable<GridDataResult>;
     public gridState: State = {
         sort: [],
@@ -91,5 +94,8 @@ export class DynamicPropertyComponent implements OnInit {
     protected removeHandler({dataItem}) {
         if (confirm("Удалить?"))
         this.editService.delete(dataItem.Id).subscribe(s => { this.load() });
+    }
+    public onSelectionChange(e: SelectionEvent) {
+        console.log(e.selectedRows);
     }
 }

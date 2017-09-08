@@ -17,7 +17,6 @@ export class AuthenticateXHRBackend extends XHRBackend {
     createConnection(request: Request) {
         //Default header settings
         let authToken = sessionStorage.getItem('auth_token');
-        console.log(authToken);
         request.headers.append('Content-Type', 'application/json');
         request.headers.append('Authorization', `Bearer ${authToken}`);
         let xhrConnection = super.createConnection(request);

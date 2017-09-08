@@ -18,7 +18,7 @@
       </ng-template>
       <kendo-grid-column>
         <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
-          <img width="100" src="{{baseUrl}}/ReturnFile/{{dataItem?dataItem.Id:0}}" />
+          <img width="100" src="{{baseUrl}}/ReturnFile/GetById/{{dataItem?dataItem.Id:0}}" />
         </ng-template>
       </kendo-grid-column>
    
@@ -52,12 +52,36 @@
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Свойство товаров
               </a>
+              <button class="btn btn-info pull-right" (click)="productPropertySaveChanges()">Сохранить изменение</button>
             </h5>
           </div>
 
           <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="card-block">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+
+                <li class="nav-item" *ngFor="let item of productProps; let i=index">
+                  <a class="nav-link {{i==0?'active':''}}" data-toggle="tab" href="#tab_{{item.DynamicPropertyId}}" role="tab">{{item.Value}}<span class="text-danger"> {{item.Id==0?'*':''}}</span></a>
+                </li>
+             
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div  role="tabpanel" *ngFor="let item of productProps; let i=index" class="tab-pane {{i==0?'active':''}}"  id="tab_{{item.DynamicPropertyId}}">
+                  <div>
+                    <ul style="list-style:none">
+                      <li *ngFor="let subitem of item.DynamicPropertyValues">
+                        <label><span>{{subitem.Value}}</span> <input type="radio" name="rb_{{item.DynamicPropertyId}}" [value]="subitem.Id" (change)="onSelectionChange(item,subitem)" [checked]="subitem.Id === item.Id"></label>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                </div>
+               
+              </div>
+              <div>* - Новая свойства</div>
             </div>
           </div>
         </div>
@@ -72,23 +96,44 @@
           <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
            
             <div class="card-block">
-              <h3>Основные</h3>
-              <div class="row">
-                <div class="col-xl-3">
-                  <img width="100" src="{{baseUrl}}/ReturnFile/{{selectedItem?selectedItem.Id:0}}" />
-                </div>
-                <div class="col-xl-9">
-                  <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Основные</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Допольнительные</a>
+                </li>
+               
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel">
+                  <div class="row">
+                    <div class="col-xl-3">
+                      <img width="100" src="{{baseUrl}}/ReturnFile/GetById/{{selectedItem?selectedItem.Id:0}}" />
+                    </div>
+                    <div class="col-xl-9">
+                      <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}" auto="auto" chooseLabel="Выберите" onUpload="onUpload($event)" >
 
 
-                  </p-fileUpload>
+                      </p-fileUpload>
+                    </div>
+                  </div>
                 </div>
+                <div class="tab-pane" id="profile" role="tabpanel">
+                  <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}?isGeneral=false" (onBeforeSend)="onBeforeSend($event)" auto="auto" maxFileSize="1000000" onUpload="onUpload($event)" chooseLabel="Выберите">  </p-fileUpload>
+                  <div *ngFor="let item of selectedItem.ProductImages">
+                    <img width="100" src="{{baseUrl}}/ReturnFile/GetByFileName/{{item.Name}}" />
+                  </div>
+                </div>
+                
               </div>
-              <h3>Допольнительные</h3>
-              <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}?isGeneral=false" (onBeforeSend)="onBeforeSend($event)" auto="auto" maxFileSize="1000000" onUpload="onUpload($event)">  </p-fileUpload>
-              <div *ngFor="let item of selectedItem.ProductImages">
-                <img width="100" src="{{baseUrl}}/ReturnFile/0/{{item.Name}}" />
-              </div>
+           
+     
+             
+              
              
             </div>
           </div>

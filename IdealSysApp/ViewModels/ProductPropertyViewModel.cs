@@ -7,8 +7,10 @@ namespace IdealSysApp.ViewModels
 {
   public class ProductPropertyViewModel : ViewModel
   {
+    public string Value { get; set; }
     public long DynamicPropertyId { get; set; }
     public long ProductId { get; set; }
     public long? DynamicPropertyValueId { get; set; }
+    public IList<DynamicPropertyValueViewModel> DynamicPropertyValues { get; set; }
   }
 }

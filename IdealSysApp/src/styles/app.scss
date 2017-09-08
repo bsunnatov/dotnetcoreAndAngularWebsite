@@ -12,4 +12,7 @@ $accent: #218E44; //Customize telerik default theme color
 .text-bold{
   font-weight:700;
 }
+span.select2-dropdown {
+  z-index: 10002;
+}
 

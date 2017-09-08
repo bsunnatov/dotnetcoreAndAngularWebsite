@@ -24,8 +24,8 @@ namespace IdealSysApp.Controllers
       _service = service;
       _pi_service = pi_service;
     }
-    [HttpGet("{Id}")]
-    public IActionResult Get(long Id)
+    [HttpGet("GetById/{Id}")]
+    public IActionResult GetById(long Id)
     {
       var ent = _service.Get(Id);
       if (ent == null)
@@ -36,17 +36,16 @@ namespace IdealSysApp.Controllers
       var image = System.IO.File.OpenRead(filePath);
       return File(image, "image/jpeg");
     }
-    [HttpGet("{Id}/{fileName}")]
-    public IActionResult Get(string fileName,long Id)
+    [HttpGet("GetByFileName/{fileName}")]
+    public IActionResult GetByFileName(string fileName)
     {
-      var ent = _pi_service.AsQueryable().FirstOrDefault(p=>p.Name==fileName);
-      if (ent == null)
+      var filePath = Path.Combine(_appEnvironment.ContentRootPath, "uploads", fileName ?? "no-image-box.png");
+      if (System.IO.File.Exists(filePath))
       {
-        return new EmptyResult();
+        var image = System.IO.File.OpenRead(filePath);
+        return File(image, "image/*");
       }
-      var filePath = Path.Combine(_appEnvironment.ContentRootPath, "uploads", ent.Name ?? "no-image-box.png");
-      var image = System.IO.File.OpenRead(filePath);
-      return File(image, "image/*");
+      return new EmptyResult();
     }
   }
 }

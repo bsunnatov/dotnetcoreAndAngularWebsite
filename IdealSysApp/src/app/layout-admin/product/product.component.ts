@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Rx';
 import { fadeAnimate, slideToBottom } from '../../router.animations';
 import { Product } from './model';
 import { ProductService } from '../../shared/services/product.service';
+import { ProductPropertyService } from '../../shared/services/productproperty.service';
 import { ConfigService } from '../../shared/utils/config.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -16,6 +17,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   animations: [fadeAnimate()]
 })
 export class ProductComponent implements OnInit {
+
+    public options: Select2Options;
+    private productProps: Array<any>=[];
     private isNew: boolean;
     private gridData: Observable<GridDataResult>;
     private _sender: any;
@@ -26,11 +30,12 @@ export class ProductComponent implements OnInit {
         take: 8,
        
     };
-    private baseUrl = ""; 
-    constructor(private service: ProductService, private configService: ConfigService) {
+    private baseUrl = "";
+
+    constructor(private service: ProductService,private cservice: ConfigService,private prPropService: ProductPropertyService) {
         this.gridData = service.getAll(this.gridState);
-        this.baseUrl = this.configService.getApiURI();
-    }
+        this.baseUrl = cservice.getApiURI();
+       }
     rowCallback(context: RowClassArgs) {
         const isEven = context.index % 2 == 0;
         return {
@@ -40,7 +45,10 @@ export class ProductComponent implements OnInit {
     }
 
     ngOnInit() {
-       
+
+      
+        
+
 
     }
   private editDataItem: Product;
@@ -86,12 +94,21 @@ export class ProductComponent implements OnInit {
   private selectedItem: any;
   public gridProductSelectionChange (gridProduct, selection) {
       this.selectedItem = gridProduct.data.data[selection.index];
+      this.prPropService.GetProductProperties(this.selectedItem.Id).subscribe((s) => { this.productProps = s });
   }
   private onBeforeSend(event) {
       event.xhr.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem("auth_token"));
 
   }
   private onUpload(res) {
-      console.log(res);
+      this.reset(this.gridState);
+  }
+  private productPropertySaveChanges() {
+      this.prPropService.SaveChanges(this.productProps).subscribe(s => { console.log(s); });  
+  }
+  private onSelectionChange(item, subitem) {
+      //console.log(item, subitem);
+      $.map(item.DynamicPropertyValues, (v, i) => { v.IsSelected = false });
+      subitem.IsSelected = true;
   }
 }
