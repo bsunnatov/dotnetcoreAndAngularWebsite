@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,6 +27,7 @@ using Microsoft.AspNetCore.Routing;
 using IdealSysApp.ViewModels;
 using Microsoft.Extensions.FileProviders;
 using IdealSysApp.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace IdealSysApp
 {
@@ -64,15 +65,19 @@ namespace IdealSysApp
         options.Issuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
         options.Audience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)];
         options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
-       
+
       });
       // api user claim policy
-      services.AddAuthorization(options =>
+      //services.AddAuthorization();//Deafult
+      services.AddAuthorization(//with custom policy
+        options =>
       {
         options.AddPolicy("ApiUser", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
-      });
+        ;
+      }
+      );
 
-      services.AddIdentity<AppUser, IdentityRole>
+      services.AddIdentity<AppUser, AppRole>
           (o =>
           {
             // configure identity options
@@ -85,6 +90,7 @@ namespace IdealSysApp
           .AddEntityFrameworkStores<ApplicationDbContext>()
           .AddDefaultTokenProviders();
       services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+    //  services.AddScoped<RoleManager<AppRole>>();
       services.AddMvc().AddJsonOptions(o =>
       {
         o.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
@@ -92,7 +98,7 @@ namespace IdealSysApp
       });
       services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
       services.AddTransient<IUserResolverService, UserResolverService>();
-      
+
       services.AddAutoMapper();
       services.AddRouting();
       _logger.LogInformation($"Total Services Initially: {services.Count}");
@@ -130,14 +136,14 @@ namespace IdealSysApp
         RequireExpirationTime = false,
         ValidateLifetime = false,
         ClockSkew = TimeSpan.Zero,
-        
+
       };
       app.UseJwtBearerAuthentication(new JwtBearerOptions
       {
         AutomaticAuthenticate = true,
         AutomaticChallenge = true,
         TokenValidationParameters = tokenValidationParameters,
-        
+
       });
       //var myRouteHandler = new RouteHandler(Handle);
       //var routeBuilder = new RouteBuilder(app, myRouteHandler);

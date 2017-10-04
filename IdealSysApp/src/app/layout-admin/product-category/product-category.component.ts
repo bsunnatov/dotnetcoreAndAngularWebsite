@@ -1,10 +1,11 @@
-﻿import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, TemplateRef } from '@angular/core';
 import { GridDataResult,RowClassArgs } from '@progress/kendo-angular-grid';
 import { State, process } from '@progress/kendo-data-query';
 import { Observable } from 'rxjs/Rx';
 import { fadeAnimate, slideToBottom } from '../../router.animations';
 import { ProductCategory } from './model';
 import { ProductCategoryService } from '../../shared/services/product-category.service';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-category',
@@ -13,6 +14,7 @@ import { ProductCategoryService } from '../../shared/services/product-category.s
   animations: [fadeAnimate()]
 })
 export class ProductCategoryComponent implements OnInit {
+    closeResult: string;
     private isNew: boolean;
     private gridData: Observable<GridDataResult>;
     private _sender: any;
@@ -24,10 +26,30 @@ export class ProductCategoryComponent implements OnInit {
         ParentId:0
        
     };
+    private selectedDataItem: ProductCategory;
+    @ViewChild('content') template1: TemplateRef<null>;
     @Input() public parentItem: ProductCategory = new ProductCategory();
-    constructor(private service: ProductCategoryService) {
-       
-      
+    constructor(
+        private service: ProductCategoryService,
+        private modalService: NgbModal
+    ) { }
+    open(content) {
+        console.log(content);
+            this.modalService.open(content).result.then((result) => {
+                this.closeResult = `Closed with: ${result}`;
+            }, (reason) => {
+                this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            });
+        }
+
+    private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+            return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        } else {
+            return `with: ${reason}`;
+        }
     }
     rowCallback(context: RowClassArgs) {
         const isEven = context.index % 2 == 0;
@@ -83,5 +105,9 @@ export class ProductCategoryComponent implements OnInit {
   public onStateChange(e) {
       Object.assign(this.gridState,e);
       this.reset();
+  }
+  openPropsModal(dataItem) {
+      this.selectedDataItem = dataItem;
+      this.open(this.template1);
   }
 }

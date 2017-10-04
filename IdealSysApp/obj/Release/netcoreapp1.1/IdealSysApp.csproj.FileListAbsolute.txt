@@ -16,3 +16,14 @@ D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\obj\Release\net
 D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.AssemblyInfo.cs
 D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.dll
 D:\PersonFolder\Projects\dotnetcoreAndAngularWebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.pdb
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.deps.json
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.runtimeconfig.json
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.runtimeconfig.dev.json
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.dll
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\bin\Release\netcoreapp1.1\IdealSysApp.pdb
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.csprojResolveAssemblyReference.cache
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.csproj.CoreCompileInputs.cache
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.AssemblyInfoInputs.cache
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.AssemblyInfo.cs
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.dll
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Release\netcoreapp1.1\IdealSysApp.pdb

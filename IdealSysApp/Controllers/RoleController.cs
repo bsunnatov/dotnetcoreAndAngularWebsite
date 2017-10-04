@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using IdealSysApp.Models.Entities;
 using IdealSysApp.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using IdealSysApp.Models.Enums;
 
 namespace IdealSysApp.Controllers
 {
@@ -16,16 +18,21 @@ namespace IdealSysApp.Controllers
   {
     private readonly UserManager<AppUser> _userManager;
     private readonly ApplicationDbContext _appDbContext;
-    public RoleController(UserManager<AppUser> userManager, ApplicationDbContext appDbContext)
+    private readonly RoleManager<AppRole> _roleManager;
+    public RoleController(UserManager<AppUser> userManager, ApplicationDbContext appDbContext,RoleManager<AppRole> roleManager)
     {
       _userManager = userManager;
       _appDbContext= appDbContext;
+      _roleManager = roleManager;
+     
     }
     // GET: api/Role
     [HttpGet]
     public object Get()
     {
-      return _appDbContext.Roles.Select(s => new {text=s.Name,id=s.Id }).ToList();
+      var roles = EnumExtensions.GetListOfDescription<RoleNameEnum>();
+      return _roleManager.Roles.Select(s => new { text = s.Name, id = s.Id,s.Description}).ToList();
+     // return _appDbContext.Roles.Select(s => new {text=s.Name,id=s.Id  }).ToList();
     }
 
     // GET: api/Role/5

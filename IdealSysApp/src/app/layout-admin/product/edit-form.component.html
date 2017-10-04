@@ -1,4 +1,4 @@
-﻿<div style="left:50%">
+<div style="left:50%">
   <kendo-dialog *ngIf="active" (close)="closeForm()">
     <kendo-dialog-titlebar>
       {{ isNew ? 'Добавить новый товар' : 'Редактировать товар' }}
@@ -8,17 +8,11 @@
       <div class="form-group">
         <label for="ProductCategoryId" class="control-label text-bold">Группа товаров</label>
         <div>
-          <kendo-combobox [data]="categoryItems"
-                          [textField]="'Name'"
-                          [valueField]="'Id'"
-                          [valuePrimitive]="true"
-                          [placeholder]="'Выберите группа'" formControlName="ProductCategoryId" style="width:100% !important">
+      
+          <app-myselect2 [value]="editForm.controls.ProductCategoryId.value" [url]="'/ProductCategory'" (onChange)="onChange($event)">
 
-          </kendo-combobox>
-          <!--<app-myselect2 [value]="" [url]="'/ProductCategory'">
-
-          </app-myselect2>-->
-          {{editForm.ProductCategoryId}}
+          </app-myselect2>
+        
         </div>
         
       </div>
@@ -30,6 +24,12 @@
         <p class="k-tooltip k-tooltip-validation" [hidden]="editForm.controls.Name.valid || editForm.controls.Name.pristine">
           Поля обязательные для заполнения
         </p>
+      </div>
+      <div class="form-group">
+        <label for="Name" class="control-label text-bold">Цена</label>
+
+        <input type="number" class="k-textbox form-control" formControlName="Price" />
+      
       </div>
       <div class="form-group">
         <label for="Description" class="control-label text-bold">Описание</label>

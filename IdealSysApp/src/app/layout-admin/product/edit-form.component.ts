@@ -1,4 +1,4 @@
-﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Validators, FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
 import { Product } from './model';
 import { GlobalValidator } from '../../shared/utils/validators';
@@ -18,7 +18,9 @@ export class ProductEditFormComponent {
         'Name': new FormControl("", Validators.required),
         'Description': new FormControl(""),
         'Id': new FormControl(0),
-        'ProductCategoryId': new FormControl('')
+        'ProductCategoryId': new FormControl(''),
+        Price: new FormControl(0),
+        ImageUrl: new FormControl(),
     });
 
 
@@ -51,5 +53,7 @@ export class ProductEditFormComponent {
     public onValueChanged(v) {
 
     }
-
+    onChange(e) {
+        this.editForm.controls["ProductCategoryId"].patchValue(e.value);//set value for select2
+    }
 }

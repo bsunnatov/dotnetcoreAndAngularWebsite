@@ -1,4 +1,4 @@
-﻿import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { Http, HttpModule, XHRBackend  } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { UserService } from './shared/services/user.service';
@@ -7,14 +7,15 @@ import { ConfigService } from './shared/utils/config.service';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared/auth.guard';
+import { SharedModule } from './shared/modules/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AuthenticateXHRBackend } from './authenticate-xhr.backend';
-
-//import { GridModule } from '@progress/kendo-angular-grid';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { GridModule } from '@progress/kendo-angular-grid';
 export function HttpLoaderFactory(http: Http) {
     //     for development
     //     return new TranslateHttpLoader(http, '/start-angular/SB-Admin-BS4-Angular-4/master/dist/assets/i18n/', '.json');
@@ -23,8 +24,7 @@ export function HttpLoaderFactory(http: Http) {
 
 @NgModule({
     declarations: [
-        AppComponent,
-        
+        AppComponent
      
     ],
     imports: [
@@ -33,7 +33,9 @@ export function HttpLoaderFactory(http: Http) {
         FormsModule,
         HttpModule,
         AppRoutingModule,
-      //  GridModule, 
+        NgbModalModule.forRoot(),
+        SharedModule.forRoot(),
+       GridModule, 
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

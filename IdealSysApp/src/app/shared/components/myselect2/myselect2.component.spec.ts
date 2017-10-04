@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Myselect2Component } from './myselect2.component';
+import { MySelect2Component } from './myselect2.component';
 
 describe('Myselect2Component', () => {
-  let component: Myselect2Component;
-  let fixture: ComponentFixture<Myselect2Component>;
+    let component: MySelect2Component;
+    let fixture: ComponentFixture<MySelect2Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Myselect2Component ]
+        declarations: [MySelect2Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Myselect2Component);
+      fixture = TestBed.createComponent(MySelect2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

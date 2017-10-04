@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ using AutoMapper;
 using IdealSysApp.Models;
 using IdealSysApp.Extensions;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.EntityFrameworkCore;
 namespace IdealSysApp.Controllers
 {
   [Produces("application/json")]
@@ -28,18 +28,20 @@ namespace IdealSysApp.Controllers
     [HttpGet]
     public object Get([FromQuery]string filter)
     {
- 
+      var query = _service.AsQueryable();
+      query = query.Include(p => p.DynamicPropertyValues);
       if (!string.IsNullOrEmpty(filter))
       {
+       
         DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
-        var result = _service.AsQueryable().OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
+        var result = query.OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
         var vmResult =_service._mapper.Map<IEnumerable<DynamicPropertyViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }
       else
       {
-        var vmResult = _service._mapper.Map<IEnumerable<DynamicPropertyViewModel>>(_service.AsQueryable());
-        return new { Data = vmResult, Total = _service.AsQueryable().Count() };
+        var vmResult = _service._mapper.Map<IEnumerable<DynamicPropertyViewModel>>(query);
+        return new { Data = vmResult, Total = query.Count() };
       }
     }
 

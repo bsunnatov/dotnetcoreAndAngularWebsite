@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,7 +35,12 @@ namespace IdealSysApp.Controllers
       if (!string.IsNullOrEmpty(filter))
       {
         DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
-        var result = _service.AsQueryable().Include(p=>p.ProductImages).OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
+        var query = _service.AsQueryable();
+        if (_filter.DynamicPropertyValueIds!=null&&_filter.DynamicPropertyValueIds.Count() > 0)
+        {
+          query = query.Where(p => p.ProductProperties.Any(s =>_filter.DynamicPropertyValueIds.Contains(s.DynamicPropertyValueId??0)));
+        }
+        var result = query.Include(p=>p.ProductImages).OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
         var vmResult = _service._mapper.Map<IEnumerable<ProductViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }

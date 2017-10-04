@@ -1,4 +1,4 @@
-﻿
+
 using IdealSysApp.Models.Entities;
 using IdealSysApp.Services;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IdealSysApp.Data
 {
-  public class ApplicationDbContext : IdentityDbContext
+  public class ApplicationDbContext : IdentityDbContext<AppUser,AppRole,string>
   {
 
     public ApplicationDbContext(DbContextOptions options) : base(options)
@@ -63,6 +63,7 @@ namespace IdealSysApp.Data
     public DbSet<DynamicPropertyValue> DynamicPropertyValues { get; set; }
     public DbSet<ProductImage> ProductImages { get; set; }
     public DbSet<ProductProperty> ProductProperties { get; set; }
-
+    public DbSet<AppRole> AppRoles { get; set; }
+    public DbSet<PropertyInProductCategory> PropertyInProductCategories { get; set; }
   }
 }

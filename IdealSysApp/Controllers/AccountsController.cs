@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,10 +13,15 @@ using IdealSysApp.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using static IdealSysApp.Helpers.Constants.Strings;
+using IdealSysApp.Models.Enums;
+using IdealSysApp.Filters;
 
 namespace IdealSysApp.Controllers
 {
-  [Authorize(Policy = "ApiUser", Roles = "Administrator")]//Permisson for Only Has Claim Role Administrator 
+  [CustomAuth(new RoleNameEnum[] {
+    RoleNameEnum.Admin,
+    RoleNameEnum.User
+  })]//Permisson for Only Has Claim Role Administrator 
   [Route("api/[controller]")]
   public class AccountsController : Controller
   {

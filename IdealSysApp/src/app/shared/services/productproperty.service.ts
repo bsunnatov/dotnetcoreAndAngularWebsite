@@ -1,4 +1,4 @@
-﻿import { Injectable, Output } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { BaseService } from "./base.service";
 import { ConfigService } from '../utils/config.service';
@@ -14,7 +14,7 @@ export class ProductPropertyService extends BaseService{
         return this.http.get(this.apiUrl + "/GetProperty/" + id).map(res => res.json()).catch(this.handleError);
     }
     SaveChanges(model) {
-        return this.http.post(this.apiUrl+"/SaveChanges", JSON.stringify(model));
+        return this.http.post(this.apiUrl + "/SaveChanges", JSON.stringify(model));
     }
     getById(id) {
         return this.http.get(this.getbyidurl(id)).map(res => res.json()).catch(this.handleError);

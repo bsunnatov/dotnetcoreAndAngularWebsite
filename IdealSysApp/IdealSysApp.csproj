@@ -5,6 +5,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
@@ -12,6 +13,9 @@
     <OutputTypeEx>exe</OutputTypeEx>
     <StartupObject />
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="src\app\shared\pipes\translate.pipe.ts" />
+  </ItemGroup>
 <ItemGroup>
     <PackageReference Include="Automapper" Version="6.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="2.0.1" />
@@ -46,5 +50,8 @@
     <Folder Include="src\app\directives\" />
     <Folder Include="wwwroot\AppData\" />
     <Folder Include="Uploads" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\shared\pipes\translate.pipe.ts" />
   </ItemGroup>
 </Project>

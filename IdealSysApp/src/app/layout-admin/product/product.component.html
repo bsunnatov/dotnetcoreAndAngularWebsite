@@ -1,5 +1,5 @@
-﻿<section [@routerTransition]>
-  <product-navbar></product-navbar>
+<section [@routerTransition]>
+  <!--<product-navbar></product-navbar>-->
 
   
     <kendo-grid #gridProduct [data]="gridData|async"
@@ -70,10 +70,10 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div  role="tabpanel" *ngFor="let item of productProps; let i=index" class="tab-pane {{i==0?'active':''}}"  id="tab_{{item.DynamicPropertyId}}">
-                  <div>
+                  <div class="card-block">
                     <ul style="list-style:none">
                       <li *ngFor="let subitem of item.DynamicPropertyValues">
-                        <label><span>{{subitem.Value}}</span> <input type="radio" name="rb_{{item.DynamicPropertyId}}" [value]="subitem.Id" (change)="onSelectionChange(item,subitem)" [checked]="subitem.Id === item.Id"></label>
+                        <label><span>{{subitem.Value}}</span> <input type="radio" name="rb_{{item.DynamicPropertyId}}" [value]="subitem.Id" (change)="onSelectionChange(item,subitem)" [checked]="subitem.Id === item.DynamicPropertyValueId"></label>
                       </li>
                     </ul>
                   </div>
@@ -81,7 +81,7 @@
                 </div>
                
               </div>
-              <div>* - Новая свойства</div>
+              <div><span class="text-danger">* </span> Новая свойства</div>
             </div>
           </div>
         </div>
@@ -110,23 +110,22 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane active" id="home" role="tabpanel">
-                  <div class="row">
-                    <div class="col-xl-3">
+                  <div>
+                    <div>
                       <img width="100" src="{{baseUrl}}/ReturnFile/GetById/{{selectedItem?selectedItem.Id:0}}" />
                     </div>
-                    <div class="col-xl-9">
-                      <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}" auto="auto" chooseLabel="Выберите" onUpload="onUpload($event)" >
+                    <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}" auto="auto" chooseLabel="Выберите" onUpload="onUpload($event)">
 
 
-                      </p-fileUpload>
-                    </div>
+                    </p-fileUpload>
                   </div>
                 </div>
                 <div class="tab-pane" id="profile" role="tabpanel">
-                  <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}?isGeneral=false" (onBeforeSend)="onBeforeSend($event)" auto="auto" maxFileSize="1000000" onUpload="onUpload($event)" chooseLabel="Выберите">  </p-fileUpload>
+                 
                   <div *ngFor="let item of selectedItem.ProductImages">
                     <img width="100" src="{{baseUrl}}/ReturnFile/GetByFileName/{{item.Name}}" />
                   </div>
+                  <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}?isGeneral=false" (onBeforeSend)="onBeforeSend($event)" auto="auto" maxFileSize="1000000" onUpload="onUpload($event)" chooseLabel="Выберите">  </p-fileUpload>
                 </div>
                 
               </div>
@@ -142,6 +141,7 @@
     </div>
     
   </div>
- 
+
 
 </section>
+

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,7 +26,9 @@ namespace IdealSysApp.ViewModels.Mappings
       CreateMap<ProductPropertyViewModel, ProductProperty>();
       CreateMap<ProductImageViewModel, ProductImage>();
       //Entity to ViewModel
-      CreateMap<ProductCategory, ProductCategoryViewModel>().ForMember(s => s.HasChild, m => m.MapFrom(v => v.Childs.Any()));
+      CreateMap<ProductCategory, ProductCategoryViewModel>()
+        .ForMember(s => s.HasChild, m => m.MapFrom(v => v.Childs.Any()))
+        .ForMember(s=>s.PropertyInProductCategories,m=>m.MapFrom(a=>a.PropertyInProductCategories));
       CreateMap<Product, ProductViewModel>();
       CreateMap<AppUser, UserViewModel>().AfterMap((src, dist) =>
       {
@@ -34,11 +36,11 @@ namespace IdealSysApp.ViewModels.Mappings
       }).ForMember(vm => vm.FullName, map => map.MapFrom(au => au.FirstName + " " + au.LastName));
       CreateMap<Storage, StorageViewModel>();
       CreateMap<Product, ProductViewModel>().ForMember(p => p.ProductImages, m => m.MapFrom(v => v.ProductImages));
-      CreateMap<DynamicProperty, DynamicPropertyViewModel>();
       CreateMap<DynamicPropertyValue, DynamicPropertyValueViewModel>();
-      CreateMap<ProductProperty, ProductPropertyViewModel>().AfterMap((src, dist) => {
-        dist.DynamicPropertyValues = src.DynamicProperty.DynamicPropertyValues.Select(s=>new DynamicPropertyValueViewModel() {Id=s.Id,DynamicPropertyId=s.DynamicPropertyId,Key=s.Key,Value=s.Value }).ToList();
-      }).ForMember(m=>m.Value,map=>map.MapFrom(s=>s.DynamicProperty.Value));
+      CreateMap<PropertyInProductCategory, PropertyInProductCategoryViewModel>();
+      CreateMap<DynamicProperty, DynamicPropertyViewModel>().ForMember(s=>s.DynamicPropertyValues,m=>m.MapFrom(a=>a.DynamicPropertyValues));
+      
+      CreateMap<ProductProperty, ProductPropertyViewModel>().ForMember(m=>m.Value,map=>map.MapFrom(s=>s.DynamicProperty.Value)).ForMember(m=>m.DynamicPropertyValues,map=>map.MapFrom(s=>s.DynamicProperty.DynamicPropertyValues));
       CreateMap<ProductImage, ProductImageViewModel>();
       CreateMap<ProductCategory, Select2ViewModel>().AfterMap((src, dist) =>
       {

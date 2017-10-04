@@ -1,4 +1,4 @@
-﻿using IdealSysApp.Data;
+using IdealSysApp.Data;
 using Microsoft.AspNetCore.Builder;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore;
+using IdealSysApp.Models.Enums;
 
 namespace IdealSysApp.Helpers
 {
@@ -33,25 +34,31 @@ namespace IdealSysApp.Helpers
       context.Database.Migrate();
       // TODO: Add seed logic here
       var owner = context.Users.FirstOrDefault(p => p.UserName == "Owner");
-      string[] roles = new string[] { "Owner", "Administrator", "Manager", "Editor", "Buyer", "Business", "Seller", "Subscriber" };
+      var  roles= EnumExtensions.GetListOfDescription<RoleNameEnum>();
       //if (owner != null&&!owner.Roles.Any())
       //{
       //  await AssignRoles(app, owner.Email, roles);
       //}
+      var roleStore = new RoleStore<AppRole>(context);
+      var deletetRoleNames = context.Roles.Where(p => !roles.Contains(p.Name));
+      foreach (var item in deletetRoleNames)
+      {
+        Console.WriteLine(item);
+       // roleStore.DeleteAsync(item).Wait();
+      }
+      foreach (string role in roles)
+      {
+
+
+        if (!context.Roles.Any(r => r.Name == role))
+        {
+          await roleStore.CreateAsync(new AppRole() { NormalizedName = role.ToUpper(),Name=role });
+        }
+      }
       if (!context.Users.Any())
       {
 
-        var roleStore = new RoleStore<IdentityRole>(context);
-      
-        foreach (string role in roles)
-        {
-        
-
-          if (!context.Roles.Any(r => r.Name == role))
-          {
-           await roleStore.CreateAsync(new IdentityRole(role) {NormalizedName=role.ToUpper() });
-          }
-        }
+  
         var user = new AppUser
         {
           FirstName = "Bobur",
@@ -74,7 +81,7 @@ namespace IdealSysApp.Helpers
           var result = userStore.CreateAsync(user);
 
        
-       await AssignRoles(app, user.Email, roles);
+       await AssignRoles(app, user.Email, roles.ToArray());
 
        await context.SaveChangesAsync();
 
@@ -95,7 +102,7 @@ namespace IdealSysApp.Helpers
       }
       catch (Exception ex)
       {
-        Debug.WriteLine(ex.Message);
+        Console.WriteLine(ex.Message);
        
       }
     

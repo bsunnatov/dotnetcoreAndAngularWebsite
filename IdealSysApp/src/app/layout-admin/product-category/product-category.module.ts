@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { ProductCategoryRoutingModule } from './product-category-routing.module';
@@ -10,6 +10,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DialogModule } from '@progress/kendo-angular-dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { DynamicPropertyModelModule } from '../dynamic-property/dynamic-property-model.module';
+//import { DynamicPropertyComponent } from '../dynamic-property/dynamic-property.component';
+//import { DynamicPropertyValueComponent } from '../dynamic-property-value/dynamic-property-value.component'
 @NgModule({
     imports: [
         CommonModule,
@@ -19,7 +22,9 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
         GridModule,
         DialogModule,
         ReactiveFormsModule,
-        DropDownsModule
+        DropDownsModule,
+       DynamicPropertyModelModule
+        
     ],
     declarations: [ProductCategoryComponent, EditFormComponent],
     providers: [ProductCategoryService]

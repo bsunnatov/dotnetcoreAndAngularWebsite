@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { GridDataResult, RowClassArgs } from '@progress/kendo-angular-grid';
 import { State, process } from '@progress/kendo-data-query';
 import { Observable } from 'rxjs/Rx';
@@ -17,7 +17,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   animations: [fadeAnimate()]
 })
 export class ProductComponent implements OnInit {
-
+  
     public options: Select2Options;
     private productProps: Array<any>=[];
     private isNew: boolean;
@@ -32,7 +32,12 @@ export class ProductComponent implements OnInit {
     };
     private baseUrl = "";
 
-    constructor(private service: ProductService,private cservice: ConfigService,private prPropService: ProductPropertyService) {
+    constructor(
+        private service: ProductService,
+        private cservice: ConfigService,
+        private prPropService: ProductPropertyService
+       
+    ) {
         this.gridData = service.getAll(this.gridState);
         this.baseUrl = cservice.getApiURI();
        }
@@ -43,7 +48,7 @@ export class ProductComponent implements OnInit {
             odd: !isEven
         };
     }
-
+   
     ngOnInit() {
 
       

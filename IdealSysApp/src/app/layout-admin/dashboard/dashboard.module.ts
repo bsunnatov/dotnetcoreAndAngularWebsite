@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
     NgbCarouselModule,
@@ -9,7 +9,7 @@ import {
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatModule } from '../../shared/modules';
-
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 @NgModule({
     imports: [
         CommonModule,
@@ -20,8 +20,8 @@ import { StatModule } from '../../shared/modules';
        
     ],
     declarations: [
-        DashboardComponent
-       
+        DashboardComponent,
+       TranslatePipe
     ]
 })
 export class DashboardModule { }

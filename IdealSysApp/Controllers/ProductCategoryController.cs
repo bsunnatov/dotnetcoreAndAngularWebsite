@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -41,7 +41,7 @@ namespace IdealSysApp.Controllers
       if (!string.IsNullOrEmpty(filter))
       {
         DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
-        var q = _service.AsQueryable().Include("Childs.Childs.Childs.Childs").AsQueryable();
+        var q = _service.AsQueryable().Include("Childs.Childs.Childs.Childs").Include(p=>p.PropertyInProductCategories).AsQueryable();
         if (!string.IsNullOrEmpty(_filter.Term))
         {
           q = q.Where(p => p.Name.Contains(_filter.Term)||p.Childs.Any(s=>s.Name.Contains(_filter.Term)));
