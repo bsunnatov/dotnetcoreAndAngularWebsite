@@ -1,0 +1,147 @@
+<section [@routerTransition]>
+  <!--<product-navbar></product-navbar>-->
+
+  
+    <kendo-grid #gridProduct [data]="gridData|async"
+                [height]="auto"
+                [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+                [pageable]="true" [sortable]="true"
+                [filterable]="true"
+                [selectable]="true"
+                [rowClass]="rowCallback"
+                (dataStateChange)="onStateChange($event)"
+                (edit)="editHandler($event)" (remove)="removeHandler($event)"
+                (add)="addHandler($event)"
+                (selectionChange)="gridProductSelectionChange(gridProduct, $event)">
+      <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand>Добавить</button>
+      </ng-template>
+      <kendo-grid-column>
+        <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+          <img width="100" src="{{baseUrl}}/ReturnFile/GetById/{{dataItem?dataItem.Id:0}}" />
+        </ng-template>
+      </kendo-grid-column>
+   
+      <kendo-grid-column field="Name" title="Имя" width="auto">
+      </kendo-grid-column>
+      <kendo-grid-column field="ProductCategoryId" title="Категория" width="auto">
+      </kendo-grid-column>
+     
+      <kendo-grid-command-column title="Действие" width="200">
+        <ng-template kendoGridCellTemplate>
+          <button kendoGridEditCommand class="k-default"><span class="fa fa-edit"></span></button>
+          <button kendoGridRemoveCommand class="k-default"><span class="fa fa-trash"></span></button>
+        </ng-template>
+
+      </kendo-grid-command-column>
+
+    </kendo-grid>
+    <kendo-grid-edit-form-product [model]="editDataItem" [isNew]="isNew"
+                                  (save)="saveHandler($event)"
+                                  (cancel)="cancelHandler()">
+    </kendo-grid-edit-form-product>
+  <div class="card" [hidden]="!selectedItem" *ngIf="selectedItem">
+    <div class="card-header">
+      <b>{{selectedItem?selectedItem.Name:''}}</b>
+    </div>
+    <div class="card-block">
+      <div id="accordion" role="tablist" aria-multiselectable="true" >
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Свойство товаров
+              </a>
+              <button class="btn btn-info pull-right" (click)="productPropertySaveChanges()">Сохранить изменение</button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="card-block">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+
+                <li class="nav-item" *ngFor="let item of productProps; let i=index">
+                  <a class="nav-link {{i==0?'active':''}}" data-toggle="tab" href="#tab_{{item.DynamicPropertyId}}" role="tab">{{item.Key}}<span class="text-danger"> {{item.Id==0?'*':''}}</span></a>
+                </li>
+             
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div  role="tabpanel" *ngFor="let item of productProps; let i=index" class="tab-pane {{i==0?'active':''}}"  id="tab_{{item.DynamicPropertyId}}">
+                  <div class="card-block">
+                    <ul style="list-style:none">
+                      <li *ngFor="let subitem of item.DynamicPropertyValues">
+                        <label><span>{{subitem.Value}}</span> <input type="radio" name="rb_{{item.DynamicPropertyId}}" [value]="subitem.Id" (change)="onSelectionChange(item,subitem)" [checked]="subitem.Id === item.DynamicPropertyValueId"></label>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                </div>
+               
+              </div>
+              <div><span class="text-danger">* </span> Новая свойства</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Картинки
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+           
+            <div class="card-block">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Основные</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Допольнительные</a>
+                </li>
+               
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel">
+                  <div>
+                    <div>
+                      <img width="100" src="{{baseUrl}}/ReturnFile/GetById/{{selectedItem?selectedItem.Id:0}}" />
+                    </div>
+                    <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}" auto="auto" chooseLabel="Выберите" onUpload="onUpload($event)">
+
+
+                    </p-fileUpload>
+                  </div>
+                </div>
+                <div class="tab-pane" id="profile" role="tabpanel">
+                 
+                  <div *ngFor="let item of selectedItem.ProductImages">
+                    <img width="100" src="{{baseUrl}}/ReturnFile/GetByFileName/{{item.Name}}" />
+                  </div>
+                  <p-fileUpload name="file" url="{{baseUrl}}/UploadFiles/UploadFiles/{{selectedItem?selectedItem.Id:0}}?isGeneral=false" (onBeforeSend)="onBeforeSend($event)" auto="auto" maxFileSize="1000000" onUpload="onUpload($event)" chooseLabel="Выберите">  </p-fileUpload>
+                </div>
+                
+              </div>
+           
+     
+             
+              
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+</section>
+

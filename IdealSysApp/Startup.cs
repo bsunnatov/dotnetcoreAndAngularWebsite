@@ -28,6 +28,7 @@ using IdealSysApp.ViewModels;
 using Microsoft.Extensions.FileProviders;
 using IdealSysApp.Services;
 using Microsoft.AspNetCore.Identity;
+using IdealSysApp.Server.Services;
 
 namespace IdealSysApp
 {
@@ -90,11 +91,13 @@ namespace IdealSysApp
           .AddEntityFrameworkStores<ApplicationDbContext>()
           .AddDefaultTokenProviders();
       services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-    //  services.AddScoped<RoleManager<AppRole>>();
+      services.AddScoped(typeof(IEntityService<>), typeof(EntityService<>));
+      //  services.AddScoped<RoleManager<AppRole>>();
       services.AddMvc().AddJsonOptions(o =>
       {
         o.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
-        o.SerializerSettings.ContractResolver = new DefaultContractResolver();
+       // o.SerializerSettings.ContractResolver = new DefaultContractResolver();
+        o.SerializerSettings.ReferenceLoopHandling =Newtonsoft.Json.ReferenceLoopHandling.Ignore;
       });
       services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
       services.AddTransient<IUserResolverService, UserResolverService>();

@@ -1,0 +1,23 @@
+﻿<div> 
+  <kendo-grid [data]="view | async"
+              [height]="auto"
+              [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+              [pageable]="true" [sortable]="true"
+              (dataStateChange)="onStateChange($event)"
+              (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+              (save)="saveHandler($event)" (remove)="removeHandler($event)"
+              (add)="addHandler($event)">
+    <ng-template kendoGridToolbarTemplate>
+      <button kendoGridAddCommand>Добавить новая</button>
+    </ng-template>
+    <kendo-grid-column field="Value"  title="Value"></kendo-grid-column>
+    <kendo-grid-command-column title="command" width="220">
+      <ng-template kendoGridCellTemplate let-isNew="isNew">
+        <button kendoGridEditCommand class="k-primary"><span class="fa fa-edit"></span></button>
+        <button kendoGridRemoveCommand><span class="fa fa-trash"></span></button>
+        <button kendoGridSaveCommand [disabled]="formGroup?.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
+        <button kendoGridCancelCommand><span class="fa fa-ban"></span></button>
+      </ng-template>
+    </kendo-grid-command-column>
+  </kendo-grid>
+</div>

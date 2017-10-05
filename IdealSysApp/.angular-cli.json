@@ -1,11 +1,11 @@
-﻿{
+{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
     "name": "idealsys-ng"
   },
   "apps": [
     {
-      "root": "src",
+      "root": "Client",
       "outDir": "wwwroot",
       "assets": [
         "assets",
