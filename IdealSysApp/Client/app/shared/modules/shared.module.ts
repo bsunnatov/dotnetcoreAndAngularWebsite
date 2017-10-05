@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { myFocus } from '../../directives/focus.directive';
 import { SpinnerComponent } from '../../spinner/spinner.component';
 import { TranslatePipe } from '../pipes/translate.pipe';
-import{}
-
 @NgModule({
     imports: [CommonModule],
     declarations: [myFocus, SpinnerComponent],
