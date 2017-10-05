@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -33,8 +33,12 @@ namespace IdealSysApp.Controllers
         return new EmptyResult();
       }
       var filePath = Path.Combine(_appEnvironment.ContentRootPath, "uploads", ent.ImageUrl?? "no-image-box.png");
-      var image = System.IO.File.OpenRead(filePath);
-      return File(image, "image/jpeg");
+      if (System.IO.File.Exists(filePath))
+      {
+        var image = System.IO.File.OpenRead(filePath);
+        return File(image, "image/jpeg");
+      }
+      return new EmptyResult();
     }
     [HttpGet("GetByFileName/{fileName}")]
     public IActionResult GetByFileName(string fileName)

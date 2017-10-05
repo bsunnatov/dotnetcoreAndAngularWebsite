@@ -35,3 +35,4 @@ C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\
 C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Debug\netcoreapp1.1\IdealSysApp.AssemblyInfo.cs
 C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Debug\netcoreapp1.1\IdealSysApp.dll
 C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Debug\netcoreapp1.1\IdealSysApp.pdb
+C:\Users\BSunnatov\Documents\GitHub\dotnetcoreandangularwebsite\IdealSysApp\obj\Debug\netcoreapp1.1\IdealSysApp.csprojResolveAssemblyReference.cache

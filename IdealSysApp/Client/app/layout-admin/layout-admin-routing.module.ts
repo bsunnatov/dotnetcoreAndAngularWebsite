@@ -8,11 +8,13 @@ const routes: Routes = [
         children: [
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
             { path: 'grid', loadChildren: './grid/grid.module#GridsModule' },
+            //start
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'appusers', loadChildren: './appuser/appuser.module#AppuserModule' },
             { path: 'productCategory', loadChildren: './product-category/product-category.module#ProductCategoryModule' },
             { path: 'storage', loadChildren: './storage/storage.module#StorageModule' },
             { path: 'product', loadChildren: './product/product.module#ProductModule' },
+            { path: 'customer', loadChildren: './customer/customer.module#CustomerModule' },
         ]
     }
 ];

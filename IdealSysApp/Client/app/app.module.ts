@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { Http, HttpModule, XHRBackend  } from '@angular/http';
+import { Http, HttpModule, XHRBackend } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { UserService } from './shared/services/user.service';
 import { RoleService } from './shared/services/role.service';
@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared/auth.guard';
 import { SharedModule } from './shared/modules/shared.module';
+import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +26,7 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
     declarations: [
         AppComponent
-     
+
     ],
     imports: [
         BrowserModule,
@@ -35,7 +36,8 @@ export function HttpLoaderFactory(http: Http) {
         AppRoutingModule,
         NgbModalModule.forRoot(),
         SharedModule.forRoot(),
-       GridModule, 
+        CoreModule.forRoot(),
+        GridModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -43,9 +45,10 @@ export function HttpLoaderFactory(http: Http) {
                 deps: [Http]
             }
         }),
-        
+
 
     ],
+    exports:[CoreModule],
     providers: [AuthGuard, UserService, ConfigService, RoleService, {
         provide: XHRBackend,
         useClass: AuthenticateXHRBackend

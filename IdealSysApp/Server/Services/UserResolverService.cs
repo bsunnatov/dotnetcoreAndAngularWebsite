@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using static IdealSysApp.Helpers.Constants.Strings;
 
 namespace IdealSysApp.Services
 {
@@ -27,11 +28,7 @@ namespace IdealSysApp.Services
       string userId = null;
       if (_context != null && _context.HttpContext != null && _context.HttpContext.User != null)
       {
-        var userName = _userManager.GetUserId(_context.HttpContext.User);
-        if(userName!=null)
-        _userManager.FindByNameAsync(userName).ContinueWith(s=> {
-          userId = s.Result.Id;
-        }).Wait();
+        userId = _context.HttpContext.User.FindFirst(JwtClaimIdentifiers.Id)?.Value;
       }
       return userId;
     }

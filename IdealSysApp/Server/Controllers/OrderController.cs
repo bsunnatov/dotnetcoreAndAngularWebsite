@@ -7,12 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using IdealSysApp.Data;
 using IdealSysApp.Models.Entities;
 using IdealSysApp.Server.ViewModels;
-
+using Microsoft.EntityFrameworkCore;
 namespace IdealSysApp.Server.Controllers
 {
   [Produces("application/json")]
   [Route("api/Order")]
-  public class OrderController : Controller
+  public class OrderController : BaseController
   {
     private readonly IRepository<Order> repository;
     public OrderController(IRepository<Order> repository)
@@ -22,7 +22,14 @@ namespace IdealSysApp.Server.Controllers
     public async Task<IActionResult> Get()
     {
       var result = await repository.GetAllAsync();
-      return Ok(result);
+      return Ok(repository._mapper.Map<IList<OrderViewModel>>(result));
+    }
+    [HttpGet("Me")]
+    public IActionResult Me()
+    {
+      var query = repository.AsQueryableForUser().Include(p=>p.OrderItems);
+      return Ok(repository._mapper.Map<IList<OrderViewModel>>(query.ToList()));
+
     }
     [HttpPost]
     public IActionResult Post([FromBody]OrderViewModel model)

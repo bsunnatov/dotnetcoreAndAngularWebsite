@@ -77,6 +77,12 @@ namespace IdealSysApp.Data
     {
       return _dbSet.AsNoTracking();
     }
+    public IQueryable<T> AsQueryableForUser(string userId = null)
+    {
+      if (userId == null)
+        return _dbSet.AsNoTracking().Where(p => p.IdentityId == userService.GetUserId());
+      return _dbSet.AsNoTracking().Where(p => p.IdentityId == userId);
+    }
     public IQueryable<T> AsQueryableTrack()
     {
       return _dbSet;

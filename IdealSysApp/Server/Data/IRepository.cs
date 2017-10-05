@@ -16,6 +16,7 @@ namespace IdealSysApp.Data
     Task<IEnumerable<T>> GetAllAsync();
     IEnumerable<T> GetAll();
     IQueryable<T> AsQueryable();
+    IQueryable<T> AsQueryableForUser(string userId=null);
     IQueryable<T> AsQueryableTrack();
     T Get(long id);
     T GetTrack(long id);

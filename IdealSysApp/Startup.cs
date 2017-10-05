@@ -96,7 +96,7 @@ namespace IdealSysApp
       services.AddMvc().AddJsonOptions(o =>
       {
         o.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
-       // o.SerializerSettings.ContractResolver = new DefaultContractResolver();
+        o.SerializerSettings.ContractResolver = new DefaultContractResolver();
         o.SerializerSettings.ReferenceLoopHandling =Newtonsoft.Json.ReferenceLoopHandling.Ignore;
       });
       services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

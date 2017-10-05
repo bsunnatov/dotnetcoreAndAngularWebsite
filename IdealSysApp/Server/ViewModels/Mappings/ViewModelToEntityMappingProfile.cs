@@ -51,6 +51,9 @@ namespace IdealSysApp.ViewModels.Mappings
       {
        dist.children = src.Childs.Select(RecursiveSelect).ToList();
       }).ForMember(p => p.text, m => m.MapFrom(s => s.Name));
+      CreateMap<Customer,CustomerViewModel>();
+      CreateMap<Order, OrderViewModel>();
+      CreateMap<OrderItem, OrderItemViewModel>();
       //Integration with 1c ViewModel
       // CreateMap<GoodViewModel, Product>().ForMember(p=>p.goodID,m=>m.MapFrom(vm=>vm.Id));
     }
