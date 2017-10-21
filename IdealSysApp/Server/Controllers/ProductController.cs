@@ -23,11 +23,18 @@ namespace IdealSysApp.Controllers
   public class ProductController : Controller
   {
     private IHostingEnvironment _hostingEnvironment;
-    private readonly IRepository<Product> _service;
-    public ProductController(IHostingEnvironment environment, IRepository<Product> service)
+    private readonly IEntityService<Product> _service;
+    public ProductController(IHostingEnvironment environment, IEntityService<Product> service)
     {
       _hostingEnvironment = environment;
       _service = service;
+    }
+    [HttpGet("GetByProperty")]
+    public IActionResult GetByProperty([FromQuery]long[] ids)
+    {
+      var query = _service.AsQueryable().Include(p=>p.ProductProperties);
+      var result = query.Where(p => p.ProductProperties.Any(s => ids.Contains(s.DynamicPropertyValueId ?? 0)));
+      return Ok(result.ToList());
     }
     [HttpGet]
     public object Get([FromQuery]string filter)
@@ -41,12 +48,12 @@ namespace IdealSysApp.Controllers
           query = query.Where(p => p.ProductProperties.Any(s =>_filter.DynamicPropertyValueIds.Contains(s.DynamicPropertyValueId??0)));
         }
         var result = query.Include(p=>p.ProductImages).OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
-        var vmResult = _service._mapper.Map<IEnumerable<ProductViewModel>>(result.Data);
+        var vmResult = _service.mapper.Map<IEnumerable<ProductViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }
       else
       {
-        var vmResult = _service._mapper.Map<IEnumerable<ProductViewModel>>(_service.AsQueryable());
+        var vmResult = _service.mapper.Map<IEnumerable<ProductViewModel>>(_service.AsQueryable());
         return vmResult;
       }
     }
@@ -54,8 +61,8 @@ namespace IdealSysApp.Controllers
     [HttpGet("{id}")]
     public ProductViewModel Get(long id)
     {
-      var product = _service.Get(id);
-      return _service._mapper.Map<ProductViewModel>(product);
+      var product = _service.GetById(id);
+      return _service.mapper.Map<ProductViewModel>(product);
     }
     // POST: api/Storage
     [HttpPost]
@@ -63,8 +70,8 @@ namespace IdealSysApp.Controllers
     {
       try
       {
-        var ent = _service.InsertViewModel(model);
-        return new OkObjectResult(_service._mapper.Map<ProductViewModel>(ent));
+        var ent = _service.CreateFromViewModel(model);
+        return new OkObjectResult(_service.mapper.Map<ProductViewModel>(ent));
       }
       catch (Exception ex)
       {
@@ -79,10 +86,10 @@ namespace IdealSysApp.Controllers
     {
       try
       {
-        var ent = _service.Get(id);
+        var ent = _service.GetById(id);
         _service.ViewModel = value;
         ent = _service.Update(ent);
-        return new OkObjectResult(_service._mapper.Map<ProductViewModel>(ent));
+        return new OkObjectResult(_service.mapper.Map<ProductViewModel>(ent));
       }
       catch (Exception ex)
       {
@@ -96,7 +103,7 @@ namespace IdealSysApp.Controllers
     [HttpDelete("{id}")]
     public IActionResult Delete(long id)
     {
-      var ent = _service.Get(id);
+      var ent = _service.GetById(id);
       if (ent != null)
       {
         _service.Delete(ent);

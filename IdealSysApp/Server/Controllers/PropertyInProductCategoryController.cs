@@ -14,8 +14,8 @@ namespace IdealSysApp.Controllers
   [Route("api/PropertyInProductCategory")]
   public class PropertyInProductCategoryController : Controller
   {
-    private readonly IRepository<PropertyInProductCategory> _repository;
-    public PropertyInProductCategoryController(IRepository<PropertyInProductCategory> repository)
+    private readonly IEntityService<PropertyInProductCategory> _repository;
+    public PropertyInProductCategoryController(IEntityService<PropertyInProductCategory> repository)
     {
       _repository = repository;
     }
@@ -23,7 +23,7 @@ namespace IdealSysApp.Controllers
     public IActionResult GetProps(long productCategoryId)
     {
       var entities=_repository.AsQueryable().Include(a=>a.DynamicProperty).Where(p=>p.ProductCategoryId==productCategoryId);
-      return Ok(_repository._mapper.Map<IList<DynamicPropertyViewModel>>(entities.Select(p=>p.DynamicProperty)));
+      return Ok(_repository.mapper.Map<IList<DynamicPropertyViewModel>>(entities.Select(p=>p.DynamicProperty)));
     }
     [HttpPost("SetProps/{productCategoryId}")]
     public IActionResult SetProps(long productCategoryId, [FromBody]long []dynamicPropertyIds)
@@ -43,7 +43,7 @@ namespace IdealSysApp.Controllers
         if (ent == null)
         {
           ent = new PropertyInProductCategory() { ProductCategoryId = productCategoryId, DynamicPropertyId = dynamicPropertyId };
-          _repository.Insert(ent);
+          _repository.Create(ent);
         }
       }
       

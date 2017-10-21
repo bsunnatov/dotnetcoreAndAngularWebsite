@@ -14,9 +14,9 @@ namespace IdealSysApp.Controllers
   [Route("api/ProductProperty")]
   public class ProductPropertyController : Controller
   {
-    private readonly IRepository<ProductProperty> _service;
-    private readonly IRepository<PropertyInProductCategory> _dpservice;
-    public ProductPropertyController(IRepository<ProductProperty> service, IRepository<PropertyInProductCategory> dpservice)
+    private readonly IEntityService<ProductProperty> _service;
+    private readonly IEntityService<PropertyInProductCategory> _dpservice;
+    public ProductPropertyController(IEntityService<ProductProperty> service, IEntityService<PropertyInProductCategory> dpservice)
     {
       this._service = service;
       this._dpservice = dpservice;
@@ -27,7 +27,7 @@ namespace IdealSysApp.Controllers
       var pp = _service.GetWithInclude(p => p.DynamicProperty.DynamicPropertyValues);
       var q = pp.Where(p => p.ProductId == productId);
       var entities = q.ToList();
-      var vms = _service._mapper.Map<IList<ProductPropertyViewModel>>(entities);
+      var vms = _service.mapper.Map<IList<ProductPropertyViewModel>>(entities);
       var addedIds = entities.Select(s => s.DynamicPropertyId);
       var prodinprops = _dpservice.GetWithInclude(p => p.DynamicProperty.DynamicPropertyValues);
       var q2 = prodinprops.Where(p => !addedIds.Any(s => s == p.DynamicPropertyId));
@@ -41,7 +41,7 @@ namespace IdealSysApp.Controllers
           Key = item.DynamicProperty.Key,
           ProductId = productId,
           DynamicPropertyId = item.DynamicPropertyId,
-          DynamicPropertyValues = _service._mapper.Map<IList<DynamicPropertyValueViewModel>>(item.DynamicProperty.DynamicPropertyValues)
+          DynamicPropertyValues = _service.mapper.Map<IList<DynamicPropertyValueViewModel>>(item.DynamicProperty.DynamicPropertyValues)
         });
       }
       return Ok(vms);
@@ -54,7 +54,7 @@ namespace IdealSysApp.Controllers
       {
         foreach (var item in props)
         {
-          var prodProp = _service._mapper.Map<ProductProperty>(item);
+          var prodProp = _service.mapper.Map<ProductProperty>(item);
           var selectedValue = item.DynamicPropertyValues.FirstOrDefault(p => p.IsSelected);
           if (selectedValue != null)
           {
@@ -64,7 +64,7 @@ namespace IdealSysApp.Controllers
 
 
 
-              _service.Insert(prodProp);
+              _service.Create(prodProp);
 
             }
             else

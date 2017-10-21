@@ -25,7 +25,7 @@ export class DynamicPropertyComponent implements OnInit {
     public gridState: State = {
         sort: [],
         skip: 0,
-        take: 4
+        take: 10
     };
     public formGroup: FormGroup;
 

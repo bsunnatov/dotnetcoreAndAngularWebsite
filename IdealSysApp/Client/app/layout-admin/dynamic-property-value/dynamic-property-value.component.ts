@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, Inject, ElementRef, ViewChild, Input} from '@angular/core';
+import { Component, OnInit, Inject, ElementRef, ViewChild, Input} from '@angular/core';
 import { GridDataResult, RowClassArgs } from '@progress/kendo-angular-grid';
 import { Observable } from 'rxjs/Rx';
 import { State, process } from '@progress/kendo-data-query';

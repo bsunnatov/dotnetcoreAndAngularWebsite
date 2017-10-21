@@ -19,8 +19,8 @@ namespace IdealSysApp.Controllers
   [Authorize(Policy = "ApiUser")]
   public class ProductCategoryController : Controller
   {
-    private readonly IRepository<ProductCategory> _service;
-    public ProductCategoryController(IRepository<ProductCategory> service)
+    private readonly IEntityService<ProductCategory> _service;
+    public ProductCategoryController(IEntityService<ProductCategory> service)
     {
       _service = service;
     }
@@ -35,7 +35,7 @@ namespace IdealSysApp.Controllers
           query = query.Where(p => !p.ParentId.HasValue);
         else
           query = query.Where(p => p.ParentId == ParentId);
-       return _service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(query);
+       return _service.mapper.Map<IEnumerable<ProductCategoryViewModel>>(query);
       }
  
       if (!string.IsNullOrEmpty(filter))
@@ -51,15 +51,15 @@ namespace IdealSysApp.Controllers
         var result = q.OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
         if (_filter.AsSelect2)
         {
-          var select2Result = _service._mapper.Map<IEnumerable<Select2ViewModel>>(result.Data);
+          var select2Result = _service.mapper.Map<IEnumerable<Select2ViewModel>>(result.Data);
           return new { Data = select2Result, Total = result.Total };
         }
-        var vmResult =_service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(result.Data);
+        var vmResult =_service.mapper.Map<IEnumerable<ProductCategoryViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }
       else
       {
-        var vmResult = _service._mapper.Map<IEnumerable<ProductCategoryViewModel>>(_service.GetWithInclude(p=>p.Parent));
+        var vmResult = _service.mapper.Map<IEnumerable<ProductCategoryViewModel>>(_service.GetWithInclude(p=>p.Parent));
         return vmResult;
       }
     }
@@ -68,8 +68,8 @@ namespace IdealSysApp.Controllers
     [HttpGet("{id}")]
     public object Get(long id)
     {
-      var ent = _service.Get(id);
-      return _service._mapper.Map<ProductCategoryViewModel>(ent);
+      var ent = _service.GetById(id);
+      return _service.mapper.Map<ProductCategoryViewModel>(ent);
     }
     // POST: api/ProductCategory
     [HttpPost]
@@ -77,8 +77,8 @@ namespace IdealSysApp.Controllers
     {
       try
       {
-        var ent = _service.InsertViewModel(model);
-        return new OkObjectResult(_service._mapper.Map<ProductCategoryViewModel>(ent));
+        var ent = _service.CreateFromViewModel(model);
+        return new OkObjectResult(_service.mapper.Map<ProductCategoryViewModel>(ent));
       }
       catch (Exception ex)
       {
@@ -94,10 +94,10 @@ namespace IdealSysApp.Controllers
     {
       try
       {
-        var ent = _service.Get(id);
+        var ent = _service.GetById(id);
         _service.ViewModel = value;
         ent = _service.Update(ent);
-        return new OkObjectResult(_service._mapper.Map<ProductCategoryViewModel>(ent));
+        return new OkObjectResult(_service.mapper.Map<ProductCategoryViewModel>(ent));
       }
       catch (Exception ex)
       {
@@ -111,7 +111,7 @@ namespace IdealSysApp.Controllers
     [HttpDelete("{id}")]
     public IActionResult Delete(long id)
     {
-      var ent=_service.Get(id);
+      var ent=_service.GetById(id);
       if (ent != null)
       {
         _service.Delete(ent);

@@ -13,8 +13,8 @@ namespace IdealSysApp.Server.Services
 {
   public class EntityService<T> where T : BaseEntity
   {
-    IRepository<T> repository;
-    public EntityService(IRepository<T> repository)
+    Data.IEntityService<T> repository;
+    public EntityService(Data.IEntityService<T> repository)
     {
       this.repository = repository;
     }

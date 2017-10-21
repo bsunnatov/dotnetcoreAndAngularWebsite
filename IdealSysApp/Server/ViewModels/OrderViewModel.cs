@@ -13,6 +13,7 @@ namespace IdealSysApp.Server.ViewModels
     {
       OrderItems = new List<OrderItemViewModel>();
     }
+    public string OverheadNumber { get; set; }
     public long CustomerId { get; set; }
     /// <summary>
     /// Дата отправка
@@ -26,6 +27,7 @@ namespace IdealSysApp.Server.ViewModels
     /// Статус заказ
     /// </summary>
     public OrderStatusEnum OrderStatus { get; set; }
+    public CustomerViewModel CustomerObject { get; set; }
     public virtual IList<OrderItemViewModel> OrderItems { get; set; }
   }
 }

@@ -90,8 +90,8 @@ namespace IdealSysApp
           })
           .AddEntityFrameworkStores<ApplicationDbContext>()
           .AddDefaultTokenProviders();
-      services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-      services.AddScoped(typeof(IEntityService<>), typeof(EntityService<>));
+      services.AddScoped(typeof(Data.IEntityService<>), typeof(Data.EntityService<>));
+      services.AddScoped(typeof(Server.Services.IEntityService<>), typeof(Server.Services.EntityService<>));
       //  services.AddScoped<RoleManager<AppRole>>();
       services.AddMvc().AddJsonOptions(o =>
       {

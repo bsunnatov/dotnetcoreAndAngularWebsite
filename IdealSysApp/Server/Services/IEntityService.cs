@@ -8,6 +8,6 @@ namespace IdealSysApp.Server.Services
 {
   public interface IEntityService<T>
   {
-    IRepository<T> repository { get; set; }
+    IEntityService<T> repository { get; set; }
   }
 }

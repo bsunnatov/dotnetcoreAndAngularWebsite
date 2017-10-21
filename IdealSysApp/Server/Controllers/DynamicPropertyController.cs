@@ -21,8 +21,8 @@ namespace IdealSysApp.Controllers
  // [Authorize(Policy = "ApiUser")]
   public class DynamicPropertyController : Controller
   {
-    private readonly IRepository<DynamicProperty> _service;
-    public DynamicPropertyController(IRepository<DynamicProperty> service)
+    private readonly Data.IEntityService<DynamicProperty> _service;
+    public DynamicPropertyController(Data.IEntityService<DynamicProperty> service)
     {
       _service = service;
     }
@@ -37,12 +37,12 @@ namespace IdealSysApp.Controllers
        
         DataSourceRequest _filter = Newtonsoft.Json.JsonConvert.DeserializeObject<DataSourceRequest>(filter);
         var result = query.OrderBy(p => p.Id).ToDataSourceResult(_filter.Take, _filter.Skip, _filter.Sort, _filter.Filter);
-        var vmResult =_service._mapper.Map<IEnumerable<DynamicPropertyViewModel>>(result.Data);
+        var vmResult =_service.mapper.Map<IEnumerable<DynamicPropertyViewModel>>(result.Data);
         return new { Data = vmResult, Total = result.Total };
       }
       else
       {
-        var vmResult = _service._mapper.Map<IEnumerable<DynamicPropertyViewModel>>(query);
+        var vmResult = _service.mapper.Map<IEnumerable<DynamicPropertyViewModel>>(query);
         return new { Data = vmResult, Total = query.Count() };
       }
     }
@@ -51,8 +51,8 @@ namespace IdealSysApp.Controllers
     [HttpGet("{id}")]
     public object Get(long id)
     {
-      var ent = _service.Get(id);
-      return _service._mapper.Map<DynamicPropertyViewModel>(ent);
+      var ent = _service.GetById(id);
+      return _service.mapper.Map<DynamicPropertyViewModel>(ent);
     }
 
     // POST: api/DynamicProperty
@@ -61,8 +61,8 @@ namespace IdealSysApp.Controllers
     {
       try
       {
-        var ent = _service.InsertViewModel(model);
-        return new OkObjectResult(_service._mapper.Map<DynamicPropertyViewModel>(ent));
+        var ent = _service.CreateFromViewModel(model);
+        return new OkObjectResult(_service.mapper.Map<DynamicPropertyViewModel>(ent));
       }
       catch (Exception ex)
       {
@@ -78,10 +78,10 @@ namespace IdealSysApp.Controllers
     {
       try
       {
-        var ent = _service.Get(id);
+        var ent = _service.GetById(id);
         _service.ViewModel = value;
         ent = _service.Update(ent);
-        return new OkObjectResult(_service._mapper.Map<DynamicPropertyViewModel>(ent));
+        return new OkObjectResult(_service.mapper.Map<DynamicPropertyViewModel>(ent));
       }
       catch (Exception ex)
       {
@@ -95,7 +95,7 @@ namespace IdealSysApp.Controllers
     [HttpDelete("{id}")]
     public IActionResult Delete(long id)
     {
-      var ent=_service.Get(id);
+      var ent=_service.GetById(id);
       if (ent != null)
       {
         _service.Delete(ent);

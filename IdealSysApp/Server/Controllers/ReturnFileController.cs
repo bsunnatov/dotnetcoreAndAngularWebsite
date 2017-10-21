@@ -16,9 +16,9 @@ namespace IdealSysApp.Controllers
   public class ReturnFileController : Controller
   {
     private IHostingEnvironment _appEnvironment;
-    private readonly IRepository<Product> _service;
-    IRepository<ProductImage> _pi_service;
-    public ReturnFileController(IHostingEnvironment appEnvironment, IRepository<Product> service, IRepository<ProductImage> pi_service)
+    private readonly IEntityService<Product> _service;
+    IEntityService<ProductImage> _pi_service;
+    public ReturnFileController(IHostingEnvironment appEnvironment, IEntityService<Product> service, IEntityService<ProductImage> pi_service)
     {
       _appEnvironment = appEnvironment;
       _service = service;
@@ -27,7 +27,7 @@ namespace IdealSysApp.Controllers
     [HttpGet("GetById/{Id}")]
     public IActionResult GetById(long Id)
     {
-      var ent = _service.Get(Id);
+      var ent = _service.GetById(Id);
       if (ent == null)
       {
         return new EmptyResult();

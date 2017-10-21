@@ -31,5 +31,11 @@ namespace IdealSysApp.Server.ViewModels
     /// Цена
     /// </summary>
     public decimal CurrentPrice { get; set; }
+    #region ProductInformations
+    public string ProductName { get; set; }
+    public string ProductImageUrl { get; set; }
+
+    #endregion
+    public ProductViewModel ProductObject { get; set; }
   }
 }

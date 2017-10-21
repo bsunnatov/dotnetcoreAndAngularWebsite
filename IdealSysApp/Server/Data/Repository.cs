@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 using IdealSysApp.Services;
 namespace IdealSysApp.Data
 {
-  public class Repository<T> : IRepository<T> where T : BaseEntity
+  public class EntityService<T> : IEntityService<T> where T : BaseEntity
 
   {
     private readonly ApplicationDbContext context;
@@ -22,17 +22,17 @@ namespace IdealSysApp.Data
     string errorMessage = string.Empty;
     private readonly UserManager<AppUser> _userManager;
     public object ViewModel { get; set; }
-    public IMapper _mapper { get; }
+    public IMapper mapper { get; }
     public ILogger log;
     public IUserResolverService userService;
-    public Repository(ApplicationDbContext context, UserManager<AppUser> userManager, IMapper mapper, ILoggerFactory loggerFactory, IUserResolverService userService)
+    public EntityService(ApplicationDbContext context, UserManager<AppUser> userManager, IMapper mapper, ILoggerFactory loggerFactory, IUserResolverService userService)
     {
 
       this.context = context;
       this._dbSet = context.Set<T>();
       _userManager = userManager;
-      _mapper = mapper;
-      this.log = loggerFactory.CreateLogger<Repository<T>>();
+      this.mapper = mapper;
+      this.log = loggerFactory.CreateLogger<EntityService<T>>();
       this.userService = userService;
 
     }
@@ -59,11 +59,11 @@ namespace IdealSysApp.Data
       var vm = (IViewModel)viewModel;
       if (vm.Id > 0)
       {
-        T ent = this.Get(vm.Id);
-        ent = _mapper.Map<object, T>(viewModel, ent);
+        T ent = this.GetById(vm.Id);
+        ent = mapper.Map<object, T>(viewModel, ent);
         return ent;
       }
-      return _mapper.Map<T>(viewModel);
+      return mapper.Map<T>(viewModel);
     }
     public async Task<IEnumerable<T>> GetAllAsync()
     {
@@ -87,15 +87,15 @@ namespace IdealSysApp.Data
     {
       return _dbSet;
     }
-    public T Get(long id)
+    public T GetById(long id)
     {
       return _dbSet.AsNoTracking().FirstOrDefault(s => s.Id == id);
     }
-    public T GetTrack(long id)
+    public T GetByIdTrack(long id)
     {
       return _dbSet.FirstOrDefault(s => s.Id == id);
     }
-    public T Insert(T entity)
+    public T Create(T entity)
     {
       if (entity == null)
       {
@@ -106,10 +106,10 @@ namespace IdealSysApp.Data
       context.SaveChanges();
       return entity;
     }
-    public T InsertViewModel(object viewModel)
+    public T CreateFromViewModel(object viewModel)
     {
       var entity = this.ViewModelToEntity(viewModel);
-      return Insert(entity);
+      return Create(entity);
     }
     public T Update(T entity)
     {
@@ -119,21 +119,31 @@ namespace IdealSysApp.Data
       }
       if (ViewModel != null)
       {
-        entity = _mapper.Map<object, T>(ViewModel, entity);
+        entity = mapper.Map<object, T>(ViewModel, entity);
       }
       entity.ModifiedDate = DateTime.Now;
-      context.Entry(entity).State = EntityState.Modified;
+      try
+      {
+        context.Entry(entity).State = EntityState.Modified;
+      }
+      catch 
+      {
+
+      }
+    
       context.SaveChanges();
       return entity;
     }
-    public int Delete(T entity)
+    public int Delete(T entity,bool directlyDelete=true)
     {
       if (entity == null)
       {
         throw new ArgumentNullException("entity");
       }
       _dbSet.Remove(entity);
+      if(directlyDelete)
       return context.SaveChanges();
+      return 0;
     }
 
   }

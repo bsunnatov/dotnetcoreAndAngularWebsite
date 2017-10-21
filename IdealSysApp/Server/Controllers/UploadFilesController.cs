@@ -16,8 +16,8 @@ namespace IdealSysApp.Controllers
   public class UploadFilesController : Controller
   {
     private IHostingEnvironment _appEnvironment;
-    private readonly IRepository<Product> _service;
-    public UploadFilesController(IHostingEnvironment appEnvironment, IRepository<Product> service)
+    private readonly IEntityService<Product> _service;
+    public UploadFilesController(IHostingEnvironment appEnvironment, IEntityService<Product> service)
     {
       _appEnvironment = appEnvironment;
       _service = service;
@@ -27,7 +27,7 @@ namespace IdealSysApp.Controllers
     [HttpPost("UploadFiles/{Id}/{isGeneral?}")]
     public IActionResult Post(long Id,IFormFile file,bool isGeneral = true)
     {
-      var ent = _service.GetTrack(Id);
+      var ent = _service.GetByIdTrack(Id);
       if (Id > 0&&ent!=null) {
         try
         {
